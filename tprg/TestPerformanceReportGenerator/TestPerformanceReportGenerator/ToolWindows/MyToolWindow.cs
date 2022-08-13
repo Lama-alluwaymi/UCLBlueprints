@@ -18,7 +18,7 @@ namespace TestPerformanceReportGenerator
         }
 
         [Guid("ce2a0f92-d094-48c5-be02-b8624558136a")]
-        internal class Pane : ToolkitToolWindowPane
+        internal class Pane : ToolWindowPane
         {
             public Pane()
             {
