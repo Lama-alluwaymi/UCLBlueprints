@@ -18,12 +18,17 @@
             <Label x:Name="lblHeadline"
                    Margin="10"
                    HorizontalAlignment="Center">Run the Test Now</Label>
-            
+
             <Button Content="Run Test!"
                     Click="button1_Click"
                     Width="120"
                     Height="80"
                     Name="button1" />
+            <Label x:Name="total" Content="Total Tests: " Margin="10 0 0 0"/>
+            <Label x:Name="passed" Content="Passed Tests: " Margin="10 0 0 0" />
+            <Label x:Name="failed" Content="Failed Tests: " Margin="10 0 0 0"/>
+            <Label x:Name="skipped" Content="Skipped Tests: " Margin="10 0 0 0" />
+            <Label x:Name="totduration" Content="Duration: " Margin="10 0 0 0"/>
         </StackPanel>
     </Grid>
 </UserControl>
