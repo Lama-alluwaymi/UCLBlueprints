@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>测试模板</title>
+    <style>
+        #mainCenter {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /*项目名称*/
+        #ProjectName {
+            font-size: 19px;
+            font-weight: 900;
+            height: 50px;
+            line-height: 60px;
+            border-bottom: 1px solid #d1cfcf;
+        }
+
+        /*CPU和内存 饼状图*/
+        #PieChartBox {
+            height: 250px;
+            text-align: center;
+        }
+
+        .chartstyle {
+            width: 45%;
+            height: 300px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        /*数据*/
+        #dataTableBox {
+            margin-top: 40px;
+        }
+
+        #dataTable {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #cdcbcb !important;
+        }
+
+            #dataTable tr {
+                border-bottom: 1px solid #cdcbcb !important;
+                padding: 10px;
+            }
+
+            #dataTable thead {
+                color: #6c6c6c;
+                text-align: left;
+                height: 50px;
+            }
+
+            #dataTable tbody tr {
+                height: 80px;
+                padding: 10px;
+            }
+
+
+        /*进度*/
+        progress {
+            168px;
+            /*height: 20px;*/
+            background-color: #fff;
+            border-radius: 1em;
+            /*bgc 需要被设置，否则背景色无法被显示出来*/
+        }
+
+            /* 表示总长度背景色 */
+
+            progress::-webkit-progress-bar {
+                background-color: lightsalmon;
+            }
+
+            /* 表示已完成进度背景色 */
+
+            progress::-webkit-progress-value {
+                background: lightskyblue;
+            }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="mainCenter">
+        <div id="ProjectName">Project Name</div>
+        <div id="PieChartBox">
+            <div id="MemoryChart" class="chartstyle"></div>
+            <div id="CPUChart" class="chartstyle"></div>
+        </div>
+        <div id="dataTableBox">
+            <span style="font-size:18px;">Test Runs</span>
+            <table id="dataTable" cellpadding="20">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Version</th>
+                        <th>Hardware</th>
+                        <th>FAILED/PASS </th>
+                        <th>Test Cases</th>
+                        <th>Line Coverage</th>
+                        <th>Duration</th>
+                        <th>Devices</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aug 1,2022,8:45:31 AM</td>
+                        <td>1.0(1)</td>
+                        <td>Computer</td>
+                        <td><progress value="4" max="7"></progress></td>
+                        <td>100</td>
+                        <td>80%</td>
+                        <td>1.32H.m</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="LineCoverageBox">
+            <div id="LineCoverageChart" style="width:100%;height:400px;margin: 0 auto"></div>
+        </div>
+
+
+    </div>
+    <!-- ECharts单文件引入 -->
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/line',
+                'echarts/chart/pie'
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var memoryChart = ec.init(document.getElementById('MemoryChart'));
+                var cpuChartChart = ec.init(document.getElementById('CPUChart'));
+                var linecoverageChart = ec.init(document.getElementById('LineCoverageChart'));
+
+                // 指定图表的配置项和数据
+                memoryOption = {
+                    // 标题
+                    title: {
+                        text: 'MEMORY USAGE',
+                    },
+                    // 图例
+                    tooltip: {
+                        show: true,
+                        trigger: "item",
+                        backgroundColor: "#0078D7",
+                        // {a}（系列名称），{b}（数据项名称），{c}（百分比）
+                        formatter: "{a}<br/>{b}:{c}%"
+                    },
+                    // 不同区域的颜色
+                    color: ['#846EC5', '#EFD9FD'],
+                    series: [
+                        {
+                            name: 'MEMORY USAGE',
+                            type: 'pie',
+                            // 数组的第一项是内半径，第二项是外半径；可以设置不同的内外半径显示成圆环图
+                            radius: '60%',
+                            // 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标；设置成百分比时第一项是相对于容器宽度，第二项是相对于容器高度
+                            center: ['50%', '50%'],
+                            data: [
+                                { value: 15, name: 'USED MEMORY' },
+                                { value: 85, name: 'UNUSED MEMORY' },
+                            ],
+                            itemStyle: {
+                                // 显示图例
+                                normal: {
+                                    label: {
+                                        show: true
+                                    },
+                                    labelLine: {
+                                        show: true
+                                    }
+                                },
+                                emphasis: {
+                                    // 图形阴影的模糊大小
+                                    shadowBlur: 10,
+                                    // 阴影水平方向上的偏移距离
+                                    shadowOffsetX: 0,
+                                    // 阴影颜色
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+                cpuOption = {
+                    // 标题
+                    title: {
+                        text: 'CPU USAGE',
+                    },
+                    // 图例
+                    tooltip: {
+                        show: true,
+                        trigger: "item",
+                        backgroundColor: "#0078D7",
+                        // {a}（系列名称），{b}（数据项名称），{c}（百分比）
+                        formatter: "{a}<br/>{b}:{c}%"
+                    },
+                    // 不同区域的颜色
+                    color: ['#F56C4F', '#9DD15D'],
+                    series: [
+                        {
+                            name: 'CPU USAGE',
+                            type: 'pie',
+                            // 数组的第一项是内半径，第二项是外半径；可以设置不同的内外半径显示成圆环图
+                            radius: '60%',
+                            // 饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标；设置成百分比时第一项是相对于容器宽度，第二项是相对于容器高度
+                            center: ['50%', '50%'],
+                            data: [
+                                { value: 60, name: 'USED CPU' },
+                                { value: 40, name: 'UNUSED CUP' },
+                            ],
+                            itemStyle: {
+                                // 显示图例
+                                normal: {
+                                    label: {
+                                        show: true
+                                    },
+                                    labelLine: {
+                                        show: true
+                                    }
+                                },
+                                emphasis: {
+                                    // 图形阴影的模糊大小
+                                    shadowBlur: 10,
+                                    // 阴影水平方向上的偏移距离
+                                    shadowOffsetX: 0,
+                                    // 阴影颜色
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                var linecoverageOption = { //具体细节的描述
+                    title: {
+                        text: 'LINE COVERAGE',
+                        textStyle: { //主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+                            fontSize: 14,
+                            fontStyle: 'normal',
+                            fontWeight: 'bold',
+                        },
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['Line Coverage Rate']
+                    },
+                    calculable: true,
+                    xAxis: [{
+                        type: 'category',
+                        //name: 'min_sup(%)'
+                        data: ['0', '1', '2', '3', '4', '5'],
+                        name: 'TEST RUN',
+                        position: 'left'
+                    }],
+                    yAxis: [{
+                        type: 'value',
+                        name: 'COVERAGE',
+                        position: 'left'
+                    }],
+                    series: [{
+                        name: 'Line Coverage Rate',
+                        type: 'line',// bar
+                        data: [3.7, 4.2, 4.8, 5.6, 7.9, 18.2],
+                        color: '#CC0066'
+                    } ]
+                };
+
+
+
+
+                memoryChart.setOption(memoryOption);
+                cpuChartChart.setOption(cpuOption);
+                linecoverageChart.setOption(linecoverageOption);
+
+            }
+        );
+    </script>
+</body>
+</html>
