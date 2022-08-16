@@ -141,7 +141,9 @@ function App() {
         Show Sample Report
       </Button>
 
-      <Text my={5}>Author Commits</Text>
+      <Heading size='md' my={5}>
+        Author Commits
+      </Heading>
       {authorCommits.length > 0 && (
         <TableContainer>
           <Table variant='simple'>
@@ -188,7 +190,9 @@ function App() {
         </TableContainer>
       )}
 
-      <Text my={5}>Recent File Authors</Text>
+      <Heading size='md' my={5}>
+        Recent File Authors
+      </Heading>
       {fileAuthors.length > 0 && (
         <Box>
           {fileAuthors.map(([file, authors]) => (
@@ -203,7 +207,9 @@ function App() {
         </Box>
       )}
 
-      <Text my={5}>Most Frequently Modified Files by Number of Commits</Text>
+      <Heading size='md' my={5}>
+        Most Frequently Modified Files by Number of Commits
+      </Heading>
       {fileCommitCounts.length > 0 && (
         <Box>
           {fileCommitCounts
