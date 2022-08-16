@@ -32,6 +32,11 @@ function App() {
   const fetchData = async () => {
     setLoading(true);
 
+    setAuthorCommits([]);
+    setTotalChanges(0);
+    setFileAuthors([]);
+    setMostRecentCommitSha('');
+
     const repo = {
       owner: url.split('/')[3],
       repo: url.split('/')[4],
