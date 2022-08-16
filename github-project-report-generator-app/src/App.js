@@ -53,16 +53,15 @@ function App() {
     setMostRecentCommitSha(treeSha);
 
     // https://docs.github.com/en/rest/git/trees#get-a-tree
-    const tree = await octokit.request(
-      'GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true',
-      {
+    const tree = (
+      await octokit.request('GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true', {
         ...repo,
         tree_sha: treeSha,
-      }
-    );
+      })
+    ).data.tree;
 
     const fileContributors = {};
-    for (const file of tree.data.tree) {
+    for (const file of tree) {
       const commits = (
         await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
       ).data;
@@ -101,6 +100,7 @@ function App() {
       >
         Generate Report
       </Button>
+
       <Text my={5}>Author Commits</Text>
       {authorCommits.length > 0 && (
         <TableContainer>
@@ -147,6 +147,7 @@ function App() {
           </Table>
         </TableContainer>
       )}
+
       <Text my={5}>Recent File Authors</Text>
       {fileAuthors.length > 0 && (
         <Box>
