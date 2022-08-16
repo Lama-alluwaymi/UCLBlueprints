@@ -46,6 +46,20 @@ const repo = {
     console.log(file.path);
   }
 
+  const fileCommits = {};
+  for (const file of tree) {
+    // https://stackoverflow.com/a/62867468
+    const commits = (
+      await octokit.request('GET /repos/{owner}/{repo}/commits?per_page=1&path=' + file.path, repo)
+    ).headers.link
+      .split(',')[1]
+      .match(/.*page=(?<page_num>\d+)/).groups.page_num;
+
+    fileCommits[file.path] = parseInt(commits);
+
+    console.log(file.path);
+  }
+
   fs.writeFileSync(
     'src/sampleData.json',
     JSON.stringify(
@@ -58,6 +72,7 @@ const repo = {
           .reduce((a, b) => a + b, 0),
         mostRecentCommitSha: treeSha,
         fileAuthors: Object.entries(fileContributors),
+        fileCommitCounts: Object.entries(fileCommits),
       },
       null,
       2

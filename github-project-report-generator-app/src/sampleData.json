@@ -1,7 +1,7 @@
 {
   "authorCommits": [
     {
-      "total": 169,
+      "total": 14,
       "weeks": [
         {
           "w": 1579996800,
@@ -11,63 +11,63 @@
         },
         {
           "w": 1580601600,
-          "a": 472,
-          "d": 23,
-          "c": 11
+          "a": 179,
+          "d": 22,
+          "c": 2
         },
         {
           "w": 1581206400,
-          "a": 1823,
-          "d": 1561,
-          "c": 20
-        },
-        {
-          "w": 1581811200,
-          "a": 492,
-          "d": 365,
-          "c": 20
-        },
-        {
-          "w": 1582416000,
-          "a": 1080,
-          "d": 392,
-          "c": 44
-        },
-        {
-          "w": 1583020800,
-          "a": 97,
-          "d": 20,
-          "c": 7
-        },
-        {
-          "w": 1583625600,
-          "a": 640,
-          "d": 246,
-          "c": 35
-        },
-        {
-          "w": 1584230400,
-          "a": 5,
-          "d": 9,
-          "c": 3
-        },
-        {
-          "w": 1584835200,
           "a": 0,
           "d": 0,
           "c": 0
         },
         {
+          "w": 1581811200,
+          "a": 239,
+          "d": 39,
+          "c": 4
+        },
+        {
+          "w": 1582416000,
+          "a": 146,
+          "d": 22,
+          "c": 5
+        },
+        {
+          "w": 1583020800,
+          "a": 261,
+          "d": 5,
+          "c": 1
+        },
+        {
+          "w": 1583625600,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1584230400,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1584835200,
+          "a": 167,
+          "d": 76,
+          "c": 1
+        },
+        {
           "w": 1585440000,
-          "a": 851,
-          "d": 517,
-          "c": 15
+          "a": 101,
+          "d": 234,
+          "c": 1
         },
         {
           "w": 1586044800,
-          "a": 611,
-          "d": 572,
-          "c": 14
+          "a": 0,
+          "d": 0,
+          "c": 0
         },
         {
           "w": 1586649600,
@@ -809,22 +809,22 @@
         }
       ],
       "author": {
-        "login": "elouak1002",
-        "id": 26234735,
-        "node_id": "MDQ6VXNlcjI2MjM0NzM1",
-        "avatar_url": "https://avatars.githubusercontent.com/u/26234735?v=4",
+        "login": "MihailBratanov",
+        "id": 29047952,
+        "node_id": "MDQ6VXNlcjI5MDQ3OTUy",
+        "avatar_url": "https://avatars.githubusercontent.com/u/29047952?v=4",
         "gravatar_id": "",
-        "url": "https://api.github.com/users/elouak1002",
-        "html_url": "https://github.com/elouak1002",
-        "followers_url": "https://api.github.com/users/elouak1002/followers",
-        "following_url": "https://api.github.com/users/elouak1002/following{/other_user}",
-        "gists_url": "https://api.github.com/users/elouak1002/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/elouak1002/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/elouak1002/subscriptions",
-        "organizations_url": "https://api.github.com/users/elouak1002/orgs",
-        "repos_url": "https://api.github.com/users/elouak1002/repos",
-        "events_url": "https://api.github.com/users/elouak1002/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/elouak1002/received_events",
+        "url": "https://api.github.com/users/MihailBratanov",
+        "html_url": "https://github.com/MihailBratanov",
+        "followers_url": "https://api.github.com/users/MihailBratanov/followers",
+        "following_url": "https://api.github.com/users/MihailBratanov/following{/other_user}",
+        "gists_url": "https://api.github.com/users/MihailBratanov/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/MihailBratanov/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/MihailBratanov/subscriptions",
+        "organizations_url": "https://api.github.com/users/MihailBratanov/orgs",
+        "repos_url": "https://api.github.com/users/MihailBratanov/repos",
+        "events_url": "https://api.github.com/users/MihailBratanov/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/MihailBratanov/received_events",
         "type": "User",
         "site_admin": false
       }
@@ -1659,55 +1659,55 @@
       }
     },
     {
-      "total": 19,
+      "total": 75,
       "weeks": [
         {
           "w": 1579996800,
-          "a": 0,
+          "a": 2,
           "d": 0,
-          "c": 0
+          "c": 1
         },
         {
           "w": 1580601600,
-          "a": 173,
-          "d": 29,
-          "c": 5
+          "a": 967,
+          "d": 627,
+          "c": 21
         },
         {
           "w": 1581206400,
-          "a": 374,
-          "d": 13,
-          "c": 5
+          "a": 414,
+          "d": 432,
+          "c": 14
         },
         {
           "w": 1581811200,
-          "a": 364,
-          "d": 185,
-          "c": 6
+          "a": 3,
+          "d": 3,
+          "c": 1
         },
         {
           "w": 1582416000,
-          "a": 17,
-          "d": 416,
-          "c": 2
+          "a": 220,
+          "d": 300,
+          "c": 12
         },
         {
           "w": 1583020800,
-          "a": 0,
-          "d": 0,
-          "c": 0
+          "a": 243,
+          "d": 230,
+          "c": 14
         },
         {
           "w": 1583625600,
-          "a": 0,
-          "d": 0,
-          "c": 0
+          "a": 195,
+          "d": 93,
+          "c": 8
         },
         {
           "w": 1584230400,
           "a": 0,
           "d": 0,
-          "c": 1
+          "c": 0
         },
         {
           "w": 1584835200,
@@ -1723,9 +1723,9 @@
         },
         {
           "w": 1586044800,
-          "a": 0,
-          "d": 0,
-          "c": 0
+          "a": 124,
+          "d": 298,
+          "c": 4
         },
         {
           "w": 1586649600,
@@ -2467,22 +2467,22 @@
         }
       ],
       "author": {
-        "login": "SeptimiuPop",
-        "id": 55930484,
-        "node_id": "MDQ6VXNlcjU1OTMwNDg0",
-        "avatar_url": "https://avatars.githubusercontent.com/u/55930484?v=4",
+        "login": "ArchawinWongkittiruk",
+        "id": 55857439,
+        "node_id": "MDQ6VXNlcjU1ODU3NDM5",
+        "avatar_url": "https://avatars.githubusercontent.com/u/55857439?v=4",
         "gravatar_id": "",
-        "url": "https://api.github.com/users/SeptimiuPop",
-        "html_url": "https://github.com/SeptimiuPop",
-        "followers_url": "https://api.github.com/users/SeptimiuPop/followers",
-        "following_url": "https://api.github.com/users/SeptimiuPop/following{/other_user}",
-        "gists_url": "https://api.github.com/users/SeptimiuPop/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/SeptimiuPop/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/SeptimiuPop/subscriptions",
-        "organizations_url": "https://api.github.com/users/SeptimiuPop/orgs",
-        "repos_url": "https://api.github.com/users/SeptimiuPop/repos",
-        "events_url": "https://api.github.com/users/SeptimiuPop/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/SeptimiuPop/received_events",
+        "url": "https://api.github.com/users/ArchawinWongkittiruk",
+        "html_url": "https://github.com/ArchawinWongkittiruk",
+        "followers_url": "https://api.github.com/users/ArchawinWongkittiruk/followers",
+        "following_url": "https://api.github.com/users/ArchawinWongkittiruk/following{/other_user}",
+        "gists_url": "https://api.github.com/users/ArchawinWongkittiruk/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/ArchawinWongkittiruk/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/ArchawinWongkittiruk/subscriptions",
+        "organizations_url": "https://api.github.com/users/ArchawinWongkittiruk/orgs",
+        "repos_url": "https://api.github.com/users/ArchawinWongkittiruk/repos",
+        "events_url": "https://api.github.com/users/ArchawinWongkittiruk/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/ArchawinWongkittiruk/received_events",
         "type": "User",
         "site_admin": false
       }
@@ -3317,7 +3317,7 @@
       }
     },
     {
-      "total": 14,
+      "total": 19,
       "weeks": [
         {
           "w": 1579996800,
@@ -3327,33 +3327,33 @@
         },
         {
           "w": 1580601600,
-          "a": 179,
-          "d": 22,
-          "c": 2
-        },
-        {
-          "w": 1581206400,
-          "a": 0,
-          "d": 0,
-          "c": 0
-        },
-        {
-          "w": 1581811200,
-          "a": 239,
-          "d": 39,
-          "c": 4
-        },
-        {
-          "w": 1582416000,
-          "a": 146,
-          "d": 22,
+          "a": 173,
+          "d": 29,
           "c": 5
         },
         {
+          "w": 1581206400,
+          "a": 374,
+          "d": 13,
+          "c": 5
+        },
+        {
+          "w": 1581811200,
+          "a": 364,
+          "d": 185,
+          "c": 6
+        },
+        {
+          "w": 1582416000,
+          "a": 17,
+          "d": 416,
+          "c": 2
+        },
+        {
           "w": 1583020800,
-          "a": 261,
-          "d": 5,
-          "c": 1
+          "a": 0,
+          "d": 0,
+          "c": 0
         },
         {
           "w": 1583625600,
@@ -3365,19 +3365,19 @@
           "w": 1584230400,
           "a": 0,
           "d": 0,
-          "c": 0
+          "c": 1
         },
         {
           "w": 1584835200,
-          "a": 167,
-          "d": 76,
-          "c": 1
+          "a": 0,
+          "d": 0,
+          "c": 0
         },
         {
           "w": 1585440000,
-          "a": 101,
-          "d": 234,
-          "c": 1
+          "a": 0,
+          "d": 0,
+          "c": 0
         },
         {
           "w": 1586044800,
@@ -4125,22 +4125,22 @@
         }
       ],
       "author": {
-        "login": "MihailBratanov",
-        "id": 29047952,
-        "node_id": "MDQ6VXNlcjI5MDQ3OTUy",
-        "avatar_url": "https://avatars.githubusercontent.com/u/29047952?v=4",
+        "login": "SeptimiuPop",
+        "id": 55930484,
+        "node_id": "MDQ6VXNlcjU1OTMwNDg0",
+        "avatar_url": "https://avatars.githubusercontent.com/u/55930484?v=4",
         "gravatar_id": "",
-        "url": "https://api.github.com/users/MihailBratanov",
-        "html_url": "https://github.com/MihailBratanov",
-        "followers_url": "https://api.github.com/users/MihailBratanov/followers",
-        "following_url": "https://api.github.com/users/MihailBratanov/following{/other_user}",
-        "gists_url": "https://api.github.com/users/MihailBratanov/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/MihailBratanov/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/MihailBratanov/subscriptions",
-        "organizations_url": "https://api.github.com/users/MihailBratanov/orgs",
-        "repos_url": "https://api.github.com/users/MihailBratanov/repos",
-        "events_url": "https://api.github.com/users/MihailBratanov/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/MihailBratanov/received_events",
+        "url": "https://api.github.com/users/SeptimiuPop",
+        "html_url": "https://github.com/SeptimiuPop",
+        "followers_url": "https://api.github.com/users/SeptimiuPop/followers",
+        "following_url": "https://api.github.com/users/SeptimiuPop/following{/other_user}",
+        "gists_url": "https://api.github.com/users/SeptimiuPop/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/SeptimiuPop/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/SeptimiuPop/subscriptions",
+        "organizations_url": "https://api.github.com/users/SeptimiuPop/orgs",
+        "repos_url": "https://api.github.com/users/SeptimiuPop/repos",
+        "events_url": "https://api.github.com/users/SeptimiuPop/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/SeptimiuPop/received_events",
         "type": "User",
         "site_admin": false
       }
@@ -5804,55 +5804,55 @@
       }
     },
     {
-      "total": 75,
+      "total": 169,
       "weeks": [
         {
           "w": 1579996800,
-          "a": 2,
-          "d": 0,
-          "c": 1
-        },
-        {
-          "w": 1580601600,
-          "a": 967,
-          "d": 627,
-          "c": 21
-        },
-        {
-          "w": 1581206400,
-          "a": 414,
-          "d": 432,
-          "c": 14
-        },
-        {
-          "w": 1581811200,
-          "a": 3,
-          "d": 3,
-          "c": 1
-        },
-        {
-          "w": 1582416000,
-          "a": 220,
-          "d": 300,
-          "c": 12
-        },
-        {
-          "w": 1583020800,
-          "a": 243,
-          "d": 230,
-          "c": 14
-        },
-        {
-          "w": 1583625600,
-          "a": 195,
-          "d": 93,
-          "c": 8
-        },
-        {
-          "w": 1584230400,
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1580601600,
+          "a": 472,
+          "d": 23,
+          "c": 11
+        },
+        {
+          "w": 1581206400,
+          "a": 1823,
+          "d": 1561,
+          "c": 20
+        },
+        {
+          "w": 1581811200,
+          "a": 492,
+          "d": 365,
+          "c": 20
+        },
+        {
+          "w": 1582416000,
+          "a": 1080,
+          "d": 392,
+          "c": 44
+        },
+        {
+          "w": 1583020800,
+          "a": 97,
+          "d": 20,
+          "c": 7
+        },
+        {
+          "w": 1583625600,
+          "a": 640,
+          "d": 246,
+          "c": 35
+        },
+        {
+          "w": 1584230400,
+          "a": 5,
+          "d": 9,
+          "c": 3
         },
         {
           "w": 1584835200,
@@ -5862,15 +5862,15 @@
         },
         {
           "w": 1585440000,
-          "a": 0,
-          "d": 0,
-          "c": 0
+          "a": 851,
+          "d": 517,
+          "c": 15
         },
         {
           "w": 1586044800,
-          "a": 124,
-          "d": 298,
-          "c": 4
+          "a": 611,
+          "d": 572,
+          "c": 14
         },
         {
           "w": 1586649600,
@@ -6612,22 +6612,22 @@
         }
       ],
       "author": {
-        "login": "ArchawinWongkittiruk",
-        "id": 55857439,
-        "node_id": "MDQ6VXNlcjU1ODU3NDM5",
-        "avatar_url": "https://avatars.githubusercontent.com/u/55857439?v=4",
+        "login": "elouak1002",
+        "id": 26234735,
+        "node_id": "MDQ6VXNlcjI2MjM0NzM1",
+        "avatar_url": "https://avatars.githubusercontent.com/u/26234735?v=4",
         "gravatar_id": "",
-        "url": "https://api.github.com/users/ArchawinWongkittiruk",
-        "html_url": "https://github.com/ArchawinWongkittiruk",
-        "followers_url": "https://api.github.com/users/ArchawinWongkittiruk/followers",
-        "following_url": "https://api.github.com/users/ArchawinWongkittiruk/following{/other_user}",
-        "gists_url": "https://api.github.com/users/ArchawinWongkittiruk/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/ArchawinWongkittiruk/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/ArchawinWongkittiruk/subscriptions",
-        "organizations_url": "https://api.github.com/users/ArchawinWongkittiruk/orgs",
-        "repos_url": "https://api.github.com/users/ArchawinWongkittiruk/repos",
-        "events_url": "https://api.github.com/users/ArchawinWongkittiruk/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/ArchawinWongkittiruk/received_events",
+        "url": "https://api.github.com/users/elouak1002",
+        "html_url": "https://github.com/elouak1002",
+        "followers_url": "https://api.github.com/users/elouak1002/followers",
+        "following_url": "https://api.github.com/users/elouak1002/following{/other_user}",
+        "gists_url": "https://api.github.com/users/elouak1002/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/elouak1002/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/elouak1002/subscriptions",
+        "organizations_url": "https://api.github.com/users/elouak1002/orgs",
+        "repos_url": "https://api.github.com/users/elouak1002/repos",
+        "events_url": "https://api.github.com/users/elouak1002/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/elouak1002/received_events",
         "type": "User",
         "site_admin": false
       }
@@ -8191,6 +8191,388 @@
       [
         "Elian Ouaknine"
       ]
+    ]
+  ],
+  "fileCommitCounts": [
+    [
+      ".gitignore",
+      16
+    ],
+    [
+      "Logo.PNG",
+      3
+    ],
+    [
+      "Logo.ico",
+      2
+    ],
+    [
+      "README.md",
+      10
+    ],
+    [
+      "build.gradle",
+      21
+    ],
+    [
+      "src",
+      477
+    ],
+    [
+      "src/integration",
+      8
+    ],
+    [
+      "src/integration/java",
+      7
+    ],
+    [
+      "src/integration/java/guiintegrationtest",
+      7
+    ],
+    [
+      "src/integration/java/guiintegrationtest/AppRunner.java",
+      4
+    ],
+    [
+      "src/integration/java/guiintegrationtest/HomeTest.java",
+      5
+    ],
+    [
+      "src/integration/java/guiintegrationtest/InputTest.java",
+      3
+    ],
+    [
+      "src/integration/java/guiintegrationtest/LoadTest.java",
+      3
+    ],
+    [
+      "src/integration/java/guiintegrationtest/OutputTest.java",
+      4
+    ],
+    [
+      "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
+      5
+    ],
+    [
+      "src/integration/resources",
+      1
+    ],
+    [
+      "src/integration/resources/XMLParserTestData1.txt",
+      1
+    ],
+    [
+      "src/integration/resources/XMLParserTestData2.txt",
+      1
+    ],
+    [
+      "src/integration/resources/XMLexample.txt",
+      1
+    ],
+    [
+      "src/integration/resources/fullInputData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testFileLinesCreatorData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testNeighbourData.txt",
+      1
+    ],
+    [
+      "src/main",
+      373
+    ],
+    [
+      "src/main/java",
+      349
+    ],
+    [
+      "src/main/java/GUI",
+      178
+    ],
+    [
+      "src/main/java/GUI/HomeController.java",
+      5
+    ],
+    [
+      "src/main/java/GUI/InputController.java",
+      45
+    ],
+    [
+      "src/main/java/GUI/LoadController.java",
+      12
+    ],
+    [
+      "src/main/java/GUI/LoggerController.java",
+      22
+    ],
+    [
+      "src/main/java/GUI/Main.java",
+      13
+    ],
+    [
+      "src/main/java/GUI/OutputController.java",
+      27
+    ],
+    [
+      "src/main/java/GUI/Root.java",
+      48
+    ],
+    [
+      "src/main/java/GUI/XMLGeneratorController.java",
+      28
+    ],
+    [
+      "src/main/java/dataprocessors",
+      66
+    ],
+    [
+      "src/main/java/dataprocessors/Debugger.java",
+      24
+    ],
+    [
+      "src/main/java/dataprocessors/Wrangler.java",
+      14
+    ],
+    [
+      "src/main/java/dataprocessors/XMLCreator.java",
+      8
+    ],
+    [
+      "src/main/java/dataprocessors/XMLDebugger.java",
+      2
+    ],
+    [
+      "src/main/java/datastructures",
+      24
+    ],
+    [
+      "src/main/java/datastructures/DataLine.java",
+      2
+    ],
+    [
+      "src/main/java/datastructures/Node.java",
+      23
+    ],
+    [
+      "src/main/java/datastructures/Status.java",
+      1
+    ],
+    [
+      "src/main/java/linecreators",
+      25
+    ],
+    [
+      "src/main/java/linecreators/DataLineCreator.java",
+      4
+    ],
+    [
+      "src/main/java/linecreators/FileLinesCreator.java",
+      8
+    ],
+    [
+      "src/main/java/linecreators/LineCreator.java",
+      3
+    ],
+    [
+      "src/main/java/linecreators/NeighbourLineCreator.java",
+      7
+    ],
+    [
+      "src/main/java/linecreators/NodeListLineCreator.java",
+      6
+    ],
+    [
+      "src/main/java/parser",
+      57
+    ],
+    [
+      "src/main/java/parser/DataLineParser.java",
+      4
+    ],
+    [
+      "src/main/java/parser/NodeCreator.java",
+      14
+    ],
+    [
+      "src/main/java/parser/Parser.java",
+      27
+    ],
+    [
+      "src/main/java/parser/XMLParser.java",
+      4
+    ],
+    [
+      "src/main/resources",
+      95
+    ],
+    [
+      "src/main/resources/GUI",
+      75
+    ],
+    [
+      "src/main/resources/GUI/Home.fxml",
+      6
+    ],
+    [
+      "src/main/resources/GUI/Input.fxml",
+      21
+    ],
+    [
+      "src/main/resources/GUI/Load.fxml",
+      9
+    ],
+    [
+      "src/main/resources/GUI/Logger.fxml",
+      2
+    ],
+    [
+      "src/main/resources/GUI/Output.fxml",
+      17
+    ],
+    [
+      "src/main/resources/GUI/XMLGenerator.fxml",
+      16
+    ],
+    [
+      "src/main/resources/Styling",
+      12
+    ],
+    [
+      "src/main/resources/Styling/Background.jpg",
+      1
+    ],
+    [
+      "src/main/resources/Styling/GUI.css",
+      9
+    ],
+    [
+      "src/main/resources/Styling/Logo.PNG",
+      1
+    ],
+    [
+      "src/test",
+      147
+    ],
+    [
+      "src/test/java",
+      142
+    ],
+    [
+      "src/test/java/dataprocessorstest",
+      33
+    ],
+    [
+      "src/test/java/dataprocessorstest/DebuggerTest.java",
+      8
+    ],
+    [
+      "src/test/java/dataprocessorstest/WranglerTest.java",
+      11
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLCreatorTest.java",
+      8
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
+      2
+    ],
+    [
+      "src/test/java/datastructurestest",
+      4
+    ],
+    [
+      "src/test/java/datastructurestest/DataLineTest.java",
+      4
+    ],
+    [
+      "src/test/java/guitest",
+      12
+    ],
+    [
+      "src/test/java/guitest/LoggerControllerTest.java",
+      12
+    ],
+    [
+      "src/test/java/linecreatorstest",
+      14
+    ],
+    [
+      "src/test/java/linecreatorstest/DataLineCreatorTest.java",
+      4
+    ],
+    [
+      "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
+      7
+    ],
+    [
+      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
+      2
+    ],
+    [
+      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
+      3
+    ],
+    [
+      "src/test/java/parsertest",
+      32
+    ],
+    [
+      "src/test/java/parsertest/DataLineParserTest.java",
+      6
+    ],
+    [
+      "src/test/java/parsertest/NodeCreatorTest.java",
+      3
+    ],
+    [
+      "src/test/java/parsertest/ParserTest.java",
+      23
+    ],
+    [
+      "src/test/java/parsertest/XMLParserTest.java",
+      4
+    ],
+    [
+      "src/test/resources",
+      11
+    ],
+    [
+      "src/test/resources/XMLParserTestData1.txt",
+      1
+    ],
+    [
+      "src/test/resources/XMLParserTestData2.txt",
+      1
+    ],
+    [
+      "src/test/resources/XMLexample.txt",
+      3
+    ],
+    [
+      "src/test/resources/fullInputData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testFileLinesCreatorData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testNeighbourData.txt",
+      1
     ]
   ]
 }

@@ -18,6 +18,9 @@ function App() {
   const [fileAuthors, setFileAuthors] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
+  // https://stackoverflow.com/questions/27931139/how-to-use-github-v3-api-to-get-commit-count-for-a-repo
+  const [fileCommitCounts, setFileCommitCounts] = useState([]);
+
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
   }, []);
@@ -36,6 +39,7 @@ function App() {
     setTotalChanges(0);
     setFileAuthors([]);
     setMostRecentCommitSha('');
+    setFileCommitCounts(0);
 
     const repo = {
       owner: url.split('/')[3],
@@ -85,6 +89,23 @@ function App() {
 
     setFileAuthors(Object.entries(fileContributors));
 
+    const fileCommits = {};
+    for (const file of tree) {
+      // https://stackoverflow.com/a/62867468
+      const commits = (
+        await octokit.request(
+          'GET /repos/{owner}/{repo}/commits?per_page=1&path=' + file.path,
+          repo
+        )
+      ).headers.link
+        .split(',')[1]
+        .match(/.*page=(?<page_num>\d+)/).groups.page_num;
+
+      fileCommits[file.path] = parseInt(commits);
+    }
+
+    setFileCommitCounts(Object.entries(fileCommits));
+
     setLoading(false);
   };
 
@@ -93,6 +114,7 @@ function App() {
     setTotalChanges(sampleData.totalChanges);
     setFileAuthors(sampleData.fileAuthors);
     setMostRecentCommitSha(sampleData.mostRecentCommitSha);
+    setFileCommitCounts(sampleData.fileCommitCounts);
   };
 
   return (
@@ -178,6 +200,23 @@ function App() {
               {authors.join(', ')}
             </Text>
           ))}
+        </Box>
+      )}
+
+      <Text my={5}>Most Frequently Modified Files by Number of Commits</Text>
+      {fileCommitCounts.length > 0 && (
+        <Box>
+          {fileCommitCounts
+            .sort((a, b) => b[1] - a[1])
+            .map(([file, commits]) => (
+              <Text key={file} mb={2}>
+                <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+                  {file}
+                </Link>
+                {' - '}
+                {commits}
+              </Text>
+            ))}
         </Box>
       )}
     </Box>
