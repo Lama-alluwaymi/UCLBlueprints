@@ -4,6 +4,8 @@ import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@
 
 import { Octokit } from 'octokit';
 
+import sampleData from './sampleData.json';
+
 function App() {
   const [token, setToken] = useState('');
   const [url, setURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
@@ -81,6 +83,13 @@ function App() {
     setLoading(false);
   };
 
+  const showSampleReport = () => {
+    setAuthorCommits(sampleData.authorCommits);
+    setTotalChanges(sampleData.totalChanges);
+    setFileAuthors(sampleData.fileAuthors);
+    setMostRecentCommitSha(sampleData.mostRecentCommitSha);
+  };
+
   return (
     <Box p={5}>
       <Heading>GitHub Project Report Generator</Heading>
@@ -97,8 +106,12 @@ function App() {
         colorScheme='blue'
         isLoading={loading}
         loadingText='Generating'
+        mr={5}
       >
         Generate Report
+      </Button>
+      <Button onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
+        Show Sample Report
       </Button>
 
       <Text my={5}>Author Commits</Text>
