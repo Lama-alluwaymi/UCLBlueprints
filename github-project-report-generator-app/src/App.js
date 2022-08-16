@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Heading, Link, Input, Button, Text, Image } from '@chakra-ui/react';
+import { Box, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
 
 import { Octokit } from 'octokit';
@@ -141,6 +141,8 @@ function App() {
         Show Sample Report
       </Button>
 
+      <Divider mt={5} />
+
       <Heading size='md' my={5}>
         Author Commits
       </Heading>
@@ -190,6 +192,8 @@ function App() {
         </TableContainer>
       )}
 
+      <Divider mt={5} />
+
       <Heading size='md' my={5}>
         Recent File Authors
       </Heading>
@@ -206,6 +210,8 @@ function App() {
           ))}
         </Box>
       )}
+
+      <Divider mt={5} />
 
       <Heading size='md' my={5}>
         Most Frequently Modified Files by Number of Commits
