@@ -9,8 +9,12 @@ function App() {
   const [url, setURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
   const [loading, setLoading] = useState(false);
 
-  const [authorCommitData, setAuthorCommitData] = useState([]);
+  const [authorCommits, setAuthorCommits] = useState([]);
   const [totalChanges, setTotalChanges] = useState(0);
+
+  // https://stackoverflow.com/questions/46762160/get-list-of-contributors-who-have-made-commits-to-a-particular-file
+  const [fileAuthors, setFileAuthors] = useState([]);
+  const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
@@ -26,19 +30,54 @@ function App() {
   const fetchData = async () => {
     setLoading(true);
 
-    // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
-    const result = await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', {
+    const repo = {
       owner: url.split('/')[3],
       repo: url.split('/')[4],
-    });
-    setAuthorCommitData(result.data);
+    };
+
+    // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
+    const commitActivity = (
+      await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', repo)
+    ).data;
+    setAuthorCommits(commitActivity);
     setTotalChanges(
-      result.data
+      commitActivity
         .map((contributor) =>
           contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
         )
         .reduce((a, b) => a + b, 0)
     );
+
+    // https://docs.github.com/en/rest/commits/commits#list-commits
+    const treeSha = (await octokit.request('GET /repos/{owner}/{repo}/commits', repo)).data[0].sha;
+    setMostRecentCommitSha(treeSha);
+
+    // https://docs.github.com/en/rest/git/trees#get-a-tree
+    const tree = await octokit.request(
+      'GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true',
+      {
+        ...repo,
+        tree_sha: treeSha,
+      }
+    );
+
+    const fileContributors = {};
+    for (const file of tree.data.tree) {
+      const commits = (
+        await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
+      ).data;
+
+      const authors = [];
+      for (const commit of commits) {
+        if (!authors.includes(commit.commit.author.name)) {
+          authors.push(commit.commit.author.name);
+        }
+      }
+
+      fileContributors[file.path] = authors;
+    }
+
+    setFileAuthors(Object.entries(fileContributors));
 
     setLoading(false);
   };
@@ -59,11 +98,11 @@ function App() {
         colorScheme='blue'
         isLoading={loading}
         loadingText='Generating'
-        mb={5}
       >
         Generate Report
       </Button>
-      {authorCommitData.length > 0 && (
+      <Text my={5}>Author Commits</Text>
+      {authorCommits.length > 0 && (
         <TableContainer>
           <Table variant='simple'>
             <TableCaption placement='top'>Author Commits</TableCaption>
@@ -78,7 +117,7 @@ function App() {
               </Tr>
             </Thead>
             <Tbody>
-              {authorCommitData
+              {authorCommits
                 .sort((a, b) => b.total - a.total)
                 .map((contributor) => {
                   const additions = contributor.weeks
@@ -107,6 +146,20 @@ function App() {
             </Tbody>
           </Table>
         </TableContainer>
+      )}
+      <Text my={5}>Recent File Authors</Text>
+      {fileAuthors.length > 0 && (
+        <Box>
+          {fileAuthors.map(([file, authors]) => (
+            <Text key={file} mb={2}>
+              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+                {file}
+              </Link>
+              {' - '}
+              {authors.join(', ')}
+            </Text>
+          ))}
+        </Box>
       )}
     </Box>
   );
