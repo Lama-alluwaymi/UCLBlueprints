@@ -38,6 +38,13 @@ namespace TestPerformanceReportGenerator
             }
             return directory;
         }
+
+        /// <summary>
+        /// Find the specific string in the output of the command called
+        /// by the initialized process.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         private string findSubString(string target) 
         {
             int targetIndex = this.output.IndexOf(target);
@@ -124,21 +131,65 @@ namespace TestPerformanceReportGenerator
         }
 
         /// <summary>
-        /// Function that is executed when button1 has been clicked.
+        /// Function that is executed when run test button has been clicked.
         /// </summary>
         /// <param name="sender"></param>6
         /// <param name="e"></param>
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             runTestCases();
-            total.Content = "Total Tests: " + this.totalTests;
-            passed.Content = "Passed Tests: " + this.passedTest + "/" + this.totalTests; 
-            failed.Content = "Failed Tests: " + this.failedTest + "/" + this.totalTests;
-            skipped.Content = "Skipped Tests: " + this.skippedTest + "/" + this.totalTests;
-            totduration.Content = "Duration: " + this.duration;
+            total.Content = this.totalTests;
+            passed.Content = this.passedTest + "/" + this.totalTests; 
+            failed.Content = this.failedTest + "/" + this.totalTests;
+            skipped.Content = this.skippedTest + "/" + this.totalTests;
+            totduration.Content =this.duration;
+            total.Visibility = Visibility.Visible;
+            passed.Visibility = Visibility.Visible;
+            failed.Visibility = Visibility.Visible; 
+            skipped.Visibility = Visibility.Visible;
+            totduration.Visibility = Visibility.Visible;
 
             //VS.MessageBox.Show("Test Performance Report Generator", this.output);
             
+        }
+
+        /// <summary>
+        /// Event handler for checkbox that will allow user to 
+        /// manually enter the relevant data. It disables the button that
+        /// automatically runs the test and will display all the input field.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void manuallyChecked(object sender, RoutedEventArgs e)
+        {
+            //setting some attributes of the xaml objects.
+            autoTestBtn.IsEnabled = false;
+            totalTestInput.Visibility = Visibility.Visible;
+            passedTestInput.Visibility = Visibility.Visible;  
+            failedTestInput.Visibility = Visibility.Visible;
+            skippedTestInput.Visibility = Visibility.Visible;
+            durationInput.Visibility = Visibility.Visible;
+            total.Visibility = Visibility.Collapsed;
+            passed.Visibility = Visibility.Collapsed;
+            failed.Visibility = Visibility.Collapsed;
+            skipped.Visibility = Visibility.Collapsed;
+            totduration.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void manuallyUnchecked(object sender, RoutedEventArgs e)
+        {
+            autoTestBtn.IsEnabled = true;
+            totalTestInput.Visibility = Visibility.Collapsed;
+            passedTestInput.Visibility = Visibility.Collapsed;
+            failedTestInput.Visibility = Visibility.Collapsed;
+            skippedTestInput.Visibility = Visibility.Collapsed;
+            durationInput.Visibility = Visibility.Collapsed;
+            total.Visibility = Visibility.Visible;
+            passed.Visibility = Visibility.Visible;
+            failed.Visibility = Visibility.Visible;
+            skipped.Visibility = Visibility.Visible;
+            totduration.Visibility = Visibility.Visible;
         }
     }
 }

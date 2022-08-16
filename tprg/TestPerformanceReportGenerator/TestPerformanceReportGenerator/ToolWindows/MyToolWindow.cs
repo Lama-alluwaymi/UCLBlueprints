@@ -8,7 +8,7 @@ namespace TestPerformanceReportGenerator
 {
     public class MyToolWindow : BaseToolWindow<MyToolWindow>
     {
-        public override string GetTitle(int toolWindowId) => "My Tool Window";
+        public override string GetTitle(int toolWindowId) => "TPRG";
 
         public override Type PaneType => typeof(Pane);
 

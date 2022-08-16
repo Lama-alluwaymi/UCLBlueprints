@@ -14,21 +14,91 @@
              d:DesignWidth="300"
              Name="TPRG">
     <Grid>
-        <StackPanel Orientation="Vertical">
-            <Label x:Name="lblHeadline"
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="lblHeadline"
                    Margin="10"
                    HorizontalAlignment="Center">Run the Test Now</Label>
 
-            <Button Content="Run Test!"
+                <Button Content="Run Test!"
                     Click="button1_Click"
                     Width="120"
-                    Height="80"
-                    Name="button1" />
-            <Label x:Name="total" Content="Total Tests: " Margin="10 0 0 0"/>
-            <Label x:Name="passed" Content="Passed Tests: " Margin="10 0 0 0" />
-            <Label x:Name="failed" Content="Failed Tests: " Margin="10 0 0 0"/>
-            <Label x:Name="skipped" Content="Skipped Tests: " Margin="10 0 0 0" />
-            <Label x:Name="totduration" Content="Duration: " Margin="10 0 0 0"/>
-        </StackPanel>
+                    Height="38"
+                    Name="autoTestBtn" />
+                <CheckBox Name="chk_manual"
+                      Content="Manually Enter Test Results"
+                      IsChecked="False"
+                      Margin="10 10 0 5"
+                      Checked="manuallyChecked"
+                      Unchecked="manuallyUnchecked"/>
+                <Label Margin="10 0 0 0">Total Number Of:</Label>
+                <StackPanel Orientation="Vertical" Width="260" Margin="2 0 0 10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="130"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Content="Tests: "
+                           Grid.Row="0" Grid.Column="0"
+                           VerticalContentAlignment="Center" Margin="0 0 0 5"/>
+                        <TextBox Name="totalTestInput" 
+                             Grid.Row="0" Grid.Column="1"
+                             VerticalContentAlignment="Center"
+                             Margin="2"
+                             Visibility="Collapsed"/>
+                        <Label Name="total" Content="" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
+                        
+                        <Label Content="Passed Tests: "
+                           Grid.Row="1" Grid.Column="0"
+                           VerticalContentAlignment="Center" Margin="0 0 0 5"/>
+                        <TextBox Name="passedTestInput" 
+                             Grid.Row="1" Grid.Column="1"
+                             VerticalContentAlignment="Center"
+                             Margin="2"
+                             Visibility="Collapsed"/>
+                        <Label Name="passed" Content="" Grid.Row="1" Grid.Column="1" Visibility="Collapsed"/>
+                        
+                        <Label Content="Failed Tests: "
+                           Grid.Row="2" Grid.Column="0"
+                           VerticalContentAlignment="Center" Margin="0 0 0 5"
+                           />
+                        <TextBox Name="failedTestInput" 
+                             Grid.Row="2" Grid.Column="1"
+                             VerticalContentAlignment="Center"
+                             Margin="2"
+                             Visibility="Collapsed"/>
+                        <Label Name="failed" Content="" Grid.Row="2" Grid.Column="1" Visibility="Collapsed"/>
+                        
+                        <Label Content="Skipped Tests: "
+                           Grid.Row="3" Grid.Column="0"
+                           VerticalContentAlignment="Center" Margin="0 0 0 5"/>
+                        <TextBox Name="skippedTestInput" 
+                             Grid.Row="3" Grid.Column="1"
+                             VerticalContentAlignment="Center"
+                             Margin="2"
+                             Visibility="Collapsed"/>
+                        <Label Name="skipped" Content="" Grid.Row="3" Grid.Column="1" Visibility="Collapsed"/>
+                        
+                        <Label Content="Duration (ms): "
+                           Grid.Row="4" Grid.Column="0"
+                           VerticalContentAlignment="Center" Margin="0 0 0 5"/>
+                        <TextBox Name="durationInput" 
+                             Grid.Row="4" Grid.Column="1"
+                             VerticalContentAlignment="Center"
+                             Margin="2"
+                             Visibility="Collapsed"/>
+                        <Label Name="totduration" Content="" Grid.Row="4" Grid.Column="1" Visibility="Collapsed"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
