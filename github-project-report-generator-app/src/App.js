@@ -32,14 +32,14 @@ function App() {
     setToken(e.target.value);
   };
 
-  const fetchData = async () => {
+  const generateReport = async () => {
     setLoading(true);
 
     setAuthorCommits([]);
     setTotalChanges(0);
     setFileAuthors([]);
     setMostRecentCommitSha('');
-    setFileCommitCounts(0);
+    setFileCommitCounts([]);
 
     const repo = {
       owner: url.split('/')[3],
@@ -86,7 +86,6 @@ function App() {
 
       fileContributors[file.path] = authors;
     }
-
     setFileAuthors(Object.entries(fileContributors));
 
     const fileCommits = {};
@@ -103,7 +102,6 @@ function App() {
 
       fileCommits[file.path] = parseInt(commits);
     }
-
     setFileCommitCounts(Object.entries(fileCommits));
 
     setLoading(false);
@@ -128,7 +126,7 @@ function App() {
       <Text>GitHub Repository URL</Text>
       <Input value={url} onChange={(e) => setURL(e.currentTarget.value)} mb={5} />
       <Button
-        onClick={() => fetchData()}
+        onClick={() => generateReport()}
         disabled={!url.includes('https://github.com')}
         colorScheme='blue'
         isLoading={loading}
@@ -197,40 +195,36 @@ function App() {
       <Heading size='md' my={5}>
         Recent File Authors
       </Heading>
-      {fileAuthors.length > 0 && (
-        <Box>
-          {fileAuthors.map(([file, authors]) => (
-            <Text key={file} mb={2}>
-              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-                {file}
-              </Link>
-              {' - '}
-              {authors.join(', ')}
-            </Text>
-          ))}
-        </Box>
-      )}
+      <Box>
+        {fileAuthors.map(([file, authors]) => (
+          <Text key={file} mb={2}>
+            <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+              {file}
+            </Link>
+            {' - '}
+            {authors.join(', ')}
+          </Text>
+        ))}
+      </Box>
 
       <Divider mt={5} />
 
       <Heading size='md' my={5}>
         Most Frequently Modified Files by Number of Commits
       </Heading>
-      {fileCommitCounts.length > 0 && (
-        <Box>
-          {fileCommitCounts
-            .sort((a, b) => b[1] - a[1])
-            .map(([file, commits]) => (
-              <Text key={file} mb={2}>
-                <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-                  {file}
-                </Link>
-                {' - '}
-                {commits}
-              </Text>
-            ))}
-        </Box>
-      )}
+      <Box>
+        {fileCommitCounts
+          .sort((a, b) => b[1] - a[1])
+          .map(([file, commits]) => (
+            <Text key={file} mb={2}>
+              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+                {file}
+              </Link>
+              {' - '}
+              {commits}
+            </Text>
+          ))}
+      </Box>
     </Box>
   );
 }
