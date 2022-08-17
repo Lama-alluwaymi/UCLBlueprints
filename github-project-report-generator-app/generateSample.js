@@ -12,6 +12,9 @@ const repo = {
 };
 
 (async () => {
+  // https://docs.github.com/en/rest/repos/repos#get-a-repository
+  const repoName = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data.name;
+
   // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
   const commitActivity = (
     await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', repo)
@@ -64,6 +67,7 @@ const repo = {
     'src/sampleData.json',
     JSON.stringify(
       {
+        name: repoName,
         authorCommits: commitActivity.sort((a, b) => b.total - a.total),
         totalCommits: commitActivity.reduce((a, b) => a + b.total, 0),
         totalChanges: commitActivity

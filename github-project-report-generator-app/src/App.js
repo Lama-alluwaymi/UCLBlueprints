@@ -11,6 +11,8 @@ function App() {
   const [url, setURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
   const [loading, setLoading] = useState(false);
 
+  const [name, setName] = useState('');
+
   const [authorCommits, setAuthorCommits] = useState([]);
   const [totalCommits, setTotalCommits] = useState(0);
   const [totalChanges, setTotalChanges] = useState(0);
@@ -36,6 +38,7 @@ function App() {
   const generateReport = async () => {
     setLoading(true);
 
+    setName('');
     setAuthorCommits([]);
     setTotalCommits(0);
     setTotalChanges(0);
@@ -47,6 +50,10 @@ function App() {
       owner: url.split('/')[3],
       repo: url.split('/')[4],
     };
+
+    // https://docs.github.com/en/rest/repos/repos#get-a-repository
+    const repoName = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data.name;
+    setName(repoName);
 
     // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
     const commitActivity = (
@@ -111,6 +118,7 @@ function App() {
   };
 
   const showSampleReport = () => {
+    setName(sampleData.name);
     setAuthorCommits(sampleData.authorCommits);
     setTotalCommits(sampleData.totalCommits);
     setTotalChanges(sampleData.totalChanges);
@@ -142,6 +150,10 @@ function App() {
       <Button onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
         Show Sample Report
       </Button>
+
+      <Heading mt={5} size='lg'>
+        {name}
+      </Heading>
 
       <Divider mt={5} />
 
