@@ -64,7 +64,7 @@ const repo = {
     'src/sampleData.json',
     JSON.stringify(
       {
-        authorCommits: commitActivity,
+        authorCommits: commitActivity.sort((a, b) => b.total - a.total),
         totalCommits: commitActivity.reduce((a, b) => a + b.total, 0),
         totalChanges: commitActivity
           .map((contributor) =>
@@ -73,7 +73,7 @@ const repo = {
           .reduce((a, b) => a + b, 0),
         mostRecentCommitSha: treeSha,
         fileAuthors: Object.entries(fileContributors),
-        fileCommitCounts: Object.entries(fileCommits),
+        fileCommitCounts: Object.entries(fileCommits).sort((a, b) => b[1] - a[1]),
       },
       null,
       2

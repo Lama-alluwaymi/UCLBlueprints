@@ -52,7 +52,7 @@ function App() {
     const commitActivity = (
       await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', repo)
     ).data;
-    setAuthorCommits(commitActivity);
+    setAuthorCommits(commitActivity.sort((a, b) => b.total - a.total));
     setTotalCommits(commitActivity.reduce((a, b) => a + b.total, 0));
     setTotalChanges(
       commitActivity
@@ -105,7 +105,7 @@ function App() {
 
       fileCommits[file.path] = parseInt(commits);
     }
-    setFileCommitCounts(Object.entries(fileCommits));
+    setFileCommitCounts(Object.entries(fileCommits).sort((a, b) => b[1] - a[1]));
 
     setLoading(false);
   };
@@ -163,35 +163,33 @@ function App() {
               </Tr>
             </Thead>
             <Tbody>
-              {authorCommits
-                .sort((a, b) => b.total - a.total)
-                .map((contributor) => {
-                  const additions = contributor.weeks
-                    .map((week) => week.a)
-                    .reduce((a, b) => a + b, 0);
-                  const deletions = contributor.weeks
-                    .map((week) => week.d)
-                    .reduce((a, b) => a + b, 0);
+              {authorCommits.map((contributor) => {
+                const additions = contributor.weeks
+                  .map((week) => week.a)
+                  .reduce((a, b) => a + b, 0);
+                const deletions = contributor.weeks
+                  .map((week) => week.d)
+                  .reduce((a, b) => a + b, 0);
 
-                  return (
-                    <Tr key={contributor.author.login}>
-                      <Td>
-                        <Link href={contributor.author.html_url} isExternal>
-                          <Image src={contributor.author.avatar_url} boxSize='50px' />
-                          {contributor.author.login}
-                        </Link>
-                      </Td>
-                      <Td>
-                        {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
-                        %)
-                      </Td>
-                      <Td>{additions}</Td>
-                      <Td>{deletions}</Td>
-                      <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>
-                      <Td>{Math.round((additions + deletions) / contributor.total)}</Td>
-                    </Tr>
-                  );
-                })}
+                return (
+                  <Tr key={contributor.author.login}>
+                    <Td>
+                      <Link href={contributor.author.html_url} isExternal>
+                        <Image src={contributor.author.avatar_url} boxSize='50px' />
+                        {contributor.author.login}
+                      </Link>
+                    </Td>
+                    <Td>
+                      {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
+                      %)
+                    </Td>
+                    <Td>{additions}</Td>
+                    <Td>{deletions}</Td>
+                    <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>
+                    <Td>{Math.round((additions + deletions) / contributor.total)}</Td>
+                  </Tr>
+                );
+              })}
             </Tbody>
           </Table>
         </TableContainer>
@@ -220,17 +218,15 @@ function App() {
         Most Frequently Modified Files by Number of Commits
       </Heading>
       <Box>
-        {fileCommitCounts
-          .sort((a, b) => b[1] - a[1])
-          .map(([file, commits]) => (
-            <Text key={file} mb={2}>
-              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-                {file}
-              </Link>
-              {' - '}
-              {commits}
-            </Text>
-          ))}
+        {fileCommitCounts.map(([file, commits]) => (
+          <Text key={file} mb={2}>
+            <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+              {file}
+            </Link>
+            {' - '}
+            {commits}
+          </Text>
+        ))}
       </Box>
     </Box>
   );
