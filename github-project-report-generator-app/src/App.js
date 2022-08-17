@@ -86,7 +86,7 @@ function App() {
     for (const file of tree) {
       // https://stackoverflow.com/a/46762417
       const commits = (
-        await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
+        await octokit.request(`GET /repos/{owner}/{repo}/commits?path=${file.path}`, repo)
       ).data;
 
       const authors = [];
@@ -120,7 +120,7 @@ function App() {
       // https://stackoverflow.com/a/62867468
       const commits = (
         await octokit.request(
-          'GET /repos/{owner}/{repo}/commits?per_page=1&path=' + file.path,
+          `GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`,
           repo
         )
       ).headers.link
@@ -204,7 +204,7 @@ function App() {
                 return (
                   <Tr key={contributor.author.login}>
                     <Td>
-                      <Link href={url + '/commits?author=' + contributor.author.login} isExternal>
+                      <Link href={`${url}/commits?author=${contributor.author.login}`} isExternal>
                         <Image src={contributor.author.avatar_url} boxSize='50px' />
                         {contributor.author.login}
                       </Link>
@@ -236,8 +236,7 @@ function App() {
             <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
               {file}
             </Link>
-            {' - '}
-            {authors.join(', ')}
+            {` - ${authors.join(', ')}`}
           </Text>
         ))}
       </Box>
@@ -250,7 +249,7 @@ function App() {
       <Box>
         {authorFiles.map(([author, files]) => (
           <Box key={author} my={5}>
-            <Link href={url + '/commits?author=' + author} isExternal>
+            <Link href={`${url}/commits?author=${author}`} isExternal>
               <Image
                 src={
                   authorCommits.find((contributor) => contributor.author.login === author).author
@@ -260,9 +259,7 @@ function App() {
               />
               {author}
             </Link>
-            {' - '}
-            {files.length}
-            {' files:'}
+            {` - ${files.length} files:`}
             {files.map((file) => (
               <Text key={file}>{file}</Text>
             ))}
@@ -281,8 +278,7 @@ function App() {
             <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
               {file}
             </Link>
-            {' - '}
-            {commits}
+            {` - ${commits}`}
           </Text>
         ))}
       </Box>

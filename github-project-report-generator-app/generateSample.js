@@ -35,7 +35,7 @@ const repo = {
   for (const file of tree) {
     // https://stackoverflow.com/a/46762417
     const commits = (
-      await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
+      await octokit.request(`GET /repos/{owner}/{repo}/commits?path=${file.path}`, repo)
     ).data;
 
     const authors = [];
@@ -68,7 +68,7 @@ const repo = {
   for (const file of tree) {
     // https://stackoverflow.com/a/62867468
     const commits = (
-      await octokit.request('GET /repos/{owner}/{repo}/commits?per_page=1&path=' + file.path, repo)
+      await octokit.request(`GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`, repo)
     ).headers.link
       .split(',')[1]
       .match(/.*page=(?<page_num>\d+)/).groups.page_num;
