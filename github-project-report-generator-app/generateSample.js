@@ -33,6 +33,7 @@ const repo = {
 
   const fileContributors = {};
   for (const file of tree) {
+    // https://stackoverflow.com/a/46762417
     const commits = (
       await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
     ).data;

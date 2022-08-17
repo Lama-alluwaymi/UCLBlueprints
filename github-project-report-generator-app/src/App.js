@@ -17,11 +17,9 @@ function App() {
   const [totalCommits, setTotalCommits] = useState(0);
   const [totalChanges, setTotalChanges] = useState(0);
 
-  // https://stackoverflow.com/questions/46762160/get-list-of-contributors-who-have-made-commits-to-a-particular-file
   const [fileAuthors, setFileAuthors] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
-  // https://stackoverflow.com/questions/27931139/how-to-use-github-v3-api-to-get-commit-count-for-a-repo
   const [fileCommitCounts, setFileCommitCounts] = useState([]);
 
   useEffect(() => {
@@ -83,6 +81,7 @@ function App() {
 
     const fileContributors = {};
     for (const file of tree) {
+      // https://stackoverflow.com/a/46762417
       const commits = (
         await octokit.request('GET /repos/{owner}/{repo}/commits?path=' + file.path, repo)
       ).data;
