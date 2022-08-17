@@ -7478,11 +7478,28 @@
         "Archawin Wongkittiruk"
       ]
     ],
-    ["Logo.PNG", ["Septimiu Pop", "SeptimiuPop"]],
-    ["Logo.ico", ["Septimiu Pop", "SV-Albert"]],
+    [
+      "Logo.PNG",
+      [
+        "Septimiu Pop",
+        "SeptimiuPop"
+      ]
+    ],
+    [
+      "Logo.ico",
+      [
+        "Septimiu Pop",
+        "SV-Albert"
+      ]
+    ],
     [
       "README.md",
-      ["Elian Ouaknine", "ArchawiWongkittiruk", "SeptimiuPop", "Archawin Wongkittiruk"]
+      [
+        "Elian Ouaknine",
+        "ArchawiWongkittiruk",
+        "SeptimiuPop",
+        "Archawin Wongkittiruk"
+      ]
     ],
     [
       "build.gradle",
@@ -7495,42 +7512,126 @@
         "ArchawinWongkittiruk"
       ]
     ],
-    ["src", ["ArchawinWongkittiruk", "Elian Ouaknine", "Albert Shakirzianov", "garg-shubh"]],
-    ["src/integration", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
-    ["src/integration/java", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
-    ["src/integration/java/guiintegrationtest", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
+    [
+      "src",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "garg-shubh"
+      ]
+    ],
+    [
+      "src/integration",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/java",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/java/guiintegrationtest",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/integration/java/guiintegrationtest/AppRunner.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/integration/java/guiintegrationtest/HomeTest.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/integration/java/guiintegrationtest/InputTest.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/integration/java/guiintegrationtest/LoadTest.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/integration/java/guiintegrationtest/OutputTest.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
-    ["src/integration/resources", ["Elian Ouaknine"]],
-    ["src/integration/resources/XMLParserTestData1.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/XMLParserTestData2.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/XMLexample.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/fullInputData.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/testData.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/testFileLinesCreatorData.txt", ["Elian Ouaknine"]],
-    ["src/integration/resources/testNeighbourData.txt", ["Elian Ouaknine"]],
+    [
+      "src/integration/resources",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/XMLParserTestData1.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/XMLParserTestData2.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/XMLexample.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/fullInputData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/testData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/testFileLinesCreatorData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/integration/resources/testNeighbourData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main",
       [
@@ -7551,8 +7652,22 @@
         "Albert Shakirzianov"
       ]
     ],
-    ["src/main/java/GUI", ["ArchawinWongkittiruk", "Elian Ouaknine", "garg-shubh", "asfand987"]],
-    ["src/main/java/GUI/HomeController.java", ["ArchawinWongkittiruk", "Harald Gerhardsen"]],
+    [
+      "src/main/java/GUI",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "garg-shubh",
+        "asfand987"
+      ]
+    ],
+    [
+      "src/main/java/GUI/HomeController.java",
+      [
+        "ArchawinWongkittiruk",
+        "Harald Gerhardsen"
+      ]
+    ],
     [
       "src/main/java/GUI/InputController.java",
       [
@@ -7568,24 +7683,57 @@
     ],
     [
       "src/main/java/GUI/LoadController.java",
-      ["ArchawinWongkittiruk", "garg-shubh", "aerris", "ArchawiWongkittiruk", "Harald Gerhardsen"]
+      [
+        "ArchawinWongkittiruk",
+        "garg-shubh",
+        "aerris",
+        "ArchawiWongkittiruk",
+        "Harald Gerhardsen"
+      ]
     ],
-    ["src/main/java/GUI/LoggerController.java", ["ArchawinWongkittiruk", "asfand987"]],
+    [
+      "src/main/java/GUI/LoggerController.java",
+      [
+        "ArchawinWongkittiruk",
+        "asfand987"
+      ]
+    ],
     [
       "src/main/java/GUI/Main.java",
-      ["ArchawiWongkittiruk", "Albert Shakirzianov", "ArchawinWongkittiruk", "aerris"]
+      [
+        "ArchawiWongkittiruk",
+        "Albert Shakirzianov",
+        "ArchawinWongkittiruk",
+        "aerris"
+      ]
     ],
     [
       "src/main/java/GUI/OutputController.java",
-      ["ArchawinWongkittiruk", "asfand987", "ArchawiWongkittiruk", "aerris", "MihailBratanov"]
+      [
+        "ArchawinWongkittiruk",
+        "asfand987",
+        "ArchawiWongkittiruk",
+        "aerris",
+        "MihailBratanov"
+      ]
     ],
     [
       "src/main/java/GUI/Root.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine", "garg-shubh", "asfand987"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "garg-shubh",
+        "asfand987"
+      ]
     ],
     [
       "src/main/java/GUI/XMLGeneratorController.java",
-      ["Elian Ouaknine", "ArchawinWongkittiruk", "aerris", "ArchawiWongkittiruk"]
+      [
+        "Elian Ouaknine",
+        "ArchawinWongkittiruk",
+        "aerris",
+        "ArchawiWongkittiruk"
+      ]
     ],
     [
       "src/main/java/dataprocessors",
@@ -7600,7 +7748,12 @@
     ],
     [
       "src/main/java/dataprocessors/Debugger.java",
-      ["Elian Ouaknine", "Archawin Wongkittiruk", "asfand987", "ArchawinWongkittiruk"]
+      [
+        "Elian Ouaknine",
+        "Archawin Wongkittiruk",
+        "asfand987",
+        "ArchawinWongkittiruk"
+      ]
     ],
     [
       "src/main/java/dataprocessors/Wrangler.java",
@@ -7615,33 +7768,88 @@
     ],
     [
       "src/main/java/dataprocessors/XMLCreator.java",
-      ["MihailBratanov", "Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "MihailBratanov",
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
-    ["src/main/java/dataprocessors/XMLDebugger.java", ["Elian Ouaknine"]],
+    [
+      "src/main/java/dataprocessors/XMLDebugger.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main/java/datastructures",
-      ["ArchawinWongkittiruk", "Elian Ouaknine", "Albert Shakirzianov", "MihailBratanov"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "MihailBratanov"
+      ]
     ],
-    ["src/main/java/datastructures/DataLine.java", ["Elian Ouaknine"]],
+    [
+      "src/main/java/datastructures/DataLine.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main/java/datastructures/Node.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine", "Albert Shakirzianov", "MihailBratanov"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "MihailBratanov"
+      ]
     ],
-    ["src/main/java/datastructures/Status.java", ["Elian Ouaknine"]],
-    ["src/main/java/linecreators", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
-    ["src/main/java/linecreators/DataLineCreator.java", ["Elian Ouaknine"]],
+    [
+      "src/main/java/datastructures/Status.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/main/java/linecreators",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/main/java/linecreators/DataLineCreator.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main/java/linecreators/FileLinesCreator.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
-    ["src/main/java/linecreators/LineCreator.java", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
+    [
+      "src/main/java/linecreators/LineCreator.java",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main/java/linecreators/NeighbourLineCreator.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/main/java/linecreators/NodeListLineCreator.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/main/java/parser",
@@ -7654,22 +7862,47 @@
         "Archawin Wongkittiruk"
       ]
     ],
-    ["src/main/java/parser/DataLineParser.java", ["ArchawinWongkittiruk", "Elian Ouaknine"]],
+    [
+      "src/main/java/parser/DataLineParser.java",
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/main/java/parser/NodeCreator.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine", "MihailBratanov", "Albert Shakirzianov"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "MihailBratanov",
+        "Albert Shakirzianov"
+      ]
     ],
     [
       "src/main/java/parser/Parser.java",
-      ["ArchawinWongkittiruk", "MihailBratanov", "Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "ArchawinWongkittiruk",
+        "MihailBratanov",
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
     [
       "src/main/java/parser/XMLParser.java",
-      ["ArchawinWongkittiruk", "Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "ArchawinWongkittiruk",
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
     [
       "src/main/resources",
-      ["ArchawinWongkittiruk", "Archawin Wongkittiruk", "asfand987", "aerris"]
+      [
+        "ArchawinWongkittiruk",
+        "Archawin Wongkittiruk",
+        "asfand987",
+        "aerris"
+      ]
     ],
     [
       "src/main/resources/GUI",
@@ -7681,73 +7914,234 @@
         "ArchawiWongkittiruk"
       ]
     ],
-    ["src/main/resources/GUI/Home.fxml", ["ArchawinWongkittiruk", "Harald Gerhardsen"]],
+    [
+      "src/main/resources/GUI/Home.fxml",
+      [
+        "ArchawinWongkittiruk",
+        "Harald Gerhardsen"
+      ]
+    ],
     [
       "src/main/resources/GUI/Input.fxml",
-      ["ArchawinWongkittiruk", "ArchawiWongkittiruk", "aerris"]
+      [
+        "ArchawinWongkittiruk",
+        "ArchawiWongkittiruk",
+        "aerris"
+      ]
     ],
-    ["src/main/resources/GUI/Load.fxml", ["ArchawinWongkittiruk", "ArchawiWongkittiruk", "aerris"]],
-    ["src/main/resources/GUI/Logger.fxml", ["ArchawinWongkittiruk"]],
+    [
+      "src/main/resources/GUI/Load.fxml",
+      [
+        "ArchawinWongkittiruk",
+        "ArchawiWongkittiruk",
+        "aerris"
+      ]
+    ],
+    [
+      "src/main/resources/GUI/Logger.fxml",
+      [
+        "ArchawinWongkittiruk"
+      ]
+    ],
     [
       "src/main/resources/GUI/Output.fxml",
-      ["ArchawinWongkittiruk", "ArchawiWongkittiruk", "aerris", "asfand987"]
+      [
+        "ArchawinWongkittiruk",
+        "ArchawiWongkittiruk",
+        "aerris",
+        "asfand987"
+      ]
     ],
     [
       "src/main/resources/GUI/XMLGenerator.fxml",
-      ["ArchawinWongkittiruk", "aerris", "ArchawiWongkittiruk"]
+      [
+        "ArchawinWongkittiruk",
+        "aerris",
+        "ArchawiWongkittiruk"
+      ]
     ],
-    ["src/main/resources/Styling", ["ArchawinWongkittiruk", "ArchawiWongkittiruk", "aerris"]],
-    ["src/main/resources/Styling/Background.jpg", ["ArchawinWongkittiruk"]],
+    [
+      "src/main/resources/Styling",
+      [
+        "ArchawinWongkittiruk",
+        "ArchawiWongkittiruk",
+        "aerris"
+      ]
+    ],
+    [
+      "src/main/resources/Styling/Background.jpg",
+      [
+        "ArchawinWongkittiruk"
+      ]
+    ],
     [
       "src/main/resources/Styling/GUI.css",
-      ["ArchawinWongkittiruk", "ArchawiWongkittiruk", "aerris"]
+      [
+        "ArchawinWongkittiruk",
+        "ArchawiWongkittiruk",
+        "aerris"
+      ]
     ],
-    ["src/main/resources/Styling/Logo.PNG", ["ArchawinWongkittiruk"]],
-    ["src/test", ["Elian Ouaknine", "Albert Shakirzianov", "garg-shubh", "MihailBratanov"]],
-    ["src/test/java", ["Elian Ouaknine", "Albert Shakirzianov", "garg-shubh", "MihailBratanov"]],
+    [
+      "src/main/resources/Styling/Logo.PNG",
+      [
+        "ArchawinWongkittiruk"
+      ]
+    ],
+    [
+      "src/test",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "garg-shubh",
+        "MihailBratanov"
+      ]
+    ],
+    [
+      "src/test/java",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "garg-shubh",
+        "MihailBratanov"
+      ]
+    ],
     [
       "src/test/java/dataprocessorstest",
-      ["Elian Ouaknine", "MihailBratanov", "Albert Shakirzianov", "Septimiu Pop"]
+      [
+        "Elian Ouaknine",
+        "MihailBratanov",
+        "Albert Shakirzianov",
+        "Septimiu Pop"
+      ]
     ],
     [
       "src/test/java/dataprocessorstest/DebuggerTest.java",
-      ["Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
     [
       "src/test/java/dataprocessorstest/WranglerTest.java",
-      ["Albert Shakirzianov", "Septimiu Pop", "Elian Ouaknine"]
+      [
+        "Albert Shakirzianov",
+        "Septimiu Pop",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/test/java/dataprocessorstest/XMLCreatorTest.java",
-      ["Elian Ouaknine", "MihailBratanov", "Albert Shakirzianov"]
+      [
+        "Elian Ouaknine",
+        "MihailBratanov",
+        "Albert Shakirzianov"
+      ]
     ],
-    ["src/test/java/dataprocessorstest/XMLDebuggerTest.java", ["Elian Ouaknine"]],
-    ["src/test/java/datastructurestest", ["Elian Ouaknine", "Albert Shakirzianov"]],
+    [
+      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/test/java/datastructurestest",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
+    ],
     [
       "src/test/java/datastructurestest/DataLineTest.java",
-      ["Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
-    ["src/test/java/guitest", ["Elian Ouaknine", "asfand987"]],
-    ["src/test/java/guitest/LoggerControllerTest.java", ["Elian Ouaknine", "asfand987"]],
-    ["src/test/java/linecreatorstest", ["Elian Ouaknine", "Albert Shakirzianov"]],
+    [
+      "src/test/java/guitest",
+      [
+        "Elian Ouaknine",
+        "asfand987"
+      ]
+    ],
+    [
+      "src/test/java/guitest/LoggerControllerTest.java",
+      [
+        "Elian Ouaknine",
+        "asfand987"
+      ]
+    ],
+    [
+      "src/test/java/linecreatorstest",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
+    ],
     [
       "src/test/java/linecreatorstest/DataLineCreatorTest.java",
-      ["Albert Shakirzianov", "Elian Ouaknine"]
+      [
+        "Albert Shakirzianov",
+        "Elian Ouaknine"
+      ]
     ],
     [
       "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
-      ["Elian Ouaknine", "Albert Shakirzianov"]
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
     ],
-    ["src/test/java/linecreatorstest/NeighbourLineCreatorTest.java", ["Elian Ouaknine"]],
-    ["src/test/java/linecreatorstest/NodeListLineCreatorTest.java", ["Elian Ouaknine"]],
-    ["src/test/java/parsertest", ["Elian Ouaknine", "Albert Shakirzianov", "MihailBratanov"]],
-    ["src/test/java/parsertest/DataLineParserTest.java", ["Elian Ouaknine", "Albert Shakirzianov"]],
-    ["src/test/java/parsertest/NodeCreatorTest.java", ["Elian Ouaknine", "MihailBratanov"]],
+    [
+      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/test/java/parsertest",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "MihailBratanov"
+      ]
+    ],
+    [
+      "src/test/java/parsertest/DataLineParserTest.java",
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov"
+      ]
+    ],
+    [
+      "src/test/java/parsertest/NodeCreatorTest.java",
+      [
+        "Elian Ouaknine",
+        "MihailBratanov"
+      ]
+    ],
     [
       "src/test/java/parsertest/ParserTest.java",
-      ["Elian Ouaknine", "Albert Shakirzianov", "MihailBratanov"]
+      [
+        "Elian Ouaknine",
+        "Albert Shakirzianov",
+        "MihailBratanov"
+      ]
     ],
-    ["src/test/java/parsertest/XMLParserTest.java", ["Albert Shakirzianov", "Elian Ouaknine"]],
+    [
+      "src/test/java/parsertest/XMLParserTest.java",
+      [
+        "Albert Shakirzianov",
+        "Elian Ouaknine"
+      ]
+    ],
     [
       "src/test/resources",
       [
@@ -7758,109 +8152,429 @@
         "ArchawinWongkittiruk"
       ]
     ],
-    ["src/test/resources/XMLParserTestData1.txt", ["Albert Shakirzianov"]],
-    ["src/test/resources/XMLParserTestData2.txt", ["Albert Shakirzianov"]],
-    ["src/test/resources/XMLexample.txt", ["MihailBratanov"]],
-    ["src/test/resources/fullInputData.txt", ["Albert Shakirzianov"]],
-    ["src/test/resources/testData.txt", ["Albert Shakirzianov"]],
-    ["src/test/resources/testFileLinesCreatorData.txt", ["Elian Ouaknine"]],
-    ["src/test/resources/testNeighbourData.txt", ["Elian Ouaknine"]]
+    [
+      "src/test/resources/XMLParserTestData1.txt",
+      [
+        "Albert Shakirzianov"
+      ]
+    ],
+    [
+      "src/test/resources/XMLParserTestData2.txt",
+      [
+        "Albert Shakirzianov"
+      ]
+    ],
+    [
+      "src/test/resources/XMLexample.txt",
+      [
+        "MihailBratanov"
+      ]
+    ],
+    [
+      "src/test/resources/fullInputData.txt",
+      [
+        "Albert Shakirzianov"
+      ]
+    ],
+    [
+      "src/test/resources/testData.txt",
+      [
+        "Albert Shakirzianov"
+      ]
+    ],
+    [
+      "src/test/resources/testFileLinesCreatorData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ],
+    [
+      "src/test/resources/testNeighbourData.txt",
+      [
+        "Elian Ouaknine"
+      ]
+    ]
   ],
   "fileCommitCounts": [
-    ["src", 477],
-    ["src/main", 373],
-    ["src/main/java", 349],
-    ["src/main/java/GUI", 178],
-    ["src/test", 147],
-    ["src/test/java", 142],
-    ["src/main/resources", 95],
-    ["src/main/resources/GUI", 75],
-    ["src/main/java/dataprocessors", 66],
-    ["src/main/java/parser", 57],
-    ["src/main/java/GUI/Root.java", 48],
-    ["src/main/java/GUI/InputController.java", 45],
-    ["src/test/java/dataprocessorstest", 33],
-    ["src/test/java/parsertest", 32],
-    ["src/main/java/GUI/XMLGeneratorController.java", 28],
-    ["src/main/java/GUI/OutputController.java", 27],
-    ["src/main/java/parser/Parser.java", 27],
-    ["src/main/java/linecreators", 25],
-    ["src/main/java/dataprocessors/Debugger.java", 24],
-    ["src/main/java/datastructures", 24],
-    ["src/main/java/datastructures/Node.java", 23],
-    ["src/test/java/parsertest/ParserTest.java", 23],
-    ["src/main/java/GUI/LoggerController.java", 22],
-    ["build.gradle", 21],
-    ["src/main/resources/GUI/Input.fxml", 21],
-    ["src/main/resources/GUI/Output.fxml", 17],
-    [".gitignore", 16],
-    ["src/main/resources/GUI/XMLGenerator.fxml", 16],
-    ["src/main/java/dataprocessors/Wrangler.java", 14],
-    ["src/main/java/parser/NodeCreator.java", 14],
-    ["src/test/java/linecreatorstest", 14],
-    ["src/main/java/GUI/Main.java", 13],
-    ["src/main/java/GUI/LoadController.java", 12],
-    ["src/main/resources/Styling", 12],
-    ["src/test/java/guitest", 12],
-    ["src/test/java/guitest/LoggerControllerTest.java", 12],
-    ["src/test/java/dataprocessorstest/WranglerTest.java", 11],
-    ["src/test/resources", 11],
-    ["README.md", 10],
-    ["src/main/resources/GUI/Load.fxml", 9],
-    ["src/main/resources/Styling/GUI.css", 9],
-    ["src/integration", 8],
-    ["src/main/java/dataprocessors/XMLCreator.java", 8],
-    ["src/main/java/linecreators/FileLinesCreator.java", 8],
-    ["src/test/java/dataprocessorstest/DebuggerTest.java", 8],
-    ["src/test/java/dataprocessorstest/XMLCreatorTest.java", 8],
-    ["src/integration/java", 7],
-    ["src/integration/java/guiintegrationtest", 7],
-    ["src/main/java/linecreators/NeighbourLineCreator.java", 7],
-    ["src/test/java/linecreatorstest/FileLinesCreatorTest.java", 7],
-    ["src/main/java/linecreators/NodeListLineCreator.java", 6],
-    ["src/main/resources/GUI/Home.fxml", 6],
-    ["src/test/java/parsertest/DataLineParserTest.java", 6],
-    ["src/integration/java/guiintegrationtest/HomeTest.java", 5],
-    ["src/integration/java/guiintegrationtest/XMLGeneratorTest.java", 5],
-    ["src/main/java/GUI/HomeController.java", 5],
-    ["src/integration/java/guiintegrationtest/AppRunner.java", 4],
-    ["src/integration/java/guiintegrationtest/OutputTest.java", 4],
-    ["src/main/java/linecreators/DataLineCreator.java", 4],
-    ["src/main/java/parser/DataLineParser.java", 4],
-    ["src/main/java/parser/XMLParser.java", 4],
-    ["src/test/java/datastructurestest", 4],
-    ["src/test/java/datastructurestest/DataLineTest.java", 4],
-    ["src/test/java/linecreatorstest/DataLineCreatorTest.java", 4],
-    ["src/test/java/parsertest/XMLParserTest.java", 4],
-    ["Logo.PNG", 3],
-    ["src/integration/java/guiintegrationtest/InputTest.java", 3],
-    ["src/integration/java/guiintegrationtest/LoadTest.java", 3],
-    ["src/main/java/linecreators/LineCreator.java", 3],
-    ["src/test/java/linecreatorstest/NodeListLineCreatorTest.java", 3],
-    ["src/test/java/parsertest/NodeCreatorTest.java", 3],
-    ["src/test/resources/XMLexample.txt", 3],
-    ["Logo.ico", 2],
-    ["src/main/java/dataprocessors/XMLDebugger.java", 2],
-    ["src/main/java/datastructures/DataLine.java", 2],
-    ["src/main/resources/GUI/Logger.fxml", 2],
-    ["src/test/java/dataprocessorstest/XMLDebuggerTest.java", 2],
-    ["src/test/java/linecreatorstest/NeighbourLineCreatorTest.java", 2],
-    ["src/integration/resources", 1],
-    ["src/integration/resources/XMLParserTestData1.txt", 1],
-    ["src/integration/resources/XMLParserTestData2.txt", 1],
-    ["src/integration/resources/XMLexample.txt", 1],
-    ["src/integration/resources/fullInputData.txt", 1],
-    ["src/integration/resources/testData.txt", 1],
-    ["src/integration/resources/testFileLinesCreatorData.txt", 1],
-    ["src/integration/resources/testNeighbourData.txt", 1],
-    ["src/main/java/datastructures/Status.java", 1],
-    ["src/main/resources/Styling/Background.jpg", 1],
-    ["src/main/resources/Styling/Logo.PNG", 1],
-    ["src/test/resources/XMLParserTestData1.txt", 1],
-    ["src/test/resources/XMLParserTestData2.txt", 1],
-    ["src/test/resources/fullInputData.txt", 1],
-    ["src/test/resources/testData.txt", 1],
-    ["src/test/resources/testFileLinesCreatorData.txt", 1],
-    ["src/test/resources/testNeighbourData.txt", 1]
+    [
+      "src",
+      477
+    ],
+    [
+      "src/main",
+      373
+    ],
+    [
+      "src/main/java",
+      349
+    ],
+    [
+      "src/main/java/GUI",
+      178
+    ],
+    [
+      "src/test",
+      147
+    ],
+    [
+      "src/test/java",
+      142
+    ],
+    [
+      "src/main/resources",
+      95
+    ],
+    [
+      "src/main/resources/GUI",
+      75
+    ],
+    [
+      "src/main/java/dataprocessors",
+      66
+    ],
+    [
+      "src/main/java/parser",
+      57
+    ],
+    [
+      "src/main/java/GUI/Root.java",
+      48
+    ],
+    [
+      "src/main/java/GUI/InputController.java",
+      45
+    ],
+    [
+      "src/test/java/dataprocessorstest",
+      33
+    ],
+    [
+      "src/test/java/parsertest",
+      32
+    ],
+    [
+      "src/main/java/GUI/XMLGeneratorController.java",
+      28
+    ],
+    [
+      "src/main/java/GUI/OutputController.java",
+      27
+    ],
+    [
+      "src/main/java/parser/Parser.java",
+      27
+    ],
+    [
+      "src/main/java/linecreators",
+      25
+    ],
+    [
+      "src/main/java/dataprocessors/Debugger.java",
+      24
+    ],
+    [
+      "src/main/java/datastructures",
+      24
+    ],
+    [
+      "src/main/java/datastructures/Node.java",
+      23
+    ],
+    [
+      "src/test/java/parsertest/ParserTest.java",
+      23
+    ],
+    [
+      "src/main/java/GUI/LoggerController.java",
+      22
+    ],
+    [
+      "build.gradle",
+      21
+    ],
+    [
+      "src/main/resources/GUI/Input.fxml",
+      21
+    ],
+    [
+      "src/main/resources/GUI/Output.fxml",
+      17
+    ],
+    [
+      ".gitignore",
+      16
+    ],
+    [
+      "src/main/resources/GUI/XMLGenerator.fxml",
+      16
+    ],
+    [
+      "src/main/java/dataprocessors/Wrangler.java",
+      14
+    ],
+    [
+      "src/main/java/parser/NodeCreator.java",
+      14
+    ],
+    [
+      "src/test/java/linecreatorstest",
+      14
+    ],
+    [
+      "src/main/java/GUI/Main.java",
+      13
+    ],
+    [
+      "src/main/java/GUI/LoadController.java",
+      12
+    ],
+    [
+      "src/main/resources/Styling",
+      12
+    ],
+    [
+      "src/test/java/guitest",
+      12
+    ],
+    [
+      "src/test/java/guitest/LoggerControllerTest.java",
+      12
+    ],
+    [
+      "src/test/java/dataprocessorstest/WranglerTest.java",
+      11
+    ],
+    [
+      "src/test/resources",
+      11
+    ],
+    [
+      "README.md",
+      10
+    ],
+    [
+      "src/main/resources/GUI/Load.fxml",
+      9
+    ],
+    [
+      "src/main/resources/Styling/GUI.css",
+      9
+    ],
+    [
+      "src/integration",
+      8
+    ],
+    [
+      "src/main/java/dataprocessors/XMLCreator.java",
+      8
+    ],
+    [
+      "src/main/java/linecreators/FileLinesCreator.java",
+      8
+    ],
+    [
+      "src/test/java/dataprocessorstest/DebuggerTest.java",
+      8
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLCreatorTest.java",
+      8
+    ],
+    [
+      "src/integration/java",
+      7
+    ],
+    [
+      "src/integration/java/guiintegrationtest",
+      7
+    ],
+    [
+      "src/main/java/linecreators/NeighbourLineCreator.java",
+      7
+    ],
+    [
+      "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
+      7
+    ],
+    [
+      "src/main/java/linecreators/NodeListLineCreator.java",
+      6
+    ],
+    [
+      "src/main/resources/GUI/Home.fxml",
+      6
+    ],
+    [
+      "src/test/java/parsertest/DataLineParserTest.java",
+      6
+    ],
+    [
+      "src/integration/java/guiintegrationtest/HomeTest.java",
+      5
+    ],
+    [
+      "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
+      5
+    ],
+    [
+      "src/main/java/GUI/HomeController.java",
+      5
+    ],
+    [
+      "src/integration/java/guiintegrationtest/AppRunner.java",
+      4
+    ],
+    [
+      "src/integration/java/guiintegrationtest/OutputTest.java",
+      4
+    ],
+    [
+      "src/main/java/linecreators/DataLineCreator.java",
+      4
+    ],
+    [
+      "src/main/java/parser/DataLineParser.java",
+      4
+    ],
+    [
+      "src/main/java/parser/XMLParser.java",
+      4
+    ],
+    [
+      "src/test/java/datastructurestest",
+      4
+    ],
+    [
+      "src/test/java/datastructurestest/DataLineTest.java",
+      4
+    ],
+    [
+      "src/test/java/linecreatorstest/DataLineCreatorTest.java",
+      4
+    ],
+    [
+      "src/test/java/parsertest/XMLParserTest.java",
+      4
+    ],
+    [
+      "Logo.PNG",
+      3
+    ],
+    [
+      "src/integration/java/guiintegrationtest/InputTest.java",
+      3
+    ],
+    [
+      "src/integration/java/guiintegrationtest/LoadTest.java",
+      3
+    ],
+    [
+      "src/main/java/linecreators/LineCreator.java",
+      3
+    ],
+    [
+      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
+      3
+    ],
+    [
+      "src/test/java/parsertest/NodeCreatorTest.java",
+      3
+    ],
+    [
+      "src/test/resources/XMLexample.txt",
+      3
+    ],
+    [
+      "Logo.ico",
+      2
+    ],
+    [
+      "src/main/java/dataprocessors/XMLDebugger.java",
+      2
+    ],
+    [
+      "src/main/java/datastructures/DataLine.java",
+      2
+    ],
+    [
+      "src/main/resources/GUI/Logger.fxml",
+      2
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
+      2
+    ],
+    [
+      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
+      2
+    ],
+    [
+      "src/integration/resources",
+      1
+    ],
+    [
+      "src/integration/resources/XMLParserTestData1.txt",
+      1
+    ],
+    [
+      "src/integration/resources/XMLParserTestData2.txt",
+      1
+    ],
+    [
+      "src/integration/resources/XMLexample.txt",
+      1
+    ],
+    [
+      "src/integration/resources/fullInputData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testFileLinesCreatorData.txt",
+      1
+    ],
+    [
+      "src/integration/resources/testNeighbourData.txt",
+      1
+    ],
+    [
+      "src/main/java/datastructures/Status.java",
+      1
+    ],
+    [
+      "src/main/resources/Styling/Background.jpg",
+      1
+    ],
+    [
+      "src/main/resources/Styling/Logo.PNG",
+      1
+    ],
+    [
+      "src/test/resources/XMLParserTestData1.txt",
+      1
+    ],
+    [
+      "src/test/resources/XMLParserTestData2.txt",
+      1
+    ],
+    [
+      "src/test/resources/fullInputData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testFileLinesCreatorData.txt",
+      1
+    ],
+    [
+      "src/test/resources/testNeighbourData.txt",
+      1
+    ]
   ]
 }
