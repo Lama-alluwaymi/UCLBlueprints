@@ -160,28 +160,12 @@ namespace TestPerformanceReportGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void manuallyChecked(object sender, RoutedEventArgs e)
+        private void autoRunChecked(object sender, RoutedEventArgs e)
         {
             //setting some attributes of the xaml objects.
-            autoTestBtn.IsEnabled = false;
-            totalTestInput.Visibility = Visibility.Visible;
-            passedTestInput.Visibility = Visibility.Visible;  
-            failedTestInput.Visibility = Visibility.Visible;
-            skippedTestInput.Visibility = Visibility.Visible;
-            durationInput.Visibility = Visibility.Visible;
-            total.Visibility = Visibility.Collapsed;
-            passed.Visibility = Visibility.Collapsed;
-            failed.Visibility = Visibility.Collapsed;
-            skipped.Visibility = Visibility.Collapsed;
-            totduration.Visibility = Visibility.Collapsed;
-
-        }
-
-        private void manuallyUnchecked(object sender, RoutedEventArgs e)
-        {
             autoTestBtn.IsEnabled = true;
             totalTestInput.Visibility = Visibility.Collapsed;
-            passedTestInput.Visibility = Visibility.Collapsed;
+            passedTestInput.Visibility = Visibility.Collapsed;  
             failedTestInput.Visibility = Visibility.Collapsed;
             skippedTestInput.Visibility = Visibility.Collapsed;
             durationInput.Visibility = Visibility.Collapsed;
@@ -190,6 +174,27 @@ namespace TestPerformanceReportGenerator
             failed.Visibility = Visibility.Visible;
             skipped.Visibility = Visibility.Visible;
             totduration.Visibility = Visibility.Visible;
+
+        }
+
+        private void autoRunUnchecked(object sender, RoutedEventArgs e)
+        {
+            autoTestBtn.IsEnabled = false;
+            totalTestInput.Visibility = Visibility.Visible;
+            passedTestInput.Visibility = Visibility.Visible;
+            failedTestInput.Visibility = Visibility.Visible;
+            skippedTestInput.Visibility = Visibility.Visible;
+            durationInput.Visibility = Visibility.Visible;
+            total.Visibility = Visibility.Collapsed;
+            passed.Visibility = Visibility.Collapsed;
+            failed.Visibility = Visibility.Collapsed;
+            skipped.Visibility = Visibility.Collapsed;
+            totduration.Visibility = Visibility.Collapsed;
+        }
+
+        private void submitData_Click(object sender, RoutedEventArgs e)
+        {
+            VS.MessageBox.Show("TPRG", "create a submit function");
         }
     }
 }
