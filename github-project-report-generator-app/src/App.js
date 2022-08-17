@@ -159,7 +159,7 @@ function App() {
                 <Th>Additions</Th>
                 <Th>Deletions</Th>
                 <Th>% of Changes</Th>
-                <Th>Average Commit Size (Lines Changed)</Th>
+                <Th>Average Commit Size by Lines Changed</Th>
               </Tr>
             </Thead>
             <Tbody>
