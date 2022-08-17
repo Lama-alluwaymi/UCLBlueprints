@@ -7470,54 +7470,49 @@
     [
       ".gitignore",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "MihailBratanov",
-        "ArchawiWongkittiruk",
-        "Albert Shakirzianov",
         "ArchawinWongkittiruk",
-        "Archawin Wongkittiruk"
+        "SV-Albert"
       ]
     ],
     [
       "Logo.PNG",
       [
-        "Septimiu Pop",
         "SeptimiuPop"
       ]
     ],
     [
       "Logo.ico",
       [
-        "Septimiu Pop",
+        "SeptimiuPop",
         "SV-Albert"
       ]
     ],
     [
       "README.md",
       [
-        "Elian Ouaknine",
-        "ArchawiWongkittiruk",
-        "SeptimiuPop",
-        "Archawin Wongkittiruk"
+        "elouak1002",
+        "ArchawinWongkittiruk",
+        "SeptimiuPop"
       ]
     ],
     [
       "build.gradle",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
-        "Albert Shakirzianov",
-        "Archawin Wongkittiruk",
-        "aerris",
-        "ArchawinWongkittiruk"
+        "SV-Albert",
+        "ArchawinWongkittiruk",
+        "ben-wsh10"
       ]
     ],
     [
       "src",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "garg-shubh"
       ]
     ],
@@ -7525,138 +7520,138 @@
       "src/integration",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/AppRunner.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/HomeTest.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/InputTest.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/LoadTest.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/OutputTest.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/XMLParserTestData1.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/XMLParserTestData2.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/XMLexample.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/fullInputData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/testData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/testFileLinesCreatorData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/integration/resources/testNeighbourData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
         "MihailBratanov",
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
         "MihailBratanov",
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java/GUI",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
         "asfand987"
       ]
@@ -7665,20 +7660,18 @@
       "src/main/java/GUI/HomeController.java",
       [
         "ArchawinWongkittiruk",
-        "Harald Gerhardsen"
+        "k1889292"
       ]
     ],
     [
       "src/main/java/GUI/InputController.java",
       [
         "ArchawinWongkittiruk",
-        "Archawin Wongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "asfand987",
         "garg-shubh",
-        "Albert Shakirzianov",
-        "ArchawiWongkittiruk",
-        "aerris"
+        "SV-Albert",
+        "ben-wsh10"
       ]
     ],
     [
@@ -7686,9 +7679,8 @@
       [
         "ArchawinWongkittiruk",
         "garg-shubh",
-        "aerris",
-        "ArchawiWongkittiruk",
-        "Harald Gerhardsen"
+        "ben-wsh10",
+        "k1889292"
       ]
     ],
     [
@@ -7701,10 +7693,8 @@
     [
       "src/main/java/GUI/Main.java",
       [
-        "ArchawiWongkittiruk",
-        "Albert Shakirzianov",
         "ArchawinWongkittiruk",
-        "aerris"
+        "SV-Albert"
       ]
     ],
     [
@@ -7712,8 +7702,7 @@
       [
         "ArchawinWongkittiruk",
         "asfand987",
-        "ArchawiWongkittiruk",
-        "aerris",
+        "ben-wsh10",
         "MihailBratanov"
       ]
     ],
@@ -7721,7 +7710,7 @@
       "src/main/java/GUI/Root.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
         "asfand987"
       ]
@@ -7729,10 +7718,9 @@
     [
       "src/main/java/GUI/XMLGeneratorController.java",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "ArchawinWongkittiruk",
-        "aerris",
-        "ArchawiWongkittiruk"
+        "ben-wsh10"
       ]
     ],
     [
@@ -7740,29 +7728,26 @@
       [
         "ArchawinWongkittiruk",
         "MihailBratanov",
-        "Elian Ouaknine",
-        "Archawin Wongkittiruk",
+        "elouak1002",
         "asfand987",
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java/dataprocessors/Debugger.java",
       [
-        "Elian Ouaknine",
-        "Archawin Wongkittiruk",
-        "asfand987",
-        "ArchawinWongkittiruk"
+        "elouak1002",
+        "ArchawinWongkittiruk",
+        "asfand987"
       ]
     ],
     [
       "src/main/java/dataprocessors/Wrangler.java",
       [
         "ArchawinWongkittiruk",
-        "Albert Shakirzianov",
-        "Elian Ouaknine",
+        "SV-Albert",
+        "elouak1002",
         "MihailBratanov",
-        "Septimiu Pop",
         "SeptimiuPop"
       ]
     ],
@@ -7770,112 +7755,111 @@
       "src/main/java/dataprocessors/XMLCreator.java",
       [
         "MihailBratanov",
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java/dataprocessors/XMLDebugger.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/datastructures",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "MihailBratanov"
       ]
     ],
     [
       "src/main/java/datastructures/DataLine.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/datastructures/Node.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "MihailBratanov"
       ]
     ],
     [
       "src/main/java/datastructures/Status.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators/DataLineCreator.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators/FileLinesCreator.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators/LineCreator.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators/NeighbourLineCreator.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/linecreators/NodeListLineCreator.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/parser",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "garg-shubh",
         "MihailBratanov",
-        "Albert Shakirzianov",
-        "Archawin Wongkittiruk"
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java/parser/DataLineParser.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/main/java/parser/NodeCreator.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
+        "elouak1002",
         "MihailBratanov",
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
@@ -7883,58 +7867,53 @@
       [
         "ArchawinWongkittiruk",
         "MihailBratanov",
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/main/java/parser/XMLParser.java",
       [
         "ArchawinWongkittiruk",
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/main/resources",
       [
         "ArchawinWongkittiruk",
-        "Archawin Wongkittiruk",
         "asfand987",
-        "aerris"
+        "ben-wsh10"
       ]
     ],
     [
       "src/main/resources/GUI",
       [
         "ArchawinWongkittiruk",
-        "Archawin Wongkittiruk",
         "asfand987",
-        "aerris",
-        "ArchawiWongkittiruk"
+        "ben-wsh10"
       ]
     ],
     [
       "src/main/resources/GUI/Home.fxml",
       [
         "ArchawinWongkittiruk",
-        "Harald Gerhardsen"
+        "k1889292"
       ]
     ],
     [
       "src/main/resources/GUI/Input.fxml",
       [
         "ArchawinWongkittiruk",
-        "ArchawiWongkittiruk",
-        "aerris"
+        "ben-wsh10"
       ]
     ],
     [
       "src/main/resources/GUI/Load.fxml",
       [
         "ArchawinWongkittiruk",
-        "ArchawiWongkittiruk",
-        "aerris"
+        "ben-wsh10"
       ]
     ],
     [
@@ -7947,8 +7926,7 @@
       "src/main/resources/GUI/Output.fxml",
       [
         "ArchawinWongkittiruk",
-        "ArchawiWongkittiruk",
-        "aerris",
+        "ben-wsh10",
         "asfand987"
       ]
     ],
@@ -7956,16 +7934,14 @@
       "src/main/resources/GUI/XMLGenerator.fxml",
       [
         "ArchawinWongkittiruk",
-        "aerris",
-        "ArchawiWongkittiruk"
+        "ben-wsh10"
       ]
     ],
     [
       "src/main/resources/Styling",
       [
         "ArchawinWongkittiruk",
-        "ArchawiWongkittiruk",
-        "aerris"
+        "ben-wsh10"
       ]
     ],
     [
@@ -7978,8 +7954,7 @@
       "src/main/resources/Styling/GUI.css",
       [
         "ArchawinWongkittiruk",
-        "ArchawiWongkittiruk",
-        "aerris"
+        "ben-wsh10"
       ]
     ],
     [
@@ -7991,8 +7966,8 @@
     [
       "src/test",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "garg-shubh",
         "MihailBratanov"
       ]
@@ -8000,8 +7975,8 @@
     [
       "src/test/java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "garg-shubh",
         "MihailBratanov"
       ]
@@ -8009,159 +7984,158 @@
     [
       "src/test/java/dataprocessorstest",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "MihailBratanov",
-        "Albert Shakirzianov",
-        "Septimiu Pop"
+        "SV-Albert",
+        "SeptimiuPop"
       ]
     ],
     [
       "src/test/java/dataprocessorstest/DebuggerTest.java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/dataprocessorstest/WranglerTest.java",
       [
-        "Albert Shakirzianov",
-        "Septimiu Pop",
-        "Elian Ouaknine"
+        "SV-Albert",
+        "SeptimiuPop",
+        "elouak1002"
       ]
     ],
     [
       "src/test/java/dataprocessorstest/XMLCreatorTest.java",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "MihailBratanov",
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/test/java/datastructurestest",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/datastructurestest/DataLineTest.java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/guitest",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "asfand987"
       ]
     ],
     [
       "src/test/java/guitest/LoggerControllerTest.java",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "asfand987"
       ]
     ],
     [
       "src/test/java/linecreatorstest",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/linecreatorstest/DataLineCreatorTest.java",
       [
-        "Albert Shakirzianov",
-        "Elian Ouaknine"
+        "SV-Albert",
+        "elouak1002"
       ]
     ],
     [
       "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/test/java/parsertest",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "MihailBratanov"
       ]
     ],
     [
       "src/test/java/parsertest/DataLineParserTest.java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov"
+        "elouak1002",
+        "SV-Albert"
       ]
     ],
     [
       "src/test/java/parsertest/NodeCreatorTest.java",
       [
-        "Elian Ouaknine",
+        "elouak1002",
         "MihailBratanov"
       ]
     ],
     [
       "src/test/java/parsertest/ParserTest.java",
       [
-        "Elian Ouaknine",
-        "Albert Shakirzianov",
+        "elouak1002",
+        "SV-Albert",
         "MihailBratanov"
       ]
     ],
     [
       "src/test/java/parsertest/XMLParserTest.java",
       [
-        "Albert Shakirzianov",
-        "Elian Ouaknine"
+        "SV-Albert",
+        "elouak1002"
       ]
     ],
     [
       "src/test/resources",
       [
         "MihailBratanov",
-        "Albert Shakirzianov",
-        "Elian Ouaknine",
-        "ArchawiWongkittiruk",
+        "SV-Albert",
+        "elouak1002",
         "ArchawinWongkittiruk"
       ]
     ],
     [
       "src/test/resources/XMLParserTestData1.txt",
       [
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/test/resources/XMLParserTestData2.txt",
       [
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
@@ -8173,25 +8147,25 @@
     [
       "src/test/resources/fullInputData.txt",
       [
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/test/resources/testData.txt",
       [
-        "Albert Shakirzianov"
+        "SV-Albert"
       ]
     ],
     [
       "src/test/resources/testFileLinesCreatorData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ],
     [
       "src/test/resources/testNeighbourData.txt",
       [
-        "Elian Ouaknine"
+        "elouak1002"
       ]
     ]
   ],

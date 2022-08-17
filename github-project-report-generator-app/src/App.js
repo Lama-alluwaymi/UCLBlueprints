@@ -88,8 +88,13 @@ function App() {
 
       const authors = [];
       for (const commit of commits) {
-        if (!authors.includes(commit.commit.author.name)) {
-          authors.push(commit.commit.author.name);
+        // Some commits have a null author
+        try {
+          if (!authors.includes(commit.author.login)) {
+            authors.push(commit.author.login);
+          }
+        } catch (error) {
+          continue;
         }
       }
 
