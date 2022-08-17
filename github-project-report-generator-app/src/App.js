@@ -12,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const [authorCommits, setAuthorCommits] = useState([]);
+  const [totalCommits, setTotalCommits] = useState(0);
   const [totalChanges, setTotalChanges] = useState(0);
 
   // https://stackoverflow.com/questions/46762160/get-list-of-contributors-who-have-made-commits-to-a-particular-file
@@ -36,6 +37,7 @@ function App() {
     setLoading(true);
 
     setAuthorCommits([]);
+    setTotalCommits(0);
     setTotalChanges(0);
     setFileAuthors([]);
     setMostRecentCommitSha('');
@@ -51,6 +53,7 @@ function App() {
       await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', repo)
     ).data;
     setAuthorCommits(commitActivity);
+    setTotalCommits(commitActivity.reduce((a, b) => a + b.total, 0));
     setTotalChanges(
       commitActivity
         .map((contributor) =>
@@ -109,6 +112,7 @@ function App() {
 
   const showSampleReport = () => {
     setAuthorCommits(sampleData.authorCommits);
+    setTotalCommits(sampleData.totalCommits);
     setTotalChanges(sampleData.totalChanges);
     setFileAuthors(sampleData.fileAuthors);
     setMostRecentCommitSha(sampleData.mostRecentCommitSha);
@@ -151,7 +155,7 @@ function App() {
             <Thead>
               <Tr>
                 <Th>Author</Th>
-                <Th>Commits</Th>
+                <Th>Commits (% of Total)</Th>
                 <Th>Additions</Th>
                 <Th>Deletions</Th>
                 <Th>% of Changes</Th>
@@ -177,7 +181,10 @@ function App() {
                           {contributor.author.login}
                         </Link>
                       </Td>
-                      <Td>{contributor.total}</Td>
+                      <Td>
+                        {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
+                        %)
+                      </Td>
                       <Td>{additions}</Td>
                       <Td>{deletions}</Td>
                       <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>

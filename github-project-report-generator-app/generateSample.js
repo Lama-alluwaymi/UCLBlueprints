@@ -65,6 +65,7 @@ const repo = {
     JSON.stringify(
       {
         authorCommits: commitActivity,
+        totalCommits: commitActivity.reduce((a, b) => a + b.total, 0),
         totalChanges: commitActivity
           .map((contributor) =>
             contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
