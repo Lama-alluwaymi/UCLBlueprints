@@ -174,7 +174,7 @@ function App() {
                 return (
                   <Tr key={contributor.author.login}>
                     <Td>
-                      <Link href={contributor.author.html_url} isExternal>
+                      <Link href={url + '/commits?author=' + contributor.author.login} isExternal>
                         <Image src={contributor.author.avatar_url} boxSize='50px' />
                         {contributor.author.login}
                       </Link>
