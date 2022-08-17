@@ -20,6 +20,8 @@ function App() {
   const [fileAuthors, setFileAuthors] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
+  const [authorFiles, setAuthorFiles] = useState([]);
+
   const [fileCommitCounts, setFileCommitCounts] = useState([]);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ function App() {
     setTotalChanges(0);
     setFileAuthors([]);
     setMostRecentCommitSha('');
+    setAuthorFiles([]);
     setFileCommitCounts([]);
 
     const repo = {
@@ -102,6 +105,16 @@ function App() {
     }
     setFileAuthors(Object.entries(fileContributors));
 
+    const contributorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
+    for (const [contributor, files] of contributorFiles) {
+      for (const [file, authors] of Object.entries(fileContributors)) {
+        if (authors.includes(contributor)) {
+          files.push(file);
+        }
+      }
+    }
+    setAuthorFiles(contributorFiles.sort((a, b) => b[1].length - a[1].length));
+
     const fileCommits = {};
     for (const file of tree) {
       // https://stackoverflow.com/a/62867468
@@ -128,6 +141,7 @@ function App() {
     setTotalChanges(sampleData.totalChanges);
     setFileAuthors(sampleData.fileAuthors);
     setMostRecentCommitSha(sampleData.mostRecentCommitSha);
+    setAuthorFiles(sampleData.authorFiles);
     setFileCommitCounts(sampleData.fileCommitCounts);
   };
 
@@ -225,6 +239,34 @@ function App() {
             {' - '}
             {authors.join(', ')}
           </Text>
+        ))}
+      </Box>
+
+      <Divider mt={5} />
+
+      <Heading size='md' my={5}>
+        Recent Author Files
+      </Heading>
+      <Box>
+        {authorFiles.map(([author, files]) => (
+          <Box key={author} my={5}>
+            <Link href={url + '/commits?author=' + author} isExternal>
+              <Image
+                src={
+                  authorCommits.find((contributor) => contributor.author.login === author).author
+                    .avatar_url
+                }
+                boxSize='50px'
+              />
+              {author}
+            </Link>
+            {' - '}
+            {files.length}
+            {' files:'}
+            {files.map((file) => (
+              <Text key={file}>{file}</Text>
+            ))}
+          </Box>
         ))}
       </Box>
 

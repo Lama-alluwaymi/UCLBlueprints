@@ -55,6 +55,15 @@ const repo = {
     console.log(file.path);
   }
 
+  const contributorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
+  for (const [contributor, files] of contributorFiles) {
+    for (const [file, authors] of Object.entries(fileContributors)) {
+      if (authors.includes(contributor)) {
+        files.push(file);
+      }
+    }
+  }
+
   const fileCommits = {};
   for (const file of tree) {
     // https://stackoverflow.com/a/62867468
@@ -83,6 +92,7 @@ const repo = {
           .reduce((a, b) => a + b, 0),
         mostRecentCommitSha: treeSha,
         fileAuthors: Object.entries(fileContributors),
+        authorFiles: contributorFiles.sort((a, b) => b[1].length - a[1].length),
         fileCommitCounts: Object.entries(fileCommits).sort((a, b) => b[1] - a[1]),
       },
       null,
