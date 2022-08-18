@@ -7,6 +7,8 @@ const generateReport = require('./src/generateReport');
   fs.writeFileSync(
     'src/sampleData.json',
     JSON.stringify(
+      // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
+      // Then create a .env file and put your token there
       await generateReport(process.env.GITHUB_TOKEN, {
         owner: 'ArchawinWongkittiruk',
         repo: 'TheBackrowers',
