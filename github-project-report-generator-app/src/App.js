@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
 
-import { Octokit } from 'octokit';
+import generateReport from './generateReport';
 
 import sampleData from './sampleData.json';
 
@@ -28,14 +28,12 @@ function App() {
     setToken(localStorage.getItem('github-api-token'));
   }, []);
 
-  const octokit = new Octokit({ auth: token });
-
   const onEditToken = (e) => {
     localStorage.setItem('github-api-token', e.target.value);
     setToken(e.target.value);
   };
 
-  const generateReport = async () => {
+  const getReport = async () => {
     setLoading(true);
 
     setName('');
@@ -47,89 +45,19 @@ function App() {
     setAuthorFiles([]);
     setFileCommitCounts([]);
 
-    const repo = {
+    const data = await generateReport(token, {
       owner: url.split('/')[3],
       repo: url.split('/')[4],
-    };
+    });
 
-    // https://docs.github.com/en/rest/repos/repos#get-a-repository
-    const repoName = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data.name;
-    setName(repoName);
-
-    // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
-    const commitActivity = (
-      await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', repo)
-    ).data;
-    setAuthorCommits(commitActivity.sort((a, b) => b.total - a.total));
-    setTotalCommits(commitActivity.reduce((a, b) => a + b.total, 0));
-    setTotalChanges(
-      commitActivity
-        .map((contributor) =>
-          contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
-        )
-        .reduce((a, b) => a + b, 0)
-    );
-
-    // https://docs.github.com/en/rest/commits/commits#list-commits
-    const treeSha = (await octokit.request('GET /repos/{owner}/{repo}/commits', repo)).data[0].sha;
-    setMostRecentCommitSha(treeSha);
-
-    // https://docs.github.com/en/rest/git/trees#get-a-tree
-    const tree = (
-      await octokit.request('GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true', {
-        ...repo,
-        tree_sha: treeSha,
-      })
-    ).data.tree;
-
-    const fileContributors = {};
-    for (const file of tree) {
-      // https://stackoverflow.com/a/46762417
-      const commits = (
-        await octokit.request(`GET /repos/{owner}/{repo}/commits?path=${file.path}`, repo)
-      ).data;
-
-      const authors = [];
-      for (const commit of commits) {
-        // Some commits have a null author
-        try {
-          if (!authors.includes(commit.author.login)) {
-            authors.push(commit.author.login);
-          }
-        } catch (error) {
-          continue;
-        }
-      }
-
-      fileContributors[file.path] = authors;
-    }
-    setFileAuthors(Object.entries(fileContributors));
-
-    const contributorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
-    for (const [contributor, files] of contributorFiles) {
-      for (const [file, authors] of Object.entries(fileContributors)) {
-        if (authors.includes(contributor)) {
-          files.push(file);
-        }
-      }
-    }
-    setAuthorFiles(contributorFiles.sort((a, b) => b[1].length - a[1].length));
-
-    const fileCommits = {};
-    for (const file of tree) {
-      // https://stackoverflow.com/a/62867468
-      const commits = (
-        await octokit.request(
-          `GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`,
-          repo
-        )
-      ).headers.link
-        .split(',')[1]
-        .match(/.*page=(?<page_num>\d+)/).groups.page_num;
-
-      fileCommits[file.path] = parseInt(commits);
-    }
-    setFileCommitCounts(Object.entries(fileCommits).sort((a, b) => b[1] - a[1]));
+    setName(data.name);
+    setAuthorCommits(data.authorCommits);
+    setTotalCommits(data.totalCommits);
+    setTotalChanges(data.totalChanges);
+    setFileAuthors(data.fileAuthors);
+    setMostRecentCommitSha(data.mostRecentCommitSha);
+    setAuthorFiles(data.authorFiles);
+    setFileCommitCounts(data.fileCommitCounts);
 
     setLoading(false);
   };
@@ -156,7 +84,7 @@ function App() {
       <Text>GitHub Repository URL</Text>
       <Input value={url} onChange={(e) => setURL(e.currentTarget.value)} mb={5} />
       <Button
-        onClick={() => generateReport()}
+        onClick={() => getReport()}
         disabled={!url.includes('https://github.com')}
         colorScheme='blue'
         isLoading={loading}
