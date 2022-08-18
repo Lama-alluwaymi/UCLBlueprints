@@ -19,7 +19,7 @@
                 <Label x:Name="lblHeadline"
                    Margin="10"
                    HorizontalAlignment="Center"
-                   FontSize="14">Test Performance Report Generator</Label>
+                   FontSize="14">Code Quality Report Generator</Label>
                 <Separator/>
                 <StackPanel Name="testResultsPanel" Orientation="Vertical" Width="280" Margin="2 0 0 10">
                     <Label FontSize="13" Content="Test Results" HorizontalAlignment="Center"/>
