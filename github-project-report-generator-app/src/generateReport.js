@@ -58,15 +58,23 @@ module.exports = async (octokitAuth, repo) => {
   const fileCommits = {};
   for (const file of tree) {
     // https://stackoverflow.com/a/62867468
-    const commits = (
-      await octokit.request(`GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`, repo)
-    ).headers.link
-      .split(',')[1]
-      .match(/.*page=(?<page_num>\d+)/).groups.page_num;
+    // Some headers have an undefined link
+    try {
+      const commits = (
+        await octokit.request(
+          `GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`,
+          repo
+        )
+      ).headers.link
+        .split(',')[1]
+        .match(/.*page=(?<page_num>\d+)/).groups.page_num;
 
-    fileCommits[file.path] = parseInt(commits);
+      fileCommits[file.path] = parseInt(commits);
 
-    console.log(file.path);
+      console.log(file.path);
+    } catch (error) {
+      continue;
+    }
   }
 
   return {
