@@ -22,7 +22,6 @@ module.exports = async (octokitAuth, repo) => {
     })
   ).data.tree;
 
-  const fileContributors = {};
   const fileCommits = {};
   for (const file of tree) {
     // https://stackoverflow.com/a/46762417
@@ -33,7 +32,8 @@ module.exports = async (octokitAuth, repo) => {
 
     const authors = {};
     for (const commit of commits) {
-      // Some commits have a null author
+      // Some commits have a null author (which can lead to the file commit count and
+      // the sum of the shown authors' commits not being equal for some files)
       if (!commit.author) continue;
       if (!authors[commit.author.login]) {
         authors[commit.author.login] = 1;
@@ -42,15 +42,14 @@ module.exports = async (octokitAuth, repo) => {
       }
     }
 
-    fileContributors[file.path] = authors;
-    fileCommits[file.path] = parseInt(commits.length);
+    fileCommits[file.path] = { authors, commits: parseInt(commits.length) };
 
     console.log(file.path);
   }
 
-  const contributorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
-  for (const [contributor, files] of contributorFiles) {
-    for (const [file, authors] of Object.entries(fileContributors)) {
+  const authorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
+  for (const [contributor, files] of authorFiles) {
+    for (const [file, { authors }] of Object.entries(fileCommits)) {
       if (authors[contributor]) {
         files.push(file);
       }
@@ -68,8 +67,7 @@ module.exports = async (octokitAuth, repo) => {
       )
       .reduce((a, b) => a + b, 0),
     mostRecentCommitSha: treeSha,
-    fileAuthors: Object.entries(fileContributors),
-    authorFiles: contributorFiles.sort((a, b) => b[1].length - a[1].length),
-    fileCommitCounts: Object.entries(fileCommits).sort((a, b) => b[1] - a[1]),
+    fileCommits: Object.entries(fileCommits).sort((a, b) => b[1].commits - a[1].commits),
+    authorFiles: authorFiles.sort((a, b) => b[1].length - a[1].length),
   };
 };

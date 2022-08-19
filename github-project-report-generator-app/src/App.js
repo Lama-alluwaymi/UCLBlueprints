@@ -19,12 +19,10 @@ function App() {
   const [totalCommits, setTotalCommits] = useState(0);
   const [totalChanges, setTotalChanges] = useState(0);
 
-  const [fileAuthors, setFileAuthors] = useState([]);
+  const [fileCommits, setFileCommits] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
   const [authorFiles, setAuthorFiles] = useState([]);
-
-  const [fileCommitCounts, setFileCommitCounts] = useState([]);
 
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
@@ -43,10 +41,9 @@ function App() {
     setAuthorCommits([]);
     setTotalCommits(0);
     setTotalChanges(0);
-    setFileAuthors([]);
+    setFileCommits([]);
     setMostRecentCommitSha('');
     setAuthorFiles([]);
-    setFileCommitCounts([]);
 
     const data = await generateReport(token, {
       owner: reqURL.split('/')[3],
@@ -58,10 +55,9 @@ function App() {
     setAuthorCommits(data.authorCommits);
     setTotalCommits(data.totalCommits);
     setTotalChanges(data.totalChanges);
-    setFileAuthors(data.fileAuthors);
+    setFileCommits(data.fileCommits);
     setMostRecentCommitSha(data.mostRecentCommitSha);
     setAuthorFiles(data.authorFiles);
-    setFileCommitCounts(data.fileCommitCounts);
 
     setLoading(false);
   };
@@ -72,10 +68,9 @@ function App() {
     setAuthorCommits(sampleData.authorCommits);
     setTotalCommits(sampleData.totalCommits);
     setTotalChanges(sampleData.totalChanges);
-    setFileAuthors(sampleData.fileAuthors);
+    setFileCommits(sampleData.fileCommits);
     setMostRecentCommitSha(sampleData.mostRecentCommitSha);
     setAuthorFiles(sampleData.authorFiles);
-    setFileCommitCounts(sampleData.fileCommitCounts);
   };
 
   return (
@@ -180,14 +175,16 @@ function App() {
         File Authors (Commits Made)
       </Heading>
       <Box>
-        {fileAuthors.map(([file, authors]) => (
+        {fileCommits.map(([file, { authors, commits }]) => (
           <Text key={file} mb={2}>
             <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
               {file}
             </Link>
-            {` - ${Object.entries(authors)
+            {` - ${commits} commit${commits > 1 ? 's' : ''} by: `}
+            {Object.entries(authors)
+              .sort((a, b) => b[1] - a[1])
               .map(([author, commits]) => `${author} (${commits})`)
-              .join(', ')}`}
+              .join(', ')}
           </Text>
         ))}
       </Box>
@@ -215,22 +212,6 @@ function App() {
               <Text key={file}>{file}</Text>
             ))}
           </Box>
-        ))}
-      </Box>
-
-      <Divider mt={5} />
-
-      <Heading size='md' my={5}>
-        Most Frequently Modified Files by Number of Commits
-      </Heading>
-      <Box>
-        {fileCommitCounts.map(([file, commits]) => (
-          <Text key={file} mb={2}>
-            <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-              {file}
-            </Link>
-            {` - ${commits}`}
-          </Text>
         ))}
       </Box>
     </Box>

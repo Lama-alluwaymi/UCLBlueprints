@@ -7467,737 +7467,1022 @@
   "totalCommits": 450,
   "totalChanges": 27250,
   "mostRecentCommitSha": "6fac32395c96b90e4cd6aefda25980884af53673",
-  "fileAuthors": [
-    [
-      ".gitignore",
-      {
-        "elouak1002": 7,
-        "MihailBratanov": 2,
-        "ArchawinWongkittiruk": 5,
-        "SV-Albert": 2
-      }
-    ],
-    [
-      "Logo.PNG",
-      {
-        "SeptimiuPop": 3
-      }
-    ],
-    [
-      "Logo.ico",
-      {
-        "SeptimiuPop": 1,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "README.md",
-      {
-        "elouak1002": 7,
-        "ArchawinWongkittiruk": 2,
-        "SeptimiuPop": 1
-      }
-    ],
-    [
-      "build.gradle",
-      {
-        "elouak1002": 10,
-        "garg-shubh": 3,
-        "SV-Albert": 5,
-        "ArchawinWongkittiruk": 2,
-        "ben-wsh10": 1
-      }
-    ],
+  "fileCommits": [
     [
       "src",
       {
-        "ArchawinWongkittiruk": 85,
-        "elouak1002": 160,
-        "SV-Albert": 34,
-        "garg-shubh": 41,
-        "MihailBratanov": 18,
-        "asfand987": 53,
-        "ben-wsh10": 45,
-        "SeptimiuPop": 15,
-        "k1889292": 9
-      }
-    ],
-    [
-      "src/integration",
-      {
-        "ArchawinWongkittiruk": 2,
-        "elouak1002": 6
-      }
-    ],
-    [
-      "src/integration/java",
-      {
-        "ArchawinWongkittiruk": 2,
-        "elouak1002": 5
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest",
-      {
-        "ArchawinWongkittiruk": 2,
-        "elouak1002": 5
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/AppRunner.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 3
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/HomeTest.java",
-      {
-        "ArchawinWongkittiruk": 2,
-        "elouak1002": 3
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/InputTest.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/LoadTest.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/OutputTest.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 3
-      }
-    ],
-    [
-      "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 4
-      }
-    ],
-    [
-      "src/integration/resources",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/XMLParserTestData1.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/XMLParserTestData2.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/XMLexample.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/fullInputData.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/testData.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/testFileLinesCreatorData.txt",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/integration/resources/testNeighbourData.txt",
-      {
-        "elouak1002": 1
+        "authors": {
+          "ArchawinWongkittiruk": 85,
+          "elouak1002": 160,
+          "SV-Albert": 34,
+          "garg-shubh": 41,
+          "MihailBratanov": 18,
+          "asfand987": 53,
+          "ben-wsh10": 45,
+          "SeptimiuPop": 15,
+          "k1889292": 9
+        },
+        "commits": 477
       }
     ],
     [
       "src/main",
       {
-        "ArchawinWongkittiruk": 83,
-        "elouak1002": 100,
-        "garg-shubh": 18,
-        "MihailBratanov": 17,
-        "SV-Albert": 28,
-        "asfand987": 45,
-        "ben-wsh10": 45,
-        "k1889292": 9,
-        "SeptimiuPop": 11
+        "authors": {
+          "ArchawinWongkittiruk": 83,
+          "elouak1002": 100,
+          "garg-shubh": 18,
+          "MihailBratanov": 17,
+          "SV-Albert": 28,
+          "asfand987": 45,
+          "ben-wsh10": 45,
+          "k1889292": 9,
+          "SeptimiuPop": 11
+        },
+        "commits": 373
       }
     ],
     [
       "src/main/java",
       {
-        "ArchawinWongkittiruk": 74,
-        "elouak1002": 100,
-        "garg-shubh": 18,
-        "MihailBratanov": 17,
-        "SV-Albert": 27,
-        "asfand987": 41,
-        "ben-wsh10": 40,
-        "k1889292": 7,
-        "SeptimiuPop": 11
+        "authors": {
+          "ArchawinWongkittiruk": 74,
+          "elouak1002": 100,
+          "garg-shubh": 18,
+          "MihailBratanov": 17,
+          "SV-Albert": 27,
+          "asfand987": 41,
+          "ben-wsh10": 40,
+          "k1889292": 7,
+          "SeptimiuPop": 11
+        },
+        "commits": 349
       }
     ],
     [
       "src/main/java/GUI",
       {
-        "ArchawinWongkittiruk": 64,
-        "elouak1002": 12,
-        "garg-shubh": 13,
-        "asfand987": 24,
-        "SV-Albert": 3,
-        "ben-wsh10": 40,
-        "k1889292": 7,
-        "MihailBratanov": 1
-      }
-    ],
-    [
-      "src/main/java/GUI/HomeController.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "k1889292": 4
-      }
-    ],
-    [
-      "src/main/java/GUI/InputController.java",
-      {
-        "ArchawinWongkittiruk": 25,
-        "elouak1002": 7,
-        "asfand987": 1,
-        "garg-shubh": 3,
-        "SV-Albert": 2,
-        "ben-wsh10": 3
-      }
-    ],
-    [
-      "src/main/java/GUI/LoadController.java",
-      {
-        "ArchawinWongkittiruk": 6,
-        "garg-shubh": 4,
-        "ben-wsh10": 1,
-        "k1889292": 1
-      }
-    ],
-    [
-      "src/main/java/GUI/LoggerController.java",
-      {
-        "ArchawinWongkittiruk": 8,
-        "asfand987": 14
-      }
-    ],
-    [
-      "src/main/java/GUI/Main.java",
-      {
-        "ArchawinWongkittiruk": 11,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/main/java/GUI/OutputController.java",
-      {
-        "ArchawinWongkittiruk": 10,
-        "asfand987": 7,
-        "ben-wsh10": 1,
-        "MihailBratanov": 1
-      }
-    ],
-    [
-      "src/main/java/GUI/Root.java",
-      {
-        "ArchawinWongkittiruk": 26,
-        "elouak1002": 2,
-        "garg-shubh": 5,
-        "asfand987": 7,
-        "k1889292": 2,
-        "ben-wsh10": 5,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/main/java/GUI/XMLGeneratorController.java",
-      {
-        "elouak1002": 2,
-        "ArchawinWongkittiruk": 11,
-        "ben-wsh10": 15
-      }
-    ],
-    [
-      "src/main/java/dataprocessors",
-      {
-        "ArchawinWongkittiruk": 6,
-        "MihailBratanov": 6,
-        "elouak1002": 24,
-        "asfand987": 20,
-        "SV-Albert": 6,
-        "SeptimiuPop": 4
-      }
-    ],
-    [
-      "src/main/java/dataprocessors/Debugger.java",
-      {
-        "elouak1002": 12,
-        "ArchawinWongkittiruk": 4,
-        "asfand987": 8
-      }
-    ],
-    [
-      "src/main/java/dataprocessors/Wrangler.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "SV-Albert": 3,
-        "elouak1002": 4,
-        "MihailBratanov": 2,
-        "SeptimiuPop": 4
-      }
-    ],
-    [
-      "src/main/java/dataprocessors/XMLCreator.java",
-      {
-        "MihailBratanov": 4,
-        "elouak1002": 1,
-        "SV-Albert": 3
-      }
-    ],
-    [
-      "src/main/java/dataprocessors/XMLDebugger.java",
-      {
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/main/java/datastructures",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 13,
-        "SV-Albert": 6,
-        "MihailBratanov": 4
-      }
-    ],
-    [
-      "src/main/java/datastructures/DataLine.java",
-      {
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/main/java/datastructures/Node.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 12,
-        "SV-Albert": 6,
-        "MihailBratanov": 4
-      }
-    ],
-    [
-      "src/main/java/datastructures/Status.java",
-      {
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/main/java/linecreators",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 24
-      }
-    ],
-    [
-      "src/main/java/linecreators/DataLineCreator.java",
-      {
-        "elouak1002": 4
-      }
-    ],
-    [
-      "src/main/java/linecreators/FileLinesCreator.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 7
-      }
-    ],
-    [
-      "src/main/java/linecreators/LineCreator.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/main/java/linecreators/NeighbourLineCreator.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 6
-      }
-    ],
-    [
-      "src/main/java/linecreators/NodeListLineCreator.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 5
-      }
-    ],
-    [
-      "src/main/java/parser",
-      {
-        "ArchawinWongkittiruk": 3,
-        "elouak1002": 21,
-        "garg-shubh": 10,
-        "MihailBratanov": 11,
-        "SV-Albert": 12
-      }
-    ],
-    [
-      "src/main/java/parser/DataLineParser.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 3
-      }
-    ],
-    [
-      "src/main/java/parser/NodeCreator.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 4,
-        "MihailBratanov": 3,
-        "SV-Albert": 6
-      }
-    ],
-    [
-      "src/main/java/parser/Parser.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "MihailBratanov": 7,
-        "elouak1002": 11,
-        "SV-Albert": 8
-      }
-    ],
-    [
-      "src/main/java/parser/XMLParser.java",
-      {
-        "ArchawinWongkittiruk": 1,
-        "elouak1002": 1,
-        "SV-Albert": 2
-      }
-    ],
-    [
-      "src/main/resources",
-      {
-        "ArchawinWongkittiruk": 37,
-        "asfand987": 8,
-        "ben-wsh10": 27,
-        "k1889292": 8,
-        "garg-shubh": 2,
-        "elouak1002": 1
-      }
-    ],
-    [
-      "src/main/resources/GUI",
-      {
-        "ArchawinWongkittiruk": 28,
-        "asfand987": 7,
-        "ben-wsh10": 27,
-        "k1889292": 4
-      }
-    ],
-    [
-      "src/main/resources/GUI/Home.fxml",
-      {
-        "ArchawinWongkittiruk": 2,
-        "k1889292": 4
-      }
-    ],
-    [
-      "src/main/resources/GUI/Input.fxml",
-      {
-        "ArchawinWongkittiruk": 13,
-        "ben-wsh10": 3
-      }
-    ],
-    [
-      "src/main/resources/GUI/Load.fxml",
-      {
-        "ArchawinWongkittiruk": 5,
-        "ben-wsh10": 4
-      }
-    ],
-    [
-      "src/main/resources/GUI/Logger.fxml",
-      {
-        "ArchawinWongkittiruk": 2
-      }
-    ],
-    [
-      "src/main/resources/GUI/Output.fxml",
-      {
-        "ArchawinWongkittiruk": 7,
-        "ben-wsh10": 3,
-        "asfand987": 1
-      }
-    ],
-    [
-      "src/main/resources/GUI/XMLGenerator.fxml",
-      {
-        "ArchawinWongkittiruk": 6,
-        "ben-wsh10": 10
-      }
-    ],
-    [
-      "src/main/resources/Styling",
-      {
-        "ArchawinWongkittiruk": 8,
-        "ben-wsh10": 3
-      }
-    ],
-    [
-      "src/main/resources/Styling/Background.jpg",
-      {
-        "ArchawinWongkittiruk": 1
-      }
-    ],
-    [
-      "src/main/resources/Styling/GUI.css",
-      {
-        "ArchawinWongkittiruk": 6,
-        "ben-wsh10": 3
-      }
-    ],
-    [
-      "src/main/resources/Styling/Logo.PNG",
-      {
-        "ArchawinWongkittiruk": 1
+        "authors": {
+          "ArchawinWongkittiruk": 64,
+          "elouak1002": 12,
+          "garg-shubh": 13,
+          "asfand987": 24,
+          "SV-Albert": 3,
+          "ben-wsh10": 40,
+          "k1889292": 7,
+          "MihailBratanov": 1
+        },
+        "commits": 178
       }
     ],
     [
       "src/test",
       {
-        "elouak1002": 66,
-        "SV-Albert": 14,
-        "garg-shubh": 33,
-        "MihailBratanov": 11,
-        "ArchawinWongkittiruk": 9,
-        "asfand987": 9,
-        "SeptimiuPop": 5
+        "authors": {
+          "elouak1002": 66,
+          "SV-Albert": 14,
+          "garg-shubh": 33,
+          "MihailBratanov": 11,
+          "ArchawinWongkittiruk": 9,
+          "asfand987": 9,
+          "SeptimiuPop": 5
+        },
+        "commits": 147
       }
     ],
     [
       "src/test/java",
       {
-        "elouak1002": 63,
-        "SV-Albert": 14,
-        "garg-shubh": 33,
-        "MihailBratanov": 11,
-        "ArchawinWongkittiruk": 7,
-        "asfand987": 9,
-        "SeptimiuPop": 5
+        "authors": {
+          "elouak1002": 63,
+          "SV-Albert": 14,
+          "garg-shubh": 33,
+          "MihailBratanov": 11,
+          "ArchawinWongkittiruk": 7,
+          "asfand987": 9,
+          "SeptimiuPop": 5
+        },
+        "commits": 142
+      }
+    ],
+    [
+      "src/main/resources",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 37,
+          "asfand987": 8,
+          "ben-wsh10": 27,
+          "k1889292": 8,
+          "garg-shubh": 2,
+          "elouak1002": 1
+        },
+        "commits": 95
+      }
+    ],
+    [
+      "src/main/resources/GUI",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 28,
+          "asfand987": 7,
+          "ben-wsh10": 27,
+          "k1889292": 4
+        },
+        "commits": 75
+      }
+    ],
+    [
+      "src/main/java/dataprocessors",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 6,
+          "MihailBratanov": 6,
+          "elouak1002": 24,
+          "asfand987": 20,
+          "SV-Albert": 6,
+          "SeptimiuPop": 4
+        },
+        "commits": 66
+      }
+    ],
+    [
+      "src/main/java/parser",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 3,
+          "elouak1002": 21,
+          "garg-shubh": 10,
+          "MihailBratanov": 11,
+          "SV-Albert": 12
+        },
+        "commits": 57
+      }
+    ],
+    [
+      "src/main/java/GUI/Root.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 26,
+          "elouak1002": 2,
+          "garg-shubh": 5,
+          "asfand987": 7,
+          "k1889292": 2,
+          "ben-wsh10": 5,
+          "SV-Albert": 1
+        },
+        "commits": 48
+      }
+    ],
+    [
+      "src/main/java/GUI/InputController.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 25,
+          "elouak1002": 7,
+          "asfand987": 1,
+          "garg-shubh": 3,
+          "SV-Albert": 2,
+          "ben-wsh10": 3
+        },
+        "commits": 45
       }
     ],
     [
       "src/test/java/dataprocessorstest",
       {
-        "elouak1002": 20,
-        "MihailBratanov": 3,
-        "SV-Albert": 6,
-        "SeptimiuPop": 4
-      }
-    ],
-    [
-      "src/test/java/dataprocessorstest/DebuggerTest.java",
-      {
-        "elouak1002": 7,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/test/java/dataprocessorstest/WranglerTest.java",
-      {
-        "SV-Albert": 5,
-        "SeptimiuPop": 4,
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/test/java/dataprocessorstest/XMLCreatorTest.java",
-      {
-        "elouak1002": 4,
-        "MihailBratanov": 3,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
-      {
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/test/java/datastructurestest",
-      {
-        "elouak1002": 3,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/test/java/datastructurestest/DataLineTest.java",
-      {
-        "elouak1002": 3,
-        "SV-Albert": 1
-      }
-    ],
-    [
-      "src/test/java/guitest",
-      {
-        "elouak1002": 3,
-        "asfand987": 9
-      }
-    ],
-    [
-      "src/test/java/guitest/LoggerControllerTest.java",
-      {
-        "elouak1002": 3,
-        "asfand987": 9
-      }
-    ],
-    [
-      "src/test/java/linecreatorstest",
-      {
-        "elouak1002": 11,
-        "SV-Albert": 3
-      }
-    ],
-    [
-      "src/test/java/linecreatorstest/DataLineCreatorTest.java",
-      {
-        "SV-Albert": 2,
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
-      {
-        "elouak1002": 4,
-        "SV-Albert": 3
-      }
-    ],
-    [
-      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
-      {
-        "elouak1002": 2
-      }
-    ],
-    [
-      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
-      {
-        "elouak1002": 3
+        "authors": {
+          "elouak1002": 20,
+          "MihailBratanov": 3,
+          "SV-Albert": 6,
+          "SeptimiuPop": 4
+        },
+        "commits": 33
       }
     ],
     [
       "src/test/java/parsertest",
       {
-        "elouak1002": 16,
-        "SV-Albert": 8,
-        "MihailBratanov": 8
+        "authors": {
+          "elouak1002": 16,
+          "SV-Albert": 8,
+          "MihailBratanov": 8
+        },
+        "commits": 32
       }
     ],
     [
-      "src/test/java/parsertest/DataLineParserTest.java",
+      "src/main/java/GUI/XMLGeneratorController.java",
       {
-        "elouak1002": 4,
-        "SV-Albert": 2
+        "authors": {
+          "elouak1002": 2,
+          "ArchawinWongkittiruk": 11,
+          "ben-wsh10": 15
+        },
+        "commits": 28
       }
     ],
     [
-      "src/test/java/parsertest/NodeCreatorTest.java",
+      "src/main/java/GUI/OutputController.java",
       {
-        "elouak1002": 1,
-        "MihailBratanov": 2
+        "authors": {
+          "ArchawinWongkittiruk": 10,
+          "asfand987": 7,
+          "ben-wsh10": 1,
+          "MihailBratanov": 1
+        },
+        "commits": 27
+      }
+    ],
+    [
+      "src/main/java/parser/Parser.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "MihailBratanov": 7,
+          "elouak1002": 11,
+          "SV-Albert": 8
+        },
+        "commits": 27
+      }
+    ],
+    [
+      "src/main/java/linecreators",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 24
+        },
+        "commits": 25
+      }
+    ],
+    [
+      "src/main/java/dataprocessors/Debugger.java",
+      {
+        "authors": {
+          "elouak1002": 12,
+          "ArchawinWongkittiruk": 4,
+          "asfand987": 8
+        },
+        "commits": 24
+      }
+    ],
+    [
+      "src/main/java/datastructures",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 13,
+          "SV-Albert": 6,
+          "MihailBratanov": 4
+        },
+        "commits": 24
+      }
+    ],
+    [
+      "src/main/java/datastructures/Node.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 12,
+          "SV-Albert": 6,
+          "MihailBratanov": 4
+        },
+        "commits": 23
       }
     ],
     [
       "src/test/java/parsertest/ParserTest.java",
       {
-        "elouak1002": 11,
-        "SV-Albert": 5,
-        "MihailBratanov": 7
+        "authors": {
+          "elouak1002": 11,
+          "SV-Albert": 5,
+          "MihailBratanov": 7
+        },
+        "commits": 23
       }
     ],
     [
-      "src/test/java/parsertest/XMLParserTest.java",
+      "src/main/java/GUI/LoggerController.java",
       {
-        "SV-Albert": 3,
-        "elouak1002": 1
+        "authors": {
+          "ArchawinWongkittiruk": 8,
+          "asfand987": 14
+        },
+        "commits": 22
+      }
+    ],
+    [
+      "build.gradle",
+      {
+        "authors": {
+          "elouak1002": 10,
+          "garg-shubh": 3,
+          "SV-Albert": 5,
+          "ArchawinWongkittiruk": 2,
+          "ben-wsh10": 1
+        },
+        "commits": 21
+      }
+    ],
+    [
+      "src/main/resources/GUI/Input.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 13,
+          "ben-wsh10": 3
+        },
+        "commits": 21
+      }
+    ],
+    [
+      "src/main/resources/GUI/Output.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 7,
+          "ben-wsh10": 3,
+          "asfand987": 1
+        },
+        "commits": 17
+      }
+    ],
+    [
+      ".gitignore",
+      {
+        "authors": {
+          "elouak1002": 7,
+          "MihailBratanov": 2,
+          "ArchawinWongkittiruk": 5,
+          "SV-Albert": 2
+        },
+        "commits": 16
+      }
+    ],
+    [
+      "src/main/resources/GUI/XMLGenerator.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 6,
+          "ben-wsh10": 10
+        },
+        "commits": 16
+      }
+    ],
+    [
+      "src/main/java/dataprocessors/Wrangler.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "SV-Albert": 3,
+          "elouak1002": 4,
+          "MihailBratanov": 2,
+          "SeptimiuPop": 4
+        },
+        "commits": 14
+      }
+    ],
+    [
+      "src/main/java/parser/NodeCreator.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 4,
+          "MihailBratanov": 3,
+          "SV-Albert": 6
+        },
+        "commits": 14
+      }
+    ],
+    [
+      "src/test/java/linecreatorstest",
+      {
+        "authors": {
+          "elouak1002": 11,
+          "SV-Albert": 3
+        },
+        "commits": 14
+      }
+    ],
+    [
+      "src/main/java/GUI/Main.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 11,
+          "SV-Albert": 1
+        },
+        "commits": 13
+      }
+    ],
+    [
+      "src/main/java/GUI/LoadController.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 6,
+          "garg-shubh": 4,
+          "ben-wsh10": 1,
+          "k1889292": 1
+        },
+        "commits": 12
+      }
+    ],
+    [
+      "src/main/resources/Styling",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 8,
+          "ben-wsh10": 3
+        },
+        "commits": 12
+      }
+    ],
+    [
+      "src/test/java/guitest",
+      {
+        "authors": {
+          "elouak1002": 3,
+          "asfand987": 9
+        },
+        "commits": 12
+      }
+    ],
+    [
+      "src/test/java/guitest/LoggerControllerTest.java",
+      {
+        "authors": {
+          "elouak1002": 3,
+          "asfand987": 9
+        },
+        "commits": 12
+      }
+    ],
+    [
+      "src/test/java/dataprocessorstest/WranglerTest.java",
+      {
+        "authors": {
+          "SV-Albert": 5,
+          "SeptimiuPop": 4,
+          "elouak1002": 2
+        },
+        "commits": 11
       }
     ],
     [
       "src/test/resources",
       {
-        "MihailBratanov": 4,
-        "SV-Albert": 2,
-        "elouak1002": 3,
-        "ArchawinWongkittiruk": 2
+        "authors": {
+          "MihailBratanov": 4,
+          "SV-Albert": 2,
+          "elouak1002": 3,
+          "ArchawinWongkittiruk": 2
+        },
+        "commits": 11
       }
     ],
     [
-      "src/test/resources/XMLParserTestData1.txt",
+      "README.md",
       {
-        "SV-Albert": 1
+        "authors": {
+          "elouak1002": 7,
+          "ArchawinWongkittiruk": 2,
+          "SeptimiuPop": 1
+        },
+        "commits": 10
       }
     ],
     [
-      "src/test/resources/XMLParserTestData2.txt",
+      "src/main/resources/GUI/Load.fxml",
       {
-        "SV-Albert": 1
+        "authors": {
+          "ArchawinWongkittiruk": 5,
+          "ben-wsh10": 4
+        },
+        "commits": 9
+      }
+    ],
+    [
+      "src/main/resources/Styling/GUI.css",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 6,
+          "ben-wsh10": 3
+        },
+        "commits": 9
+      }
+    ],
+    [
+      "src/integration",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2,
+          "elouak1002": 6
+        },
+        "commits": 8
+      }
+    ],
+    [
+      "src/main/java/dataprocessors/XMLCreator.java",
+      {
+        "authors": {
+          "MihailBratanov": 4,
+          "elouak1002": 1,
+          "SV-Albert": 3
+        },
+        "commits": 8
+      }
+    ],
+    [
+      "src/main/java/linecreators/FileLinesCreator.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 7
+        },
+        "commits": 8
+      }
+    ],
+    [
+      "src/test/java/dataprocessorstest/DebuggerTest.java",
+      {
+        "authors": {
+          "elouak1002": 7,
+          "SV-Albert": 1
+        },
+        "commits": 8
+      }
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLCreatorTest.java",
+      {
+        "authors": {
+          "elouak1002": 4,
+          "MihailBratanov": 3,
+          "SV-Albert": 1
+        },
+        "commits": 8
+      }
+    ],
+    [
+      "src/integration/java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2,
+          "elouak1002": 5
+        },
+        "commits": 7
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2,
+          "elouak1002": 5
+        },
+        "commits": 7
+      }
+    ],
+    [
+      "src/main/java/linecreators/NeighbourLineCreator.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 6
+        },
+        "commits": 7
+      }
+    ],
+    [
+      "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
+      {
+        "authors": {
+          "elouak1002": 4,
+          "SV-Albert": 3
+        },
+        "commits": 7
+      }
+    ],
+    [
+      "src/main/java/linecreators/NodeListLineCreator.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 5
+        },
+        "commits": 6
+      }
+    ],
+    [
+      "src/main/resources/GUI/Home.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2,
+          "k1889292": 4
+        },
+        "commits": 6
+      }
+    ],
+    [
+      "src/test/java/parsertest/DataLineParserTest.java",
+      {
+        "authors": {
+          "elouak1002": 4,
+          "SV-Albert": 2
+        },
+        "commits": 6
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/HomeTest.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2,
+          "elouak1002": 3
+        },
+        "commits": 5
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 4
+        },
+        "commits": 5
+      }
+    ],
+    [
+      "src/main/java/GUI/HomeController.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "k1889292": 4
+        },
+        "commits": 5
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/AppRunner.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 3
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/OutputTest.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 3
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/main/java/linecreators/DataLineCreator.java",
+      {
+        "authors": {
+          "elouak1002": 4
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/main/java/parser/DataLineParser.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 3
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/main/java/parser/XMLParser.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 1,
+          "SV-Albert": 2
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/test/java/datastructurestest",
+      {
+        "authors": {
+          "elouak1002": 3,
+          "SV-Albert": 1
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/test/java/datastructurestest/DataLineTest.java",
+      {
+        "authors": {
+          "elouak1002": 3,
+          "SV-Albert": 1
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/test/java/linecreatorstest/DataLineCreatorTest.java",
+      {
+        "authors": {
+          "SV-Albert": 2,
+          "elouak1002": 2
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "src/test/java/parsertest/XMLParserTest.java",
+      {
+        "authors": {
+          "SV-Albert": 3,
+          "elouak1002": 1
+        },
+        "commits": 4
+      }
+    ],
+    [
+      "Logo.PNG",
+      {
+        "authors": {
+          "SeptimiuPop": 3
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/InputTest.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 2
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "src/integration/java/guiintegrationtest/LoadTest.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 2
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "src/main/java/linecreators/LineCreator.java",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1,
+          "elouak1002": 2
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
+      {
+        "authors": {
+          "elouak1002": 3
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "src/test/java/parsertest/NodeCreatorTest.java",
+      {
+        "authors": {
+          "elouak1002": 1,
+          "MihailBratanov": 2
+        },
+        "commits": 3
       }
     ],
     [
       "src/test/resources/XMLexample.txt",
       {
-        "MihailBratanov": 3
+        "authors": {
+          "MihailBratanov": 3
+        },
+        "commits": 3
+      }
+    ],
+    [
+      "Logo.ico",
+      {
+        "authors": {
+          "SeptimiuPop": 1,
+          "SV-Albert": 1
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/main/java/dataprocessors/XMLDebugger.java",
+      {
+        "authors": {
+          "elouak1002": 2
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/main/java/datastructures/DataLine.java",
+      {
+        "authors": {
+          "elouak1002": 2
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/main/resources/GUI/Logger.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 2
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
+      {
+        "authors": {
+          "elouak1002": 2
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
+      {
+        "authors": {
+          "elouak1002": 2
+        },
+        "commits": 2
+      }
+    ],
+    [
+      "src/integration/resources",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/XMLParserTestData1.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/XMLParserTestData2.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/XMLexample.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/fullInputData.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/testData.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/testFileLinesCreatorData.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/integration/resources/testNeighbourData.txt",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/main/java/datastructures/Status.java",
+      {
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/main/resources/Styling/Background.jpg",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/main/resources/Styling/Logo.PNG",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/test/resources/XMLParserTestData1.txt",
+      {
+        "authors": {
+          "SV-Albert": 1
+        },
+        "commits": 1
+      }
+    ],
+    [
+      "src/test/resources/XMLParserTestData2.txt",
+      {
+        "authors": {
+          "SV-Albert": 1
+        },
+        "commits": 1
       }
     ],
     [
       "src/test/resources/fullInputData.txt",
       {
-        "SV-Albert": 1
+        "authors": {
+          "SV-Albert": 1
+        },
+        "commits": 1
       }
     ],
     [
       "src/test/resources/testData.txt",
       {
-        "SV-Albert": 1
+        "authors": {
+          "SV-Albert": 1
+        },
+        "commits": 1
       }
     ],
     [
       "src/test/resources/testFileLinesCreatorData.txt",
       {
-        "elouak1002": 1
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
       }
     ],
     [
       "src/test/resources/testNeighbourData.txt",
       {
-        "elouak1002": 1
+        "authors": {
+          "elouak1002": 1
+        },
+        "commits": 1
       }
     ]
   ],
@@ -8503,388 +8788,6 @@
         "src/main/resources/GUI",
         "src/main/resources/GUI/Home.fxml"
       ]
-    ]
-  ],
-  "fileCommitCounts": [
-    [
-      "src",
-      477
-    ],
-    [
-      "src/main",
-      373
-    ],
-    [
-      "src/main/java",
-      349
-    ],
-    [
-      "src/main/java/GUI",
-      178
-    ],
-    [
-      "src/test",
-      147
-    ],
-    [
-      "src/test/java",
-      142
-    ],
-    [
-      "src/main/resources",
-      95
-    ],
-    [
-      "src/main/resources/GUI",
-      75
-    ],
-    [
-      "src/main/java/dataprocessors",
-      66
-    ],
-    [
-      "src/main/java/parser",
-      57
-    ],
-    [
-      "src/main/java/GUI/Root.java",
-      48
-    ],
-    [
-      "src/main/java/GUI/InputController.java",
-      45
-    ],
-    [
-      "src/test/java/dataprocessorstest",
-      33
-    ],
-    [
-      "src/test/java/parsertest",
-      32
-    ],
-    [
-      "src/main/java/GUI/XMLGeneratorController.java",
-      28
-    ],
-    [
-      "src/main/java/GUI/OutputController.java",
-      27
-    ],
-    [
-      "src/main/java/parser/Parser.java",
-      27
-    ],
-    [
-      "src/main/java/linecreators",
-      25
-    ],
-    [
-      "src/main/java/dataprocessors/Debugger.java",
-      24
-    ],
-    [
-      "src/main/java/datastructures",
-      24
-    ],
-    [
-      "src/main/java/datastructures/Node.java",
-      23
-    ],
-    [
-      "src/test/java/parsertest/ParserTest.java",
-      23
-    ],
-    [
-      "src/main/java/GUI/LoggerController.java",
-      22
-    ],
-    [
-      "build.gradle",
-      21
-    ],
-    [
-      "src/main/resources/GUI/Input.fxml",
-      21
-    ],
-    [
-      "src/main/resources/GUI/Output.fxml",
-      17
-    ],
-    [
-      ".gitignore",
-      16
-    ],
-    [
-      "src/main/resources/GUI/XMLGenerator.fxml",
-      16
-    ],
-    [
-      "src/main/java/dataprocessors/Wrangler.java",
-      14
-    ],
-    [
-      "src/main/java/parser/NodeCreator.java",
-      14
-    ],
-    [
-      "src/test/java/linecreatorstest",
-      14
-    ],
-    [
-      "src/main/java/GUI/Main.java",
-      13
-    ],
-    [
-      "src/main/java/GUI/LoadController.java",
-      12
-    ],
-    [
-      "src/main/resources/Styling",
-      12
-    ],
-    [
-      "src/test/java/guitest",
-      12
-    ],
-    [
-      "src/test/java/guitest/LoggerControllerTest.java",
-      12
-    ],
-    [
-      "src/test/java/dataprocessorstest/WranglerTest.java",
-      11
-    ],
-    [
-      "src/test/resources",
-      11
-    ],
-    [
-      "README.md",
-      10
-    ],
-    [
-      "src/main/resources/GUI/Load.fxml",
-      9
-    ],
-    [
-      "src/main/resources/Styling/GUI.css",
-      9
-    ],
-    [
-      "src/integration",
-      8
-    ],
-    [
-      "src/main/java/dataprocessors/XMLCreator.java",
-      8
-    ],
-    [
-      "src/main/java/linecreators/FileLinesCreator.java",
-      8
-    ],
-    [
-      "src/test/java/dataprocessorstest/DebuggerTest.java",
-      8
-    ],
-    [
-      "src/test/java/dataprocessorstest/XMLCreatorTest.java",
-      8
-    ],
-    [
-      "src/integration/java",
-      7
-    ],
-    [
-      "src/integration/java/guiintegrationtest",
-      7
-    ],
-    [
-      "src/main/java/linecreators/NeighbourLineCreator.java",
-      7
-    ],
-    [
-      "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
-      7
-    ],
-    [
-      "src/main/java/linecreators/NodeListLineCreator.java",
-      6
-    ],
-    [
-      "src/main/resources/GUI/Home.fxml",
-      6
-    ],
-    [
-      "src/test/java/parsertest/DataLineParserTest.java",
-      6
-    ],
-    [
-      "src/integration/java/guiintegrationtest/HomeTest.java",
-      5
-    ],
-    [
-      "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
-      5
-    ],
-    [
-      "src/main/java/GUI/HomeController.java",
-      5
-    ],
-    [
-      "src/integration/java/guiintegrationtest/AppRunner.java",
-      4
-    ],
-    [
-      "src/integration/java/guiintegrationtest/OutputTest.java",
-      4
-    ],
-    [
-      "src/main/java/linecreators/DataLineCreator.java",
-      4
-    ],
-    [
-      "src/main/java/parser/DataLineParser.java",
-      4
-    ],
-    [
-      "src/main/java/parser/XMLParser.java",
-      4
-    ],
-    [
-      "src/test/java/datastructurestest",
-      4
-    ],
-    [
-      "src/test/java/datastructurestest/DataLineTest.java",
-      4
-    ],
-    [
-      "src/test/java/linecreatorstest/DataLineCreatorTest.java",
-      4
-    ],
-    [
-      "src/test/java/parsertest/XMLParserTest.java",
-      4
-    ],
-    [
-      "Logo.PNG",
-      3
-    ],
-    [
-      "src/integration/java/guiintegrationtest/InputTest.java",
-      3
-    ],
-    [
-      "src/integration/java/guiintegrationtest/LoadTest.java",
-      3
-    ],
-    [
-      "src/main/java/linecreators/LineCreator.java",
-      3
-    ],
-    [
-      "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
-      3
-    ],
-    [
-      "src/test/java/parsertest/NodeCreatorTest.java",
-      3
-    ],
-    [
-      "src/test/resources/XMLexample.txt",
-      3
-    ],
-    [
-      "Logo.ico",
-      2
-    ],
-    [
-      "src/main/java/dataprocessors/XMLDebugger.java",
-      2
-    ],
-    [
-      "src/main/java/datastructures/DataLine.java",
-      2
-    ],
-    [
-      "src/main/resources/GUI/Logger.fxml",
-      2
-    ],
-    [
-      "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
-      2
-    ],
-    [
-      "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
-      2
-    ],
-    [
-      "src/integration/resources",
-      1
-    ],
-    [
-      "src/integration/resources/XMLParserTestData1.txt",
-      1
-    ],
-    [
-      "src/integration/resources/XMLParserTestData2.txt",
-      1
-    ],
-    [
-      "src/integration/resources/XMLexample.txt",
-      1
-    ],
-    [
-      "src/integration/resources/fullInputData.txt",
-      1
-    ],
-    [
-      "src/integration/resources/testData.txt",
-      1
-    ],
-    [
-      "src/integration/resources/testFileLinesCreatorData.txt",
-      1
-    ],
-    [
-      "src/integration/resources/testNeighbourData.txt",
-      1
-    ],
-    [
-      "src/main/java/datastructures/Status.java",
-      1
-    ],
-    [
-      "src/main/resources/Styling/Background.jpg",
-      1
-    ],
-    [
-      "src/main/resources/Styling/Logo.PNG",
-      1
-    ],
-    [
-      "src/test/resources/XMLParserTestData1.txt",
-      1
-    ],
-    [
-      "src/test/resources/XMLParserTestData2.txt",
-      1
-    ],
-    [
-      "src/test/resources/fullInputData.txt",
-      1
-    ],
-    [
-      "src/test/resources/testData.txt",
-      1
-    ],
-    [
-      "src/test/resources/testFileLinesCreatorData.txt",
-      1
-    ],
-    [
-      "src/test/resources/testNeighbourData.txt",
-      1
     ]
   ]
 }
