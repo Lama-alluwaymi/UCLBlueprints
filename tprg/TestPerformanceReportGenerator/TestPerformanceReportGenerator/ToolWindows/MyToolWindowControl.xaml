@@ -13,151 +13,231 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              Name="TPRG">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="LightBlue"/>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                                <Setter Property="BorderThickness" TargetName="border" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <ControlTemplate x:Key="RoundButtonTemplate" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="3" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="true">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
     <Grid>
-        <ScrollViewer>
-            <StackPanel Orientation="Vertical">
-                <Label x:Name="lblHeadline"
-                   Margin="10"
-                   HorizontalAlignment="Center"
-                   FontSize="14">Test Performance Report Generator</Label>
-                <Separator/>
-                <StackPanel Name="testResultsPanel" Orientation="Vertical" Width="280" Margin="2 0 0 10">
-                    <Label FontSize="13" Content="Test Results" HorizontalAlignment="Center"/>
-                    <Label>Total Number Of:</Label>
-                    <Grid Width="273">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="130"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
+        <DockPanel HorizontalAlignment="Stretch" LastChildFill="True" VerticalAlignment="Stretch">
+            <Label x:Name="lblHeadline" DockPanel.Dock="Top"
+                   Margin="10 10 10 5" FontWeight="SemiBold"
+                   HorizontalAlignment="Center" Content="Code Quality Report Generator"
+                   FontSize="18"/>
+            <Separator DockPanel.Dock="Top"/>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" >
+                    <StackPanel Name="testResultsPanel" Orientation="Vertical" Width="280" Margin="0 5 0 10">
+                        <Label FontSize="16" Content="Test Results" FontWeight="DemiBold" HorizontalAlignment="Center"/>
+                        <Label Margin="10 0 0 10" FontWeight="DemiBold">Total Number Of</Label>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="130"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
 
-                        <Label Content="Tests: "
-                           Grid.Row="0" Grid.Column="0"
-                           VerticalContentAlignment="Center" Margin="10 0 0 5"
-                            />
-                        <TextBox Name="totalTestInput" 
-                             Grid.Row="0" Grid.Column="1"
-                             VerticalContentAlignment="Center"
-                             Margin="2"
-                             Visibility="Visible"/>
-                        <Label Name="total" Content="" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
+                            <Label Content="Tests: "
+                                Grid.Row="0" Grid.Column="0"
+                                VerticalContentAlignment="Center" Margin="10 0 0 5"/>
+                            <TextBox Name="totalTestInput" 
+                                 Grid.Row="0" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"
+                                 Visibility="Visible"/>
+                            <Label Name="total" Content="" Grid.Row="0" Grid.Column="1" Visibility="Collapsed"/>
 
-                        <Label Content="Passed Tests: "
-                           Grid.Row="1" Grid.Column="0"
-                           VerticalContentAlignment="Center" Margin="10 0 0 5"/>
-                        <TextBox Name="passedTestInput" 
-                             Grid.Row="1" Grid.Column="1"
-                             VerticalContentAlignment="Center"
-                             Margin="2"
-                             Visibility="Visible"/>
-                        <Label Name="passed" Content="" Grid.Row="1" Grid.Column="1" Visibility="Collapsed"/>
+                            <Label Content="Passed Tests: "
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalContentAlignment="Center" Margin="10 0 0 5"/>
+                            <TextBox Name="passedTestInput" 
+                                 Grid.Row="1" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"
+                                 Visibility="Visible"/>
+                            <Label Name="passed" Content="" Grid.Row="1" Grid.Column="1" Visibility="Collapsed"/>
+                            <Label Content="Failed Tests: "
+                                Grid.Row="2" Grid.Column="0"
+                                VerticalContentAlignment="Center" Margin="10 0 0 5"/>
+                            <TextBox Name="failedTestInput" 
+                                 Grid.Row="2" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"
+                                 Visibility="Visible"/>
+                            <Label Name="failed" Content="" Grid.Row="2" Grid.Column="1" Visibility="Collapsed"/>
 
-                        <Label Content="Failed Tests: "
-                           Grid.Row="2" Grid.Column="0"
-                           VerticalContentAlignment="Center" Margin="10 0 0 5"
-                           />
-                        <TextBox Name="failedTestInput" 
-                             Grid.Row="2" Grid.Column="1"
-                             VerticalContentAlignment="Center"
-                             Margin="2"
-                             Visibility="Visible"/>
-                        <Label Name="failed" Content="" Grid.Row="2" Grid.Column="1" Visibility="Collapsed"/>
+                            <Label Content="Skipped Tests: "
+                               Grid.Row="3" Grid.Column="0"
+                               VerticalContentAlignment="Center" Margin="10 0 0 5"/>
+                            <TextBox Name="skippedTestInput" 
+                                 Grid.Row="3" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"
+                                 Visibility="Visible"/>
+                            <Label Name="skipped" Content="" Grid.Row="3" Grid.Column="1" Visibility="Collapsed"/>
+                            <Label Content="Duration (ms): "
+                               Grid.Row="4" Grid.Column="0"
+                               VerticalContentAlignment="Center" Margin="10 0 0 5"/>
+                            <TextBox Name="durationInput" 
+                                 Grid.Row="4" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"
+                                 Visibility="Visible"/>
+                            <Label Name="totduration" Content="" Grid.Row="4" Grid.Column="1" Visibility="Collapsed"/>
+                        </Grid>
+                        <CheckBox Name="chk_manual"
+                          Content="Fetch results automatically"
+                          IsChecked="False"
+                          Margin="13 5 0 5"
+                          Checked="autoRunChecked"
+                          Unchecked="autoRunUnchecked"
+                          VerticalContentAlignment="Center"
+                          FontSize="10" />
+                        <Button Template="{DynamicResource RoundButtonTemplate}" Content="Run Test!"
+                            Click="button1_Click"
+                            Width="110"
+                            Height="28" Margin="0 5 0 0"
+                            Name="autoTestBtn" Background="LightBlue"
+                            IsEnabled="False" />
+                    </StackPanel>
 
-                        <Label Content="Skipped Tests: "
-                           Grid.Row="3" Grid.Column="0"
-                           VerticalContentAlignment="Center" Margin="10 0 0 5"/>
-                        <TextBox Name="skippedTestInput" 
-                             Grid.Row="3" Grid.Column="1"
-                             VerticalContentAlignment="Center"
-                             Margin="2"
-                             Visibility="Visible"/>
-                        <Label Name="skipped" Content="" Grid.Row="3" Grid.Column="1" Visibility="Collapsed"/>
+                    <Separator Margin="0 5 0 0"/>
 
-                        <Label Content="Duration (ms): "
-                           Grid.Row="4" Grid.Column="0"
-                           VerticalContentAlignment="Center" Margin="10 0 0 5"/>
-                        <TextBox Name="durationInput" 
-                             Grid.Row="4" Grid.Column="1"
-                             VerticalContentAlignment="Center"
-                             Margin="2"
-                             Visibility="Visible"/>
-                        <Label Name="totduration" Content="" Grid.Row="4" Grid.Column="1" Visibility="Collapsed"/>
-                    </Grid>
-                    <CheckBox Name="chk_manual"
-                      Content="Fetch results automatically"
-                      IsChecked="False"
-                      Margin="2 0 0 5"
-                      Checked="autoRunChecked"
-                      Unchecked="autoRunUnchecked"
-                      VerticalContentAlignment="Center"
-                      FontSize="10"
-                      />
-                    <Button Content="Run Test!"
-                    Click="button1_Click"
-                    Width="95"
-                    Height="28"
-                    Name="autoTestBtn" 
-                    IsEnabled="False"
-                    />
-                </StackPanel>
-
-                <Separator/>
-
-                <StackPanel Orientation="Vertical" Margin="2 0 0 5">
-                    <Label Content="Code Metrics" FontSize="13" HorizontalAlignment="Center"/>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="130"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Label FontSize="11" Content="Maintainability Index: " Grid.Row="0" Grid.Column="0" Margin="10 0 0 5"/>
-                        <TextBox Name="maintainabilityInput"
+                    <StackPanel Orientation="Vertical" Margin="2 0 0 5">
+                        <Label Content="Code Metrics" FontSize="16" Margin="0 5 0 10" FontWeight="DemiBold" HorizontalAlignment="Center"/>
+                        <Grid HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="130"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Label Content="Maintainability Index: " Grid.Row="0" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="maintainabilityInput"
                                  Grid.Row="0" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                        <Label FontSize="11" Content="Cyclomatic Complexity: " Grid.Row="1" Grid.Column="0" Margin="10 0 0 5"/>
-                        <TextBox Name="cyclomaticInput"
+                            <Label Content="Cyclomatic Complexity: " Grid.Row="1" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="cyclomaticInput"
                                  Grid.Row="1" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                        <Label FontSize="11" Content="Class Coupling: " Grid.Row="2" Grid.Column="0" Margin="10 0 0 5"/>
-                        <TextBox Name="classCouplingInput"
+                            <Label Content="Class Coupling: " Grid.Row="2" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="classCouplingInput"
                                  Grid.Row="2" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                        <Label FontSize="11" Content="Lines of Source Code: " Grid.Row="3" Grid.Column="0" Margin="10 0 0 5"/>
-                        <TextBox Name="loscInput"
+                            <Label Content="Lines of Source Code: " Grid.Row="3" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="loscInput"
                                  Grid.Row="3" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                        <Label FontSize="11" Content="Lines of Exec. Code: " Grid.Row="4" Grid.Column="0" Margin="10 0 0 5"/>
-                        <TextBox Name="loecInput"
+                            <Label Content="Lines of Exec. Code: " Grid.Row="4" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="loecInput"
                                  Grid.Row="4" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                    </Grid>
-                </StackPanel>
-                <Separator/>
-                <Button Name="submitData" 
+                            <Label Content="Line Coverage: " Grid.Row="5" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="lineCoverageInput"
+                                 Grid.Row="5" Grid.Column="1"
+                                 VerticalContentAlignment="Center"
+                                 Margin="2"/>
+                        </Grid>
+                    </StackPanel>
+                    <Separator Margin="0 10"/>
+                    <Button Name="submitData" Template="{DynamicResource RoundButtonTemplate}"
                         Content="Generate" 
                         Width="110" Height="30"
-                        Click="submitData_Click"
-                        Margin="0 8 0 5"/>
-                
-            </StackPanel>
-        </ScrollViewer>
+                        Click="submitData_Click" Background="LightBlue"
+                        Margin="0 8 0 10"/>
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </DockPanel>
     </Grid>
 </UserControl>
