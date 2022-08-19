@@ -168,7 +168,6 @@ function App() {
                 nameKey='name'
                 label={(entry) => `${entry.name} (${entry.value}%)`}
                 isAnimationActive={false}
-                fill='#3182CE'
               />
             </PieChart>
           </Flex>
