@@ -23,11 +23,13 @@ module.exports = async (octokitAuth, repo) => {
   ).data.tree;
 
   const fileContributors = {};
+  const fileCommits = {};
   for (const file of tree) {
     // https://stackoverflow.com/a/46762417
-    const commits = (
-      await octokit.request(`GET /repos/{owner}/{repo}/commits?path=${file.path}`, repo)
-    ).data;
+    const { data: commits, headers } = await octokit.request(
+      `GET /repos/{owner}/{repo}/commits?per_page=100&path=${file.path}`,
+      repo
+    );
 
     const authors = [];
     for (const commit of commits) {
@@ -43,6 +45,20 @@ module.exports = async (octokitAuth, repo) => {
 
     fileContributors[file.path] = authors;
 
+    // https://stackoverflow.com/a/62867468
+    const pages = headers.link?.split(',')[1].match(/.*page=(?<page_num>\d+)/).groups.page_num;
+    if (pages) {
+      const lastPageCommits = (
+        await octokit.request(
+          `GET /repos/{owner}/{repo}/commits?per_page=100&page=${pages}&path=${file.path}`,
+          repo
+        )
+      ).data;
+      fileCommits[file.path] = parseInt(commits.length * (pages - 1) + lastPageCommits.length);
+    } else {
+      fileCommits[file.path] = parseInt(commits.length);
+    }
+
     console.log(file.path);
   }
 
@@ -52,28 +68,6 @@ module.exports = async (octokitAuth, repo) => {
       if (authors.includes(contributor)) {
         files.push(file);
       }
-    }
-  }
-
-  const fileCommits = {};
-  for (const file of tree) {
-    // https://stackoverflow.com/a/62867468
-    // Some headers have an undefined link
-    try {
-      const commits = (
-        await octokit.request(
-          `GET /repos/{owner}/{repo}/commits?per_page=1&path=${file.path}`,
-          repo
-        )
-      ).headers.link
-        .split(',')[1]
-        .match(/.*page=(?<page_num>\d+)/).groups.page_num;
-
-      fileCommits[file.path] = parseInt(commits);
-
-      console.log(file.path);
-    } catch (error) {
-      continue;
     }
   }
 

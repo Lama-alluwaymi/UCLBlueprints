@@ -7514,7 +7514,8 @@
         "ArchawinWongkittiruk",
         "elouak1002",
         "SV-Albert",
-        "garg-shubh"
+        "garg-shubh",
+        "MihailBratanov"
       ]
     ],
     [
@@ -7635,7 +7636,8 @@
         "elouak1002",
         "garg-shubh",
         "MihailBratanov",
-        "SV-Albert"
+        "SV-Albert",
+        "asfand987"
       ]
     ],
     [
@@ -7645,7 +7647,8 @@
         "elouak1002",
         "garg-shubh",
         "MihailBratanov",
-        "SV-Albert"
+        "SV-Albert",
+        "asfand987"
       ]
     ],
     [
@@ -7654,7 +7657,10 @@
         "ArchawinWongkittiruk",
         "elouak1002",
         "garg-shubh",
-        "asfand987"
+        "asfand987",
+        "SV-Albert",
+        "ben-wsh10",
+        "k1889292"
       ]
     ],
     [
@@ -7713,7 +7719,10 @@
         "ArchawinWongkittiruk",
         "elouak1002",
         "garg-shubh",
-        "asfand987"
+        "asfand987",
+        "k1889292",
+        "ben-wsh10",
+        "SV-Albert"
       ]
     ],
     [
@@ -7731,7 +7740,8 @@
         "MihailBratanov",
         "elouak1002",
         "asfand987",
-        "SV-Albert"
+        "SV-Albert",
+        "SeptimiuPop"
       ]
     ],
     [
@@ -7885,7 +7895,10 @@
       [
         "ArchawinWongkittiruk",
         "asfand987",
-        "ben-wsh10"
+        "ben-wsh10",
+        "k1889292",
+        "garg-shubh",
+        "elouak1002"
       ]
     ],
     [
@@ -7893,7 +7906,8 @@
       [
         "ArchawinWongkittiruk",
         "asfand987",
-        "ben-wsh10"
+        "ben-wsh10",
+        "k1889292"
       ]
     ],
     [
@@ -7970,7 +7984,10 @@
         "elouak1002",
         "SV-Albert",
         "garg-shubh",
-        "MihailBratanov"
+        "MihailBratanov",
+        "ArchawinWongkittiruk",
+        "asfand987",
+        "SeptimiuPop"
       ]
     ],
     [
@@ -7979,7 +7996,10 @@
         "elouak1002",
         "SV-Albert",
         "garg-shubh",
-        "MihailBratanov"
+        "MihailBratanov",
+        "ArchawinWongkittiruk",
+        "asfand987",
+        "SeptimiuPop"
       ]
     ],
     [
@@ -8221,6 +8241,7 @@
         "src/main/java/parser/NodeCreator.java",
         "src/main/java/parser/Parser.java",
         "src/main/java/parser/XMLParser.java",
+        "src/main/resources",
         "src/test",
         "src/test/java",
         "src/test/java/dataprocessorstest",
@@ -8301,6 +8322,8 @@
         "src/main/resources/Styling/Background.jpg",
         "src/main/resources/Styling/GUI.css",
         "src/main/resources/Styling/Logo.PNG",
+        "src/test",
+        "src/test/java",
         "src/test/resources"
       ]
     ],
@@ -8313,8 +8336,10 @@
         "src",
         "src/main",
         "src/main/java",
+        "src/main/java/GUI",
         "src/main/java/GUI/InputController.java",
         "src/main/java/GUI/Main.java",
+        "src/main/java/GUI/Root.java",
         "src/main/java/dataprocessors",
         "src/main/java/dataprocessors/Wrangler.java",
         "src/main/java/dataprocessors/XMLCreator.java",
@@ -8350,6 +8375,7 @@
       "MihailBratanov",
       [
         ".gitignore",
+        "src",
         "src/main",
         "src/main/java",
         "src/main/java/GUI/OutputController.java",
@@ -8373,26 +8399,10 @@
       ]
     ],
     [
-      "ben-wsh10",
-      [
-        "build.gradle",
-        "src/main/java/GUI/InputController.java",
-        "src/main/java/GUI/LoadController.java",
-        "src/main/java/GUI/OutputController.java",
-        "src/main/java/GUI/XMLGeneratorController.java",
-        "src/main/resources",
-        "src/main/resources/GUI",
-        "src/main/resources/GUI/Input.fxml",
-        "src/main/resources/GUI/Load.fxml",
-        "src/main/resources/GUI/Output.fxml",
-        "src/main/resources/GUI/XMLGenerator.fxml",
-        "src/main/resources/Styling",
-        "src/main/resources/Styling/GUI.css"
-      ]
-    ],
-    [
       "asfand987",
       [
+        "src/main",
+        "src/main/java",
         "src/main/java/GUI",
         "src/main/java/GUI/InputController.java",
         "src/main/java/GUI/LoggerController.java",
@@ -8403,8 +8413,30 @@
         "src/main/resources",
         "src/main/resources/GUI",
         "src/main/resources/GUI/Output.fxml",
+        "src/test",
+        "src/test/java",
         "src/test/java/guitest",
         "src/test/java/guitest/LoggerControllerTest.java"
+      ]
+    ],
+    [
+      "ben-wsh10",
+      [
+        "build.gradle",
+        "src/main/java/GUI",
+        "src/main/java/GUI/InputController.java",
+        "src/main/java/GUI/LoadController.java",
+        "src/main/java/GUI/OutputController.java",
+        "src/main/java/GUI/Root.java",
+        "src/main/java/GUI/XMLGeneratorController.java",
+        "src/main/resources",
+        "src/main/resources/GUI",
+        "src/main/resources/GUI/Input.fxml",
+        "src/main/resources/GUI/Load.fxml",
+        "src/main/resources/GUI/Output.fxml",
+        "src/main/resources/GUI/XMLGenerator.fxml",
+        "src/main/resources/Styling",
+        "src/main/resources/Styling/GUI.css"
       ]
     ],
     [
@@ -8419,6 +8451,7 @@
         "src/main/java/GUI/LoadController.java",
         "src/main/java/GUI/Root.java",
         "src/main/java/parser",
+        "src/main/resources",
         "src/test",
         "src/test/java"
       ]
@@ -8429,7 +8462,10 @@
         "Logo.PNG",
         "Logo.ico",
         "README.md",
+        "src/main/java/dataprocessors",
         "src/main/java/dataprocessors/Wrangler.java",
+        "src/test",
+        "src/test/java",
         "src/test/java/dataprocessorstest",
         "src/test/java/dataprocessorstest/WranglerTest.java"
       ]
@@ -8437,8 +8473,12 @@
     [
       "k1889292",
       [
+        "src/main/java/GUI",
         "src/main/java/GUI/HomeController.java",
         "src/main/java/GUI/LoadController.java",
+        "src/main/java/GUI/Root.java",
+        "src/main/resources",
+        "src/main/resources/GUI",
         "src/main/resources/GUI/Home.fxml"
       ]
     ]
