@@ -162,11 +162,11 @@ function App() {
               <Pie
                 data={authorCommits.map((contributor) => ({
                   name: contributor.author.login,
-                  value: contributor.total,
+                  value: Math.round((contributor.total / totalCommits) * 100),
                 }))}
                 dataKey='value'
                 nameKey='name'
-                label={(entry) => entry.name}
+                label={(entry) => `${entry.name} (${entry.value}%)`}
                 isAnimationActive={false}
                 fill='#3182CE'
               />
