@@ -8,9 +8,10 @@ import sampleData from './sampleData.json';
 
 function App() {
   const [token, setToken] = useState('');
-  const [url, setURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
+  const [reqURL, setReqURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
   const [loading, setLoading] = useState(false);
 
+  const [url, setURL] = useState('');
   const [name, setName] = useState('');
 
   const [authorCommits, setAuthorCommits] = useState([]);
@@ -36,6 +37,7 @@ function App() {
   const getReport = async () => {
     setLoading(true);
 
+    setURL('');
     setName('');
     setAuthorCommits([]);
     setTotalCommits(0);
@@ -46,10 +48,11 @@ function App() {
     setFileCommitCounts([]);
 
     const data = await generateReport(token, {
-      owner: url.split('/')[3],
-      repo: url.split('/')[4],
+      owner: reqURL.split('/')[3],
+      repo: reqURL.split('/')[4],
     });
 
+    setURL(data.url);
     setName(data.name);
     setAuthorCommits(data.authorCommits);
     setTotalCommits(data.totalCommits);
@@ -63,6 +66,7 @@ function App() {
   };
 
   const showSampleReport = () => {
+    setURL(sampleData.url);
     setName(sampleData.name);
     setAuthorCommits(sampleData.authorCommits);
     setTotalCommits(sampleData.totalCommits);
@@ -82,10 +86,10 @@ function App() {
       </Link>
       <Input value={token} onChange={onEditToken} type='password' mb={5} />
       <Text>GitHub Repository URL</Text>
-      <Input value={url} onChange={(e) => setURL(e.currentTarget.value)} mb={5} />
+      <Input value={reqURL} onChange={(e) => setReqURL(e.currentTarget.value)} mb={5} />
       <Button
         onClick={() => getReport()}
-        disabled={!url.includes('https://github.com')}
+        disabled={!reqURL.includes('https://github.com')}
         colorScheme='blue'
         isLoading={loading}
         loadingText='Generating'

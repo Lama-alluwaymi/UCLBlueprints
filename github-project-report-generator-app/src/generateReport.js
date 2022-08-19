@@ -4,7 +4,7 @@ module.exports = async (octokitAuth, repo) => {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/repos/repos#get-a-repository
-  const repoName = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data.name;
+  const { name, html_url } = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data;
 
   // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
   const commitActivity = (
@@ -78,7 +78,8 @@ module.exports = async (octokitAuth, repo) => {
   }
 
   return {
-    name: repoName,
+    url: html_url,
+    name: name,
     authorCommits: commitActivity.sort((a, b) => b.total - a.total),
     totalCommits: commitActivity.reduce((a, b) => a + b.total, 0),
     totalChanges: commitActivity
