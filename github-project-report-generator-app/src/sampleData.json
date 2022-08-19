@@ -7470,724 +7470,724 @@
   "fileAuthors": [
     [
       ".gitignore",
-      [
-        "elouak1002",
-        "MihailBratanov",
-        "ArchawinWongkittiruk",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 7,
+        "MihailBratanov": 2,
+        "ArchawinWongkittiruk": 5,
+        "SV-Albert": 2
+      }
     ],
     [
       "Logo.PNG",
-      [
-        "SeptimiuPop"
-      ]
+      {
+        "SeptimiuPop": 3
+      }
     ],
     [
       "Logo.ico",
-      [
-        "SeptimiuPop",
-        "SV-Albert"
-      ]
+      {
+        "SeptimiuPop": 1,
+        "SV-Albert": 1
+      }
     ],
     [
       "README.md",
-      [
-        "elouak1002",
-        "ArchawinWongkittiruk",
-        "SeptimiuPop"
-      ]
+      {
+        "elouak1002": 7,
+        "ArchawinWongkittiruk": 2,
+        "SeptimiuPop": 1
+      }
     ],
     [
       "build.gradle",
-      [
-        "elouak1002",
-        "garg-shubh",
-        "SV-Albert",
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "elouak1002": 10,
+        "garg-shubh": 3,
+        "SV-Albert": 5,
+        "ArchawinWongkittiruk": 2,
+        "ben-wsh10": 1
+      }
     ],
     [
       "src",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "SV-Albert",
-        "garg-shubh",
-        "MihailBratanov"
-      ]
+      {
+        "ArchawinWongkittiruk": 9,
+        "elouak1002": 52,
+        "SV-Albert": 5,
+        "garg-shubh": 32,
+        "MihailBratanov": 2
+      }
     ],
     [
       "src/integration",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 2,
+        "elouak1002": 6
+      }
     ],
     [
       "src/integration/java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 2,
+        "elouak1002": 5
+      }
     ],
     [
       "src/integration/java/guiintegrationtest",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 2,
+        "elouak1002": 5
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/AppRunner.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 3
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/HomeTest.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 2,
+        "elouak1002": 3
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/InputTest.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 2
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/LoadTest.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 2
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/OutputTest.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 3
+      }
     ],
     [
       "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 4
+      }
     ],
     [
       "src/integration/resources",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/XMLParserTestData1.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/XMLParserTestData2.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/XMLexample.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/fullInputData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/testData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/testFileLinesCreatorData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/integration/resources/testNeighbourData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/main",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "garg-shubh",
-        "MihailBratanov",
-        "SV-Albert",
-        "asfand987"
-      ]
+      {
+        "ArchawinWongkittiruk": 34,
+        "elouak1002": 39,
+        "garg-shubh": 13,
+        "MihailBratanov": 3,
+        "SV-Albert": 2,
+        "asfand987": 9
+      }
     ],
     [
       "src/main/java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "garg-shubh",
-        "MihailBratanov",
-        "SV-Albert",
-        "asfand987"
-      ]
+      {
+        "ArchawinWongkittiruk": 32,
+        "elouak1002": 40,
+        "garg-shubh": 13,
+        "MihailBratanov": 3,
+        "SV-Albert": 2,
+        "asfand987": 10
+      }
     ],
     [
       "src/main/java/GUI",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "garg-shubh",
-        "asfand987",
-        "SV-Albert",
-        "ben-wsh10",
-        "k1889292"
-      ]
+      {
+        "ArchawinWongkittiruk": 39,
+        "elouak1002": 9,
+        "garg-shubh": 11,
+        "asfand987": 20,
+        "SV-Albert": 2,
+        "ben-wsh10": 17,
+        "k1889292": 2
+      }
     ],
     [
       "src/main/java/GUI/HomeController.java",
-      [
-        "ArchawinWongkittiruk",
-        "k1889292"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "k1889292": 4
+      }
     ],
     [
       "src/main/java/GUI/InputController.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "asfand987",
-        "garg-shubh",
-        "SV-Albert",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 25,
+        "elouak1002": 7,
+        "asfand987": 1,
+        "garg-shubh": 3,
+        "SV-Albert": 2,
+        "ben-wsh10": 3
+      }
     ],
     [
       "src/main/java/GUI/LoadController.java",
-      [
-        "ArchawinWongkittiruk",
-        "garg-shubh",
-        "ben-wsh10",
-        "k1889292"
-      ]
+      {
+        "ArchawinWongkittiruk": 6,
+        "garg-shubh": 4,
+        "ben-wsh10": 1,
+        "k1889292": 1
+      }
     ],
     [
       "src/main/java/GUI/LoggerController.java",
-      [
-        "ArchawinWongkittiruk",
-        "asfand987"
-      ]
+      {
+        "ArchawinWongkittiruk": 8,
+        "asfand987": 14
+      }
     ],
     [
       "src/main/java/GUI/Main.java",
-      [
-        "ArchawinWongkittiruk",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 11,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/main/java/GUI/OutputController.java",
-      [
-        "ArchawinWongkittiruk",
-        "asfand987",
-        "ben-wsh10",
-        "MihailBratanov"
-      ]
+      {
+        "ArchawinWongkittiruk": 10,
+        "asfand987": 7,
+        "ben-wsh10": 1,
+        "MihailBratanov": 1
+      }
     ],
     [
       "src/main/java/GUI/Root.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "garg-shubh",
-        "asfand987",
-        "k1889292",
-        "ben-wsh10",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 26,
+        "elouak1002": 2,
+        "garg-shubh": 5,
+        "asfand987": 7,
+        "k1889292": 2,
+        "ben-wsh10": 5,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/main/java/GUI/XMLGeneratorController.java",
-      [
-        "elouak1002",
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "elouak1002": 2,
+        "ArchawinWongkittiruk": 11,
+        "ben-wsh10": 15
+      }
     ],
     [
       "src/main/java/dataprocessors",
-      [
-        "ArchawinWongkittiruk",
-        "MihailBratanov",
-        "elouak1002",
-        "asfand987",
-        "SV-Albert",
-        "SeptimiuPop"
-      ]
+      {
+        "ArchawinWongkittiruk": 6,
+        "MihailBratanov": 6,
+        "elouak1002": 24,
+        "asfand987": 20,
+        "SV-Albert": 6,
+        "SeptimiuPop": 4
+      }
     ],
     [
       "src/main/java/dataprocessors/Debugger.java",
-      [
-        "elouak1002",
-        "ArchawinWongkittiruk",
-        "asfand987"
-      ]
+      {
+        "elouak1002": 12,
+        "ArchawinWongkittiruk": 4,
+        "asfand987": 8
+      }
     ],
     [
       "src/main/java/dataprocessors/Wrangler.java",
-      [
-        "ArchawinWongkittiruk",
-        "SV-Albert",
-        "elouak1002",
-        "MihailBratanov",
-        "SeptimiuPop"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "SV-Albert": 3,
+        "elouak1002": 4,
+        "MihailBratanov": 2,
+        "SeptimiuPop": 4
+      }
     ],
     [
       "src/main/java/dataprocessors/XMLCreator.java",
-      [
-        "MihailBratanov",
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "MihailBratanov": 4,
+        "elouak1002": 1,
+        "SV-Albert": 3
+      }
     ],
     [
       "src/main/java/dataprocessors/XMLDebugger.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 2
+      }
     ],
     [
       "src/main/java/datastructures",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "SV-Albert",
-        "MihailBratanov"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 13,
+        "SV-Albert": 6,
+        "MihailBratanov": 4
+      }
     ],
     [
       "src/main/java/datastructures/DataLine.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 2
+      }
     ],
     [
       "src/main/java/datastructures/Node.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "SV-Albert",
-        "MihailBratanov"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 12,
+        "SV-Albert": 6,
+        "MihailBratanov": 4
+      }
     ],
     [
       "src/main/java/datastructures/Status.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/main/java/linecreators",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 24
+      }
     ],
     [
       "src/main/java/linecreators/DataLineCreator.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 4
+      }
     ],
     [
       "src/main/java/linecreators/FileLinesCreator.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 7
+      }
     ],
     [
       "src/main/java/linecreators/LineCreator.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 2
+      }
     ],
     [
       "src/main/java/linecreators/NeighbourLineCreator.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 6
+      }
     ],
     [
       "src/main/java/linecreators/NodeListLineCreator.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 5
+      }
     ],
     [
       "src/main/java/parser",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "garg-shubh",
-        "MihailBratanov",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 3,
+        "elouak1002": 21,
+        "garg-shubh": 10,
+        "MihailBratanov": 11,
+        "SV-Albert": 12
+      }
     ],
     [
       "src/main/java/parser/DataLineParser.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 3
+      }
     ],
     [
       "src/main/java/parser/NodeCreator.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "MihailBratanov",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 4,
+        "MihailBratanov": 3,
+        "SV-Albert": 6
+      }
     ],
     [
       "src/main/java/parser/Parser.java",
-      [
-        "ArchawinWongkittiruk",
-        "MihailBratanov",
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "MihailBratanov": 7,
+        "elouak1002": 11,
+        "SV-Albert": 8
+      }
     ],
     [
       "src/main/java/parser/XMLParser.java",
-      [
-        "ArchawinWongkittiruk",
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "ArchawinWongkittiruk": 1,
+        "elouak1002": 1,
+        "SV-Albert": 2
+      }
     ],
     [
       "src/main/resources",
-      [
-        "ArchawinWongkittiruk",
-        "asfand987",
-        "ben-wsh10",
-        "k1889292",
-        "garg-shubh",
-        "elouak1002"
-      ]
+      {
+        "ArchawinWongkittiruk": 37,
+        "asfand987": 8,
+        "ben-wsh10": 27,
+        "k1889292": 8,
+        "garg-shubh": 2,
+        "elouak1002": 1
+      }
     ],
     [
       "src/main/resources/GUI",
-      [
-        "ArchawinWongkittiruk",
-        "asfand987",
-        "ben-wsh10",
-        "k1889292"
-      ]
+      {
+        "ArchawinWongkittiruk": 28,
+        "asfand987": 7,
+        "ben-wsh10": 27,
+        "k1889292": 4
+      }
     ],
     [
       "src/main/resources/GUI/Home.fxml",
-      [
-        "ArchawinWongkittiruk",
-        "k1889292"
-      ]
+      {
+        "ArchawinWongkittiruk": 2,
+        "k1889292": 4
+      }
     ],
     [
       "src/main/resources/GUI/Input.fxml",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 13,
+        "ben-wsh10": 3
+      }
     ],
     [
       "src/main/resources/GUI/Load.fxml",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 5,
+        "ben-wsh10": 4
+      }
     ],
     [
       "src/main/resources/GUI/Logger.fxml",
-      [
-        "ArchawinWongkittiruk"
-      ]
+      {
+        "ArchawinWongkittiruk": 2
+      }
     ],
     [
       "src/main/resources/GUI/Output.fxml",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10",
-        "asfand987"
-      ]
+      {
+        "ArchawinWongkittiruk": 7,
+        "ben-wsh10": 3,
+        "asfand987": 1
+      }
     ],
     [
       "src/main/resources/GUI/XMLGenerator.fxml",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 6,
+        "ben-wsh10": 10
+      }
     ],
     [
       "src/main/resources/Styling",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 8,
+        "ben-wsh10": 3
+      }
     ],
     [
       "src/main/resources/Styling/Background.jpg",
-      [
-        "ArchawinWongkittiruk"
-      ]
+      {
+        "ArchawinWongkittiruk": 1
+      }
     ],
     [
       "src/main/resources/Styling/GUI.css",
-      [
-        "ArchawinWongkittiruk",
-        "ben-wsh10"
-      ]
+      {
+        "ArchawinWongkittiruk": 6,
+        "ben-wsh10": 3
+      }
     ],
     [
       "src/main/resources/Styling/Logo.PNG",
-      [
-        "ArchawinWongkittiruk"
-      ]
+      {
+        "ArchawinWongkittiruk": 1
+      }
     ],
     [
       "src/test",
-      [
-        "elouak1002",
-        "SV-Albert",
-        "garg-shubh",
-        "MihailBratanov",
-        "ArchawinWongkittiruk",
-        "asfand987",
-        "SeptimiuPop"
-      ]
+      {
+        "elouak1002": 38,
+        "SV-Albert": 8,
+        "garg-shubh": 33,
+        "MihailBratanov": 5,
+        "ArchawinWongkittiruk": 5,
+        "asfand987": 9,
+        "SeptimiuPop": 2
+      }
     ],
     [
       "src/test/java",
-      [
-        "elouak1002",
-        "SV-Albert",
-        "garg-shubh",
-        "MihailBratanov",
-        "ArchawinWongkittiruk",
-        "asfand987",
-        "SeptimiuPop"
-      ]
+      {
+        "elouak1002": 38,
+        "SV-Albert": 8,
+        "garg-shubh": 33,
+        "MihailBratanov": 5,
+        "ArchawinWongkittiruk": 5,
+        "asfand987": 9,
+        "SeptimiuPop": 2
+      }
     ],
     [
       "src/test/java/dataprocessorstest",
-      [
-        "elouak1002",
-        "MihailBratanov",
-        "SV-Albert",
-        "SeptimiuPop"
-      ]
+      {
+        "elouak1002": 20,
+        "MihailBratanov": 3,
+        "SV-Albert": 6,
+        "SeptimiuPop": 4
+      }
     ],
     [
       "src/test/java/dataprocessorstest/DebuggerTest.java",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 7,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/java/dataprocessorstest/WranglerTest.java",
-      [
-        "SV-Albert",
-        "SeptimiuPop",
-        "elouak1002"
-      ]
+      {
+        "SV-Albert": 5,
+        "SeptimiuPop": 4,
+        "elouak1002": 2
+      }
     ],
     [
       "src/test/java/dataprocessorstest/XMLCreatorTest.java",
-      [
-        "elouak1002",
-        "MihailBratanov",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 4,
+        "MihailBratanov": 3,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/java/dataprocessorstest/XMLDebuggerTest.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 2
+      }
     ],
     [
       "src/test/java/datastructurestest",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 3,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/java/datastructurestest/DataLineTest.java",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 3,
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/java/guitest",
-      [
-        "elouak1002",
-        "asfand987"
-      ]
+      {
+        "elouak1002": 3,
+        "asfand987": 9
+      }
     ],
     [
       "src/test/java/guitest/LoggerControllerTest.java",
-      [
-        "elouak1002",
-        "asfand987"
-      ]
+      {
+        "elouak1002": 3,
+        "asfand987": 9
+      }
     ],
     [
       "src/test/java/linecreatorstest",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 11,
+        "SV-Albert": 3
+      }
     ],
     [
       "src/test/java/linecreatorstest/DataLineCreatorTest.java",
-      [
-        "SV-Albert",
-        "elouak1002"
-      ]
+      {
+        "SV-Albert": 2,
+        "elouak1002": 2
+      }
     ],
     [
       "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 4,
+        "SV-Albert": 3
+      }
     ],
     [
       "src/test/java/linecreatorstest/NeighbourLineCreatorTest.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 2
+      }
     ],
     [
       "src/test/java/linecreatorstest/NodeListLineCreatorTest.java",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 3
+      }
     ],
     [
       "src/test/java/parsertest",
-      [
-        "elouak1002",
-        "SV-Albert",
-        "MihailBratanov"
-      ]
+      {
+        "elouak1002": 16,
+        "SV-Albert": 8,
+        "MihailBratanov": 8
+      }
     ],
     [
       "src/test/java/parsertest/DataLineParserTest.java",
-      [
-        "elouak1002",
-        "SV-Albert"
-      ]
+      {
+        "elouak1002": 4,
+        "SV-Albert": 2
+      }
     ],
     [
       "src/test/java/parsertest/NodeCreatorTest.java",
-      [
-        "elouak1002",
-        "MihailBratanov"
-      ]
+      {
+        "elouak1002": 1,
+        "MihailBratanov": 2
+      }
     ],
     [
       "src/test/java/parsertest/ParserTest.java",
-      [
-        "elouak1002",
-        "SV-Albert",
-        "MihailBratanov"
-      ]
+      {
+        "elouak1002": 11,
+        "SV-Albert": 5,
+        "MihailBratanov": 7
+      }
     ],
     [
       "src/test/java/parsertest/XMLParserTest.java",
-      [
-        "SV-Albert",
-        "elouak1002"
-      ]
+      {
+        "SV-Albert": 3,
+        "elouak1002": 1
+      }
     ],
     [
       "src/test/resources",
-      [
-        "MihailBratanov",
-        "SV-Albert",
-        "elouak1002",
-        "ArchawinWongkittiruk"
-      ]
+      {
+        "MihailBratanov": 4,
+        "SV-Albert": 2,
+        "elouak1002": 3,
+        "ArchawinWongkittiruk": 2
+      }
     ],
     [
       "src/test/resources/XMLParserTestData1.txt",
-      [
-        "SV-Albert"
-      ]
+      {
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/resources/XMLParserTestData2.txt",
-      [
-        "SV-Albert"
-      ]
+      {
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/resources/XMLexample.txt",
-      [
-        "MihailBratanov"
-      ]
+      {
+        "MihailBratanov": 3
+      }
     ],
     [
       "src/test/resources/fullInputData.txt",
-      [
-        "SV-Albert"
-      ]
+      {
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/resources/testData.txt",
-      [
-        "SV-Albert"
-      ]
+      {
+        "SV-Albert": 1
+      }
     ],
     [
       "src/test/resources/testFileLinesCreatorData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ],
     [
       "src/test/resources/testNeighbourData.txt",
-      [
-        "elouak1002"
-      ]
+      {
+        "elouak1002": 1
+      }
     ]
   ],
   "authorFiles": [

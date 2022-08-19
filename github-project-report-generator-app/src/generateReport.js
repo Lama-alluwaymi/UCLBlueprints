@@ -31,15 +31,14 @@ module.exports = async (octokitAuth, repo) => {
       repo
     );
 
-    const authors = [];
+    const authors = {};
     for (const commit of commits) {
       // Some commits have a null author
-      try {
-        if (!authors.includes(commit.author.login)) {
-          authors.push(commit.author.login);
-        }
-      } catch (error) {
-        continue;
+      if (!commit.author) continue;
+      if (!authors[commit.author.login]) {
+        authors[commit.author.login] = 1;
+      } else {
+        authors[commit.author.login]++;
       }
     }
 
@@ -65,7 +64,7 @@ module.exports = async (octokitAuth, repo) => {
   const contributorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
   for (const [contributor, files] of contributorFiles) {
     for (const [file, authors] of Object.entries(fileContributors)) {
-      if (authors.includes(contributor)) {
+      if (authors[contributor]) {
         files.push(file);
       }
     }

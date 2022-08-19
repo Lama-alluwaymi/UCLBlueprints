@@ -160,7 +160,7 @@ function App() {
       <Divider mt={5} />
 
       <Heading size='md' my={5}>
-        Recent File Authors
+        Recent File Authors (Recent Commits Made)
       </Heading>
       <Box>
         {fileAuthors.map(([file, authors]) => (
@@ -168,7 +168,9 @@ function App() {
             <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
               {file}
             </Link>
-            {` - ${authors.join(', ')}`}
+            {` - ${Object.entries(authors)
+              .map(([author, commits]) => `${author} (${commits})`)
+              .join(', ')}`}
           </Text>
         ))}
       </Box>
