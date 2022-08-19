@@ -25,7 +25,7 @@ const exampleRepo = {
   callAndWrite('pullRequests.json', 'GET /repos/{owner}/{repo}/pulls?state=all');
 
   fs.writeFileSync(
-    'example/tree.json',
+    'github-api-response-examples/tree.json',
     JSON.stringify(
       await octokit.request('GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true', {
         ...exampleRepo,
@@ -41,7 +41,7 @@ const exampleRepo = {
 
 async function callAndWrite(fileName, req) {
   fs.writeFileSync(
-    'example/' + fileName,
+    'github-api-response-examples/' + fileName,
     JSON.stringify(await octokit.request(req, exampleRepo), null, 2)
   );
 }
