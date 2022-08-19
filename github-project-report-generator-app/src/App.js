@@ -177,7 +177,7 @@ function App() {
       <Divider mt={5} />
 
       <Heading size='md' my={5}>
-        Recent File Authors (Recent Commits Made)
+        File Authors (Commits Made)
       </Heading>
       <Box>
         {fileAuthors.map(([file, authors]) => (
@@ -195,7 +195,7 @@ function App() {
       <Divider mt={5} />
 
       <Heading size='md' my={5}>
-        Recent Author Files
+        Author Files
       </Heading>
       <Box>
         {authorFiles.map(([author, files]) => (
