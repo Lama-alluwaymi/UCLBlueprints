@@ -7482,7 +7482,7 @@
           "SeptimiuPop": 15,
           "k1889292": 9
         },
-        "commits": 477
+        "commits": 460
       }
     ],
     [
@@ -7499,7 +7499,7 @@
           "k1889292": 9,
           "SeptimiuPop": 11
         },
-        "commits": 373
+        "commits": 356
       }
     ],
     [
@@ -7516,7 +7516,7 @@
           "k1889292": 7,
           "SeptimiuPop": 11
         },
-        "commits": 349
+        "commits": 335
       }
     ],
     [
@@ -7532,7 +7532,7 @@
           "k1889292": 7,
           "MihailBratanov": 1
         },
-        "commits": 178
+        "commits": 164
       }
     ],
     [
@@ -7576,19 +7576,7 @@
           "garg-shubh": 2,
           "elouak1002": 1
         },
-        "commits": 95
-      }
-    ],
-    [
-      "src/main/resources/GUI",
-      {
-        "authors": {
-          "ArchawinWongkittiruk": 28,
-          "asfand987": 7,
-          "ben-wsh10": 27,
-          "k1889292": 4
-        },
-        "commits": 75
+        "commits": 83
       }
     ],
     [
@@ -7601,6 +7589,18 @@
           "asfand987": 20,
           "SV-Albert": 6,
           "SeptimiuPop": 4
+        },
+        "commits": 66
+      }
+    ],
+    [
+      "src/main/resources/GUI",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 28,
+          "asfand987": 7,
+          "ben-wsh10": 27,
+          "k1889292": 4
         },
         "commits": 66
       }
@@ -7644,7 +7644,7 @@
           "SV-Albert": 2,
           "ben-wsh10": 3
         },
-        "commits": 45
+        "commits": 41
       }
     ],
     [
@@ -7679,18 +7679,6 @@
           "ben-wsh10": 15
         },
         "commits": 28
-      }
-    ],
-    [
-      "src/main/java/GUI/OutputController.java",
-      {
-        "authors": {
-          "ArchawinWongkittiruk": 10,
-          "asfand987": 7,
-          "ben-wsh10": 1,
-          "MihailBratanov": 1
-        },
-        "commits": 27
       }
     ],
     [
@@ -7785,24 +7773,15 @@
       }
     ],
     [
-      "src/main/resources/GUI/Input.fxml",
+      "src/main/java/GUI/OutputController.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 13,
-          "ben-wsh10": 3
+          "ArchawinWongkittiruk": 10,
+          "asfand987": 7,
+          "ben-wsh10": 1,
+          "MihailBratanov": 1
         },
-        "commits": 21
-      }
-    ],
-    [
-      "src/main/resources/GUI/Output.fxml",
-      {
-        "authors": {
-          "ArchawinWongkittiruk": 7,
-          "ben-wsh10": 3,
-          "asfand987": 1
-        },
-        "commits": 17
+        "commits": 19
       }
     ],
     [
@@ -7813,6 +7792,16 @@
           "MihailBratanov": 2,
           "ArchawinWongkittiruk": 5,
           "SV-Albert": 2
+        },
+        "commits": 16
+      }
+    ],
+    [
+      "src/main/resources/GUI/Input.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 13,
+          "ben-wsh10": 3
         },
         "commits": 16
       }
@@ -7863,16 +7852,6 @@
       }
     ],
     [
-      "src/main/java/GUI/Main.java",
-      {
-        "authors": {
-          "ArchawinWongkittiruk": 11,
-          "SV-Albert": 1
-        },
-        "commits": 13
-      }
-    ],
-    [
       "src/main/java/GUI/LoadController.java",
       {
         "authors": {
@@ -7885,11 +7864,11 @@
       }
     ],
     [
-      "src/main/resources/Styling",
+      "src/main/java/GUI/Main.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 8,
-          "ben-wsh10": 3
+          "ArchawinWongkittiruk": 11,
+          "SV-Albert": 1
         },
         "commits": 12
       }
@@ -7912,6 +7891,27 @@
           "asfand987": 9
         },
         "commits": 12
+      }
+    ],
+    [
+      "src/main/resources/GUI/Output.fxml",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 7,
+          "ben-wsh10": 3,
+          "asfand987": 1
+        },
+        "commits": 11
+      }
+    ],
+    [
+      "src/main/resources/Styling",
+      {
+        "authors": {
+          "ArchawinWongkittiruk": 8,
+          "ben-wsh10": 3
+        },
+        "commits": 11
       }
     ],
     [
