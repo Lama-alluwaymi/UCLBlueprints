@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
+import { Pie, PieChart } from 'recharts';
 
 import generateReport from './generateReport';
 
@@ -111,50 +112,67 @@ function App() {
         Author Commits
       </Heading>
       {authorCommits.length > 0 && (
-        <TableContainer>
-          <Table variant='simple'>
-            <TableCaption placement='top'>Author Commits</TableCaption>
-            <Thead>
-              <Tr>
-                <Th>Author</Th>
-                <Th>Commits (% of Total)</Th>
-                <Th>Additions</Th>
-                <Th>Deletions</Th>
-                <Th>% of Changes</Th>
-                <Th>Average Commit Size by Lines Changed</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {authorCommits.map((contributor) => {
-                const additions = contributor.weeks
-                  .map((week) => week.a)
-                  .reduce((a, b) => a + b, 0);
-                const deletions = contributor.weeks
-                  .map((week) => week.d)
-                  .reduce((a, b) => a + b, 0);
+        <Box>
+          <TableContainer>
+            <Table variant='simple'>
+              <TableCaption placement='top'>Author Commits</TableCaption>
+              <Thead>
+                <Tr>
+                  <Th>Author</Th>
+                  <Th>Commits (% of Total)</Th>
+                  <Th>Additions</Th>
+                  <Th>Deletions</Th>
+                  <Th>% of Changes</Th>
+                  <Th>Average Commit Size by Lines Changed</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {authorCommits.map((contributor) => {
+                  const additions = contributor.weeks
+                    .map((week) => week.a)
+                    .reduce((a, b) => a + b, 0);
+                  const deletions = contributor.weeks
+                    .map((week) => week.d)
+                    .reduce((a, b) => a + b, 0);
 
-                return (
-                  <Tr key={contributor.author.login}>
-                    <Td>
-                      <Link href={`${url}/commits?author=${contributor.author.login}`} isExternal>
-                        <Image src={contributor.author.avatar_url} boxSize='50px' />
-                        {contributor.author.login}
-                      </Link>
-                    </Td>
-                    <Td>
-                      {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
-                      %)
-                    </Td>
-                    <Td>{additions}</Td>
-                    <Td>{deletions}</Td>
-                    <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>
-                    <Td>{Math.round((additions + deletions) / contributor.total)}</Td>
-                  </Tr>
-                );
-              })}
-            </Tbody>
-          </Table>
-        </TableContainer>
+                  return (
+                    <Tr key={contributor.author.login}>
+                      <Td>
+                        <Link href={`${url}/commits?author=${contributor.author.login}`} isExternal>
+                          <Image src={contributor.author.avatar_url} boxSize='50px' />
+                          {contributor.author.login}
+                        </Link>
+                      </Td>
+                      <Td>
+                        {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
+                        %)
+                      </Td>
+                      <Td>{additions}</Td>
+                      <Td>{deletions}</Td>
+                      <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>
+                      <Td>{Math.round((additions + deletions) / contributor.total)}</Td>
+                    </Tr>
+                  );
+                })}
+              </Tbody>
+            </Table>
+          </TableContainer>
+          <Flex mt={5} justify='center'>
+            <PieChart width={730} height={250}>
+              <Pie
+                data={authorCommits.map((contributor) => ({
+                  name: contributor.author.login,
+                  value: contributor.total,
+                }))}
+                dataKey='value'
+                nameKey='name'
+                label={(entry) => entry.name}
+                isAnimationActive={false}
+                fill='#3182CE'
+              />
+            </PieChart>
+          </Flex>
+        </Box>
       )}
 
       <Divider mt={5} />
