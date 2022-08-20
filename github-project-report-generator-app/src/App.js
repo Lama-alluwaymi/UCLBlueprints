@@ -23,7 +23,7 @@ function App() {
   const [fileCommits, setFileCommits] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
-  const [fileCommitsSortType, setFileCommitsSortType] = useState('Name');
+  const [sortType, setSortType] = useState('Name');
 
   const [authorFiles, setAuthorFiles] = useState([]);
 
@@ -180,7 +180,7 @@ function App() {
           File Authors (Commits Made)
         </Heading>
         <Text mr={2}>Sort by:</Text>
-        <RadioGroup onChange={setFileCommitsSortType} value={fileCommitsSortType}>
+        <RadioGroup onChange={setSortType} value={sortType}>
           <Stack direction='row'>
             <Radio value='Name'>Name</Radio>
             <Radio value='Commits'>Commits</Radio>
@@ -190,7 +190,7 @@ function App() {
       <Box>
         {fileCommits
           .sort((a, b) =>
-            fileCommitsSortType === 'Name' ? a[0].localeCompare(b[0]) : b[1].commits - a[1].commits
+            sortType === 'Name' ? a[0].localeCompare(b[0]) : b[1].commits - a[1].commits
           )
           .map(([file, { authors, commits: totalCommits }]) => (
             <Box key={file} mb={4}>
