@@ -53,6 +53,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ReportGenerator.cs" />
+    <Compile Include="Utilities\QualityData.cs" />
     <Compile Include="Utilities\TestAutoRunner.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
@@ -61,6 +63,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Utilities\TestTemplate.html" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
