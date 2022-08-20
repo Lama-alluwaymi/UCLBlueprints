@@ -72,7 +72,7 @@ module.exports = async (octokitAuth, repo) => {
       )
       .reduce((a, b) => a + b, 0),
     mostRecentCommitSha: treeSha,
-    fileCommits: Object.entries(fileCommits).sort((a, b) => b[1].commits - a[1].commits),
+    fileCommits: Object.entries(fileCommits),
     authorFiles: authorFiles.sort((a, b) => b[1].length - a[1].length),
   };
 };

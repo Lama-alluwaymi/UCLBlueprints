@@ -23,7 +23,7 @@ function App() {
   const [fileCommits, setFileCommits] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
-  const [sortType, setSortType] = useState('Name');
+  const [sortType, setSortType] = useState('Default');
 
   const [authorFiles, setAuthorFiles] = useState([]);
 
@@ -182,16 +182,14 @@ function App() {
         <Text mr={2}>Sort by:</Text>
         <RadioGroup onChange={setSortType} value={sortType}>
           <Stack direction='row'>
-            <Radio value='Name'>Name</Radio>
+            <Radio value='Default'>Default</Radio>
             <Radio value='Commits'>Commits</Radio>
           </Stack>
         </RadioGroup>
       </Flex>
       <Box>
-        {fileCommits
-          .sort((a, b) =>
-            sortType === 'Name' ? a[0].localeCompare(b[0]) : b[1].commits - a[1].commits
-          )
+        {[...fileCommits]
+          .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
           .map(([file, { authors, commits: totalCommits }]) => (
             <Box key={file} mb={4}>
               <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
