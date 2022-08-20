@@ -176,17 +176,36 @@ function App() {
         File Authors (Commits Made)
       </Heading>
       <Box>
-        {fileCommits.map(([file, { authors, commits }]) => (
-          <Text key={file} mb={2}>
+        {fileCommits.map(([file, { authors, commits: totalCommits }]) => (
+          <Box key={file} mb={4}>
             <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
               {file}
             </Link>
-            {` - ${commits} commit${commits > 1 ? 's' : ''} by: `}
-            {Object.entries(authors)
-              .sort((a, b) => b[1] - a[1])
-              .map(([author, commits]) => `${author} (${commits})`)
-              .join(', ')}
-          </Text>
+            {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
+            <Flex mb={2}>
+              {Object.entries(authors)
+                .sort((a, b) => b[1] - a[1])
+                .map(([author, commits]) => (
+                  <Text key={author} color={stringToColour(author)} mr={2}>
+                    {author} ({commits}),
+                  </Text>
+                ))}
+            </Flex>
+            {/* https://stackoverflow.com/a/49828563 */}
+            <Box width='100%' height={2}>
+              {Object.entries(authors)
+                .sort((a, b) => b[1] - a[1])
+                .map(([author, commits]) => (
+                  <Box
+                    key={author}
+                    width={`${(commits / totalCommits) * 100}%`}
+                    height={2}
+                    float='left'
+                    bgColor={stringToColour(author)}
+                  />
+                ))}
+            </Box>
+          </Box>
         ))}
       </Box>
 
