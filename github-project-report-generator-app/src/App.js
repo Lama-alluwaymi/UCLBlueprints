@@ -183,27 +183,23 @@ function App() {
             </Link>
             {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
             <Flex mb={2}>
-              {Object.entries(authors)
-                .sort((a, b) => b[1] - a[1])
-                .map(([author, commits]) => (
-                  <Text key={author} color={stringToColour(author)} mr={2}>
-                    {author} ({commits}),
-                  </Text>
-                ))}
+              {Object.entries(authors).map(([author, commits]) => (
+                <Text key={author} color={stringToColour(author)} mr={2}>
+                  {author} ({commits}),
+                </Text>
+              ))}
             </Flex>
             {/* https://stackoverflow.com/a/49828563 */}
             <Box width='100%' height={2}>
-              {Object.entries(authors)
-                .sort((a, b) => b[1] - a[1])
-                .map(([author, commits]) => (
-                  <Box
-                    key={author}
-                    width={`${(commits / totalCommits) * 100}%`}
-                    height={2}
-                    float='left'
-                    bgColor={stringToColour(author)}
-                  />
-                ))}
+              {Object.entries(authors).map(([author, commits]) => (
+                <Box
+                  key={author}
+                  width={`${(commits / totalCommits) * 100}%`}
+                  height={2}
+                  float='left'
+                  bgColor={stringToColour(author)}
+                />
+              ))}
             </Box>
           </Box>
         ))}

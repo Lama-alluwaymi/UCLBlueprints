@@ -7472,13 +7472,13 @@
       "src",
       {
         "authors": {
-          "ArchawinWongkittiruk": 85,
           "elouak1002": 160,
-          "SV-Albert": 34,
-          "garg-shubh": 41,
-          "MihailBratanov": 18,
+          "ArchawinWongkittiruk": 85,
           "asfand987": 53,
           "ben-wsh10": 45,
+          "garg-shubh": 41,
+          "SV-Albert": 34,
+          "MihailBratanov": 18,
           "SeptimiuPop": 15,
           "k1889292": 9
         },
@@ -7489,15 +7489,15 @@
       "src/main",
       {
         "authors": {
-          "ArchawinWongkittiruk": 83,
           "elouak1002": 100,
-          "garg-shubh": 18,
-          "MihailBratanov": 17,
-          "SV-Albert": 28,
+          "ArchawinWongkittiruk": 83,
           "asfand987": 45,
           "ben-wsh10": 45,
-          "k1889292": 9,
-          "SeptimiuPop": 11
+          "SV-Albert": 28,
+          "garg-shubh": 18,
+          "MihailBratanov": 17,
+          "SeptimiuPop": 11,
+          "k1889292": 9
         },
         "commits": 356
       }
@@ -7506,15 +7506,15 @@
       "src/main/java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 74,
           "elouak1002": 100,
-          "garg-shubh": 18,
-          "MihailBratanov": 17,
-          "SV-Albert": 27,
+          "ArchawinWongkittiruk": 74,
           "asfand987": 41,
           "ben-wsh10": 40,
-          "k1889292": 7,
-          "SeptimiuPop": 11
+          "SV-Albert": 27,
+          "garg-shubh": 18,
+          "MihailBratanov": 17,
+          "SeptimiuPop": 11,
+          "k1889292": 7
         },
         "commits": 335
       }
@@ -7524,12 +7524,12 @@
       {
         "authors": {
           "ArchawinWongkittiruk": 64,
-          "elouak1002": 12,
-          "garg-shubh": 13,
-          "asfand987": 24,
-          "SV-Albert": 3,
           "ben-wsh10": 40,
+          "asfand987": 24,
+          "garg-shubh": 13,
+          "elouak1002": 12,
           "k1889292": 7,
+          "SV-Albert": 3,
           "MihailBratanov": 1
         },
         "commits": 164
@@ -7540,8 +7540,8 @@
       {
         "authors": {
           "elouak1002": 66,
-          "SV-Albert": 14,
           "garg-shubh": 33,
+          "SV-Albert": 14,
           "MihailBratanov": 11,
           "ArchawinWongkittiruk": 9,
           "asfand987": 9,
@@ -7555,11 +7555,11 @@
       {
         "authors": {
           "elouak1002": 63,
-          "SV-Albert": 14,
           "garg-shubh": 33,
+          "SV-Albert": 14,
           "MihailBratanov": 11,
-          "ArchawinWongkittiruk": 7,
           "asfand987": 9,
+          "ArchawinWongkittiruk": 7,
           "SeptimiuPop": 5
         },
         "commits": 142
@@ -7570,8 +7570,8 @@
       {
         "authors": {
           "ArchawinWongkittiruk": 37,
-          "asfand987": 8,
           "ben-wsh10": 27,
+          "asfand987": 8,
           "k1889292": 8,
           "garg-shubh": 2,
           "elouak1002": 1
@@ -7583,10 +7583,10 @@
       "src/main/java/dataprocessors",
       {
         "authors": {
-          "ArchawinWongkittiruk": 6,
-          "MihailBratanov": 6,
           "elouak1002": 24,
           "asfand987": 20,
+          "ArchawinWongkittiruk": 6,
+          "MihailBratanov": 6,
           "SV-Albert": 6,
           "SeptimiuPop": 4
         },
@@ -7598,8 +7598,8 @@
       {
         "authors": {
           "ArchawinWongkittiruk": 28,
-          "asfand987": 7,
           "ben-wsh10": 27,
+          "asfand987": 7,
           "k1889292": 4
         },
         "commits": 66
@@ -7609,11 +7609,11 @@
       "src/main/java/parser",
       {
         "authors": {
-          "ArchawinWongkittiruk": 3,
           "elouak1002": 21,
-          "garg-shubh": 10,
+          "SV-Albert": 12,
           "MihailBratanov": 11,
-          "SV-Albert": 12
+          "garg-shubh": 10,
+          "ArchawinWongkittiruk": 3
         },
         "commits": 57
       }
@@ -7623,11 +7623,11 @@
       {
         "authors": {
           "ArchawinWongkittiruk": 26,
-          "elouak1002": 2,
-          "garg-shubh": 5,
           "asfand987": 7,
-          "k1889292": 2,
+          "garg-shubh": 5,
           "ben-wsh10": 5,
+          "elouak1002": 2,
+          "k1889292": 2,
           "SV-Albert": 1
         },
         "commits": 48
@@ -7639,10 +7639,10 @@
         "authors": {
           "ArchawinWongkittiruk": 25,
           "elouak1002": 7,
-          "asfand987": 1,
           "garg-shubh": 3,
+          "ben-wsh10": 3,
           "SV-Albert": 2,
-          "ben-wsh10": 3
+          "asfand987": 1
         },
         "commits": 41
       }
@@ -7652,9 +7652,9 @@
       {
         "authors": {
           "elouak1002": 20,
-          "MihailBratanov": 3,
           "SV-Albert": 6,
-          "SeptimiuPop": 4
+          "SeptimiuPop": 4,
+          "MihailBratanov": 3
         },
         "commits": 33
       }
@@ -7674,9 +7674,9 @@
       "src/main/java/GUI/XMLGeneratorController.java",
       {
         "authors": {
-          "elouak1002": 2,
+          "ben-wsh10": 15,
           "ArchawinWongkittiruk": 11,
-          "ben-wsh10": 15
+          "elouak1002": 2
         },
         "commits": 28
       }
@@ -7685,10 +7685,10 @@
       "src/main/java/parser/Parser.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "MihailBratanov": 7,
           "elouak1002": 11,
-          "SV-Albert": 8
+          "SV-Albert": 8,
+          "MihailBratanov": 7,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 27
       }
@@ -7697,8 +7697,8 @@
       "src/main/java/linecreators",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 24
+          "elouak1002": 24,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 25
       }
@@ -7708,8 +7708,8 @@
       {
         "authors": {
           "elouak1002": 12,
-          "ArchawinWongkittiruk": 4,
-          "asfand987": 8
+          "asfand987": 8,
+          "ArchawinWongkittiruk": 4
         },
         "commits": 24
       }
@@ -7718,10 +7718,10 @@
       "src/main/java/datastructures",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
           "elouak1002": 13,
           "SV-Albert": 6,
-          "MihailBratanov": 4
+          "MihailBratanov": 4,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 24
       }
@@ -7730,10 +7730,10 @@
       "src/main/java/datastructures/Node.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
           "elouak1002": 12,
           "SV-Albert": 6,
-          "MihailBratanov": 4
+          "MihailBratanov": 4,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 23
       }
@@ -7743,8 +7743,8 @@
       {
         "authors": {
           "elouak1002": 11,
-          "SV-Albert": 5,
-          "MihailBratanov": 7
+          "MihailBratanov": 7,
+          "SV-Albert": 5
         },
         "commits": 23
       }
@@ -7753,8 +7753,8 @@
       "src/main/java/GUI/LoggerController.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 8,
-          "asfand987": 14
+          "asfand987": 14,
+          "ArchawinWongkittiruk": 8
         },
         "commits": 22
       }
@@ -7764,8 +7764,8 @@
       {
         "authors": {
           "elouak1002": 10,
-          "garg-shubh": 3,
           "SV-Albert": 5,
+          "garg-shubh": 3,
           "ArchawinWongkittiruk": 2,
           "ben-wsh10": 1
         },
@@ -7789,8 +7789,8 @@
       {
         "authors": {
           "elouak1002": 7,
-          "MihailBratanov": 2,
           "ArchawinWongkittiruk": 5,
+          "MihailBratanov": 2,
           "SV-Albert": 2
         },
         "commits": 16
@@ -7810,8 +7810,8 @@
       "src/main/resources/GUI/XMLGenerator.fxml",
       {
         "authors": {
-          "ArchawinWongkittiruk": 6,
-          "ben-wsh10": 10
+          "ben-wsh10": 10,
+          "ArchawinWongkittiruk": 6
         },
         "commits": 16
       }
@@ -7820,11 +7820,11 @@
       "src/main/java/dataprocessors/Wrangler.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "SV-Albert": 3,
           "elouak1002": 4,
+          "SeptimiuPop": 4,
+          "SV-Albert": 3,
           "MihailBratanov": 2,
-          "SeptimiuPop": 4
+          "ArchawinWongkittiruk": 1
         },
         "commits": 14
       }
@@ -7833,10 +7833,10 @@
       "src/main/java/parser/NodeCreator.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
+          "SV-Albert": 6,
           "elouak1002": 4,
           "MihailBratanov": 3,
-          "SV-Albert": 6
+          "ArchawinWongkittiruk": 1
         },
         "commits": 14
       }
@@ -7877,8 +7877,8 @@
       "src/test/java/guitest",
       {
         "authors": {
-          "elouak1002": 3,
-          "asfand987": 9
+          "asfand987": 9,
+          "elouak1002": 3
         },
         "commits": 12
       }
@@ -7887,8 +7887,8 @@
       "src/test/java/guitest/LoggerControllerTest.java",
       {
         "authors": {
-          "elouak1002": 3,
-          "asfand987": 9
+          "asfand987": 9,
+          "elouak1002": 3
         },
         "commits": 12
       }
@@ -7930,8 +7930,8 @@
       {
         "authors": {
           "MihailBratanov": 4,
-          "SV-Albert": 2,
           "elouak1002": 3,
+          "SV-Albert": 2,
           "ArchawinWongkittiruk": 2
         },
         "commits": 11
@@ -7972,8 +7972,8 @@
       "src/integration",
       {
         "authors": {
-          "ArchawinWongkittiruk": 2,
-          "elouak1002": 6
+          "elouak1002": 6,
+          "ArchawinWongkittiruk": 2
         },
         "commits": 8
       }
@@ -7983,8 +7983,8 @@
       {
         "authors": {
           "MihailBratanov": 4,
-          "elouak1002": 1,
-          "SV-Albert": 3
+          "SV-Albert": 3,
+          "elouak1002": 1
         },
         "commits": 8
       }
@@ -7993,8 +7993,8 @@
       "src/main/java/linecreators/FileLinesCreator.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 7
+          "elouak1002": 7,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 8
       }
@@ -8024,8 +8024,8 @@
       "src/integration/java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 2,
-          "elouak1002": 5
+          "elouak1002": 5,
+          "ArchawinWongkittiruk": 2
         },
         "commits": 7
       }
@@ -8034,8 +8034,8 @@
       "src/integration/java/guiintegrationtest",
       {
         "authors": {
-          "ArchawinWongkittiruk": 2,
-          "elouak1002": 5
+          "elouak1002": 5,
+          "ArchawinWongkittiruk": 2
         },
         "commits": 7
       }
@@ -8044,8 +8044,8 @@
       "src/main/java/linecreators/NeighbourLineCreator.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 6
+          "elouak1002": 6,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 7
       }
@@ -8064,8 +8064,8 @@
       "src/main/java/linecreators/NodeListLineCreator.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 5
+          "elouak1002": 5,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 6
       }
@@ -8074,8 +8074,8 @@
       "src/main/resources/GUI/Home.fxml",
       {
         "authors": {
-          "ArchawinWongkittiruk": 2,
-          "k1889292": 4
+          "k1889292": 4,
+          "ArchawinWongkittiruk": 2
         },
         "commits": 6
       }
@@ -8094,8 +8094,8 @@
       "src/integration/java/guiintegrationtest/HomeTest.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 2,
-          "elouak1002": 3
+          "elouak1002": 3,
+          "ArchawinWongkittiruk": 2
         },
         "commits": 5
       }
@@ -8104,8 +8104,8 @@
       "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 4
+          "elouak1002": 4,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 5
       }
@@ -8114,8 +8114,8 @@
       "src/main/java/GUI/HomeController.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "k1889292": 4
+          "k1889292": 4,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 5
       }
@@ -8124,8 +8124,8 @@
       "src/integration/java/guiintegrationtest/AppRunner.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 3
+          "elouak1002": 3,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 4
       }
@@ -8134,8 +8134,8 @@
       "src/integration/java/guiintegrationtest/OutputTest.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 3
+          "elouak1002": 3,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 4
       }
@@ -8153,8 +8153,8 @@
       "src/main/java/parser/DataLineParser.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 3
+          "elouak1002": 3,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 4
       }
@@ -8163,9 +8163,9 @@
       "src/main/java/parser/XMLParser.java",
       {
         "authors": {
+          "SV-Albert": 2,
           "ArchawinWongkittiruk": 1,
-          "elouak1002": 1,
-          "SV-Albert": 2
+          "elouak1002": 1
         },
         "commits": 4
       }
@@ -8223,8 +8223,8 @@
       "src/integration/java/guiintegrationtest/InputTest.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 2
+          "elouak1002": 2,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 3
       }
@@ -8233,8 +8233,8 @@
       "src/integration/java/guiintegrationtest/LoadTest.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 2
+          "elouak1002": 2,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 3
       }
@@ -8243,8 +8243,8 @@
       "src/main/java/linecreators/LineCreator.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 1,
-          "elouak1002": 2
+          "elouak1002": 2,
+          "ArchawinWongkittiruk": 1
         },
         "commits": 3
       }
@@ -8262,8 +8262,8 @@
       "src/test/java/parsertest/NodeCreatorTest.java",
       {
         "authors": {
-          "elouak1002": 1,
-          "MihailBratanov": 2
+          "MihailBratanov": 2,
+          "elouak1002": 1
         },
         "commits": 3
       }

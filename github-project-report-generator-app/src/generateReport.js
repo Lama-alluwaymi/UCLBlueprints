@@ -45,7 +45,7 @@ module.exports = async (octokitAuth, repo) => {
     // Therefore, to be consistent, the commit count output should be the author commits' sums
     // rather than the seemingly more intuitive commits.length
     fileCommits[file.path] = {
-      authors,
+      authors: Object.fromEntries(Object.entries(authors).sort((a, b) => b[1] - a[1])),
       commits: Object.values(authors).reduce((a, b) => a + b, 0),
     };
 
