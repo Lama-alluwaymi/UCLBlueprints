@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FileHelper.cs" />
     <Compile Include="Utilities\ReportGenerator.cs" />
     <Compile Include="Utilities\QualityData.cs" />
     <Compile Include="Utilities\TestAutoRunner.cs" />
