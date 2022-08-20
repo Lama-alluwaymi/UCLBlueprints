@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Flex, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
+import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
 import { Pie, PieChart } from 'recharts';
 
 import generateReport from './generateReport';
@@ -21,6 +22,8 @@ function App() {
 
   const [fileCommits, setFileCommits] = useState([]);
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
+
+  const [fileCommitsSortType, setFileCommitsSortType] = useState('Name');
 
   const [authorFiles, setAuthorFiles] = useState([]);
 
@@ -172,37 +175,50 @@ function App() {
 
       <Divider mt={5} />
 
-      <Heading size='md' my={5}>
-        File Authors (Commits Made)
-      </Heading>
+      <Flex align='center' my={5}>
+        <Heading size='md' mr={5}>
+          File Authors (Commits Made)
+        </Heading>
+        <Text mr={2}>Sort by:</Text>
+        <RadioGroup onChange={setFileCommitsSortType} value={fileCommitsSortType}>
+          <Stack direction='row'>
+            <Radio value='Name'>Name</Radio>
+            <Radio value='Commits'>Commits</Radio>
+          </Stack>
+        </RadioGroup>
+      </Flex>
       <Box>
-        {fileCommits.map(([file, { authors, commits: totalCommits }]) => (
-          <Box key={file} mb={4}>
-            <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-              {file}
-            </Link>
-            {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
-            <Flex mb={2}>
-              {Object.entries(authors).map(([author, commits]) => (
-                <Text key={author} color={stringToColour(author)} mr={2}>
-                  {author} ({commits}),
-                </Text>
-              ))}
-            </Flex>
-            {/* https://stackoverflow.com/a/49828563 */}
-            <Box width='100%' height={2}>
-              {Object.entries(authors).map(([author, commits]) => (
-                <Box
-                  key={author}
-                  width={`${(commits / totalCommits) * 100}%`}
-                  height={2}
-                  float='left'
-                  bgColor={stringToColour(author)}
-                />
-              ))}
+        {fileCommits
+          .sort((a, b) =>
+            fileCommitsSortType === 'Name' ? a[0].localeCompare(b[0]) : b[1].commits - a[1].commits
+          )
+          .map(([file, { authors, commits: totalCommits }]) => (
+            <Box key={file} mb={4}>
+              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+                {file}
+              </Link>
+              {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
+              <Flex mb={2}>
+                {Object.entries(authors).map(([author, commits]) => (
+                  <Text key={author} color={stringToColour(author)} mr={2}>
+                    {author} ({commits}),
+                  </Text>
+                ))}
+              </Flex>
+              {/* https://stackoverflow.com/a/49828563 */}
+              <Box width='100%' height={2}>
+                {Object.entries(authors).map(([author, commits]) => (
+                  <Box
+                    key={author}
+                    width={`${(commits / totalCommits) * 100}%`}
+                    height={2}
+                    float='left'
+                    bgColor={stringToColour(author)}
+                  />
+                ))}
+              </Box>
             </Box>
-          </Box>
-        ))}
+          ))}
       </Box>
 
       <Divider mt={5} />
