@@ -12,15 +12,27 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
   const [proportionalBarHeights, setProportionalBarHeights] = useState(false);
   const [commitsInOrder, setCommitsInOrder] = useState(false);
-  const shownFileCommits = !onlyShowTogetherFiles
-    ? onlyShowAuthorFiles
-      ? fileCommits.filter((file) => selectedAuthors.some((author) => file[1].authors[author]))
-      : fileCommits
-    : selectedAuthors.length > 0
-    ? fileCommits.filter((file) => selectedAuthors.every((author) => file[1].authors[author]))
-    : [];
-  const highlightedFileCommits = fileCommits.filter((file) =>
-    selectedAuthors.some((author) => file[1].authors[author])
+  const [showFiles, setShowFiles] = useState(true);
+  const [showFolders, setShowFolders] = useState(true);
+  const shownFileCommits = fileCommits
+    .filter((file) => {
+      // Better to have these old school if-statements than confusing nested ternaries
+      if (onlyShowTogetherFiles)
+        return selectedAuthors.length > 0
+          ? selectedAuthors.every((author) => file[1].authors[author])
+          : false;
+      if (onlyShowAuthorFiles) return selectedAuthors.some((author) => file[1].authors[author]);
+      return true;
+    })
+    .filter((file) => {
+      if (showFiles && file[0].includes('.')) return true;
+      if (showFolders && !file[0].includes('.')) return true;
+      return false;
+    });
+  const highlightedFileCommits = fileCommits.filter(
+    (file) =>
+      selectedAuthors.some((author) => file[1].authors[author]) &&
+      shownFileCommits.some((shownFile) => shownFile[0] === file[0])
   );
 
   return (
@@ -39,6 +51,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           </Flex>
         </RadioGroup>
       </Flex>
+
       <Checkbox
         isChecked={selectedAuthors.length === authors.length}
         onChange={(e) => setSelectedAuthors(e.target.checked ? authors : [])}
@@ -67,6 +80,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           ))}
         </Flex>
       </CheckboxGroup>
+
       <Flex mt={5}>
         <Checkbox
           isChecked={onlyShowAuthorFiles || onlyShowTogetherFiles}
@@ -83,6 +97,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           Only Show Files All Selected Authors Worked On Together
         </Checkbox>
       </Flex>
+
       <Flex mt={5}>
         <Checkbox
           isChecked={proportionalBarHeights}
@@ -95,12 +110,25 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           Show Commits in Order
         </Checkbox>
       </Flex>
+
+      <Flex mt={5}>
+        <Checkbox isChecked={showFiles} onChange={(e) => setShowFiles(e.target.checked)} mr={4}>
+          Show Files
+        </Checkbox>
+        <Checkbox isChecked={showFolders} onChange={(e) => setShowFolders(e.target.checked)}>
+          Show Folders
+        </Checkbox>
+      </Flex>
+
       <Box mt={5}>
         <Text mb={5}>
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles
-            ? `${highlightedFileCommits.length}/${shownFileCommits.length}`
-            : shownFileCommits.length}{' '}
-          files{!onlyShowAuthorFiles && !onlyShowTogetherFiles ? ' highlighted' : ''}:
+            ? `${highlightedFileCommits.length}/`
+            : ''}
+          {shownFileCommits.length} {showFiles ? 'files' : ''}
+          {showFiles && showFolders ? ' and ' : ''}
+          {showFolders ? 'folders' : ''}
+          {!onlyShowAuthorFiles && !onlyShowTogetherFiles ? ' highlighted' : ''}:
         </Text>
         {[...shownFileCommits]
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
