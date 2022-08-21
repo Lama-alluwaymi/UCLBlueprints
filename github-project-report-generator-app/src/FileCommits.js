@@ -10,6 +10,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [selectedAuthors, setSelectedAuthors] = useState(authors);
   const [onlyShowAuthorFiles, setOnlyShowAuthorFiles] = useState(false);
   const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
+  const [proportionalBarHeights, setProportionalBarHeights] = useState(false);
   const shownFileCommits = !onlyShowTogetherFiles
     ? onlyShowAuthorFiles
       ? fileCommits.filter((file) => selectedAuthors.some((author) => file[1].authors[author]))
@@ -81,6 +82,13 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           Only Show Files All Selected Authors Worked On Together
         </Checkbox>
       </Flex>
+      <Checkbox
+        isChecked={proportionalBarHeights}
+        onChange={(e) => setProportionalBarHeights(e.target.checked)}
+        mt={5}
+      >
+        Show Bar Heights Proportional to Commit Count
+      </Checkbox>
       <Box mt={5}>
         <Text mb={5}>
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles
@@ -109,12 +117,12 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
                 ))}
               </Flex>
               {/* https://stackoverflow.com/a/49828563 */}
-              <Box width='100%' height={2}>
+              <Box width='100%' height={proportionalBarHeights ? `${totalCommits}px` : 2}>
                 {Object.entries(authors).map(([author, commits]) => (
                   <Box
                     key={author}
                     width={`${(commits / totalCommits) * 100}%`}
-                    height={2}
+                    height='100%'
                     float='left'
                     bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
                   />
