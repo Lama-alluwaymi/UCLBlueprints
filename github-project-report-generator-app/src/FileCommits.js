@@ -7,9 +7,9 @@ import stringToColour from './stringToColour';
 
 const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [sortType, setSortType] = useState('Default');
-  const [shownAuthors, setShownAuthors] = useState(authors);
+  const [selectedAuthors, setSelectedAuthors] = useState(authors);
   const shownFileCommits = fileCommits.filter((file) =>
-    shownAuthors.some((author) => file[1].authors[author])
+    selectedAuthors.some((author) => file[1].authors[author])
   );
 
   return (
@@ -29,23 +29,23 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
         </RadioGroup>
       </Flex>
       <Checkbox
-        isChecked={shownAuthors.length === authors.length}
-        onChange={(e) => setShownAuthors(e.target.checked ? authors : [])}
+        isChecked={selectedAuthors.length === authors.length}
+        onChange={(e) => setSelectedAuthors(e.target.checked ? authors : [])}
       >
         Select/Deselect All
       </Checkbox>
       <Divider />
-      <CheckboxGroup value={shownAuthors}>
+      <CheckboxGroup value={selectedAuthors}>
         <Flex>
           {authors.map((author) => (
             <Checkbox
               key={author}
               value={author}
               onChange={(e) =>
-                setShownAuthors(
+                setSelectedAuthors(
                   e.target.checked
-                    ? [...shownAuthors, author]
-                    : shownAuthors.filter((a) => a !== author)
+                    ? [...selectedAuthors, author]
+                    : selectedAuthors.filter((a) => a !== author)
                 )
               }
               mr={4}
@@ -70,7 +70,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
                   <Text
                     key={author}
                     color={stringToColour(author)}
-                    fontWeight={shownAuthors.includes(author) ? 'bold' : 'normal'}
+                    fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
                     mr={2}
                   >
                     {author} ({commits}),
@@ -85,7 +85,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
                     width={`${(commits / totalCommits) * 100}%`}
                     height={2}
                     float='left'
-                    bgColor={shownAuthors.includes(author) ? stringToColour(author) : 'grey'}
+                    bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
                   />
                 ))}
               </Box>
