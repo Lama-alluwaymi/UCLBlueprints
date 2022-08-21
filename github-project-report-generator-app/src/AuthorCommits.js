@@ -8,9 +8,7 @@ import stringToColour from './stringToColour';
 const AuthorCommits = ({ commitActivity, url }) => {
   const totalCommits = commitActivity.reduce((a, b) => a + b.total, 0);
   const totalChanges = commitActivity
-    .map((contributor) =>
-      contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
-    )
+    .map(({ weeks }) => weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0))
     .reduce((a, b) => a + b, 0);
 
   return (
