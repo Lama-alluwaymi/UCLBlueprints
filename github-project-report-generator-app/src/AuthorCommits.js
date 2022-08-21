@@ -32,26 +32,26 @@ const AuthorCommits = ({ commitActivity, url }) => {
             </Tr>
           </Thead>
           <Tbody>
-            {commitActivity.map((contributor) => {
-              const additions = contributor.weeks.map((week) => week.a).reduce((a, b) => a + b, 0);
-              const deletions = contributor.weeks.map((week) => week.d).reduce((a, b) => a + b, 0);
+            {commitActivity.map(({ weeks, author, total }) => {
+              const additions = weeks.map((week) => week.a).reduce((a, b) => a + b, 0);
+              const deletions = weeks.map((week) => week.d).reduce((a, b) => a + b, 0);
 
               return (
-                <Tr key={contributor.author.login}>
+                <Tr key={author.login}>
                   <Td>
-                    <Link href={`${url}/commits?author=${contributor.author.login}`} isExternal>
-                      <Image src={contributor.author.avatar_url} boxSize='50px' />
-                      {contributor.author.login}
+                    <Link href={`${url}/commits?author=${author.login}`} isExternal>
+                      <Image src={author.avatar_url} boxSize='50px' />
+                      {author.login}
                     </Link>
                   </Td>
                   <Td>
-                    {contributor.total} ({Math.round((contributor.total / totalCommits) * 100)}
+                    {total} ({Math.round((total / totalCommits) * 100)}
                     %)
                   </Td>
                   <Td>{additions}</Td>
                   <Td>{deletions}</Td>
                   <Td>{Math.round(((additions + deletions) / totalChanges) * 100)}</Td>
-                  <Td>{Math.round((additions + deletions) / contributor.total)}</Td>
+                  <Td>{Math.round((additions + deletions) / total)}</Td>
                 </Tr>
               );
             })}
@@ -61,10 +61,10 @@ const AuthorCommits = ({ commitActivity, url }) => {
       <Flex mt={5} justify='center'>
         <PieChart width={730} height={250}>
           <Pie
-            data={commitActivity.map((contributor) => ({
-              name: contributor.author.login,
-              value: Math.round((contributor.total / totalCommits) * 100),
-              fill: stringToColour(contributor.author.login),
+            data={commitActivity.map(({ author, total }) => ({
+              name: author.login,
+              value: Math.round((total / totalCommits) * 100),
+              fill: stringToColour(author.login),
             }))}
             dataKey='value'
             nameKey='name'
