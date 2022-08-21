@@ -8,7 +8,16 @@ import stringToColour from './stringToColour';
 const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [sortType, setSortType] = useState('Default');
   const [selectedAuthors, setSelectedAuthors] = useState(authors);
-  const shownFileCommits = fileCommits.filter((file) =>
+  const [onlyShowAuthorFiles, setOnlyShowAuthorFiles] = useState(false);
+  const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
+  const shownFileCommits = !onlyShowTogetherFiles
+    ? onlyShowAuthorFiles
+      ? fileCommits.filter((file) => selectedAuthors.some((author) => file[1].authors[author]))
+      : fileCommits
+    : selectedAuthors.length > 0
+    ? fileCommits.filter((file) => selectedAuthors.every((author) => file[1].authors[author]))
+    : [];
+  const highlightedFileCommits = fileCommits.filter((file) =>
     selectedAuthors.some((author) => file[1].authors[author])
   );
 
@@ -31,6 +40,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
       <Checkbox
         isChecked={selectedAuthors.length === authors.length}
         onChange={(e) => setSelectedAuthors(e.target.checked ? authors : [])}
+        mr={4}
       >
         Select/Deselect All
       </Checkbox>
@@ -55,9 +65,30 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           ))}
         </Flex>
       </CheckboxGroup>
+      <Flex mt={5}>
+        <Checkbox
+          isChecked={onlyShowAuthorFiles || onlyShowTogetherFiles}
+          onChange={(e) => setOnlyShowAuthorFiles(e.target.checked)}
+          isDisabled={onlyShowTogetherFiles}
+          mr={4}
+        >
+          Only Show Files Selected Authors Worked On
+        </Checkbox>
+        <Checkbox
+          isChecked={onlyShowTogetherFiles}
+          onChange={(e) => setOnlyShowTogetherFiles(e.target.checked)}
+        >
+          Only Show Files All Selected Authors Worked On Together
+        </Checkbox>
+      </Flex>
       <Box mt={5}>
-        <Text mb={5}>{shownFileCommits.length} files:</Text>
-        {shownFileCommits
+        <Text mb={5}>
+          {!onlyShowAuthorFiles && !onlyShowTogetherFiles
+            ? `${highlightedFileCommits.length}/${shownFileCommits.length}`
+            : shownFileCommits.length}{' '}
+          files{!onlyShowAuthorFiles && !onlyShowTogetherFiles ? ' highlighted' : ''}:
+        </Text>
+        {[...shownFileCommits]
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
           .map(([file, { authors, commits: totalCommits }]) => (
             <Box key={file} mb={4}>
