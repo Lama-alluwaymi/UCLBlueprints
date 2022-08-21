@@ -1,7 +1,8 @@
 {
   "url": "https://github.com/ArchawinWongkittiruk/TheBackrowers",
   "name": "TheBackrowers",
-  "authorCommits": [
+  "mostRecentCommitSha": "6fac32395c96b90e4cd6aefda25980884af53673",
+  "commitActivity": [
     {
       "total": 169,
       "weeks": [
@@ -7464,8 +7465,6 @@
       }
     }
   ],
-  "totalCommits": 450,
-  "totalChanges": 27250,
   "fileCommits": [
     [
       ".gitignore",
@@ -8484,6 +8483,5 @@
         "commits": 1
       }
     ]
-  ],
-  "mostRecentCommitSha": "6fac32395c96b90e4cd6aefda25980884af53673"
+  ]
 }

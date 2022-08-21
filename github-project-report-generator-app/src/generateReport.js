@@ -55,14 +55,8 @@ module.exports = async (octokitAuth, repo) => {
   return {
     url: html_url,
     name: name,
-    authorCommits: commitActivity.sort((a, b) => b.total - a.total),
-    totalCommits: commitActivity.reduce((a, b) => a + b.total, 0),
-    totalChanges: commitActivity
-      .map((contributor) =>
-        contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
-      )
-      .reduce((a, b) => a + b, 0),
-    fileCommits: Object.entries(fileCommits),
     mostRecentCommitSha: treeSha,
+    commitActivity: commitActivity.sort((a, b) => b.total - a.total),
+    fileCommits: Object.entries(fileCommits),
   };
 };

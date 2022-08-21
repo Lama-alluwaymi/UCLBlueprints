@@ -16,18 +16,21 @@ function App() {
 
   const [url, setURL] = useState('');
   const [name, setName] = useState('');
+  const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
-  const [authorCommits, setAuthorCommits] = useState([]);
-  const [totalCommits, setTotalCommits] = useState(0);
-  const [totalChanges, setTotalChanges] = useState(0);
+  const [commitActivity, setCommitActivity] = useState([]);
+  const authors = commitActivity.map((contributor) => contributor.author.login);
+  const totalCommits = commitActivity.reduce((a, b) => a + b.total, 0);
+  const totalChanges = commitActivity
+    .map((contributor) =>
+      contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
+    )
+    .reduce((a, b) => a + b, 0);
 
   const [fileCommits, setFileCommits] = useState([]);
-  const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
   const [sortType, setSortType] = useState('Default');
   const [shownAuthors, setShownAuthors] = useState([]);
-
-  const authors = authorCommits.map((contributor) => contributor.author.login);
   const shownFileCommits = fileCommits.filter((file) =>
     shownAuthors.some((author) => file[1].authors[author])
   );
@@ -44,11 +47,9 @@ function App() {
   const clearReport = () => {
     setURL('');
     setName('');
-    setAuthorCommits([]);
-    setTotalCommits(0);
-    setTotalChanges(0);
-    setFileCommits([]);
     setMostRecentCommitSha('');
+    setCommitActivity([]);
+    setFileCommits([]);
 
     setShownAuthors([]);
   };
@@ -56,13 +57,11 @@ function App() {
   const setReport = (data) => {
     setURL(data.url);
     setName(data.name);
-    setAuthorCommits(data.authorCommits);
-    setTotalCommits(data.totalCommits);
-    setTotalChanges(data.totalChanges);
-    setFileCommits(data.fileCommits);
     setMostRecentCommitSha(data.mostRecentCommitSha);
+    setCommitActivity(data.commitActivity);
+    setFileCommits(data.fileCommits);
 
-    setShownAuthors(data.authorCommits.map((contributor) => contributor.author.login));
+    setShownAuthors(data.commitActivity.map((contributor) => contributor.author.login));
   };
 
   const getReport = async () => {
@@ -115,7 +114,7 @@ function App() {
       <Heading size='md' my={5}>
         Author Commits
       </Heading>
-      {authorCommits.length > 0 && (
+      {commitActivity.length > 0 && (
         <Box>
           <TableContainer>
             <Table variant='simple'>
@@ -131,7 +130,7 @@ function App() {
                 </Tr>
               </Thead>
               <Tbody>
-                {authorCommits.map((contributor) => {
+                {commitActivity.map((contributor) => {
                   const additions = contributor.weeks
                     .map((week) => week.a)
                     .reduce((a, b) => a + b, 0);
@@ -164,7 +163,7 @@ function App() {
           <Flex mt={5} justify='center'>
             <PieChart width={730} height={250}>
               <Pie
-                data={authorCommits.map((contributor) => ({
+                data={commitActivity.map((contributor) => ({
                   name: contributor.author.login,
                   value: Math.round((contributor.total / totalCommits) * 100),
                   fill: stringToColour(contributor.author.login),
@@ -204,7 +203,7 @@ function App() {
       <Divider />
       <CheckboxGroup value={shownAuthors}>
         <Flex>
-          {authorCommits.map(({ author: { login: author } }) => (
+          {commitActivity.map(({ author: { login: author } }) => (
             <Checkbox
               key={author}
               value={author}
