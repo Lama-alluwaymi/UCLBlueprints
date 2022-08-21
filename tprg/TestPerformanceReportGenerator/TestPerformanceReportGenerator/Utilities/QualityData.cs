@@ -16,6 +16,6 @@ namespace TestPerformanceReportGenerator.Utilities
         public string TestCases { get; set; }
         public string LineCoverage { get; set; }
         public string Duration { get; set; }
-        public string Devices { get; set; }
+        public string Skipped { get; set; }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="Utilities\FileHelper.cs" />
     <Compile Include="Utilities\ReportGenerator.cs" />
     <Compile Include="Utilities\QualityData.cs" />
+    <Compile Include="Utilities\SystemInfoRetriver.cs" />
     <Compile Include="Utilities\TestAutoRunner.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +96,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xaml" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

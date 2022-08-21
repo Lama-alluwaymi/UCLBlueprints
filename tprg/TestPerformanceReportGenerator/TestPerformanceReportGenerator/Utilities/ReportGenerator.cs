@@ -12,7 +12,7 @@ namespace TestPerformanceReportGenerator.Utilities
         public List<QualityData> dataList = new List<QualityData>();
 
         public void AddTestData(string date, string version, string hardware, string failedTests, 
-            string passedTests, string testCases, string lineCoverage, string testDuration, string device)
+            string passedTests, string testCases, string lineCoverage, string testDuration, string skipped)
         {
             this.dataList.Add(new QualityData()
             {
@@ -24,11 +24,11 @@ namespace TestPerformanceReportGenerator.Utilities
                 TestCases = testCases,
                 LineCoverage = lineCoverage,
                 Duration = testDuration,
-                Devices = device
+                Skipped = skipped  
             });
             
         }
-        public void GenerateReport(string projectName, List<QualityData> dataList,
+        public static void GenerateReport(string projectName, List<QualityData> dataList,
             string maintainability, string cycloComplexity, string depthOfInheritnace, string classCoupling,
             string losc, string loec)
         {
@@ -51,17 +51,17 @@ namespace TestPerformanceReportGenerator.Utilities
             reportFile = reportFile.Replace("{$ClassCoupling$}", classCoupling);
 
             int index = 0;
-            foreach(QualityData item in this.dataList)
+            foreach(QualityData item in dataList)
             {
                 tablestr += $@"<tr>
                                <td>{item.Date}</td>
                                <td>{item.Version}</td>
                                <td>{item.Hardware}</td>
                                <td>{item.Failed}/{item.Passed}&nbsp;&nbsp;<progress value='{item.Failed}' max='{item.Passed}'></progress></td>
+                               <td>{item.Skipped}</td>
                                <td>{item.TestCases}</td>                            
                                <td>{item.LineCoverage} %</td>
                                <td>{item.Duration} ms</td>
-                               <td>{item.Devices}</td>
                                </tr>";
 
                 coverageOptionXAxis += "'" + ++index + "',";

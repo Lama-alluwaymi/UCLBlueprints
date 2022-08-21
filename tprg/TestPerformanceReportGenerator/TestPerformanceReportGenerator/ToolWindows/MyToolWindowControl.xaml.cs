@@ -1,15 +1,21 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Diagnostics;
+using System.Reflection;
+using System.Management;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Globalization;
 using TestPerformanceReportGenerator.Utilities;
 
 namespace TestPerformanceReportGenerator
 {
     public partial class MyToolWindowControl : UserControl
     {
+
+        private ReportGenerator generator = new ReportGenerator();
+        private TestAutoRunner autoRunner = new TestAutoRunner();
 
         public MyToolWindowControl()
         {
@@ -25,13 +31,13 @@ namespace TestPerformanceReportGenerator
         {
             ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
-                TestAutoRunner autoRunner = new TestAutoRunner();
-                await Task.Run(() => autoRunner.runTestCases());
-                total.Content = autoRunner.totalTests;
-                passed.Content = autoRunner.passedTest + "/" + autoRunner.totalTests;
-                failed.Content = autoRunner.failedTest + "/" + autoRunner.totalTests;
-                skipped.Content = autoRunner.skippedTest + "/" + autoRunner.totalTests;
-                totduration.Content = autoRunner.duration;
+                //TestAutoRunner autoRunner = new TestAutoRunner();
+                await Task.Run(() => this.autoRunner.runTestCases());
+                total.Content = this.autoRunner.totalTests;
+                passed.Content = this.autoRunner.passedTest + "/" + this.autoRunner.totalTests;
+                failed.Content = this.autoRunner.failedTest + "/" + this.autoRunner.totalTests;
+                skipped.Content = this.autoRunner.skippedTest + "/" + this.autoRunner.totalTests;
+                totduration.Content = this.autoRunner.duration;
                 total.Visibility = Visibility.Visible;
                 passed.Visibility = Visibility.Visible;
                 failed.Visibility = Visibility.Visible;
@@ -51,6 +57,7 @@ namespace TestPerformanceReportGenerator
         {
             //setting some attributes of the xaml objects.
             autoTestBtn.IsEnabled = true;
+            autoTestBtn.Visibility = Visibility.Visible;
             totalTestInput.Visibility = Visibility.Collapsed;
             passedTestInput.Visibility = Visibility.Collapsed;  
             failedTestInput.Visibility = Visibility.Collapsed;
@@ -67,6 +74,7 @@ namespace TestPerformanceReportGenerator
         private void autoRunUnchecked(object sender, RoutedEventArgs e)
         {
             autoTestBtn.IsEnabled = false;
+            autoTestBtn.Visibility = Visibility.Collapsed;
             totalTestInput.Visibility = Visibility.Visible;
             passedTestInput.Visibility = Visibility.Visible;
             failedTestInput.Visibility = Visibility.Visible;
@@ -81,7 +89,36 @@ namespace TestPerformanceReportGenerator
 
         private void submitData_Click(object sender, RoutedEventArgs e)
         {
-            VS.MessageBox.Show("TPRG", "create a submit function");
+            //VS.MessageBox.Show("//", this.autoRunner.passedTest);
+
+        }
+
+        private void addTestDataBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Get current Date
+            string dateNow = SystemInfoRetriver.GetCurrentDate();
+            string version = SystemInfoRetriver.GetProductVersion();
+            string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
+
+            if (chk_manual.IsChecked == true) {
+                if (!total.Content.Equals("") && !passed.Content.Equals("") && !failed.Content.Equals("")
+                    && !skipped.Content.Equals("") && !totduration.Content.Equals("") && !coverageInput.Text.Equals("")) {
+
+                    string dur = this.autoRunner.duration.Replace("ms", "");
+                    generator.AddTestData(dateNow, version, hardwareInfo, this.autoRunner.failedTest, this.autoRunner.passedTest,
+                                            this.autoRunner.totalTests, coverageInput.Text, dur, this.autoRunner.skippedTest);
+                }
+                else
+                {
+                    VS.MessageBox.ShowError("Code Quality Report Generator", "Click 'Run Test!' button to run the test first.");
+                }
+            }
+            else
+            {
+                generator.AddTestData(dateNow, version, hardwareInfo, failedTestInput.Text, passedTestInput.Text,
+                                        totalTestInput.Text, coverageInput.Text, durationInput.Text, skippedTestInput.Text);
+            }
+
         }
     }
 }
