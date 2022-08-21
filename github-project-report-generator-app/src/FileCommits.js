@@ -142,7 +142,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
                 {Object.entries(authors).map(([author, commits]) => (
                   <Text
                     key={author}
-                    color={stringToColour(author)}
+                    color={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
                     fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
                     mr={2}
                   >
