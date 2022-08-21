@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Heading, Link, Input, Button, Text, Divider } from '@chakra-ui/react';
 
 import AuthorCommits from './AuthorCommits';
+import Timeline from './Timeline';
 import FileCommits from './FileCommits';
 
 import generateReport from './generateReport';
@@ -93,6 +94,9 @@ function App() {
         <>
           <Divider mt={5} />
           <AuthorCommits commitActivity={commitActivity} url={url} />
+
+          <Divider mt={5} />
+          <Timeline commitActivity={commitActivity} />
         </>
       )}
 
