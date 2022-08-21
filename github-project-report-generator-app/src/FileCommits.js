@@ -85,7 +85,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
                     width={`${(commits / totalCommits) * 100}%`}
                     height={2}
                     float='left'
-                    bgColor={stringToColour(author)}
+                    bgColor={shownAuthors.includes(author) ? stringToColour(author) : 'grey'}
                   />
                 ))}
               </Box>
