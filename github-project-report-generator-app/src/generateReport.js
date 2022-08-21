@@ -31,15 +31,17 @@ module.exports = async (octokitAuth, repo) => {
     });
 
     const authors = {};
-    for (const commit of commits) {
+    const order = [];
+    for (const { author } of commits) {
       // Some commits have a null author, which can lead to the file commit count and
       // the sum of the shown authors' commits not being equal for some files
-      if (!commit.author) continue;
-      if (!authors[commit.author.login]) {
-        authors[commit.author.login] = 1;
+      if (!author) continue;
+      if (!authors[author.login]) {
+        authors[author.login] = 1;
       } else {
-        authors[commit.author.login]++;
+        authors[author.login]++;
       }
+      order.push(author.login);
     }
 
     // Therefore, to be consistent, the commit count output should be the author commits' sums
@@ -47,6 +49,7 @@ module.exports = async (octokitAuth, repo) => {
     fileCommits[file.path] = {
       authors: Object.fromEntries(Object.entries(authors).sort((a, b) => b[1] - a[1])),
       commits: Object.values(authors).reduce((a, b) => a + b, 0),
+      order: order,
     };
 
     console.log(file.path);

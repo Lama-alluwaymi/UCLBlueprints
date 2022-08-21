@@ -11,6 +11,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [onlyShowAuthorFiles, setOnlyShowAuthorFiles] = useState(false);
   const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
   const [proportionalBarHeights, setProportionalBarHeights] = useState(false);
+  const [commitsInOrder, setCommitsInOrder] = useState(false);
   const shownFileCommits = !onlyShowTogetherFiles
     ? onlyShowAuthorFiles
       ? fileCommits.filter((file) => selectedAuthors.some((author) => file[1].authors[author]))
@@ -82,13 +83,18 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           Only Show Files All Selected Authors Worked On Together
         </Checkbox>
       </Flex>
-      <Checkbox
-        isChecked={proportionalBarHeights}
-        onChange={(e) => setProportionalBarHeights(e.target.checked)}
-        mt={5}
-      >
-        Show Bar Heights Proportional to Commit Count
-      </Checkbox>
+      <Flex mt={5}>
+        <Checkbox
+          isChecked={proportionalBarHeights}
+          onChange={(e) => setProportionalBarHeights(e.target.checked)}
+          mr={4}
+        >
+          Show Bar Heights Proportional to Commit Count
+        </Checkbox>
+        <Checkbox isChecked={commitsInOrder} onChange={(e) => setCommitsInOrder(e.target.checked)}>
+          Show Commits in Order
+        </Checkbox>
+      </Flex>
       <Box mt={5}>
         <Text mb={5}>
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles
@@ -98,7 +104,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
         </Text>
         {[...shownFileCommits]
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
-          .map(([file, { authors, commits: totalCommits }]) => (
+          .map(([file, { authors, commits: totalCommits, order }]) => (
             <Box key={file} mb={4}>
               <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
                 {file}
@@ -118,15 +124,26 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
               </Flex>
               {/* https://stackoverflow.com/a/49828563 */}
               <Box width='100%' height={proportionalBarHeights ? `${totalCommits}px` : 2}>
-                {Object.entries(authors).map(([author, commits]) => (
-                  <Box
-                    key={author}
-                    width={`${(commits / totalCommits) * 100}%`}
-                    height='100%'
-                    float='left'
-                    bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
-                  />
-                ))}
+                {commitsInOrder
+                  ? order.map((author, index) => (
+                      <Box
+                        key={index}
+                        width={`${(1 / totalCommits) * 100}%`}
+                        height='100%'
+                        float='left'
+                        bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
+                      />
+                    ))
+                  : Object.entries(authors).map(([author, commits]) => (
+                      <Box
+                        key={author}
+                        width={`${(commits / totalCommits) * 100}%`}
+                        height='100%'
+                        float='left'
+                        bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
+                      />
+                    ))}
+                {}
               </Box>
             </Box>
           ))}
