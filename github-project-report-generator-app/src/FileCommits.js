@@ -14,21 +14,18 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
   const [commitsInOrder, setCommitsInOrder] = useState(false);
   const [showFiles, setShowFiles] = useState(true);
   const [showFolders, setShowFolders] = useState(true);
-  const shownFileCommits = fileCommits
-    .filter((file) => {
-      // Better to have these old school if-statements than confusing nested ternaries
-      if (onlyShowTogetherFiles)
-        return selectedAuthors.length > 0
-          ? selectedAuthors.every((author) => file[1].authors[author])
-          : false;
-      if (onlyShowAuthorFiles) return selectedAuthors.some((author) => file[1].authors[author]);
-      return true;
-    })
-    .filter((file) => {
-      if (showFiles && file[0].includes('.')) return true;
-      if (showFolders && !file[0].includes('.')) return true;
-      return false;
-    });
+  const shownFileCommits = fileCommits.filter((file) => {
+    // Better to have these old school if-statements than confusing nested ternaries
+    if (Object.keys(file[1].authors).length === 0) return false;
+    if (onlyShowTogetherFiles)
+      return selectedAuthors.length > 0
+        ? selectedAuthors.every((author) => file[1].authors[author])
+        : false;
+    if (onlyShowAuthorFiles) return selectedAuthors.some((author) => file[1].authors[author]);
+    if (showFiles && file[0].includes('.')) return true;
+    if (showFolders && !file[0].includes('.')) return true;
+    return false;
+  });
   const highlightedFileCommits = fileCommits.filter(
     (file) =>
       selectedAuthors.some((author) => file[1].authors[author]) &&
