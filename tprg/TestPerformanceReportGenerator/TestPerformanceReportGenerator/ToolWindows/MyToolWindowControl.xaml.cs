@@ -1,12 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Diagnostics;
 using System.Reflection;
-using System.Management;
-using System.Text;
-using System.IO;
-using System.Linq;
-using System.Globalization;
 using TestPerformanceReportGenerator.Utilities;
 
 namespace TestPerformanceReportGenerator
@@ -16,6 +10,19 @@ namespace TestPerformanceReportGenerator
 
         private ReportGenerator generator = new ReportGenerator();
         private TestAutoRunner autoRunner = new TestAutoRunner();
+        private string failedInputTxt;
+        private string passedInputTxt;
+        private string skippedInputTxt;
+        private string durationInputTxt;
+        private string coverageInputTxt;
+        private string totaltestInputTxt;
+        private string maintainInputTxt;
+        private string cycloInputTxt;
+        private string depthOfInputTxt;
+        private string classCInputTxt;
+        private string loscInputTxt;
+        private string loecInputTxt;
+        
 
         public MyToolWindowControl()
         {
@@ -89,64 +96,99 @@ namespace TestPerformanceReportGenerator
 
         private void submitData_Click(object sender, RoutedEventArgs e)
         {
+            this.maintainInputTxt = maintainabilityInput.Text;
+            this.cycloInputTxt = cyclomaticInput.Text;
+            this.depthOfInputTxt = depthInheritanceInput.Text;
+            this.classCInputTxt = classCouplingInput.Text;
+            this.loscInputTxt = loscInput.Text;
+            this.loecInputTxt = loecInput.Text;
+
             //VS.MessageBox.Show("//", this.autoRunner.passedTest);
             ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
                 await Task.Run(() =>
                 {
                     string projectName = Assembly.GetCallingAssembly().GetName().Name;
-
                     ReportGenerator.GenerateReport(projectName, this.generator.dataList,
-                                                    maintainabilityInput.Text, cyclomaticInput.Text,
-                                                    depthInheritanceInput.Text, classCouplingInput.Text,
-                                                    loscInput.Text, loecInput.Text);
+                                                    this.maintainInputTxt, this.cycloInputTxt,
+                                                    this.depthOfInputTxt, this.classCInputTxt,
+                                                    this.loscInputTxt, this.loecInputTxt);
                 });
+                // Clearing all input after report generation
+                ClearQualityInputs();
             }).FireAndForget();
-
         }
 
         private void addTestDataBtn_Click(object sender, RoutedEventArgs e)
         {
-            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            this.failedInputTxt = failedTestInput.Text;
+            this.passedInputTxt = passedTestInput.Text;
+            this.totaltestInputTxt = totalTestInput.Text;
+            this.skippedInputTxt = skippedTestInput.Text;
+            this.durationInputTxt = durationInput.Text;
+            this.coverageInputTxt = coverageInput.Text;
+
+            if (chk_manual.IsChecked == true)
             {
-                await Task.Run(() =>
-                {
-                    // Get current Date
-                    string dateNow = SystemInfoRetriver.GetCurrentDate();
-                    string version = SystemInfoRetriver.GetProductVersion();
-                    string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
-
-                    if (chk_manual.IsChecked == true)
+                if (!total.Content.Equals("") && !passed.Content.Equals("") && !failed.Content.Equals("")
+                    && !skipped.Content.Equals("") && !totduration.Content.Equals("") && !coverageInput.Text.Equals(""))
+                { 
+                    ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                     {
-                        if (!total.Content.Equals("") && !passed.Content.Equals("") && !failed.Content.Equals("")
-                            && !skipped.Content.Equals("") && !totduration.Content.Equals("") && !coverageInput.Text.Equals(""))
+                        await Task.Run(() =>
                         {
-
+                            // Get current Date
+                            string dateNow = SystemInfoRetriver.GetCurrentDate();
+                            string version = SystemInfoRetriver.GetProductVersion();
+                            string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
                             string dur = this.autoRunner.duration.Replace("ms", "");
-                            generator.AddTestData(dateNow, version, hardwareInfo, this.autoRunner.failedTest, this.autoRunner.passedTest,
-                                                    this.autoRunner.totalTests, coverageInput.Text, dur, this.autoRunner.skippedTest);
-                        }
-                        else
-                        {
-                            VS.MessageBox.ShowError("Code Quality Report Generator", "Click 'Run Test!' button to run the test first.");
-                        }
-                    }
-                    else
+                            this.generator.AddTestData(dateNow, version, hardwareInfo, this.autoRunner.failedTest, this.autoRunner.passedTest,
+                                                    this.autoRunner.totalTests, this.coverageInputTxt, dur, this.autoRunner.skippedTest);
+                        });
+                        ClearTestInputs();
+                    }).FireAndForget();
+                }
+                else
+                {
+                    VS.MessageBox.Show("Code Quality Report Generator", "Click 'Run Test!' button to run the test first.");
+                }
+            }
+            else
+            {
+                ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+                {
+                    await Task.Run(() =>
                     {
-                        generator.AddTestData(dateNow, version, hardwareInfo, failedTestInput.Text, passedTestInput.Text,
-                                                totalTestInput.Text, coverageInput.Text, durationInput.Text, skippedTestInput.Text);
-                    }
-                });
+                        string dateNow = SystemInfoRetriver.GetCurrentDate();
+                        string version = SystemInfoRetriver.GetProductVersion();
+                        string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
+                        this.generator.AddTestData(dateNow, version, hardwareInfo, this.failedInputTxt, this.passedInputTxt,
+                            this.totaltestInputTxt, this.coverageInputTxt, this.durationInputTxt, this.skippedInputTxt);
 
-                failedTestInput.Clear();
-                passedTestInput.Clear();
-                totalTestInput.Clear();
-                coverageInput.Clear();
-                durationInput.Clear();
-                skippedTestInput.Clear();
+                    });
+                    ClearTestInputs();
+                }).FireAndForget();
+            }
+        }
 
-            }).FireAndForget();
+        private void ClearTestInputs()
+        {
+            failedTestInput.Clear();
+            passedTestInput.Clear();
+            totalTestInput.Clear();
+            coverageInput.Clear();
+            durationInput.Clear();
+            skippedTestInput.Clear();
+        }
 
+        private void ClearQualityInputs()
+        {
+            maintainabilityInput.Clear();
+            cyclomaticInput.Clear();
+            depthInheritanceInput.Clear();
+            classCouplingInput.Clear();
+            loscInput.Clear();
+            loecInput.Clear();
         }
     }
 }
