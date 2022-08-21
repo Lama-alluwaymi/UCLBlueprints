@@ -52,15 +52,6 @@ module.exports = async (octokitAuth, repo) => {
     console.log(file.path);
   }
 
-  const authorFiles = commitActivity.map((contributor) => [contributor.author.login, []]);
-  for (const [contributor, files] of authorFiles) {
-    for (const [file, { authors }] of Object.entries(fileCommits)) {
-      if (authors[contributor]) {
-        files.push(file);
-      }
-    }
-  }
-
   return {
     url: html_url,
     name: name,
@@ -71,8 +62,7 @@ module.exports = async (octokitAuth, repo) => {
         contributor.weeks.map((week) => week.a + week.d).reduce((a, b) => a + b, 0)
       )
       .reduce((a, b) => a + b, 0),
-    mostRecentCommitSha: treeSha,
     fileCommits: Object.entries(fileCommits),
-    authorFiles: authorFiles.sort((a, b) => b[1].length - a[1].length),
+    mostRecentCommitSha: treeSha,
   };
 };

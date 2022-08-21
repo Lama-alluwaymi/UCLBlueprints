@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Flex, Heading, Link, Input, Button, Text, Image, Divider } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
-import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
+import { Radio, RadioGroup } from '@chakra-ui/react';
+import { Checkbox, CheckboxGroup } from '@chakra-ui/react';
 import { Pie, PieChart } from 'recharts';
 
 import generateReport from './generateReport';
@@ -24,8 +25,12 @@ function App() {
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
 
   const [sortType, setSortType] = useState('Default');
+  const [shownAuthors, setShownAuthors] = useState([]);
 
-  const [authorFiles, setAuthorFiles] = useState([]);
+  const authors = authorCommits.map((contributor) => contributor.author.login);
+  const shownFileCommits = fileCommits.filter((file) =>
+    shownAuthors.some((author) => file[1].authors[author])
+  );
 
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
@@ -36,9 +41,7 @@ function App() {
     setToken(e.target.value);
   };
 
-  const getReport = async () => {
-    setLoading(true);
-
+  const clearReport = () => {
     setURL('');
     setName('');
     setAuthorCommits([]);
@@ -46,13 +49,11 @@ function App() {
     setTotalChanges(0);
     setFileCommits([]);
     setMostRecentCommitSha('');
-    setAuthorFiles([]);
 
-    const data = await generateReport(token, {
-      owner: reqURL.split('/')[3],
-      repo: reqURL.split('/')[4],
-    });
+    setShownAuthors([]);
+  };
 
+  const setReport = (data) => {
     setURL(data.url);
     setName(data.name);
     setAuthorCommits(data.authorCommits);
@@ -60,20 +61,25 @@ function App() {
     setTotalChanges(data.totalChanges);
     setFileCommits(data.fileCommits);
     setMostRecentCommitSha(data.mostRecentCommitSha);
-    setAuthorFiles(data.authorFiles);
 
+    setShownAuthors(data.authorCommits.map((contributor) => contributor.author.login));
+  };
+
+  const getReport = async () => {
+    setLoading(true);
+    clearReport();
+    setReport(
+      await generateReport(token, {
+        owner: reqURL.split('/')[3],
+        repo: reqURL.split('/')[4],
+      })
+    );
     setLoading(false);
   };
 
   const showSampleReport = () => {
-    setURL(sampleData.url);
-    setName(sampleData.name);
-    setAuthorCommits(sampleData.authorCommits);
-    setTotalCommits(sampleData.totalCommits);
-    setTotalChanges(sampleData.totalChanges);
-    setFileCommits(sampleData.fileCommits);
-    setMostRecentCommitSha(sampleData.mostRecentCommitSha);
-    setAuthorFiles(sampleData.authorFiles);
+    clearReport();
+    setReport(sampleData);
   };
 
   return (
@@ -181,14 +187,44 @@ function App() {
         </Heading>
         <Text mr={2}>Sort by:</Text>
         <RadioGroup onChange={setSortType} value={sortType}>
-          <Stack direction='row'>
-            <Radio value='Default'>Default</Radio>
+          <Flex>
+            <Radio value='Default' mr={2}>
+              Default
+            </Radio>
             <Radio value='Commits'>Commits</Radio>
-          </Stack>
+          </Flex>
         </RadioGroup>
       </Flex>
-      <Box>
-        {[...fileCommits]
+      <Checkbox
+        isChecked={shownAuthors.length === authors.length}
+        onChange={(e) => setShownAuthors(e.target.checked ? authors : [])}
+      >
+        Select/Deselect All
+      </Checkbox>
+      <Divider />
+      <CheckboxGroup value={shownAuthors}>
+        <Flex>
+          {authorCommits.map(({ author: { login: author } }) => (
+            <Checkbox
+              key={author}
+              value={author}
+              onChange={(e) =>
+                setShownAuthors(
+                  e.target.checked
+                    ? [...shownAuthors, author]
+                    : shownAuthors.filter((a) => a !== author)
+                )
+              }
+              mr={4}
+            >
+              {author}
+            </Checkbox>
+          ))}
+        </Flex>
+      </CheckboxGroup>
+      <Box mt={5}>
+        {fileCommits.length > 0 && <Text mb={5}>{shownFileCommits.length} files:</Text>}
+        {shownFileCommits
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
           .map(([file, { authors, commits: totalCommits }]) => (
             <Box key={file} mb={4}>
@@ -198,7 +234,12 @@ function App() {
               {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
               <Flex mb={2}>
                 {Object.entries(authors).map(([author, commits]) => (
-                  <Text key={author} color={stringToColour(author)} mr={2}>
+                  <Text
+                    key={author}
+                    color={stringToColour(author)}
+                    fontWeight={shownAuthors.includes(author) ? 'bold' : 'normal'}
+                    mr={2}
+                  >
                     {author} ({commits}),
                   </Text>
                 ))}
@@ -217,32 +258,6 @@ function App() {
               </Box>
             </Box>
           ))}
-      </Box>
-
-      <Divider mt={5} />
-
-      <Heading size='md' my={5}>
-        Author Files
-      </Heading>
-      <Box>
-        {authorFiles.map(([author, files]) => (
-          <Box key={author} my={5}>
-            <Link href={`${url}/commits?author=${author}`} isExternal>
-              <Image
-                src={
-                  authorCommits.find((contributor) => contributor.author.login === author).author
-                    .avatar_url
-                }
-                boxSize='50px'
-              />
-              {author}
-            </Link>
-            {` - ${files.length} files:`}
-            {files.map((file) => (
-              <Text key={file}>{file}</Text>
-            ))}
-          </Box>
-        ))}
       </Box>
     </Box>
   );
