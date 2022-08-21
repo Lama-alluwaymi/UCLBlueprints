@@ -90,34 +90,62 @@ namespace TestPerformanceReportGenerator
         private void submitData_Click(object sender, RoutedEventArgs e)
         {
             //VS.MessageBox.Show("//", this.autoRunner.passedTest);
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                await Task.Run(() =>
+                {
+                    string projectName = Assembly.GetCallingAssembly().GetName().Name;
+
+                    ReportGenerator.GenerateReport(projectName, this.generator.dataList,
+                                                    maintainabilityInput.Text, cyclomaticInput.Text,
+                                                    depthInheritanceInput.Text, classCouplingInput.Text,
+                                                    loscInput.Text, loecInput.Text);
+                });
+            }).FireAndForget();
 
         }
 
         private void addTestDataBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Get current Date
-            string dateNow = SystemInfoRetriver.GetCurrentDate();
-            string version = SystemInfoRetriver.GetProductVersion();
-            string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
-
-            if (chk_manual.IsChecked == true) {
-                if (!total.Content.Equals("") && !passed.Content.Equals("") && !failed.Content.Equals("")
-                    && !skipped.Content.Equals("") && !totduration.Content.Equals("") && !coverageInput.Text.Equals("")) {
-
-                    string dur = this.autoRunner.duration.Replace("ms", "");
-                    generator.AddTestData(dateNow, version, hardwareInfo, this.autoRunner.failedTest, this.autoRunner.passedTest,
-                                            this.autoRunner.totalTests, coverageInput.Text, dur, this.autoRunner.skippedTest);
-                }
-                else
-                {
-                    VS.MessageBox.ShowError("Code Quality Report Generator", "Click 'Run Test!' button to run the test first.");
-                }
-            }
-            else
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
             {
-                generator.AddTestData(dateNow, version, hardwareInfo, failedTestInput.Text, passedTestInput.Text,
-                                        totalTestInput.Text, coverageInput.Text, durationInput.Text, skippedTestInput.Text);
-            }
+                await Task.Run(() =>
+                {
+                    // Get current Date
+                    string dateNow = SystemInfoRetriver.GetCurrentDate();
+                    string version = SystemInfoRetriver.GetProductVersion();
+                    string hardwareInfo = SystemInfoRetriver.GetHardwareInfo();
+
+                    if (chk_manual.IsChecked == true)
+                    {
+                        if (!total.Content.Equals("") && !passed.Content.Equals("") && !failed.Content.Equals("")
+                            && !skipped.Content.Equals("") && !totduration.Content.Equals("") && !coverageInput.Text.Equals(""))
+                        {
+
+                            string dur = this.autoRunner.duration.Replace("ms", "");
+                            generator.AddTestData(dateNow, version, hardwareInfo, this.autoRunner.failedTest, this.autoRunner.passedTest,
+                                                    this.autoRunner.totalTests, coverageInput.Text, dur, this.autoRunner.skippedTest);
+                        }
+                        else
+                        {
+                            VS.MessageBox.ShowError("Code Quality Report Generator", "Click 'Run Test!' button to run the test first.");
+                        }
+                    }
+                    else
+                    {
+                        generator.AddTestData(dateNow, version, hardwareInfo, failedTestInput.Text, passedTestInput.Text,
+                                                totalTestInput.Text, coverageInput.Text, durationInput.Text, skippedTestInput.Text);
+                    }
+                });
+
+                failedTestInput.Clear();
+                passedTestInput.Clear();
+                totalTestInput.Clear();
+                coverageInput.Clear();
+                durationInput.Clear();
+                skippedTestInput.Clear();
+
+            }).FireAndForget();
 
         }
     }

@@ -222,26 +222,27 @@
                                  Grid.Row="1" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                            <Label Content="Class Coupling: " Grid.Row="2" Grid.Column="0" Margin="10 0 0 5"/>
-                            <TextBox Name="classCouplingInput"
+                            <Label Content="Depth of Inheritance: " Grid.Row="2" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="depthInheritanceInput"
                                  Grid.Row="2" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                            <Label Content="Lines of Source Code: " Grid.Row="3" Grid.Column="0" Margin="10 0 0 5"/>
-                            <TextBox Name="loscInput"
+                            <Label Content="Class Coupling: " Grid.Row="3" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="classCouplingInput"
                                  Grid.Row="3" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                            <Label Content="Lines of Exec. Code: " Grid.Row="4" Grid.Column="0" Margin="10 0 0 5"/>
-                            <TextBox Name="loecInput"
+                            <Label Content="Lines of Source Code: " Grid.Row="4" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="loscInput"
                                  Grid.Row="4" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
-                            <Label Content="Line Coverage: " Grid.Row="5" Grid.Column="0" Margin="10 0 0 5"/>
-                            <TextBox Name="lineCoverageInput"
+                            <Label Content="Lines of Exec. Code: " Grid.Row="5" Grid.Column="0" Margin="10 0 0 5"/>
+                            <TextBox Name="loecInput"
                                  Grid.Row="5" Grid.Column="1"
                                  VerticalContentAlignment="Center"
                                  Margin="2"/>
+
                         </Grid>
                     </StackPanel>
                     <Separator Margin="0 10"/>
