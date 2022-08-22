@@ -96,7 +96,7 @@ function App() {
           <AuthorCommits commitActivity={commitActivity} url={url} />
 
           <Divider mt={5} />
-          <Timeline commitActivity={commitActivity} />
+          <Timeline commitActivity={commitActivity} url={url} />
         </>
       )}
 
