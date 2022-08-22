@@ -1,6 +1,6 @@
 const { Octokit } = require('octokit');
 
-module.exports = async (octokitAuth, repo) => {
+export default async function generateReport(octokitAuth, repo) {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/repos/repos#get-a-repository
@@ -62,4 +62,4 @@ module.exports = async (octokitAuth, repo) => {
     commitActivity: commitActivity.sort((a, b) => b.total - a.total),
     fileCommits: Object.entries(fileCommits),
   };
-};
+}
