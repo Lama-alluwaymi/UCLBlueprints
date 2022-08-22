@@ -46,7 +46,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
         <RadioGroup onChange={setSortType} value={sortType}>
           <Flex>
             <Radio value='Default' mr={2}>
-              Default
+              Repository Structure
             </Radio>
             <Radio value='Commits'>Commits</Radio>
           </Flex>

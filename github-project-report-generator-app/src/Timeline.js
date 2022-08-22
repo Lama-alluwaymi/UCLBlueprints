@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Heading, Link, Image } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Link, Image, Badge } from '@chakra-ui/react';
 import { Radio, RadioGroup } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
 
@@ -37,7 +37,7 @@ const Timeline = ({ commitActivity, url }) => {
           Timeline (by Week)
         </Heading>
         <Text mr={2}>Showing:</Text>
-        <RadioGroup onChange={setShowing} value={showing}>
+        <RadioGroup onChange={setShowing} value={showing} mr={5}>
           <Flex>
             <Radio value='Changes' mr={2}>
               Changes
@@ -45,6 +45,12 @@ const Timeline = ({ commitActivity, url }) => {
             <Radio value='Commits'>Commits</Radio>
           </Flex>
         </RadioGroup>
+        {showing === 'Changes' && (
+          <>
+            <Badge colorScheme='red'>Deletions</Badge>
+            <Badge colorScheme='green'>Additions</Badge>
+          </>
+        )}
       </Flex>
       <TableContainer>
         <Table variant='simple'>
