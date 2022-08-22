@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Report generator</title>
+</head>
+<body>
+    <h1>Trello Report Generator</h1>
+    
+    <label for="listID">List ID:</label>
+    <input type="text" id="listID" name="listID"><br><br>
+    <label for="key">Key:</label>
+    <input type="text" id="key" name="key"><br><br>
+    <label for="token">Token:</label>
+    <input type="text" id="token" name="token"><br><br>
+    <button id="btn" onclick="countCardsInList(document.getElementById('listID').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
+    <h1>Cards currently in done list</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Card Name</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody id="table_body"></tbody>
+    </table>
+    <script src="main.js"></script>
+</body>
+</html>
