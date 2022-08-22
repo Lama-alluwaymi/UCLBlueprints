@@ -40,17 +40,5 @@ function countCardsInList(listID, key, token) {
 
 }
 
-//var listID = document.getElementById("listID");
-//var token = document.getElementById("token");
-//var key = document.getElementById("key");
-
-//console.log(listID);
-//console.log(token);
-//console.log(key);
-
-//countCardsInList(listID, key, token);
-// listid= 62f67eb4babcd7227e1d7f3c
- //key=c6740dc77e0524d9f6192299e0821c9c
- //token=502942d216f43d75b1c9954158d49049c4cd74a20d1f0daade7c035489c3ba35 //
  
 
