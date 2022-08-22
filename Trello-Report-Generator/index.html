@@ -6,17 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Report generator</title>
 </head>
+
 <body>
+    <script src="main.js"></script>
     <h1>Trello Report Generator</h1>
     
-    <label for="listID">List ID:</label>
-    <input type="text" id="listID" name="listID"><br><br>
+    <label for="boardID">Enter your board ID:</label>
+    <input type="text" id="boardID" name="boardID"><br><br>
     <label for="key">Key:</label>
     <input type="text" id="key" name="key"><br><br>
     <label for="token">Token:</label>
     <input type="text" id="token" name="token"><br><br>
-    <button id="btn" onclick="countCardsInList(document.getElementById('listID').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
-    <h1>Cards currently in done list</h1>
+    <button id="btn" onclick="getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );" >Fetch Lists</button><br><br>
+
+
+    <label for="lists">Choose a list:</label>
+        <select name="listDropDown" id="listDropDown">
+        
+        </select>
+  <br><br>
+    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
+    
+    <h1>Cards currently in list</h1>
     <table class="table">
         <thead>
             <tr>
@@ -27,6 +38,5 @@
         </thead>
         <tbody id="table_body"></tbody>
     </table>
-    <script src="main.js"></script>
 </body>
 </html>
