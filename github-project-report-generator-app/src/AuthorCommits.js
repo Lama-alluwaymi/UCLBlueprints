@@ -56,7 +56,7 @@ const AuthorCommits = ({ commitActivity, url }) => {
           </Tbody>
         </Table>
       </TableContainer>
-      <Flex mt={5} justify='center'>
+      <Flex mt={5} justify='center' display={{ base: 'none', md: 'flex' }}>
         <PieChart width={730} height={250}>
           <Pie
             data={commitActivity.map(({ author, total }) => ({

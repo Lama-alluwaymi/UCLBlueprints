@@ -32,13 +32,13 @@ const Timeline = ({ commitActivity, url }) => {
 
   return (
     <>
-      <Flex align='center' my={5}>
+      <Flex align='center' my={5} wrap='wrap'>
         <Heading size='md' mr={5}>
           Timeline (by Week)
         </Heading>
-        <Text mr={2}>Showing:</Text>
         <RadioGroup onChange={setShowing} value={showing} mr={5}>
-          <Flex>
+          <Flex wrap='wrap'>
+            <Text mr={2}>Showing:</Text>
             <Radio value='Commits' mr={2}>
               Commits
             </Radio>
@@ -46,10 +46,10 @@ const Timeline = ({ commitActivity, url }) => {
           </Flex>
         </RadioGroup>
         {showing === 'Changes' && (
-          <>
+          <Box>
             <Badge colorScheme='red'>Deletions</Badge>
             <Badge colorScheme='green'>Additions</Badge>
-          </>
+          </Box>
         )}
       </Flex>
       <TableContainer>

@@ -71,8 +71,9 @@ function App() {
       </Link>
       <Input value={token} onChange={onEditToken} type='password' mb={5} />
       <Text>GitHub Repository URL</Text>
-      <Input value={reqURL} onChange={(e) => setReqURL(e.currentTarget.value)} mb={5} />
+      <Input value={reqURL} onChange={(e) => setReqURL(e.currentTarget.value)} />
       <Button
+        mt={5}
         onClick={() => getBasicReport()}
         disabled={!reqURL.includes('https://github.com')}
         colorScheme='blue'
@@ -83,6 +84,7 @@ function App() {
         Generate Basic Report
       </Button>
       <Button
+        mt={5}
         onClick={() => getFullReport()}
         disabled={!reqURL.includes('https://github.com')}
         colorScheme='blue'
@@ -92,7 +94,7 @@ function App() {
       >
         Generate Full Report
       </Button>
-      <Button onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
+      <Button mt={5} onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
         Show Sample Report
       </Button>
 

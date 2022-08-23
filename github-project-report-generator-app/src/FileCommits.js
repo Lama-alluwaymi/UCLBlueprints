@@ -55,13 +55,13 @@ const FileCommits = ({
 
   return (
     <>
-      <Flex align='center' my={5}>
+      <Flex align='center' my={5} wrap='wrap'>
         <Heading size='md' mr={5}>
           File Commits
         </Heading>
-        <Text mr={2}>Sort by:</Text>
         <RadioGroup onChange={setSortType} value={sortType}>
-          <Flex>
+          <Flex wrap='wrap'>
+            <Text mr={2}>Sort by:</Text>
             <Radio value='Default' mr={2}>
               Repository Structure
             </Radio>
@@ -79,7 +79,7 @@ const FileCommits = ({
       </Checkbox>
       <Divider />
       <CheckboxGroup value={selectedAuthors}>
-        <Flex>
+        <Flex wrap='wrap'>
           {authors.map((author) => (
             <Checkbox
               key={author}
@@ -99,7 +99,7 @@ const FileCommits = ({
         </Flex>
       </CheckboxGroup>
 
-      <Flex mt={5}>
+      <Flex mt={5} wrap='wrap'>
         <Checkbox
           isChecked={onlyShowAuthorFiles || onlyShowTogetherFiles}
           onChange={(e) => setOnlyShowAuthorFiles(e.target.checked)}
@@ -116,7 +116,7 @@ const FileCommits = ({
         </Checkbox>
       </Flex>
 
-      <Flex mt={5}>
+      <Flex mt={5} wrap='wrap'>
         <Text mr={2}>Timeline View:</Text>
         <Switch
           isChecked={timelineView}
@@ -136,7 +136,7 @@ const FileCommits = ({
       </Flex>
 
       {!timelineView && (
-        <Flex mt={5}>
+        <Flex mt={5} wrap='wrap'>
           <Checkbox
             isChecked={proportionalBarHeights}
             onChange={(e) => setProportionalBarHeights(e.target.checked)}
@@ -153,7 +153,7 @@ const FileCommits = ({
         </Flex>
       )}
 
-      <Flex mt={5}>
+      <Flex mt={5} wrap='wrap'>
         <Checkbox isChecked={showFiles} onChange={(e) => setShowFiles(e.target.checked)} mr={4}>
           Show Files
         </Checkbox>
@@ -202,7 +202,7 @@ const FileCommits = ({
                       ).toLocaleDateString()}`
                     : ''
                 } by: `}
-                <Flex mb={2}>
+                <Flex wrap='wrap' mb={2}>
                   {Object.entries(authors).map(([author, commits]) => (
                     <Text
                       key={author}
