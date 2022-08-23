@@ -53,6 +53,7 @@ export async function generateFullReport(octokitAuth, repo) {
       }
       order.push({ author: author.login, date: commit.committer.date });
     }
+    if (order.length === 0) continue;
     order.reverse();
 
     // Therefore, to be consistent, the commit count output should be the author commits' sums
