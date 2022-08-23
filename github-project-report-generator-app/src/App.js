@@ -15,13 +15,18 @@ function App() {
   const [reqURL, setReqURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
   const [loading, setLoading] = useState(false);
 
-  const [url, setURL] = useState('');
-  const [name, setName] = useState('');
-  const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
-  const [firstCommitDate, setFirstCommitDate] = useState('');
-  const [lastCommitDate, setLastCommitDate] = useState('');
-  const [commitActivity, setCommitActivity] = useState([]);
-  const [fileCommits, setFileCommits] = useState([]);
+  const [
+    {
+      url,
+      name,
+      mostRecentCommitSha,
+      firstCommitDate,
+      lastCommitDate,
+      commitActivity,
+      fileCommits,
+    },
+    setData,
+  ] = useState({});
 
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
@@ -32,30 +37,10 @@ function App() {
     setToken(e.target.value);
   };
 
-  const clearReport = () => {
-    setURL('');
-    setName('');
-    setMostRecentCommitSha('');
-    setFirstCommitDate('');
-    setLastCommitDate('');
-    setCommitActivity([]);
-    setFileCommits([]);
-  };
-
-  const setReport = (data) => {
-    setURL(data.url);
-    setName(data.name);
-    setMostRecentCommitSha(data.mostRecentCommitSha);
-    setFirstCommitDate(data.firstCommitDate);
-    setLastCommitDate(data.lastCommitDate);
-    setCommitActivity(data.commitActivity);
-    setFileCommits(data.fileCommits);
-  };
-
   const getReport = async () => {
     setLoading(true);
-    clearReport();
-    setReport(
+    setData({});
+    setData(
       await generateReport(token, {
         owner: reqURL.split('/')[3],
         repo: reqURL.split('/')[4],
@@ -65,8 +50,9 @@ function App() {
   };
 
   const showSampleReport = () => {
-    clearReport();
-    setReport(sampleData);
+    setData({});
+    // Set a delay so the state actually resets and the report re-renders
+    setTimeout(() => setData(sampleData), 1);
   };
 
   return (
@@ -93,11 +79,13 @@ function App() {
         Show Sample Report
       </Button>
 
-      <Heading mt={5} size='lg'>
-        {name}
-      </Heading>
+      {name && (
+        <Heading mt={5} size='lg'>
+          {name}
+        </Heading>
+      )}
 
-      {commitActivity.length > 0 && (
+      {commitActivity?.length > 0 && (
         <>
           <Divider mt={5} />
           <AuthorCommits commitActivity={commitActivity} url={url} />
@@ -107,7 +95,7 @@ function App() {
         </>
       )}
 
-      {fileCommits.length > 0 && (
+      {fileCommits?.length > 0 && (
         <>
           <Divider mt={5} />
           <FileCommits
