@@ -5,27 +5,33 @@ import AuthorCommits from './AuthorCommits';
 import Timeline from './Timeline';
 import FileCommits from './FileCommits';
 
-import generateReport from './generateReport';
+import { generateBasicReport, generateFullReport } from './generateReport';
 
 import sampleData from './sampleData.json';
 
 function App() {
   const [token, setToken] = useState('');
   const [reqURL, setReqURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
-  const [loading, setLoading] = useState(false);
+  const [basicReportLoading, setBasicReportLoading] = useState(false);
+  const [fullReportLoading, setFullReportLoading] = useState(false);
 
   const [
     {
       url,
       name,
+      commitActivity,
       mostRecentCommitSha,
       firstCommitDate,
       lastCommitDate,
-      commitActivity,
       fileCommits,
     },
     setData,
   ] = useState({});
+
+  const repo = {
+    owner: reqURL.split('/')[3],
+    repo: reqURL.split('/')[4],
+  };
 
   useEffect(() => {
     setToken(localStorage.getItem('github-api-token'));
@@ -36,16 +42,18 @@ function App() {
     setToken(e.target.value);
   };
 
-  const getReport = async () => {
-    setLoading(true);
+  const getBasicReport = async () => {
+    setBasicReportLoading(true);
     setData({});
-    setData(
-      await generateReport(token, {
-        owner: reqURL.split('/')[3],
-        repo: reqURL.split('/')[4],
-      })
-    );
-    setLoading(false);
+    setData(await generateBasicReport(token, repo));
+    setBasicReportLoading(false);
+  };
+
+  const getFullReport = async () => {
+    setFullReportLoading(true);
+    setData({ url, name, commitActivity });
+    setData(await generateFullReport(token, repo));
+    setFullReportLoading(false);
   };
 
   const showSampleReport = () => {
@@ -65,14 +73,24 @@ function App() {
       <Text>GitHub Repository URL</Text>
       <Input value={reqURL} onChange={(e) => setReqURL(e.currentTarget.value)} mb={5} />
       <Button
-        onClick={() => getReport()}
+        onClick={() => getBasicReport()}
         disabled={!reqURL.includes('https://github.com')}
         colorScheme='blue'
-        isLoading={loading}
+        isLoading={basicReportLoading}
         loadingText='Generating'
         mr={5}
       >
-        Generate Report
+        Generate Basic Report
+      </Button>
+      <Button
+        onClick={() => getFullReport()}
+        disabled={!reqURL.includes('https://github.com')}
+        colorScheme='blue'
+        isLoading={fullReportLoading}
+        loadingText='Generating'
+        mr={5}
+      >
+        Generate Full Report
       </Button>
       <Button onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
         Show Sample Report

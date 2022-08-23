@@ -1,6 +1,6 @@
 // Must be run with 'esm' flag -> node -r esm generateSample
 
-import generateReport from './src/generateReport.js';
+import { generateFullReport } from './src/generateReport.js';
 
 const fs = require('fs');
 require('dotenv').config();
@@ -11,7 +11,7 @@ require('dotenv').config();
     JSON.stringify(
       // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
       // Then create a .env file and put your token there
-      await generateReport(process.env.GITHUB_TOKEN, {
+      await generateFullReport(process.env.GITHUB_TOKEN, {
         owner: 'ArchawinWongkittiruk',
         repo: 'TheBackrowers',
       }),
