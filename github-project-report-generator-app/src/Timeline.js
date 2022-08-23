@@ -6,7 +6,7 @@ import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@
 import stringToColour from './stringToColour';
 
 const Timeline = ({ commitActivity, url }) => {
-  const [showing, setShowing] = useState('Changes');
+  const [showing, setShowing] = useState('Commits');
   const weeks = commitActivity[0].weeks
     .map((week, index) => ({
       week: week.w,
@@ -39,10 +39,10 @@ const Timeline = ({ commitActivity, url }) => {
         <Text mr={2}>Showing:</Text>
         <RadioGroup onChange={setShowing} value={showing} mr={5}>
           <Flex>
-            <Radio value='Changes' mr={2}>
-              Changes
+            <Radio value='Commits' mr={2}>
+              Commits
             </Radio>
-            <Radio value='Commits'>Commits</Radio>
+            <Radio value='Changes'>Changes</Radio>
           </Flex>
         </RadioGroup>
         {showing === 'Changes' && (
