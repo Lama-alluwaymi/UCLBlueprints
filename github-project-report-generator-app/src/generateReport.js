@@ -43,6 +43,7 @@ export default async function generateReport(octokitAuth, repo) {
       }
       order.push({ author: author.login, date: commit.committer.date });
     }
+    order.reverse();
 
     // Therefore, to be consistent, the commit count output should be the author commits' sums
     // rather than the seemingly more intuitive commits.length
@@ -50,8 +51,8 @@ export default async function generateReport(octokitAuth, repo) {
       authors: Object.fromEntries(Object.entries(authors).sort((a, b) => b[1] - a[1])),
       commits: Object.values(authors).reduce((a, b) => a + b, 0),
       order: order,
-      firstCommitDate: order[order.length - 1].date,
-      lastCommitDate: order[0].date,
+      firstCommitDate: order[0].date,
+      lastCommitDate: order[order.length - 1].date,
     };
 
     console.log(file.path);

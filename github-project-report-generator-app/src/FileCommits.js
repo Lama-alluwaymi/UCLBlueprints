@@ -108,7 +108,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           Show Bar Heights Proportional to Commit Count
         </Checkbox>
         <Checkbox isChecked={commitsInOrder} onChange={(e) => setCommitsInOrder(e.target.checked)}>
-          Show Commits in Order (from most recent on the left to least recent on the right)
+          Show Commits in Order (from least recent on the left to most recent on the right)
         </Checkbox>
       </Flex>
 
