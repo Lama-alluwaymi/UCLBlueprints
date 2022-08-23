@@ -24,6 +24,7 @@ const FileCommits = ({
   const [showTimelineCommits, setShowTimelineCommits] = useState(false);
 
   const [proportionalBarHeights, setProportionalBarHeights] = useState(false);
+  const [proportionalBarWidths, setProportionalBarWidths] = useState(false);
   const [commitsInOrder, setCommitsInOrder] = useState(false);
 
   const [showFiles, setShowFiles] = useState(true);
@@ -52,6 +53,7 @@ const FileCommits = ({
       selectedAuthors.some((author) => file[1].authors[author]) &&
       shownFileCommits.some((shownFile) => shownFile[0] === file[0])
   );
+  const maxCommits = shownFileCommits.reduce((a, file) => Math.max(a, file[1].commits), 0);
 
   return (
     <>
@@ -145,10 +147,17 @@ const FileCommits = ({
             Show Bar Heights Proportional to Commit Count
           </Checkbox>
           <Checkbox
+            isChecked={proportionalBarWidths}
+            onChange={(e) => setProportionalBarWidths(e.target.checked)}
+            mr={4}
+          >
+            Show Bar Widths Proportional to Commit Count
+          </Checkbox>
+          <Checkbox
             isChecked={commitsInOrder}
             onChange={(e) => setCommitsInOrder(e.target.checked)}
           >
-            Show Commits in Order (from least recent on the left to most recent on the right)
+            Show Commits in Order from Least Recent to Most Recent
           </Checkbox>
         </Flex>
       )}
@@ -217,7 +226,7 @@ const FileCommits = ({
                 {/* https://stackoverflow.com/a/49828563 */}
                 {!timelineView ? (
                   <Box
-                    width='100%'
+                    width={proportionalBarWidths ? `${(totalCommits / maxCommits) * 100}%` : '100%'}
                     height={proportionalBarHeights ? `${totalCommits * 2}px` : 2}
                     mt={4}
                   >
