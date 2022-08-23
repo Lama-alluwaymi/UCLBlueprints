@@ -17,10 +17,10 @@ namespace TestPerformanceReportGenerator.Utilities
         public string duration;
         public string totalTests;
 
-        private static DirectoryInfo getSolutionDir(string currentPath = null)
+        public static DirectoryInfo getSolutionDir(string currentPath = null, string fileExt = "*.sln")
         {
             var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
-            while (directory != null && !directory.GetFiles("*.sln").Any())
+            while (directory != null && !directory.GetFiles(fileExt).Any())
             {
                 directory = directory.Parent;
             }
@@ -38,6 +38,7 @@ namespace TestPerformanceReportGenerator.Utilities
                 {
                     len = target.Length;
                     substr = this.output.Substring(targetIndex + len + 1, 5);
+                    substr = substr.Replace("ms", "");
                     return substr;
                 }
                 len = target.Length;

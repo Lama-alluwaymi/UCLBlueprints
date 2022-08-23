@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio;
 using System.IO;
 
 namespace TestPerformanceReportGenerator.Utilities
@@ -36,8 +36,11 @@ namespace TestPerformanceReportGenerator.Utilities
             string coverageOptionXAxis = "";
             string coverageOptionYAxis = "";
 
-            string reportFile = FileHelper.ReadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestTemplate.html"));
-            // string reportFile = FileHelper.ReadFile("../Utilities/TestTemplate.html");
+            //string reportFile = FileHelper.ReadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestTemplate.html"));
+            //var root = Path.GetDirectoryName(typeof(VisualStudioServices).Assembly.Location);
+            //string reportFile = FileHelper.ReadFile(Path.Combine(root!, "Utilities", "TestTemplate.html"));
+            string resourceName = "TestPerformanceReportGenerator.Utilities.TestTemplate.html";
+            string reportFile = FileHelper.ReadFromResource(resourceName);
 
             reportFile = reportFile.Replace("{$ProjectName$}", projectName);
             reportFile = reportFile.Replace("{$SOURCECODE$}", losc);
@@ -52,7 +55,7 @@ namespace TestPerformanceReportGenerator.Utilities
 
             int index = 0;
             foreach(QualityData item in dataList)
-            {
+            {   
                 tablestr += $@"<tr>
                                <td>{item.Date}</td>
                                <td>{item.Version}</td>
@@ -79,7 +82,18 @@ namespace TestPerformanceReportGenerator.Utilities
             string reportName = "CodeQualityReport_" + dateNow + ".html";
 
             //Write to path "../Reports/CodeQualityReport_dmy.html"
-            string[] outputPath = { AppDomain.CurrentDomain.BaseDirectory, "Reports", reportName};
+            DirectoryInfo outputDir = TestAutoRunner.getSolutionDir(null, "*.csproj");
+            string outputPath = outputDir.FullName;
+            string[] path = { outputPath, "Reports", reportName };
+            if (Directory.Exists(Path.Combine(outputPath, "Reports")))
+            {
+                FileHelper.WriteFile(reportFile, Path.Combine(path));
+            }
+            else
+            {
+                Directory.CreateDirectory(Path.Combine(outputPath, "Reports"));
+                FileHelper.WriteFile(reportFile, Path.Combine(path));
+            }
             FileHelper.WriteFile(reportFile, Path.Combine(outputPath));
         }
     }

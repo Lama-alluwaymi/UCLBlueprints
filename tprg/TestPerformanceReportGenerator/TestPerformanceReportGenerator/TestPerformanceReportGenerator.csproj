@@ -65,7 +65,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Utilities\TestTemplate.html" />
+    <EmbeddedResource Include="Utilities\TestTemplate.html" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>

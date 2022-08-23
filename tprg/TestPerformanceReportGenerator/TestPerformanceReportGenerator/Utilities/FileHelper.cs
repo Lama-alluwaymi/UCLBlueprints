@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.IO;
+
 
 namespace TestPerformanceReportGenerator.Utilities
 {
@@ -28,6 +29,16 @@ namespace TestPerformanceReportGenerator.Utilities
             }catch(Exception e)
             {
                 return e.Message;
+            }
+        }
+
+        public static string ReadFromResource(string resourceName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using(StreamReader sr = new StreamReader(stream))
+            {
+                return sr.ReadToEnd();
             }
         }
 
