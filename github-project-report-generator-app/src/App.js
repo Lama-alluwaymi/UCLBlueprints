@@ -85,7 +85,7 @@ function App() {
         </Heading>
       )}
 
-      {commitActivity?.length > 0 && (
+      {commitActivity && (
         <>
           <Divider mt={5} />
           <AuthorCommits commitActivity={commitActivity} url={url} />
@@ -95,7 +95,7 @@ function App() {
         </>
       )}
 
-      {fileCommits?.length > 0 && (
+      {fileCommits && (
         <>
           <Divider mt={5} />
           <FileCommits
