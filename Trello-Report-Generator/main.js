@@ -1,21 +1,49 @@
+//gets all cards that have been moved into specified list
+function getActionsInList(listID, key, token) {
+
+    fetch("https://api.trello.com/1/lists/" + listID + "/actions?key=" + key + "&token=" + token + "&filter=updateCard:idList").then((data) => {
+
+    return data.json();
+    }).then((objectData) => {
+        console.log(objectData[0].title);
+        let actionsData="";
+        objectData.map((values) => {
+            actionsData+= `<tr>
+            <td>${values.data.card.name}</td>
+            <td><a href="https://trello.com/c/${values.data.card.shortLink}">https://trello.com/c/${values.data.card.shortLink}</a></td>
+            <td>${values.data.listBefore.name}</td>
+            <td>${values.date}</td>
+            <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
+            </tr>`;
+        });
+        document.getElementById("table_body_cards_into_list").innerHTML=actionsData;
+    }).catch((err) => {
+        console.log(err);
+    })
+
+}
+
+
+
+
 //gets all the lists in a board
 function getListsForDropdown(boardID, key, token) {
 
-fetch("https://api.trello.com/1/boards/" + boardID + "/lists?key=" + key + "&token=" + token + "&fields=id,name").then((data) => {
+    fetch("https://api.trello.com/1/boards/" + boardID + "/lists?key=" + key + "&token=" + token + "&fields=id,name").then((data) => {
 
-    return data.json();
-}).then((objectData) => {
-    console.log(objectData[0].title);
-    let dropDownData="";
-    objectData.map((values) => {
-        dropDownData+= `
-        <option value="${values.id}"> ${values.name}</option>
-        `;
-    });
-    document.getElementById("listDropDown").innerHTML=dropDownData;
-}).catch((err) => {
-    console.log(err);
-})
+        return data.json();
+    }).then((objectData) => {
+        console.log(objectData[0].title);
+        let dropDownData="";
+        objectData.map((values) => {
+            dropDownData+= `
+            <option value="${values.id}"> ${values.name}</option>
+        `   ;
+        });
+        document.getElementById("listDropDown").innerHTML=dropDownData;
+    }).catch((err) => {
+        console.log(err);
+    })
 
 }
 
