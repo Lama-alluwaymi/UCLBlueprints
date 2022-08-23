@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Link, Text, Divider } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Text, Divider, Avatar, Switch } from '@chakra-ui/react';
 import { Radio, RadioGroup } from '@chakra-ui/react';
 import { Checkbox, CheckboxGroup } from '@chakra-ui/react';
 
 import stringToColour from './stringToColour';
 
-const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
+const FileCommits = ({
+  fileCommits,
+  authors,
+  firstCommitDate,
+  lastCommitDate,
+  url,
+  mostRecentCommitSha,
+}) => {
   const [sortType, setSortType] = useState('Default');
+
   const [selectedAuthors, setSelectedAuthors] = useState(authors);
+
   const [onlyShowAuthorFiles, setOnlyShowAuthorFiles] = useState(false);
   const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
+
+  const [timelineView, setTimelineView] = useState(false);
+  const [showTimelineCommits, setShowTimelineCommits] = useState(false);
+
   const [proportionalBarHeights, setProportionalBarHeights] = useState(false);
   const [commitsInOrder, setCommitsInOrder] = useState(false);
+
   const [showFiles, setShowFiles] = useState(true);
   const [showFolders, setShowFolders] = useState(true);
+
+  const totalTime = Math.abs(new Date(lastCommitDate) - new Date(firstCommitDate));
+
   const shownFileCommits = fileCommits
     .filter((file) => {
       // Better to have these old school if-statements than confusing nested ternaries
@@ -40,7 +57,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
     <>
       <Flex align='center' my={5}>
         <Heading size='md' mr={5}>
-          File Authors (Commits Made)
+          File Commits
         </Heading>
         <Text mr={2}>Sort by:</Text>
         <RadioGroup onChange={setSortType} value={sortType}>
@@ -100,17 +117,41 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
       </Flex>
 
       <Flex mt={5}>
-        <Checkbox
-          isChecked={proportionalBarHeights}
-          onChange={(e) => setProportionalBarHeights(e.target.checked)}
-          mr={4}
-        >
-          Show Bar Heights Proportional to Commit Count
-        </Checkbox>
-        <Checkbox isChecked={commitsInOrder} onChange={(e) => setCommitsInOrder(e.target.checked)}>
-          Show Commits in Order (from least recent on the left to most recent on the right)
-        </Checkbox>
+        <Text mr={2}>Timeline View:</Text>
+        <Switch
+          isChecked={timelineView}
+          onChange={(e) => setTimelineView(e.target.checked)}
+          mr={2}
+        />
+        {timelineView && (
+          <>
+            <Text mr={2}>Show Commits:</Text>
+            <Switch
+              isChecked={showTimelineCommits}
+              onChange={(e) => setShowTimelineCommits(e.target.checked)}
+              mr={2}
+            />
+          </>
+        )}
       </Flex>
+
+      {!timelineView && (
+        <Flex mt={5}>
+          <Checkbox
+            isChecked={proportionalBarHeights}
+            onChange={(e) => setProportionalBarHeights(e.target.checked)}
+            mr={4}
+          >
+            Show Bar Heights Proportional to Commit Count
+          </Checkbox>
+          <Checkbox
+            isChecked={commitsInOrder}
+            onChange={(e) => setCommitsInOrder(e.target.checked)}
+          >
+            Show Commits in Order (from least recent on the left to most recent on the right)
+          </Checkbox>
+        </Flex>
+      )}
 
       <Flex mt={5}>
         <Checkbox isChecked={showFiles} onChange={(e) => setShowFiles(e.target.checked)} mr={4}>
@@ -131,51 +172,119 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
           {showFolders ? 'folders' : ''}
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles ? ' highlighted' : ''}:
         </Text>
+        {timelineView && (
+          <Flex justify='space-between' mb={5}>
+            <Text>| {new Date(firstCommitDate).toLocaleDateString()}</Text>
+            <Text>{new Date(lastCommitDate).toLocaleDateString()} |</Text>
+          </Flex>
+        )}
         {[...shownFileCommits]
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
-          .map(([file, { authors, commits: totalCommits, order }]) => (
-            <Box key={file} mb={4}>
-              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
-                {file}
-              </Link>
-              {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} by: `}
-              <Flex mb={2}>
-                {Object.entries(authors).map(([author, commits]) => (
-                  <Text
-                    key={author}
-                    color={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
-                    fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
-                    mr={2}
+          .map(
+            ([
+              file,
+              {
+                authors,
+                commits: totalCommits,
+                order,
+                firstCommitDate: first,
+                lastCommitDate: last,
+              },
+            ]) => (
+              <Box key={file} mb={8}>
+                <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
+                  {file}
+                </Link>
+                {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
+                  timelineView
+                    ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
+                        last
+                      ).toLocaleDateString()}`
+                    : ''
+                } by: `}
+                <Flex mb={2}>
+                  {Object.entries(authors).map(([author, commits]) => (
+                    <Text
+                      key={author}
+                      color={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
+                      fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
+                      mr={2}
+                    >
+                      {author} ({commits}),
+                    </Text>
+                  ))}
+                </Flex>
+                {/* https://stackoverflow.com/a/49828563 */}
+                {!timelineView ? (
+                  <Box
+                    width='100%'
+                    height={proportionalBarHeights ? `${totalCommits * 2}px` : 2}
+                    mt={4}
                   >
-                    {author} ({commits}),
-                  </Text>
-                ))}
-              </Flex>
-              {/* https://stackoverflow.com/a/49828563 */}
-              <Box width='100%' height={proportionalBarHeights ? `${totalCommits * 2}px` : 2}>
-                {commitsInOrder
-                  ? order.map(({ author }, index) => (
-                      <Box
-                        key={index}
-                        width={`${(1 / totalCommits) * 100}%`}
-                        height='100%'
-                        float='left'
-                        bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
-                      />
-                    ))
-                  : Object.entries(authors).map(([author, commits]) => (
-                      <Box
-                        key={author}
-                        width={`${(commits / totalCommits) * 100}%`}
-                        height='100%'
-                        float='left'
-                        bgColor={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
-                      />
-                    ))}
-                {}
+                    {commitsInOrder
+                      ? order.map(({ author }, index) => (
+                          <Box
+                            key={index}
+                            width={`${(1 / totalCommits) * 100}%`}
+                            height='100%'
+                            float='left'
+                            bgColor={
+                              selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                            }
+                          />
+                        ))
+                      : Object.entries(authors).map(([author, commits]) => (
+                          <Box
+                            key={author}
+                            width={`${(commits / totalCommits) * 100}%`}
+                            height='100%'
+                            float='left'
+                            bgColor={
+                              selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                            }
+                          />
+                        ))}
+                    {}
+                  </Box>
+                ) : (
+                  <Box width={showTimelineCommits ? '99%' : '100%'} height={2} mt={4}>
+                    <Box
+                      float='left'
+                      height='100%'
+                      width={`${
+                        (Math.abs(new Date(first) - new Date(firstCommitDate)) / totalTime) * 100
+                      }%`}
+                    />
+                    <Flex
+                      position='relative'
+                      height='100%'
+                      bgColor='black'
+                      width={`${(Math.abs(new Date(last) - new Date(first)) / totalTime) * 100}%`}
+                      align='center'
+                    >
+                      {showTimelineCommits &&
+                        order.map(({ author, date }) => (
+                          <Avatar
+                            key={date}
+                            name={author}
+                            size='xs'
+                            bgColor={
+                              selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                            }
+                            position='absolute'
+                            left={`${
+                              (Math.abs(new Date(date) - new Date(first)) /
+                                Math.abs(new Date(last) - new Date(first))) *
+                              100
+                            }%`}
+                          />
+                        ))}
+                    </Flex>
+                  </Box>
+                )}
               </Box>
-            </Box>
-          ))}
+            )
+          )}
       </Box>
     </>
   );

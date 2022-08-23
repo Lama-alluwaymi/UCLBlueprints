@@ -4,7 +4,6 @@ import { Box, Heading, Link, Input, Button, Text, Divider } from '@chakra-ui/rea
 import AuthorCommits from './AuthorCommits';
 import Timeline from './Timeline';
 import FileCommits from './FileCommits';
-import FileTimelines from './FileTimelines';
 
 import generateReport from './generateReport';
 
@@ -101,13 +100,6 @@ function App() {
           <FileCommits
             fileCommits={fileCommits}
             authors={commitActivity.map((contributor) => contributor.author.login)}
-            url={url}
-            mostRecentCommitSha={mostRecentCommitSha}
-          />
-
-          <Divider mt={5} />
-          <FileTimelines
-            fileCommits={fileCommits}
             firstCommitDate={firstCommitDate}
             lastCommitDate={lastCommitDate}
             url={url}
