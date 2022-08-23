@@ -41,11 +41,12 @@ const FileTimelines = ({
         return (
           <Box key={file} mb={5}>
             <Flex>
-              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal mr={4}>
+              <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal mr={2}>
                 {file}:
               </Link>
-              <Text mr={4}>First commit: {new Date(first).toLocaleDateString()}</Text>
-              <Text>Last commit: {new Date(last).toLocaleDateString()}</Text>
+              <Text>
+                {new Date(first).toLocaleDateString()} - {new Date(last).toLocaleDateString()}
+              </Text>
             </Flex>
             <Box width={showCommits ? '99%' : '100%'} height={2} mt={4}>
               <Box float='left' height='100%' width={`${leftGap}%`} />
