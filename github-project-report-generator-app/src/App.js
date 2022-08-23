@@ -4,6 +4,7 @@ import { Box, Heading, Link, Input, Button, Text, Divider } from '@chakra-ui/rea
 import AuthorCommits from './AuthorCommits';
 import Timeline from './Timeline';
 import FileCommits from './FileCommits';
+import FileTimelines from './FileTimelines';
 
 import generateReport from './generateReport';
 
@@ -17,6 +18,8 @@ function App() {
   const [url, setURL] = useState('');
   const [name, setName] = useState('');
   const [mostRecentCommitSha, setMostRecentCommitSha] = useState('');
+  const [firstCommitDate, setFirstCommitDate] = useState('');
+  const [lastCommitDate, setLastCommitDate] = useState('');
   const [commitActivity, setCommitActivity] = useState([]);
   const [fileCommits, setFileCommits] = useState([]);
 
@@ -33,6 +36,8 @@ function App() {
     setURL('');
     setName('');
     setMostRecentCommitSha('');
+    setFirstCommitDate('');
+    setLastCommitDate('');
     setCommitActivity([]);
     setFileCommits([]);
   };
@@ -41,6 +46,8 @@ function App() {
     setURL(data.url);
     setName(data.name);
     setMostRecentCommitSha(data.mostRecentCommitSha);
+    setFirstCommitDate(data.firstCommitDate);
+    setLastCommitDate(data.lastCommitDate);
     setCommitActivity(data.commitActivity);
     setFileCommits(data.fileCommits);
   };
@@ -106,6 +113,15 @@ function App() {
           <FileCommits
             fileCommits={fileCommits}
             authors={commitActivity.map((contributor) => contributor.author.login)}
+            url={url}
+            mostRecentCommitSha={mostRecentCommitSha}
+          />
+
+          <Divider mt={5} />
+          <FileTimelines
+            fileCommits={fileCommits}
+            firstCommitDate={firstCommitDate}
+            lastCommitDate={lastCommitDate}
             url={url}
             mostRecentCommitSha={mostRecentCommitSha}
           />

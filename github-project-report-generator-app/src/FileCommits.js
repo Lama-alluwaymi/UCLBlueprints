@@ -154,7 +154,7 @@ const FileCommits = ({ fileCommits, authors, url, mostRecentCommitSha }) => {
               {/* https://stackoverflow.com/a/49828563 */}
               <Box width='100%' height={proportionalBarHeights ? `${totalCommits * 2}px` : 2}>
                 {commitsInOrder
-                  ? order.map((author, index) => (
+                  ? order.map(({ author }, index) => (
                       <Box
                         key={index}
                         width={`${(1 / totalCommits) * 100}%`}

@@ -37,7 +37,7 @@ async function generateReport(octokitAuth, repo) {
 
     const authors = {};
     const order = [];
-    for (const { author } of commits) {
+    for (const { author, commit } of commits) {
       // Some commits have a null author, which can lead to the file commit count and
       // the sum of the shown authors' commits not being equal for some files
       if (!author) continue;
@@ -46,7 +46,7 @@ async function generateReport(octokitAuth, repo) {
       } else {
         authors[author.login]++;
       }
-      order.push(author.login);
+      order.push({ author: author.login, date: commit.committer.date });
     }
 
     // Therefore, to be consistent, the commit count output should be the author commits' sums
@@ -55,15 +55,24 @@ async function generateReport(octokitAuth, repo) {
       authors: Object.fromEntries(Object.entries(authors).sort((a, b) => b[1] - a[1])),
       commits: Object.values(authors).reduce((a, b) => a + b, 0),
       order: order,
+      firstCommitDate: order[order.length - 1].date,
+      lastCommitDate: order[0].date,
     };
 
     console.log(file.path);
   }
 
+  const allCommits = await octokit.paginate('GET /repos/{owner}/{repo}/commits', {
+    ...repo,
+    per_page: 100,
+  });
+
   return {
     url: html_url,
     name: name,
     mostRecentCommitSha: treeSha,
+    firstCommitDate: allCommits[allCommits.length - 1].commit.committer.date,
+    lastCommitDate: allCommits[0].commit.committer.date,
     commitActivity: commitActivity.sort((a, b) => b.total - a.total),
     fileCommits: Object.entries(fileCommits),
   };
