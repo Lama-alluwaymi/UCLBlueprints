@@ -11,7 +11,7 @@ import sampleData from './sampleData.json';
 
 function App() {
   const [token, setToken] = useState('');
-  const [reqURL, setReqURL] = useState('https://github.com/ArchawinWongkittiruk/TheBackrowers');
+  const [reqURL, setReqURL] = useState('');
   const [basicReportLoading, setBasicReportLoading] = useState(false);
   const [fullReportLoading, setFullReportLoading] = useState(false);
 
@@ -71,7 +71,11 @@ function App() {
       </Link>
       <Input value={token} onChange={onEditToken} type='password' mb={5} />
       <Text>GitHub Repository URL</Text>
-      <Input value={reqURL} onChange={(e) => setReqURL(e.currentTarget.value)} />
+      <Input
+        value={reqURL}
+        onChange={(e) => setReqURL(e.currentTarget.value)}
+        placeholder='https://github.com/owner/repo'
+      />
       <Button
         mt={5}
         onClick={() => getBasicReport()}
