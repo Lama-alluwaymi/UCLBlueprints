@@ -282,7 +282,7 @@ const FileCommits = ({
                               (Math.abs(new Date(date) - new Date(first)) /
                                 Math.abs(new Date(last) - new Date(first))) *
                               100
-                            }% - 10px)`}
+                            }% - 12px)`}
                           />
                         ))}
                     </Flex>
