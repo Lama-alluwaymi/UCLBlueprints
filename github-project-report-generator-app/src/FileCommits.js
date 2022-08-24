@@ -198,9 +198,11 @@ const FileCommits = ({
                 </Link>
                 {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
                   timelineView
-                    ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
-                        last
-                      ).toLocaleDateString()}`
+                    ? new Date(first).toLocaleDateString() !== new Date(last).toLocaleDateString()
+                      ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
+                          last
+                        ).toLocaleDateString()}`
+                      : `on ${new Date(first).toLocaleDateString()}`
                     : ''
                 } by: `}
                 <Flex wrap='wrap' mb={2}>
