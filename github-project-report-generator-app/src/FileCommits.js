@@ -212,15 +212,20 @@ const FileCommits = ({
                     : ''
                 } by: `}
                 <Flex wrap='wrap' mb={2}>
-                  {Object.entries(authors).map(([author, commits]) => (
-                    <Text
+                  {Object.entries(authors).map(([author, commits], index) => (
+                    <Link
                       key={author}
-                      color={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
-                      fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
-                      mr={2}
+                      href={`${url}/commits/${mostRecentCommitSha}/${file}?author=${author}`}
+                      isExternal
                     >
-                      {author} ({commits}),
-                    </Text>
+                      <Text
+                        color={selectedAuthors.includes(author) ? stringToColour(author) : 'grey'}
+                        fontWeight={selectedAuthors.includes(author) ? 'bold' : 'normal'}
+                        mr={2}
+                      >
+                        {author} ({commits}){index !== Object.keys(authors).length - 1 ? ',' : ''}
+                      </Text>
+                    </Link>
                   ))}
                 </Flex>
                 {/* https://stackoverflow.com/a/49828563 */}
