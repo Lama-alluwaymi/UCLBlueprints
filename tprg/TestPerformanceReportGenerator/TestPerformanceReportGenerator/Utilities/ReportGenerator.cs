@@ -82,7 +82,7 @@ namespace TestPerformanceReportGenerator.Utilities
             string reportName = "CodeQualityReport_" + dateNow + ".html";
 
             //Write to path "../Reports/CodeQualityReport_dmy.html"
-            DirectoryInfo outputDir = TestAutoRunner.getSolutionDir(null, "*.csproj");
+            DirectoryInfo outputDir = TestAutoRunner.getSolutionDir();
             string outputPath = outputDir.FullName;
             string[] path = { outputPath, "Reports", reportName };
             if (Directory.Exists(Path.Combine(outputPath, "Reports")))
@@ -94,7 +94,7 @@ namespace TestPerformanceReportGenerator.Utilities
                 Directory.CreateDirectory(Path.Combine(outputPath, "Reports"));
                 FileHelper.WriteFile(reportFile, Path.Combine(path));
             }
-            FileHelper.WriteFile(reportFile, Path.Combine(outputPath));
+
         }
     }
 }

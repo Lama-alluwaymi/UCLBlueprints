@@ -163,7 +163,7 @@
                                  Margin="2"
                                  Visibility="Visible"/>
                             <Label Name="totduration" Content="" Grid.Row="4" Grid.Column="1" Visibility="Collapsed"/>
-                            <Label Content="Line Coverage: "
+                            <Label Content="Line Coverage (%): "
                                    Grid.Row="5" Grid.Column="0"
                                    VerticalContentAlignment="Center" Margin="10 0 0 5"/>
                             <TextBox Name="coverageInput" 
@@ -250,7 +250,7 @@
                         Content="Generate" 
                         Width="110" Height="30"
                         Click="submitData_Click" Background="LightBlue"
-                        Margin="0 8 0 10"/>
+                        Margin="0 8 0 10" IsEnabled="False"/>
 
                 </StackPanel>
             </ScrollViewer>

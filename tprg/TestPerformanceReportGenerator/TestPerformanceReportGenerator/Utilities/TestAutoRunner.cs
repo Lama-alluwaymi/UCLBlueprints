@@ -1,7 +1,5 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
-using System.Windows;
 using System.Linq;
 using System.IO;
 
@@ -26,6 +24,8 @@ namespace TestPerformanceReportGenerator.Utilities
             }
             return directory;
         }
+
+        public static string GetSolutionName() => getSolutionDir().FullName.Split('\\').Last().Replace(".sln", "");
 
         private string findSubString(string target)
         {

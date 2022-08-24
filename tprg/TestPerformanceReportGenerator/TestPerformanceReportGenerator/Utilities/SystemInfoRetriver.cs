@@ -11,7 +11,7 @@ namespace TestPerformanceReportGenerator.Utilities
     {
         public static string GetCurrentDate()
         {
-            return DateTime.Now.ToString("d", new CultureInfo("en-GB"));
+            return DateTime.Now.ToString("T", new CultureInfo("en-GB"));
         }
 
         public static string GetProductVersion()
@@ -41,12 +41,12 @@ namespace TestPerformanceReportGenerator.Utilities
                 if (obj["TotalPhysicalMemory"] != null)
                 {
                     double ramByte = (Convert.ToDouble(obj["TotalPhysicalMemory"]));
-                    double ramMB = ramByte / 1048576;
-                    ramSize = ramMB.ToString();
+                    double ramGB = ramByte / Math.Pow(1024, 3);
+                    ramSize = ramGB.ToString("0.##");
                 }
             }
 
-            hardwareInfo = "CPU: " + cpuName + "; " + "RAM Size: " + ramSize + "MB"; 
+            hardwareInfo = "CPU: " + cpuName + "; " + "RAM Size: " + ramSize + "GB"; 
             return hardwareInfo;
         }
 

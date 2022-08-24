@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Reflection;
 using TestPerformanceReportGenerator.Utilities;
 using Microsoft.VisualStudio.Imaging;
 
@@ -142,7 +141,11 @@ namespace TestPerformanceReportGenerator
                     InfoBar infobar = await VS.InfoBar.CreateAsync("{ce2a0f92-d094-48c5-be02-b8624558136a}", model);
                     await Task.Run(() =>
                     {
-                        string projectName = Assembly.GetCallingAssembly().GetName().Name;
+                        // get project name
+                        //string projectName = Assembly.GetCallingAssembly().GetName().Name;
+                        //string projectName = Assembly.GetExecutingAssembly().FullName.Split(',')[0];
+                        string projectName = TestAutoRunner.GetSolutionName();
+
                         ReportGenerator.GenerateReport(projectName, this.generator.dataList,
                                                         this.maintainInputTxt, this.cycloInputTxt,
                                                         this.depthOfInputTxt, this.classCInputTxt,
@@ -199,7 +202,8 @@ namespace TestPerformanceReportGenerator
                         // show info bar when data has been added
                         await infobar.TryShowInfoBarUIAsync();
                         ClearTestInputs();
-
+                        //Turn generate report button on
+                        submitData.IsEnabled = true;
                     }).FireAndForget();
                 }
                 else
@@ -238,6 +242,8 @@ namespace TestPerformanceReportGenerator
                         });
                         await infobar.TryShowInfoBarUIAsync();
                         ClearTestInputs();
+                        //Turn generate report button on
+                        submitData.IsEnabled = true;
                     }).FireAndForget();
                 }
                 else
@@ -258,7 +264,13 @@ namespace TestPerformanceReportGenerator
             coverageInput.Clear();
             durationInput.Clear();
             skippedTestInput.Clear();
+            total.Content = String.Empty;
+            passed.Content = String.Empty;
+            failed.Content = String.Empty;
+            skipped.Content = String.Empty;
+            totduration.Content = String.Empty;
         }
+
         /// <summary>
         /// Helper method to clear all input when report has generated.
         /// </summary>
