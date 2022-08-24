@@ -102,20 +102,25 @@ const FileCommits = ({
       </CheckboxGroup>
 
       <Flex mt={5} wrap='wrap'>
-        <Checkbox
+        <Text mr={2}>Only Show Files Selected Authors Worked On:</Text>
+        <Switch
           isChecked={onlyShowAuthorFiles || onlyShowTogetherFiles}
           onChange={(e) => setOnlyShowAuthorFiles(e.target.checked)}
           isDisabled={onlyShowTogetherFiles}
           mr={4}
-        >
-          Only Show Files Selected Authors Worked On
-        </Checkbox>
-        <Checkbox
+        />
+        <Text mr={2}>Only Show Files All Selected Authors Worked On Together:</Text>
+        <Switch
           isChecked={onlyShowTogetherFiles}
           onChange={(e) => setOnlyShowTogetherFiles(e.target.checked)}
-        >
-          Only Show Files All Selected Authors Worked On Together
-        </Checkbox>
+        />
+      </Flex>
+
+      <Flex mt={5} wrap='wrap'>
+        <Text mr={2}>Show Files:</Text>
+        <Switch isChecked={showFiles} onChange={(e) => setShowFiles(e.target.checked)} mr={4} />
+        <Text mr={2}>Show Folders:</Text>
+        <Switch isChecked={showFolders} onChange={(e) => setShowFolders(e.target.checked)} />
       </Flex>
 
       <Flex mt={5} wrap='wrap'>
@@ -123,7 +128,7 @@ const FileCommits = ({
         <Switch
           isChecked={timelineView}
           onChange={(e) => setTimelineView(e.target.checked)}
-          mr={2}
+          mr={4}
         />
         {timelineView && (
           <>
@@ -131,7 +136,6 @@ const FileCommits = ({
             <Switch
               isChecked={showTimelineCommits}
               onChange={(e) => setShowTimelineCommits(e.target.checked)}
-              mr={2}
             />
           </>
         )}
@@ -139,39 +143,33 @@ const FileCommits = ({
 
       {!timelineView && (
         <Flex mt={5} wrap='wrap'>
-          <Checkbox
+          <Text mr={2}>Show Bar Heights Proportional to Commit Count:</Text>
+          <Switch
             isChecked={proportionalBarHeights}
             onChange={(e) => setProportionalBarHeights(e.target.checked)}
             mr={4}
-          >
-            Show Bar Heights Proportional to Commit Count
-          </Checkbox>
-          <Checkbox
+          />
+          <Text mr={2}>Show Bar Widths Proportional to Commit Count:</Text>
+          <Switch
             isChecked={proportionalBarWidths}
             onChange={(e) => setProportionalBarWidths(e.target.checked)}
             mr={4}
-          >
-            Show Bar Widths Proportional to Commit Count
-          </Checkbox>
-          <Checkbox
+          />
+          <Text mr={2}>Show Commits in Order from Least Recent to Most Recent:</Text>
+          <Switch
             isChecked={commitsInOrder}
             onChange={(e) => setCommitsInOrder(e.target.checked)}
-          >
-            Show Commits in Order from Least Recent to Most Recent
-          </Checkbox>
+          />
         </Flex>
       )}
 
-      <Flex mt={5} wrap='wrap'>
-        <Checkbox isChecked={showFiles} onChange={(e) => setShowFiles(e.target.checked)} mr={4}>
-          Show Files
-        </Checkbox>
-        <Checkbox isChecked={showFolders} onChange={(e) => setShowFolders(e.target.checked)}>
-          Show Folders
-        </Checkbox>
-      </Flex>
-
       <Box mt={5}>
+        {timelineView && (
+          <Flex justify='space-between' mb={5}>
+            <Text>| {new Date(firstCommitDate).toLocaleDateString()}</Text>
+            <Text>{new Date(lastCommitDate).toLocaleDateString()} |</Text>
+          </Flex>
+        )}
         <Text mb={5}>
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles
             ? `${highlightedFileCommits.length}/`
@@ -181,12 +179,6 @@ const FileCommits = ({
           {showFolders ? 'folders' : ''}
           {!onlyShowAuthorFiles && !onlyShowTogetherFiles ? ' highlighted' : ''}:
         </Text>
-        {timelineView && (
-          <Flex justify='space-between' mb={5}>
-            <Text>| {new Date(firstCommitDate).toLocaleDateString()}</Text>
-            <Text>{new Date(lastCommitDate).toLocaleDateString()} |</Text>
-          </Flex>
-        )}
         {[...shownFileCommits]
           .sort((a, b) => (sortType === 'Default' ? 0 : b[1].commits - a[1].commits))
           .map(
