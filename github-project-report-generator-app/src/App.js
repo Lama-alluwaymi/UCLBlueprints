@@ -14,6 +14,7 @@ function App() {
   const [reqURL, setReqURL] = useState('');
   const [basicReportLoading, setBasicReportLoading] = useState(false);
   const [fullReportLoading, setFullReportLoading] = useState(false);
+  const [resError, setResError] = useState('');
 
   const [
     {
@@ -44,15 +45,25 @@ function App() {
 
   const getBasicReport = async () => {
     setBasicReportLoading(true);
+    setResError('');
     setData({});
-    setData(await generateBasicReport(token, repo));
+    try {
+      setData(await generateBasicReport(token, repo));
+    } catch (error) {
+      setResError(error.message);
+    }
     setBasicReportLoading(false);
   };
 
   const getFullReport = async () => {
     setFullReportLoading(true);
+    setResError('');
     setData({ url, name, commitActivity });
-    setData(await generateFullReport(token, repo));
+    try {
+      setData(await generateFullReport(token, repo));
+    } catch (error) {
+      setResError(error.message);
+    }
     setFullReportLoading(false);
   };
 
@@ -101,6 +112,8 @@ function App() {
       <Button mt={5} onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
         Show Sample Report
       </Button>
+
+      <Text mt={5}>{resError}</Text>
 
       {name && (
         <Flex mt={5} justify='space-between' align='center' wrap='wrap'>
