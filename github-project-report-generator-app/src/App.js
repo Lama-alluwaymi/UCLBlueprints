@@ -104,7 +104,9 @@ function App() {
 
       {name && (
         <Heading mt={5} size='lg'>
-          {name}
+          <Link href={url} isExternal>
+            {name}
+          </Link>
         </Heading>
       )}
 
