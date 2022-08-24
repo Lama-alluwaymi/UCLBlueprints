@@ -261,7 +261,7 @@ const FileCommits = ({
                     {}
                   </Box>
                 ) : (
-                  <Box width={showTimelineCommits ? '99%' : '100%'} height={3} mt={4}>
+                  <Box width='100%' height={3} mt={4}>
                     <Box
                       float='left'
                       height='100%'
@@ -286,11 +286,11 @@ const FileCommits = ({
                               selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
                             }
                             position='absolute'
-                            left={`${
+                            left={`calc(${
                               (Math.abs(new Date(date) - new Date(first)) /
                                 Math.abs(new Date(last) - new Date(first))) *
                               100
-                            }%`}
+                            }% - 10px)`}
                           />
                         ))}
                     </Flex>
