@@ -253,7 +253,7 @@ const FileCommits = ({
                     {}
                   </Box>
                 ) : (
-                  <Box width='100%' height={3} mt={4}>
+                  <Box width='100%' height={3} mt={4} position='relative'>
                     <Box
                       float='left'
                       height='100%'
@@ -261,31 +261,28 @@ const FileCommits = ({
                         (Math.abs(new Date(first) - new Date(firstCommitDate)) / totalTime) * 100
                       }%`}
                     />
-                    <Flex
-                      position='relative'
+                    <Box
+                      float='left'
                       height='100%'
                       bgColor='black'
                       width={`${(Math.abs(new Date(last) - new Date(first)) / totalTime) * 100}%`}
-                      align='center'
-                    >
-                      {showTimelineCommits &&
-                        order.map(({ author, date }) => (
-                          <Avatar
-                            key={date}
-                            name={author}
-                            size='xs'
-                            bgColor={
-                              selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
-                            }
-                            position='absolute'
-                            left={`calc(${
-                              (Math.abs(new Date(date) - new Date(first)) /
-                                Math.abs(new Date(last) - new Date(first))) *
-                              100
-                            }% - 10px)`}
-                          />
-                        ))}
-                    </Flex>
+                    />
+                    {showTimelineCommits &&
+                      order.map(({ author, date }) => (
+                        <Avatar
+                          key={date}
+                          name={author}
+                          size='xs'
+                          bgColor={
+                            selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                          }
+                          position='absolute'
+                          left={`calc(${
+                            (Math.abs(new Date(date) - new Date(firstCommitDate)) / totalTime) * 100
+                          }% - 10px)`}
+                          top='-7px'
+                        />
+                      ))}
                   </Box>
                 )}
               </Box>
