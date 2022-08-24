@@ -232,7 +232,7 @@ const FileCommits = ({
                 {!timelineView ? (
                   <Box
                     width={proportionalBarWidths ? `${(totalCommits / maxCommits) * 100}%` : '100%'}
-                    height={proportionalBarHeights ? `${totalCommits * 2}px` : 2}
+                    height={proportionalBarHeights ? `${totalCommits * 2}px` : 3}
                     mt={4}
                   >
                     {commitsInOrder
@@ -261,7 +261,7 @@ const FileCommits = ({
                     {}
                   </Box>
                 ) : (
-                  <Box width={showTimelineCommits ? '99%' : '100%'} height={2} mt={4}>
+                  <Box width={showTimelineCommits ? '99%' : '100%'} height={3} mt={4}>
                     <Box
                       float='left'
                       height='100%'
