@@ -75,11 +75,13 @@ function App() {
 
   // https://stackoverflow.com/a/45594892
   const downloadJSONReport = () => {
+    // https://stackoverflow.com/a/35869246
+    const date = lastCommitDate.replace(/T.*/, '').split('-').reverse().join('-');
     FileSaver.saveAs(
       new Blob([JSON.stringify(data, null, 2)], {
         type: 'application/json',
       }),
-      `${name}-${lastCommitDate}.json`
+      `${name}-${fileCommits ? 'full' : 'basic'}-report-${date}.json`
     );
   };
 
