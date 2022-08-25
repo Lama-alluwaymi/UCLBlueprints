@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text, Heading, Link, Image, Badge } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Link, Image, Badge, Tooltip } from '@chakra-ui/react';
 import { Radio, RadioGroup } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
 
@@ -72,32 +72,50 @@ const Timeline = ({ commitActivity, url }) => {
                     {author.login}
                   </Link>
                 </Td>
-                {weeks.map(({ week, authors, maxChanges, maxCommits }) => (
-                  <Td key={week}>
-                    {showing === 'Changes' ? (
-                      <Box width='100%' height={5}>
-                        <Box
-                          width={`${(authors[index].authorWeek.d / maxChanges) * 100}%`}
-                          height='100%'
-                          float='left'
-                          bgColor='red'
-                        />
-                        <Box
-                          width={`${(authors[index].authorWeek.a / maxChanges) * 100}%`}
-                          height='100%'
-                          float='left'
-                          bgColor='green'
-                        />
-                      </Box>
-                    ) : (
-                      <Box
-                        width={`${(authors[index].authorWeek.c / maxCommits) * 100}%`}
-                        height={5}
-                        bgColor={stringToColour(authors[index].author)}
-                      />
-                    )}
-                  </Td>
-                ))}
+                {weeks.map(({ week, authors, maxChanges, maxCommits }) => {
+                  const deletions = authors[index].authorWeek.d;
+                  const additions = authors[index].authorWeek.a;
+                  const commits = authors[index].authorWeek.c;
+
+                  return (
+                    <Td key={week}>
+                      {showing === 'Changes' ? (
+                        <Box width='100%' height={5}>
+                          <Tooltip
+                            label={`${deletions} deletion${deletions > 1 ? 's' : ''}`}
+                            hasArrow
+                          >
+                            <Box
+                              width={`${(deletions / maxChanges) * 100}%`}
+                              height='100%'
+                              float='left'
+                              bgColor='red'
+                            />
+                          </Tooltip>
+                          <Tooltip
+                            label={`${additions} addition${additions > 1 ? 's' : ''}`}
+                            hasArrow
+                          >
+                            <Box
+                              width={`${(additions / maxChanges) * 100}%`}
+                              height='100%'
+                              float='left'
+                              bgColor='green'
+                            />
+                          </Tooltip>
+                        </Box>
+                      ) : (
+                        <Tooltip label={`${commits} commit${commits > 1 ? 's' : ''}`} hasArrow>
+                          <Box
+                            width={`${(commits / maxCommits) * 100}%`}
+                            height={5}
+                            bgColor={stringToColour(authors[index].author)}
+                          />
+                        </Tooltip>
+                      )}
+                    </Td>
+                  );
+                })}
               </Tr>
             ))}
             {showing === 'Changes' ? (
