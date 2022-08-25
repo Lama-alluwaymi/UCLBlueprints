@@ -33,7 +33,9 @@ function getAllActionsInList(listID, key, token) {
                  specificAction = "List created";
              } else if (actionType == "createCard") {
                  specificAction = "Card created";
-             } else if (actionType == "commentCard") {
+             }
+             
+             if (actionType == "commentCard") {
                 specificAction = "Comment added";
              }
 
