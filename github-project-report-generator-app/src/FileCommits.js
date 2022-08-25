@@ -20,6 +20,9 @@ const FileCommits = ({
   const [onlyShowAuthorFiles, setOnlyShowAuthorFiles] = useState(false);
   const [onlyShowTogetherFiles, setOnlyShowTogetherFiles] = useState(false);
 
+  const [showFiles, setShowFiles] = useState(true);
+  const [showFolders, setShowFolders] = useState(true);
+
   const [timelineView, setTimelineView] = useState(false);
   const [showTimelineCommits, setShowTimelineCommits] = useState(false);
 
@@ -27,19 +30,15 @@ const FileCommits = ({
   const [proportionalBarWidths, setProportionalBarWidths] = useState(false);
   const [commitsInOrder, setCommitsInOrder] = useState(false);
 
-  const [showFiles, setShowFiles] = useState(true);
-  const [showFolders, setShowFolders] = useState(true);
-
   const totalTime = Math.abs(new Date(lastCommitDate) - new Date(firstCommitDate));
 
   const shownFileCommits = fileCommits
     .filter((file) => {
       // Better to have these old school if-statements than confusing nested ternaries
-      if (Object.keys(file[1].authors).length === 0) return false;
       if (onlyShowTogetherFiles)
-        return selectedAuthors.length > 0
-          ? selectedAuthors.every((author) => file[1].authors[author])
-          : false;
+        return (
+          selectedAuthors.length > 0 && selectedAuthors.every((author) => file[1].authors[author])
+        );
       if (onlyShowAuthorFiles) return selectedAuthors.some((author) => file[1].authors[author]);
       return true;
     })
