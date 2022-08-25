@@ -1,6 +1,8 @@
 {
   "url": "https://github.com/ArchawinWongkittiruk/TheBackrowers",
   "name": "TheBackrowers",
+  "firstCommitDate": "2020-01-30T16:03:20Z",
+  "lastCommitDate": "2020-04-07T13:07:04Z",
   "commitActivity": [
     {
       "total": 169,
@@ -7519,8 +7521,6 @@
     }
   ],
   "mostRecentCommitSha": "6fac32395c96b90e4cd6aefda25980884af53673",
-  "firstCommitDate": "2020-01-30T16:03:21Z",
-  "lastCommitDate": "2020-04-07T12:01:37Z",
   "fileCommits": [
     [
       ".gitignore",

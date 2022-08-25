@@ -20,10 +20,10 @@ function App() {
     {
       url,
       name,
-      commitActivity,
-      mostRecentCommitSha,
       firstCommitDate,
       lastCommitDate,
+      commitActivity,
+      mostRecentCommitSha,
       fileCommits,
     },
     setData,
@@ -58,7 +58,7 @@ function App() {
   const getFullReport = async () => {
     setFullReportLoading(true);
     setResError('');
-    setData({ url, name, commitActivity });
+    setData({ url, name, firstCommitDate, lastCommitDate, commitActivity });
     try {
       setData(await generateFullReport(token, repo));
     } catch (error) {
@@ -122,7 +122,7 @@ function App() {
               {name}
             </Link>
           </Heading>
-          <Text>{new Date().toLocaleDateString()}</Text>
+          <Text>Last commit: {new Date(lastCommitDate).toLocaleDateString()}</Text>
         </Flex>
       )}
 

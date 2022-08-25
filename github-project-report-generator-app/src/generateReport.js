@@ -4,7 +4,9 @@ export async function generateBasicReport(octokitAuth, repo) {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/repos/repos#get-a-repository
-  const { name, html_url } = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data;
+  const { name, html_url, created_at, pushed_at } = (
+    await octokit.request('GET /repos/{owner}/{repo}', repo)
+  ).data;
 
   // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
   const commitActivity = (
@@ -14,6 +16,8 @@ export async function generateBasicReport(octokitAuth, repo) {
   return {
     url: html_url,
     name: name,
+    firstCommitDate: created_at,
+    lastCommitDate: pushed_at,
     commitActivity: commitActivity.sort((a, b) => b.total - a.total),
   };
 }
@@ -69,16 +73,9 @@ export async function generateFullReport(octokitAuth, repo) {
     console.log(file.path);
   }
 
-  const allCommits = await octokit.paginate('GET /repos/{owner}/{repo}/commits', {
-    ...repo,
-    per_page: 100,
-  });
-
   return {
     ...(await generateBasicReport(octokitAuth, repo)),
     mostRecentCommitSha: treeSha,
-    firstCommitDate: allCommits[allCommits.length - 1].commit.committer.date,
-    lastCommitDate: allCommits[0].commit.committer.date,
     fileCommits: Object.entries(fileCommits),
   };
 }
