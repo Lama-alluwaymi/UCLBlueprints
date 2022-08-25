@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import FileSaver from 'file-saver';
 import { Box, Flex, Heading, Link, Input, Button, Text, Divider } from '@chakra-ui/react';
+import { DownloadIcon } from '@chakra-ui/icons';
 
 import AuthorCommits from './AuthorCommits';
 import Timeline from './Timeline';
@@ -16,18 +18,16 @@ function App() {
   const [fullReportLoading, setFullReportLoading] = useState(false);
   const [resError, setResError] = useState('');
 
-  const [
-    {
-      url,
-      name,
-      firstCommitDate,
-      lastCommitDate,
-      commitActivity,
-      mostRecentCommitSha,
-      fileCommits,
-    },
-    setData,
-  ] = useState({});
+  const [data, setData] = useState({});
+  const {
+    url,
+    name,
+    firstCommitDate,
+    lastCommitDate,
+    commitActivity,
+    mostRecentCommitSha,
+    fileCommits,
+  } = data;
 
   const repo = {
     owner: reqURL.split('/')[3],
@@ -73,6 +73,25 @@ function App() {
     setTimeout(() => setData(sampleData), 1);
   };
 
+  // https://stackoverflow.com/a/45594892
+  const downloadJSONReport = () => {
+    FileSaver.saveAs(
+      new Blob([JSON.stringify(data, null, 2)], {
+        type: 'application/json',
+      }),
+      `${name}-${lastCommitDate}.json`
+    );
+  };
+
+  // https://stackoverflow.com/a/61707546
+  const uploadJSONReport = (e) => {
+    const fileReader = new FileReader();
+    fileReader.readAsText(e.target.files[0], 'UTF-8');
+    fileReader.onload = (e) => {
+      setData(JSON.parse(e.target.result));
+    };
+  };
+
   return (
     <Box p={5}>
       <Heading>GitHub Project Report Generator</Heading>
@@ -109,9 +128,24 @@ function App() {
       >
         Generate Full Report
       </Button>
-      <Button mt={5} onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
+      <Button mt={5} onClick={() => showSampleReport()} colorScheme='blue' variant='outline' mr={5}>
         Show Sample Report
       </Button>
+      <Flex wrap='wrap'>
+        <Button
+          mt={5}
+          onClick={() => downloadJSONReport()}
+          isDisabled={Object.keys(data).length === 0}
+          leftIcon={<DownloadIcon />}
+          mr={5}
+        >
+          Download JSON Report
+        </Button>
+        <Flex mt={5} align='center' wrap='wrap'>
+          <Text mr={4}>Upload JSON Report:</Text>
+          <input type='file' onChange={uploadJSONReport} />
+        </Flex>
+      </Flex>
 
       <Text mt={5}>{resError}</Text>
 
