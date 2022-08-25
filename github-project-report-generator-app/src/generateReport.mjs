@@ -1,4 +1,4 @@
-const { Octokit } = require('octokit');
+import { Octokit } from 'octokit';
 
 export async function generateBasicReport(octokitAuth, repo) {
   const octokit = new Octokit({ auth: octokitAuth });
