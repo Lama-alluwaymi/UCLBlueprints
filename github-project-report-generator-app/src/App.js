@@ -152,14 +152,17 @@ function App() {
       <Text mt={5}>{resError}</Text>
 
       {name && (
-        <Flex mt={5} justify='space-between' align='center' wrap='wrap'>
-          <Heading size='lg'>
-            <Link href={url} isExternal>
-              {name}
-            </Link>
-          </Heading>
-          <Text>Last commit: {new Date(lastCommitDate).toLocaleDateString()}</Text>
-        </Flex>
+        <>
+          <Divider mt={5} />
+          <Flex mt={5} justify='space-between' align='center' wrap='wrap'>
+            <Heading size='lg'>
+              <Link href={url} isExternal>
+                {name}
+              </Link>
+            </Heading>
+            <Text>Last commit: {new Date(lastCommitDate).toLocaleDateString()}</Text>
+          </Flex>
+        </>
       )}
 
       {commitActivity && (
