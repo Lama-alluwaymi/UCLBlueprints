@@ -25,7 +25,7 @@
         
         </select>
   <br><br>
-    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
+    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
     
     <h1>Cards currently in list</h1>
     <table class="table">
@@ -60,6 +60,22 @@
     <text>Graph of who moved the most cards into list</text>
 
     <h1>All actions that have take place in the list</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>Action</th>
+                <th>Date of action</th>
+                <th>By who</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_actions_on_list"></tbody>
+    </table>
+
+
+
+
 
 
     <h1>Cards assigned per board member on the list</h1>

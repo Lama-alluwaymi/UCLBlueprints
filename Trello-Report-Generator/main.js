@@ -1,3 +1,73 @@
+//gets all actions that have happened in a list
+function getAllActionsInList(listID, key, token) {
+
+    fetch("https://api.trello.com/1/lists/" + listID + "/actions?key=" + key + "&token=" + token).then((data) => {
+
+    return data.json();
+    }).then((objectData) => {
+        console.log(objectData[0].title);
+        let allActionsData="";
+        objectData.map((values) => {
+
+             let actionType = values.type;
+             let specificAction = "";
+             console.log(actionType);
+             if (actionType == "updateCard") {
+                 if (values.data.old.hasOwnProperty('dueReminder')) {
+                     specificAction = "Reminder change";
+                 } else if (values.data.old.hasOwnProperty('desc')) {
+                     specificAction = "Description change";
+                 } else if (values.data.old.hasOwnProperty('idList')) {
+                     specificAction = "List change";
+                 } else if (values.data.old.hasOwnProperty('idLabels')) {
+                     specificAction = "Label change";
+                 } else if (values.data.old.hasOwnProperty('due')) {
+                     specificAction = "Due date change";
+                 } else if (values.data.old.hasOwnProperty('closed')) {
+                     specificAction = "Card archived";
+                 } else {
+                     specificAction = "Error";
+                 }
+
+             } else if (actionType == "createList") {
+                 specificAction = "List created";
+             } else if (actionType == "createCard") {
+                 specificAction = "Card created";
+             } else if (actionType == "commentCard") {
+                specificAction = "Comment added";
+             }
+
+            let specificName ="testName";
+            let shortLink ="";
+            let trelloLinkCreation = "https://trello.com/c/";
+            
+            
+            if (values.data.hasOwnProperty('card')) {
+                specificName = values.data.card.name;
+                shortLink = values.data.card.shortLink;
+                trelloLinkCreation = trelloLinkCreation + shortLink;
+
+            } else {
+                specificName = "";
+                trelloLinkCreation =""
+            }
+
+            allActionsData+= `<tr>
+            <td>${specificName}</td>
+            <td><a href="${trelloLinkCreation}">${trelloLinkCreation}</a></td>
+            <td>${specificAction}</td>
+            <td>${values.date}</td>
+            <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
+            </tr>`;
+        });
+        document.getElementById("table_body_actions_on_list").innerHTML=allActionsData;
+    }).catch((err) => {
+        console.log(err);
+    })
+
+}
+
+
 //gets all cards that have been moved into specified list
 function getActionsInList(listID, key, token) {
 
