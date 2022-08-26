@@ -47,7 +47,6 @@ function App() {
   const getBasicReport = async () => {
     setBasicReportLoading(true);
     setResError('');
-    setData({});
     try {
       setData(await generateBasicReport(token, repo));
     } catch (error) {
@@ -59,7 +58,6 @@ function App() {
   const getFullReport = async () => {
     setFullReportLoading(true);
     setResError('');
-    setData({ url, name, firstCommitDate, lastCommitDate, commitActivity });
     try {
       setData(await generateFullReport(token, repo, setFileCommitsFetchingStatus));
     } catch (error) {
@@ -70,9 +68,7 @@ function App() {
   };
 
   const showSampleReport = () => {
-    setData({});
-    // Set a delay so the state actually resets and the report re-renders
-    setTimeout(() => setData(sampleData), 1);
+    setData(sampleData);
   };
 
   // https://stackoverflow.com/a/45594892
