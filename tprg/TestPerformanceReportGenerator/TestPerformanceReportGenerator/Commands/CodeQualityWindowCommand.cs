@@ -1,11 +1,11 @@
 ﻿namespace TestPerformanceReportGenerator
 {
     [Command(PackageIds.MyCommand)]
-    internal sealed class MyToolWindowCommand : BaseCommand<MyToolWindowCommand>
+    internal sealed class CodeQualityWindowCommand : BaseCommand<CodeQualityWindowCommand>
     {
         protected override Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            return MyToolWindow.ShowAsync();
+            return CodeQualityToolWindow.ShowAsync();
         }
     }
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using Microsoft.VisualStudio;
 using System.IO;
 
 namespace TestPerformanceReportGenerator.Utilities

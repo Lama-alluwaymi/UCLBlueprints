@@ -14,8 +14,8 @@
         <Icon guid="ImageCatalogGuid" id="ToolWindow" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>TPRG</ButtonText>
-          <LocCanonicalName>.View.TPRG</LocCanonicalName>
+          <ButtonText>CQRG</ButtonText>
+          <LocCanonicalName>.View.CQRG</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.Imaging;
 
 namespace TestPerformanceReportGenerator
 {
-    public partial class MyToolWindowControl : UserControl
+    public partial class CodeQualityWindowControl : UserControl
     {
 
         private ReportGenerator generator = new ReportGenerator();
@@ -25,7 +25,7 @@ namespace TestPerformanceReportGenerator
         private string loecInputTxt;
         
 
-        public MyToolWindowControl()
+        public CodeQualityWindowControl()
         {
             InitializeComponent();
         }

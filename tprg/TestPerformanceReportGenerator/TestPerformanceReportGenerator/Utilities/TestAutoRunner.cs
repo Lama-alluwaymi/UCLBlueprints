@@ -104,7 +104,7 @@ namespace TestPerformanceReportGenerator.Utilities
             else
             {
                 //Console.WriteLine("Could not find a directory with the current solution");
-                VS.MessageBox.ShowError("Test Performance Report Generator", "Could not find directory containing current solution.");
+                VS.MessageBox.ShowError("Code Quality Report Generator", "Could not find directory containing current solution.");
             }
 
         }
