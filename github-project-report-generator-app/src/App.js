@@ -107,52 +107,42 @@ function App() {
         placeholder='https://github.com/owner/repo'
       />
 
-      <Flex align='center' wrap='wrap'>
-        <Button
-          mt={5}
-          onClick={() => getBasicReport()}
-          disabled={!reqURL.includes('https://github.com')}
-          colorScheme='blue'
-          isLoading={basicReportLoading}
-          loadingText='Generating'
-          mr={5}
-        >
-          Generate Basic Report
-        </Button>
-        <Button
-          mt={5}
-          onClick={() => getFullReport()}
-          disabled={!reqURL.includes('https://github.com')}
-          colorScheme='blue'
-          isLoading={fullReportLoading}
-          loadingText='Generating'
-          mr={5}
-        >
-          Generate Full Report
-        </Button>
-        <Button
-          mt={5}
-          onClick={() => showSampleReport()}
-          colorScheme='blue'
-          variant='outline'
-          mr={5}
-        >
+      <Flex mt={5} justify='space-between' wrap='wrap' gap={5}>
+        <Flex gap={5} align='center' wrap='wrap'>
+          <Button
+            onClick={() => getBasicReport()}
+            disabled={!reqURL.includes('https://github.com')}
+            colorScheme='blue'
+            isLoading={basicReportLoading}
+            loadingText='Generating'
+          >
+            Generate Basic Report
+          </Button>
+          <Button
+            onClick={() => getFullReport()}
+            disabled={!reqURL.includes('https://github.com')}
+            colorScheme='blue'
+            isLoading={fullReportLoading}
+            loadingText='Generating'
+          >
+            Generate Full Report
+          </Button>
+          <Text>{fileCommitsFetchingStatus}</Text>
+        </Flex>
+        <Button onClick={() => showSampleReport()} colorScheme='blue' variant='outline'>
           Show Sample Report
         </Button>
-        <Text mt={5}>{fileCommitsFetchingStatus}</Text>
       </Flex>
 
-      <Flex wrap='wrap'>
+      <Flex mt={5} wrap='wrap' gap={5}>
         <Button
-          mt={5}
           onClick={() => downloadJSONReport()}
           isDisabled={Object.keys(data).length === 0}
           leftIcon={<DownloadIcon />}
-          mr={5}
         >
           Download JSON Report
         </Button>
-        <Flex mt={5} align='center' wrap='wrap'>
+        <Flex align='center' wrap='wrap'>
           <Text mr={4}>Upload JSON Report:</Text>
           <input type='file' onChange={uploadJSONReport} />
         </Flex>
