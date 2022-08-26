@@ -198,7 +198,7 @@ const FileCommits = ({
                 {' - '}
                 <Link href={`${url}/commits/${mostRecentCommitSha}/${file}`} isExternal>
                   {`${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
-                    timelineView
+                    timelineView || commitsInOrder
                       ? new Date(first).toLocaleDateString() !== new Date(last).toLocaleDateString()
                         ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
                             last
@@ -233,16 +233,24 @@ const FileCommits = ({
                     mt={4}
                   >
                     {commitsInOrder
-                      ? order.map(({ author }, index) => (
-                          <Box
-                            key={index}
-                            width={`${(1 / totalCommits) * 100}%`}
-                            height='100%'
-                            float='left'
-                            bgColor={
-                              selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
-                            }
-                          />
+                      ? order.map(({ author, date, message, html_url }, index) => (
+                          <Link key={index} href={html_url} isExternal>
+                            <Tooltip
+                              label={`"${message}" - ${author} committed on ${new Date(
+                                date
+                              ).toLocaleDateString()}`}
+                              hasArrow
+                            >
+                              <Box
+                                width={`${(1 / totalCommits) * 100}%`}
+                                height='100%'
+                                float='left'
+                                bgColor={
+                                  selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                                }
+                              />
+                            </Tooltip>
+                          </Link>
                         ))
                       : Object.entries(authors).map(([author, commits]) => (
                           <Box
@@ -273,8 +281,8 @@ const FileCommits = ({
                       width={`${(Math.abs(new Date(last) - new Date(first)) / totalTime) * 100}%`}
                     />
                     {showTimelineCommits &&
-                      order.map(({ author, date, message, html_url }) => (
-                        <Link key={date} href={html_url} isExternal>
+                      order.map(({ author, date, message, html_url }, index) => (
+                        <Link key={index} href={html_url} isExternal>
                           <Tooltip
                             label={`"${message}" - ${author} committed on ${new Date(
                               date
