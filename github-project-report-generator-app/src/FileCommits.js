@@ -195,15 +195,19 @@ const FileCommits = ({
                 <Link href={`${url}/blob/${mostRecentCommitSha}/${file}`} isExternal>
                   {file}
                 </Link>
-                {` - ${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
-                  timelineView
-                    ? new Date(first).toLocaleDateString() !== new Date(last).toLocaleDateString()
-                      ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
-                          last
-                        ).toLocaleDateString()}`
-                      : `on ${new Date(first).toLocaleDateString()}`
-                    : ''
-                } by: `}
+                {' - '}
+                <Link href={`${url}/commits/${mostRecentCommitSha}/${file}`} isExternal>
+                  {`${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
+                    timelineView
+                      ? new Date(first).toLocaleDateString() !== new Date(last).toLocaleDateString()
+                        ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
+                            last
+                          ).toLocaleDateString()}`
+                        : `on ${new Date(first).toLocaleDateString()}`
+                      : ''
+                  }`}
+                </Link>
+                {' by: '}
                 <Flex wrap='wrap' mb={2}>
                   {Object.entries(authors).map(([author, commits], index) => (
                     <Link
