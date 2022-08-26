@@ -16,6 +16,7 @@ function App() {
   const [reqURL, setReqURL] = useState('');
   const [basicReportLoading, setBasicReportLoading] = useState(false);
   const [fullReportLoading, setFullReportLoading] = useState(false);
+  const [fileCommitsFetchingStatus, setFileCommitsFetchingStatus] = useState('');
   const [resError, setResError] = useState('');
 
   const [data, setData] = useState({});
@@ -60,10 +61,11 @@ function App() {
     setResError('');
     setData({ url, name, firstCommitDate, lastCommitDate, commitActivity });
     try {
-      setData(await generateFullReport(token, repo));
+      setData(await generateFullReport(token, repo, setFileCommitsFetchingStatus));
     } catch (error) {
       setResError(error.message);
     }
+    setFileCommitsFetchingStatus('');
     setFullReportLoading(false);
   };
 
@@ -108,31 +110,42 @@ function App() {
         onChange={(e) => setReqURL(e.currentTarget.value)}
         placeholder='https://github.com/owner/repo'
       />
-      <Button
-        mt={5}
-        onClick={() => getBasicReport()}
-        disabled={!reqURL.includes('https://github.com')}
-        colorScheme='blue'
-        isLoading={basicReportLoading}
-        loadingText='Generating'
-        mr={5}
-      >
-        Generate Basic Report
-      </Button>
-      <Button
-        mt={5}
-        onClick={() => getFullReport()}
-        disabled={!reqURL.includes('https://github.com')}
-        colorScheme='blue'
-        isLoading={fullReportLoading}
-        loadingText='Generating'
-        mr={5}
-      >
-        Generate Full Report
-      </Button>
-      <Button mt={5} onClick={() => showSampleReport()} colorScheme='blue' variant='outline' mr={5}>
-        Show Sample Report
-      </Button>
+
+      <Flex align='center' wrap='wrap'>
+        <Button
+          mt={5}
+          onClick={() => getBasicReport()}
+          disabled={!reqURL.includes('https://github.com')}
+          colorScheme='blue'
+          isLoading={basicReportLoading}
+          loadingText='Generating'
+          mr={5}
+        >
+          Generate Basic Report
+        </Button>
+        <Button
+          mt={5}
+          onClick={() => getFullReport()}
+          disabled={!reqURL.includes('https://github.com')}
+          colorScheme='blue'
+          isLoading={fullReportLoading}
+          loadingText='Generating'
+          mr={5}
+        >
+          Generate Full Report
+        </Button>
+        <Button
+          mt={5}
+          onClick={() => showSampleReport()}
+          colorScheme='blue'
+          variant='outline'
+          mr={5}
+        >
+          Show Sample Report
+        </Button>
+        <Text mt={5}>{fileCommitsFetchingStatus}</Text>
+      </Flex>
+
       <Flex wrap='wrap'>
         <Button
           mt={5}

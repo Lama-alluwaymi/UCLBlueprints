@@ -22,7 +22,7 @@ export async function generateBasicReport(octokitAuth, repo) {
   };
 }
 
-export async function generateFullReport(octokitAuth, repo) {
+export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchingStatus) {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/commits/commits#list-commits
@@ -70,7 +70,11 @@ export async function generateFullReport(octokitAuth, repo) {
       lastCommitDate: order[order.length - 1].date,
     };
 
-    console.log(file.path);
+    setFileCommitsFetchingStatus(
+      `Fetched commits for: ${file.path} (${
+        tree.findIndex((treeFile) => treeFile.path === file.path) + 1
+      }/${tree.length})`
+    );
   }
 
   return {
