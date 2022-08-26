@@ -1,3 +1,84 @@
+function getCardsAssignedPerBoardMember(boardID, listID, key, token) {
+
+    var memberIDs = [];
+    var memberName = [];
+    var memberUsername = [];
+    var cardNumber = [];
+
+    //get each member
+    fetch("https://api.trello.com/1/boards/" + boardID + "/members?key=" + key + "&token=" + token).then((data) => {
+
+    return data.json();
+    }).then((objectData) => {
+
+
+        for(let i = 0; i < objectData.length; i++) {
+            let obj = objectData[i];
+            
+            memberIDs.push(obj.id);
+            memberName.push(obj.fullName);
+            memberUsername.push(obj.username);
+        }
+
+    
+        
+    let cardsAssignedData = "";
+    
+    for(let j = 0; j < memberIDs.length; j++) {
+    
+        fetch("https://api.trello.com/1/members/" + memberIDs[j] + "/cards?key=" + key + "&token=" + token).then((data) => {
+
+        return data.json();
+        }).then((objectData) => {
+            
+            let cardCounter = 0;
+
+            
+            for(let k = 0; k < objectData.length; k++) {
+                let obj = objectData[k];
+                
+               
+                
+                
+                if(obj.idList == listID) {
+                    
+                    cardCounter = cardCounter + 1;
+                }
+
+            }
+
+            console.log("cardCounter: " + cardCounter);
+
+            cardNumber.push(cardCounter);
+            console.log("cardNumber: " + cardNumber[0]);
+
+        
+            
+        
+        
+        })
+
+        console.log("j: " + j);
+        console.log("cardNumber[j]: " + cardNumber[j]);
+        cardsAssignedData += `<tr>
+            <td>${memberName[j]} (${memberUsername[j]})</td>
+            <td>${cardNumber[j]}</td>
+            </tr>`;
+
+    }
+    
+    
+    document.getElementById("table_body_cards_assigned_list").innerHTML=cardsAssignedData;
+    
+    
+    })
+    
+
+}
+
+
+
+
 //gets all actions that have happened in a list
 function getAllActionsInList(listID, key, token) {
 
@@ -34,7 +115,7 @@ function getAllActionsInList(listID, key, token) {
              } else if (actionType == "createCard") {
                  specificAction = "Card created";
              }
-             
+
              if (actionType == "commentCard") {
                 specificAction = "Comment added";
              }

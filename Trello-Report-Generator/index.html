@@ -25,7 +25,7 @@
         
         </select>
   <br><br>
-    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );" >Generate Report</button>
+    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); getCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);" >Generate Report</button>
     
     <h1>Cards currently in list</h1>
     <table class="table">
@@ -82,16 +82,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Author</th>
+                <th>Member</th>
                 <th>Number of cards</th>
             </tr>
         </thead>
-        <tbody id="table_body_actions_on_list"></tbody>
+        <tbody id="table_body_cards_assigned_list"></tbody>
     </table>
     <text>Graph of this</text>
     
 
-    <h1>All actions in board by all members</h1>
+    <h1>All actions that have taken place on the board</h1>
 
 
 </body>
