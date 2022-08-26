@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Heading, Link, Text, Divider, Avatar, Switch } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Text, Divider, Avatar, Switch, Tooltip } from '@chakra-ui/react';
 import { Radio, RadioGroup } from '@chakra-ui/react';
 import { Checkbox, CheckboxGroup } from '@chakra-ui/react';
 
@@ -269,20 +269,29 @@ const FileCommits = ({
                       width={`${(Math.abs(new Date(last) - new Date(first)) / totalTime) * 100}%`}
                     />
                     {showTimelineCommits &&
-                      order.map(({ author, date }) => (
-                        <Avatar
-                          key={date}
-                          name={author}
-                          size='xs'
-                          bgColor={
-                            selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
-                          }
-                          position='absolute'
-                          left={`calc(${
-                            (Math.abs(new Date(date) - new Date(firstCommitDate)) / totalTime) * 100
-                          }% - 10px)`}
-                          top='-7px'
-                        />
+                      order.map(({ author, date, message, html_url }) => (
+                        <Link key={date} href={html_url} isExternal>
+                          <Tooltip
+                            label={`"${message}" - ${author} committed on ${new Date(
+                              date
+                            ).toLocaleDateString()}`}
+                            hasArrow
+                          >
+                            <Avatar
+                              name={author}
+                              size='xs'
+                              bgColor={
+                                selectedAuthors.includes(author) ? stringToColour(author) : 'grey'
+                              }
+                              position='absolute'
+                              left={`calc(${
+                                (Math.abs(new Date(date) - new Date(firstCommitDate)) / totalTime) *
+                                100
+                              }% - 10px)`}
+                              top='-7px'
+                            />
+                          </Tooltip>
+                        </Link>
                       ))}
                   </Box>
                 )}

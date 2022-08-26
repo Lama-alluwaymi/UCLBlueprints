@@ -52,7 +52,7 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
 
     const authors = {};
     const order = [];
-    for (const { author, commit } of commits) {
+    for (const { author, commit, html_url } of commits) {
       // Some commits have a null author, which can lead to the file commit count and
       // the sum of the shown authors' commits not being equal for some files
       if (!author) continue;
@@ -61,7 +61,12 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
       } else {
         authors[author.login]++;
       }
-      order.push({ author: author.login, date: commit.committer.date });
+      order.push({
+        author: author.login,
+        date: commit.committer.date,
+        message: commit.message,
+        html_url,
+      });
     }
     if (order.length === 0) continue;
     order.reverse();
