@@ -9,16 +9,15 @@ namespace TestPerformanceReportGenerator
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
-    [ProvideToolWindow(typeof(CodeQualityToolWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
-    [ProvideToolWindow(typeof(QualityOverviewToolWindow.Pane), Style = VsDockStyle.Linked, Window = WindowGuids.SolutionExplorer)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.TestPerformanceReportGeneratorString)]
+    [ProvideToolWindow(typeof(CodeQualityToolWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
+    [ProvideToolWindow(typeof(QualityOverviewToolWindow.Pane), Style = VsDockStyle.Float)]
     public sealed class TestPerformanceReportGeneratorPackage : ToolkitPackage
     {
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await this.RegisterCommandsAsync();
-
             this.RegisterToolWindows();
         }
     }

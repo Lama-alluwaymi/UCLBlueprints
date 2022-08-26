@@ -17,7 +17,7 @@ namespace TestPerformanceReportGenerator
             return Task.FromResult<FrameworkElement>(new CodeQualityWindowControl());
         }
 
-        [Guid("ce2a0f92-d094-48c5-be02-b8624558136a")]
+        [Guid(PackageGuids.CodeQualityWindowString)]
         internal class Pane : ToolWindowPane
         {
             public Pane()

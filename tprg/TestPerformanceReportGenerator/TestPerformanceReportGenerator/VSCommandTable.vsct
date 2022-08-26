@@ -18,15 +18,15 @@
           <LocCanonicalName>.View.CQRG</LocCanonicalName>
         </Strings>
       </Button>
-	  <Button guid="TestPerformanceReportGenerator" id="QualityOverviewCommand" priority="0x0100" type="Button">
-		<Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
+	  <!--<Button guid="TestPerformanceReportGenerator" id="QualityOverviewCommand" priority="0x0100" type="Button">
+		<Parent guid="VSMainMenu" id="View.ExplorerWindowsGroup"/>
 		<Icon guid="ImageCatalogGuid" id="ToolWindow" />
 		<CommandFlag>IconIsMoniker</CommandFlag>
 		<Strings>
 			<ButtonText>CQRG_overview</ButtonText>
 			<LocCanonicalName>.View.CQRG_overview</LocCanonicalName>
 		</Strings>
-	  </Button>
+	  </Button>-->
     </Buttons>
   </Commands>
 
@@ -35,5 +35,7 @@
       <IDSymbol name="MyCommand" value="0x0100" />
 	  <IDSymbol name="QualityOverviewCommand" value="0x101"/>
     </GuidSymbol>
+	<GuidSymbol name="CodeQualityWindow" value="{ce2a0f92-d094-48c5-be02-b8624558136a}"/>
+	<GuidSymbol name="QualityOverviewWindow" value="{7bda49d1-3062-4c71-9de5-956e509ee0b9}"/>
   </Symbols>
 </CommandTable>

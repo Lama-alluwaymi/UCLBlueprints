@@ -17,7 +17,7 @@ namespace TestPerformanceReportGenerator
             return Task.FromResult<FrameworkElement>(new QualityOverviewToolWindowControl());
         }
 
-        [Guid("7bda49d1-3062-4c71-9de5-956e509ee0b9")]
+        [Guid(PackageGuids.QualityOverviewWindowString)]
         internal class Pane : ToolWindowPane
         {
             public Pane()
