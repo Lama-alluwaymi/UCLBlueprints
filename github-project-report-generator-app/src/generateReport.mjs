@@ -38,6 +38,12 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
 
   const fileCommits = {};
   for (const file of tree) {
+    setFileCommitsFetchingStatus(
+      `Fetching commits for: ${file.path} (${
+        tree.findIndex((treeFile) => treeFile.path === file.path) + 1
+      }/${tree.length})`
+    );
+
     // https://stackoverflow.com/a/46762417
     const commits = await octokit.paginate(`GET /repos/{owner}/{repo}/commits?path=${file.path}`, {
       ...repo,
@@ -69,12 +75,6 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
       firstCommitDate: order[0].date,
       lastCommitDate: order[order.length - 1].date,
     };
-
-    setFileCommitsFetchingStatus(
-      `Fetched commits for: ${file.path} (${
-        tree.findIndex((treeFile) => treeFile.path === file.path) + 1
-      }/${tree.length})`
-    );
   }
 
   return {
