@@ -59,6 +59,7 @@
       <DependentUpon>QualityOverviewToolWindowControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FileHelper.cs" />
+    <Compile Include="Utilities\OverviewQualitytData.cs" />
     <Compile Include="Utilities\ReportGenerator.cs" />
     <Compile Include="Utilities\QualityData.cs" />
     <Compile Include="Utilities\SystemInfoRetriver.cs" />
@@ -109,6 +110,7 @@
     <Reference Include="System.Xaml" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="System.ComponentModel.Composition" />
   </ItemGroup>
@@ -116,6 +118,9 @@
     <PackageReference Include="Community.VisualStudio.VSCT" Version="16.0.29.6" PrivateAssets="all" />
     <PackageReference Include="Community.VisualStudio.Toolkit.17" Version="17.0.451" ExcludeAssets="Runtime">
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.45</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.3.2093">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

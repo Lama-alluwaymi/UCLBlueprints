@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.IO;
-
+using HtmlAgilityPack;
+using System.Xml;
 
 namespace TestPerformanceReportGenerator.Utilities
 {
@@ -69,5 +68,54 @@ namespace TestPerformanceReportGenerator.Utilities
                 writer.WriteLine(report);
             }
         }
+
+        public static string[] GetAllReportFiles()
+        {
+            string path = Path.Combine(getSolutionDir().FullName, "Reports");
+            if (Directory.Exists(path))
+            {
+                return Directory.GetFiles(path);
+            }
+            else
+            {
+                throw new DirectoryNotFoundException();
+            }
+        }
+
+        public static OverviewQualitytData ParseHtmlFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                var doc = new HtmlDocument();
+                doc.Load(filePath);
+                // Get all values from 
+                var maintain_val = doc.DocumentNode.SelectSingleNode("//div[@id='maintain_val']");
+                var cyclo_val = doc.DocumentNode.SelectSingleNode("//span[@id='cyclo_val']");
+                var inherit_val = doc.DocumentNode.SelectSingleNode("//span[@id='inherit_val']");
+                var classcoup_val = doc.DocumentNode.SelectSingleNode("//span[@id='classcoup_val']");
+                var line_cov = doc.DocumentNode.SelectNodes("//td[@id='line_cov']").Last();
+                var tot_testcase = doc.DocumentNode.SelectNodes("//td[@id='tot_testcase']").Last();
+
+                // store all values in an object
+                OverviewQualitytData data = new OverviewQualitytData()
+                {
+                    Maintainability = maintain_val.InnerText,
+                    CyclomaticComplexity = cyclo_val.InnerText,
+                    DepthInheritance = inherit_val.InnerText,
+                    ClassCoupling = classcoup_val.InnerText,
+                    LineCoverage = line_cov.InnerText,
+                    TotalTestCases = tot_testcase.InnerText,
+                };
+
+                return data;
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+
+        }
+
+
     }
 }
