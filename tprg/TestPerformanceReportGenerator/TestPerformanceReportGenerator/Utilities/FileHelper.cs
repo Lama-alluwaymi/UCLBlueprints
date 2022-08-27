@@ -41,6 +41,17 @@ namespace TestPerformanceReportGenerator.Utilities
                 return sr.ReadToEnd();
             }
         }
+        public static DirectoryInfo getSolutionDir(string currentPath = null, string fileExt = "*.sln")
+        {
+            var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
+            while (directory != null && !directory.GetFiles(fileExt).Any())
+            {
+                directory = directory.Parent;
+            }
+            return directory;
+        }
+
+        public static string GetSolutionName() => getSolutionDir().FullName.Split('\\').Last().Replace(".sln", "");
 
         public static void WriteFile(string report, string path, bool isClearedOldText = true)
         {

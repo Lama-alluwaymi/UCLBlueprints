@@ -36,7 +36,7 @@ namespace TestPerformanceReportGenerator.Utilities
             //string reportFile = FileHelper.ReadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestTemplate.html"));
             //var root = Path.GetDirectoryName(typeof(VisualStudioServices).Assembly.Location);
             //string reportFile = FileHelper.ReadFile(Path.Combine(root!, "Utilities", "TestTemplate.html"));
-            string resourceName = "TestPerformanceReportGenerator.Utilities.TestTemplate.html";
+            string resourceName = "TestPerformanceReportGenerator.Resources.TestTemplate.html";
             string reportFile = FileHelper.ReadFromResource(resourceName);
 
             reportFile = reportFile.Replace("{$ProjectName$}", projectName);
@@ -79,7 +79,7 @@ namespace TestPerformanceReportGenerator.Utilities
             string reportName = "CodeQualityReport_" + dateNow + ".html";
 
             //Write to path "../Reports/CodeQualityReport_dmy.html"
-            DirectoryInfo outputDir = TestAutoRunner.getSolutionDir();
+            DirectoryInfo outputDir = FileHelper.getSolutionDir();
             string outputPath = outputDir.FullName;
             string[] path = { outputPath, "Reports", reportName };
             if (Directory.Exists(Path.Combine(outputPath, "Reports")))

@@ -15,18 +15,6 @@ namespace TestPerformanceReportGenerator.Utilities
         public string duration;
         public string totalTests;
 
-        public static DirectoryInfo getSolutionDir(string currentPath = null, string fileExt = "*.sln")
-        {
-            var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
-            while (directory != null && !directory.GetFiles(fileExt).Any())
-            {
-                directory = directory.Parent;
-            }
-            return directory;
-        }
-
-        public static string GetSolutionName() => getSolutionDir().FullName.Split('\\').Last().Replace(".sln", "");
-
         private string findSubString(string target)
         {
             int targetIndex = this.output.IndexOf(target);
@@ -42,7 +30,9 @@ namespace TestPerformanceReportGenerator.Utilities
                     return substr;
                 }
                 len = target.Length;
-                substr = this.output.Substring(targetIndex + len + 5, 1);
+                substr = this.output.Substring(targetIndex + len + 5, 2).Replace(",", "");
+                // currently fetches only two digits, next step: find a way of fetching all the numbers 
+                // such that if there are 100+ test cases it can fetch all the test cases.
                 return substr;
             }
             return null;
@@ -52,7 +42,7 @@ namespace TestPerformanceReportGenerator.Utilities
         {
             // Get the directory that contain the solution such that process can 
             // start in that directory
-            DirectoryInfo directory = getSolutionDir();
+            DirectoryInfo directory = FileHelper.getSolutionDir();
             if (directory != null)
             {
                 // Set stringBuilders to fetch the output of the process

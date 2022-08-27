@@ -144,7 +144,7 @@ namespace TestPerformanceReportGenerator
                         // get project name
                         //string projectName = Assembly.GetCallingAssembly().GetName().Name;
                         //string projectName = Assembly.GetExecutingAssembly().FullName.Split(',')[0];
-                        string projectName = TestAutoRunner.GetSolutionName();
+                        string projectName = FileHelper.GetSolutionName();
 
                         ReportGenerator.GenerateReport(projectName, this.generator.dataList,
                                                         this.maintainInputTxt, this.cycloInputTxt,
