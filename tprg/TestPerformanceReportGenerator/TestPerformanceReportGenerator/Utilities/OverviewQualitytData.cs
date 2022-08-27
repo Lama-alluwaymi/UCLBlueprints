@@ -8,5 +8,7 @@
         public string ClassCoupling { get; set; }
         public string LineCoverage { get; set; }
         public string TotalTestCases { get; set; }
+        public string ProjectName { get; set; }
+        public string ReportDate { get; set; }
     }
 }

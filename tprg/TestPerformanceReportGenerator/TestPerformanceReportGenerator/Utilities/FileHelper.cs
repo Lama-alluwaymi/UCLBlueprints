@@ -88,13 +88,18 @@ namespace TestPerformanceReportGenerator.Utilities
             {
                 var doc = new HtmlDocument();
                 doc.Load(filePath);
-                // Get all values from 
+                // Get report basic data
+                var project_name = doc.DocumentNode.SelectSingleNode("//div[@id='ProjectName']");
+                var report_date = doc.DocumentNode.SelectSingleNode("//div[@id='ReportDate']");
+                // Get all code metrics value
                 var maintain_val = doc.DocumentNode.SelectSingleNode("//div[@id='maintain_val']");
                 var cyclo_val = doc.DocumentNode.SelectSingleNode("//span[@id='cyclo_val']");
                 var inherit_val = doc.DocumentNode.SelectSingleNode("//span[@id='inherit_val']");
                 var classcoup_val = doc.DocumentNode.SelectSingleNode("//span[@id='classcoup_val']");
-                var line_cov = doc.DocumentNode.SelectNodes("//td[@id='line_cov']").Last();
+                // Get the last entry of Line coverage and total number of test cases
+                var line_cov = doc.DocumentNode.SelectNodes("//td[@id='line_cov']").Last(); 
                 var tot_testcase = doc.DocumentNode.SelectNodes("//td[@id='tot_testcase']").Last();
+
 
                 // store all values in an object
                 OverviewQualitytData data = new OverviewQualitytData()
@@ -105,6 +110,8 @@ namespace TestPerformanceReportGenerator.Utilities
                     ClassCoupling = classcoup_val.InnerText,
                     LineCoverage = line_cov.InnerText,
                     TotalTestCases = tot_testcase.InnerText,
+                    ProjectName = project_name.InnerText,
+                    ReportDate = report_date.InnerText,
                 };
 
                 return data;

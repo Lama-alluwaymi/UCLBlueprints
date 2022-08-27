@@ -8,12 +8,12 @@ namespace TestPerformanceReportGenerator.Utilities
     {
         public List<QualityData> dataList = new List<QualityData>();
 
-        public void AddTestData(string date, string version, string hardware, string failedTests, 
+        public void AddTestData(string time, string version, string hardware, string failedTests, 
             string passedTests, string testCases, string lineCoverage, string testDuration, string skipped)
         {
             this.dataList.Add(new QualityData()
             {
-                Date = date,
+                Time = time,
                 Version = version,
                 Hardware = hardware,
                 Failed = failedTests,
@@ -29,6 +29,12 @@ namespace TestPerformanceReportGenerator.Utilities
             string maintainability, string cycloComplexity, string depthOfInheritnace, string classCoupling,
             string losc, string loec)
         {
+            // generate uniformal report name based on CodeQualityReport + Current date
+            var dateCulture = new CultureInfo("en-GB");
+            string dateNow = DateTime.Now.ToString("d", dateCulture);
+            string dateFormatted = dateNow.Replace("/", "");
+            string reportName = "CodeQualityReport_" + dateFormatted + ".html";
+
             string tablestr = "";
             string coverageOptionXAxis = "";
             string coverageOptionYAxis = "";
@@ -40,6 +46,7 @@ namespace TestPerformanceReportGenerator.Utilities
             string reportFile = FileHelper.ReadFromResource(resourceName);
 
             reportFile = reportFile.Replace("{$ProjectName$}", projectName);
+            reportFile = reportFile.Replace("{$ReportDate$}", dateNow);
             reportFile = reportFile.Replace("{$SOURCECODE$}", losc);
             reportFile = reportFile.Replace("{$EXECUTABLECODE$}", loec);
 
@@ -54,7 +61,7 @@ namespace TestPerformanceReportGenerator.Utilities
             foreach(QualityData item in dataList)
             {   
                 tablestr += $@"<tr>
-                               <td>{item.Date}</td>
+                               <td>{item.Time}</td>
                                <td>{item.Version}</td>
                                <td>{item.Hardware}</td>
                                <td>{item.Failed}/{item.Passed}&nbsp;&nbsp;<progress value='{item.Failed}' max='{item.Passed}'></progress></td>
@@ -70,13 +77,6 @@ namespace TestPerformanceReportGenerator.Utilities
             reportFile = reportFile.Replace("{$tablestr$}", tablestr);
             reportFile = reportFile.Replace("{$linecoverageOptionxAxis$}", coverageOptionXAxis.TrimEnd(','));
             reportFile = reportFile.Replace("{$linecoverageOptionyAxis$}", coverageOptionYAxis.TrimEnd(','));
-
-
-            // generate uniformal report name based on CodeQualityReport + Current date
-            var dateCulture = new CultureInfo("en-GB");
-            string dateNow = DateTime.Now.ToString("d",dateCulture);
-            dateNow = dateNow.Replace("/", "");
-            string reportName = "CodeQualityReport_" + dateNow + ".html";
 
             //Write to path "../Reports/CodeQualityReport_dmy.html"
             DirectoryInfo outputDir = FileHelper.getSolutionDir();

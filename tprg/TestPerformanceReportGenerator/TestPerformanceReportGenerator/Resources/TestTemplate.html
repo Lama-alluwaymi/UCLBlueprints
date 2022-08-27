@@ -14,7 +14,21 @@
             font-weight: 900;
             height: 50px;
             line-height: 60px;
+            
+        }
+
+        #ReportDate {
+            font-size: 19px;
+            font-weight: 900;
+            height: 50px;
+            line-height: 60px;
+        }
+
+        #TitleContainer {
+            display: flex;
+            flex-direction: row;
             border-bottom: 1px solid #d1cfcf;
+            justify-content: space-between; 
         }
 
         #PieChartBox {
@@ -91,7 +105,10 @@
 </head>
 <body>
     <div id="mainCenter">
-        <div id="ProjectName">{$ProjectName$}</div>
+        <div id="TitleContainer">
+            <div id="ProjectName">{$ProjectName$}</div>
+            <div id="ReportDate">{$ReportDate$}</div>
+        </div>
         <div id="PieChartBox">
 
             <div id="DataBox" class="chartstyle" style="">

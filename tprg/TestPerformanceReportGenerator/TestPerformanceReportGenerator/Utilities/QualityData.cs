@@ -3,7 +3,7 @@ namespace TestPerformanceReportGenerator.Utilities
 {
     public class QualityData
     {
-        public string Date { get; set; }
+        public string Time { get; set; }
         public string Version { get; set; }
         public string Hardware { get; set; }
         public string Failed { get; set; }
