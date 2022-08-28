@@ -93,5 +93,60 @@ namespace TestPerformanceReportGenerator.Utilities
             }
 
         }
+        
+        public static void GenerateOverview()
+        {
+            // Get the overview report template from resource
+            string overviewResName = "TestPerformanceReportGenerator.Resources.OverviewTemplate.html";
+            string overviewFile = FileHelper.ReadFromResource(overviewResName);
+
+            // Get all files in the Report folder
+            string[] reportFiles = FileHelper.GetAllReportFiles();
+
+            // Set data strings that are going to be replaced in the 
+            string dateXAxis = "";
+            string lineCoverageY = "";
+            string testCasesY = "";
+            string maintainabilityY = "";
+            string cycloY = "";
+            string depthOfInhY = "";
+            string classCouplY = "";
+            string projectName = "";
+
+            foreach (string reportFilePath in reportFiles)
+            {
+                OverviewQualitytData data = FileHelper.ParseHtmlFile(reportFilePath);
+                dateXAxis += "'\"" + data.ReportDate + "\"',";
+                lineCoverageY += "'" + data.LineCoverage + "',";
+                testCasesY += "'" + data.TotalTestCases + "',";
+                maintainabilityY += "'" + data.Maintainability + "',";
+                cycloY += "'" + data.CyclomaticComplexity + "',";
+                depthOfInhY += "'" + data.DepthInheritance + "',";
+                classCouplY += "'" + data.ClassCoupling + "',";
+                projectName = data.ProjectName;
+            }
+
+            overviewFile = overviewFile.Replace("{$dateXAxis$}", dateXAxis.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$LineCoverage$}", lineCoverageY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$TestCases$}", testCasesY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$MaintainabilityIndex$}", maintainabilityY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$CyclomaticComplexity$}", cycloY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$DepthOfInheritance$}", depthOfInhY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$ClassCoupling$}", classCouplY.TrimEnd(','));
+            overviewFile = overviewFile.Replace("{$ProjectName$}", projectName);
+
+            // write file to repository
+            DirectoryInfo outputDir = FileHelper.getSolutionDir();
+            string outputPath = outputDir.FullName;
+            string[] path = { outputPath, "Overview_Report", "CodeQuality_Overview.html" };
+            if(Directory.Exists(Path.Combine(outputPath, "Overview_Report"))){
+                FileHelper.WriteFile(overviewFile, Path.Combine(path));
+            }
+            else
+            {
+                Directory.CreateDirectory(Path.Combine(outputPath, "Overview_Report"));
+                FileHelper.WriteFile(overviewFile, Path.Combine(path));
+            }
+        }
     }
 }

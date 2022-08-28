@@ -7,7 +7,7 @@
     <style>
         #mainCenter{
             width: 80%;
-            margin: 20px, auto;
+            margin: 20px auto;
         }
 
         #TitleContainer{
@@ -21,20 +21,26 @@
             height: 400px;
             margin: 0 auto;
         }
+        #ProjectName {
+            font-size: 19px;
+            font-weight: 900;
+            height: 50px;
+            line-height: 60px;
+        }
     </style>
 </head>
 <body>
-    <div id="mainCenter"></div>
-    <div id="TitleContainer">
-        <div id="ProjectName">{$ProjectName$}</div>
+    <div id="mainCenter">
+        <div id="TitleContainer">
+            <div id="ProjectName">{$ProjectName$}</div>
+        </div>
+        <div id="LineChartBox">
+            <div class="LineChart" id="CodeQualityChart" />
+        </div>
+        <div id="LineChartBox">
+            <div class="LineChart" id="TestMetricsChart" />
+        </div>
     </div>
-    <div id="LineChartBox">
-        <div class="LineChart" id="CodeQualityChart"/>
-    </div>
-    <div id="LineChartBox">
-        <div class="LineChart" id="TestMetricsChart"/>
-    </div>
-
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <script type="text/javascript">
         require.config({
@@ -69,11 +75,11 @@
                     toolbox: {
                         feature: {
                             restore: { show: true },
-                            magicType: { show: true, type:['line', 'bar'] }
+                            magicType: { show: true, type: ['line', 'bar'] }
                         }
                     },
                     legend: {
-                        data:["Test Cases", "Line Coverage"]
+                        data: ["Test Cases", "Line Coverage"]
                     },
                     xAxis: [{
                         type: "category",
@@ -88,7 +94,7 @@
                             name: "Line Coverage",
                             interval: 10,
                             axisLabel: {
-                                formatter:"{value} %"
+                                formatter: "{value} %"
                             }
                         },
                         {
@@ -100,11 +106,11 @@
                         {
                             name: "Line Coverage",
                             type: "line",
-                            //tooltip: {
-                            //    valueFormatter: function (value) {
-                            //        return "value" + "%";
-                            //    }
-                            //},
+                            tooltip: {
+                                valueFormatter: function (value) {
+                                    return "value" + "%";
+                                }
+                            },
                             data: [{$LineCoverage$}],
                             yAxisIndex: 1
                         },
@@ -173,7 +179,7 @@
                 codeQualityChart.setOption(codeQualtiyOption);
                 testMetricsChart.setOption(testMetricsOption);
             }
-        )
+        );
 
     </script>
 </body>
