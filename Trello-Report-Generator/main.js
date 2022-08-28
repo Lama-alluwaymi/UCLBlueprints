@@ -193,7 +193,7 @@ function getListsForDropdown(boardID, key, token) {
 
 }
 
-//gets all the cards in the list
+//gets cards in a list, all the boards members and records cards currently in a chosen list and who those cards are assigned to
 async function buildCountCardsInList(boardID, listID, key, token) {
         const result = await getCardsInList(listID, key, token);
         const result2 = await fetchMembers(boardID, key, token);
@@ -245,6 +245,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
 }
 
+//gets all the cards in a list
 async function getCardsInList(listID, key, token) {
 
         const response = await fetch("https://api.trello.com/1/lists/" + listID + "/cards?key=" + key + "&token=" + token + "&fields=name,shortUrl,desc,dateLastActivity,idMembers")
@@ -253,7 +254,7 @@ async function getCardsInList(listID, key, token) {
         return data;
 }
 
-
+//gets all the cards in a list, all the members of a board and counts how many cards are assigned to each member
 async function buildCardsAssignedPerBoardMember(boardID, listID, key, token) {
 
     const result = await getCardsInList(listID, key, token);
@@ -304,7 +305,7 @@ async function buildCardsAssignedPerBoardMember(boardID, listID, key, token) {
 
 
 
-
+//gets all members of a board
 async function fetchMembers(boardID, key, token) {
 
         
