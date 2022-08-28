@@ -1,0 +1,91 @@
+body {
+    font-family: Sora, serif;
+}
+
+#listDropDown {
+
+    width:170px;
+    height:25px;
+    
+}
+
+#inputSection {
+
+    padding-left:30px;
+    
+}
+
+#reportSection {
+
+    padding-left:30px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+    
+  }
+
+#btn {
+    display: flex;
+    padding: 0;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: Sora, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    
+}
+
+#btn:hover {
+  background: #008168;
+}
+
+#btn:active {
+  background: #006e58;
+}
+
+#button_text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    color: #fff;
+    height: 100%;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009578;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align:center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

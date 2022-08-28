@@ -1,3 +1,28 @@
+//reveal lists
+function revealLists() {
+
+    let lists = document.getElementById("listDisplay");
+
+    lists.style.display = "block";
+
+}
+
+//reveal report
+function revealSections() {
+    let cardsCurrentlyInList = document.getElementById("cardsCurrentlyInList");
+    let cardsMovedIntoList = document.getElementById("cardsMovedIntoList");
+    let actionsTakenPlaceInList = document.getElementById("actionsTakenPlaceInList");
+    let cardsAssignedPerBoardMemberOnList = document.getElementById("cardsAssignedPerBoardMemberOnList");
+    let allActionsOnList = document.getElementById("allActionsOnList");
+
+    cardsCurrentlyInList.style.display = "block";
+    cardsMovedIntoList.style.display = "block";
+    actionsTakenPlaceInList.style.display = "block";
+    cardsAssignedPerBoardMemberOnList.style.display = "block";
+    allActionsOnList.style.display = "block";
+}
+
+
 //gets all actions that have happened in a board
 function getAllActionsInBoard(boardID, key, token) {
 

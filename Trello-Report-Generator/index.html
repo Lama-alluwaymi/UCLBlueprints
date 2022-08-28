@@ -4,41 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Report generator</title>
+    <title>Trello Harvester</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+
 </head>
 
 <body>
     <script src="main.js"></script>
-    <h1>Trello Report Generator</h1>
     
-    <label for="boardID">Enter your board ID:</label>
+    <div id="inputSection">
+    <h1>Trello Harvester</h1>
+    
+    <label for="boardID">Board ID:</label>
     <input type="text" id="boardID" name="boardID"><br><br>
     <label for="key">Key:</label>
     <input type="text" id="key" name="key"><br><br>
     <label for="token">Token:</label>
     <input type="text" id="token" name="token"><br><br>
-    <button id="btn" onclick="getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );" >Fetch Lists</button><br><br>
+    <button id="btn" onclick="revealLists(); getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );" ><p id="button_text">Fetch Lists</p></button><br><br>
 
-
-    <label for="lists">Choose a list:</label>
+    <div id="listDisplay" style="display:none">
+    <label for="lists">List:</label>
         <select name="listDropDown" id="listDropDown">
         
         </select>
+    
   <br><br>
     <button id="btn" onclick="
+        revealSections();
         buildCountCardsInList(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
         getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
         getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); 
         buildCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value); 
         getAllActionsInBoard(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value);
         
-        " >Generate Report</button>
+        " ><p id="button_text">Generate Report</p></button>
+    
+    </div>
+    </div>
     
     
-    
-    
+    <div id="reportSection">
+    <div id="cardsCurrentlyInList" style="display:none">
     <h1>Cards currently in list</h1>
-    <table class="table">
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Card Name</th>
@@ -50,10 +60,11 @@
         </thead>
         <tbody id="table_body"></tbody>
     </table>
+    </div>
 
+    <div id="cardsMovedIntoList" style="display:none">
     <h1>Cards moved into list</h1>
-    <text>Sorted by date ascending order, descending order, filter by board member</text>
-    <table class="table">
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Card Name</th>
@@ -66,11 +77,15 @@
         <tbody id="table_body_cards_into_list"></tbody>
     </table>
     
-    
     <text>Graph of who moved the most cards into list</text>
 
+    </div>
+    
+    
+    
+    <div id="actionsTakenPlaceInList" style="display:none">
     <h1>All actions that have take place in the list</h1>
-    <table class="table">
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Card Name</th>
@@ -82,14 +97,15 @@
         </thead>
         <tbody id="table_body_actions_on_list"></tbody>
     </table>
+    </div>
 
 
 
 
 
-
+    <div id="cardsAssignedPerBoardMemberOnList" style="display:none">
     <h1>Cards assigned per board member on the list</h1>
-    <table class="table">
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Member</th>
@@ -99,10 +115,12 @@
         <tbody id="table_body_cards_assigned_list"></tbody>
     </table>
     <text>Graph of this</text>
+    </div>
     
 
+    <div id="allActionsOnList" style="display:none">
     <h1>All actions that have taken place on the board</h1>
-    <table class="table">
+    <table class="styled-table">
         <thead>
             <tr>
                 <th>Card Name</th>
@@ -114,6 +132,8 @@
         </thead>
         <tbody id="table_body_actions_on_board"></tbody>
     </table>
+    </div>
+    </div>
 
 </body>
 </html>
