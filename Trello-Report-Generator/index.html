@@ -25,7 +25,17 @@
         
         </select>
   <br><br>
-    <button id="btn" onclick="countCardsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); getCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);" >Generate Report</button>
+    <button id="btn" onclick="
+        buildCountCardsInList(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
+        getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
+        getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); 
+        getCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value); 
+        getAllActionsInBoard(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value);
+        
+        " >Generate Report</button>
+    
+    
+    
     
     <h1>Cards currently in list</h1>
     <table class="table">
@@ -92,7 +102,18 @@
     
 
     <h1>All actions that have taken place on the board</h1>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>Action</th>
+                <th>Date of action</th>
+                <th>By who</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_actions_on_board"></tbody>
+    </table>
 
 </body>
 </html>

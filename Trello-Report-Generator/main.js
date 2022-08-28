@@ -1,78 +1,71 @@
-function getCardsAssignedPerBoardMember(boardID, listID, key, token) {
+//gets all actions that have happened in a board
+function getAllActionsInBoard(boardID, key, token) {
 
-    var memberIDs = [];
-    var memberName = [];
-    var memberUsername = [];
-    var cardNumber = [];
-
-    //get each member
-    fetch("https://api.trello.com/1/boards/" + boardID + "/members?key=" + key + "&token=" + token).then((data) => {
+    fetch("https://api.trello.com/1/boards/" + boardID + "/actions?key=" + key + "&token=" + token).then((data) => {
 
     return data.json();
     }).then((objectData) => {
+        console.log(objectData[0].title);
+        let allActionsData="";
+        objectData.map((values) => {
 
+             let actionType = values.type;
+             let specificAction = "";
+             
+             if (actionType == "updateCard") {
+                 if (values.data.old.hasOwnProperty('dueReminder')) {
+                     specificAction = "Reminder change";
+                 } else if (values.data.old.hasOwnProperty('desc')) {
+                     specificAction = "Description change";
+                 } else if (values.data.old.hasOwnProperty('idList')) {
+                     specificAction = "List change";
+                 } else if (values.data.old.hasOwnProperty('idLabels')) {
+                     specificAction = "Label change";
+                 } else if (values.data.old.hasOwnProperty('due')) {
+                     specificAction = "Due date change";
+                 } else if (values.data.old.hasOwnProperty('closed')) {
+                     specificAction = "Card archived";
+                 } else {
+                     specificAction = "Error";
+                 }
 
-        for(let i = 0; i < objectData.length; i++) {
-            let obj = objectData[i];
+             } else if (actionType == "createList") {
+                 specificAction = "List created";
+             } else if (actionType == "createCard") {
+                 specificAction = "Card created";
+             }
+
+             if (actionType == "commentCard") {
+                specificAction = "Comment added";
+             }
+
+            let specificName ="testName";
+            let shortLink ="";
+            let trelloLinkCreation = "https://trello.com/c/";
             
-            memberIDs.push(obj.id);
-            memberName.push(obj.fullName);
-            memberUsername.push(obj.username);
-        }
-
-    
-        
-    let cardsAssignedData = "";
-    
-    for(let j = 0; j < memberIDs.length; j++) {
-    
-        fetch("https://api.trello.com/1/members/" + memberIDs[j] + "/cards?key=" + key + "&token=" + token).then((data) => {
-
-        return data.json();
-        }).then((objectData) => {
             
-            let cardCounter = 0;
+            if (values.data.hasOwnProperty('card')) {
+                specificName = values.data.card.name;
+                shortLink = values.data.card.shortLink;
+                trelloLinkCreation = trelloLinkCreation + shortLink;
 
-            
-            for(let k = 0; k < objectData.length; k++) {
-                let obj = objectData[k];
-                
-               
-                
-                
-                if(obj.idList == listID) {
-                    
-                    cardCounter = cardCounter + 1;
-                }
-
+            } else {
+                specificName = "";
+                trelloLinkCreation =""
             }
 
-            console.log("cardCounter: " + cardCounter);
-
-            cardNumber.push(cardCounter);
-            console.log("cardNumber: " + cardNumber[0]);
-
-        
-            
-        
-        
-        })
-
-        console.log("j: " + j);
-        console.log("cardNumber[j]: " + cardNumber[j]);
-        cardsAssignedData += `<tr>
-            <td>${memberName[j]} (${memberUsername[j]})</td>
-            <td>${cardNumber[j]}</td>
+            allActionsData+= `<tr>
+            <td>${specificName}</td>
+            <td><a href="${trelloLinkCreation}">${trelloLinkCreation}</a></td>
+            <td>${specificAction}</td>
+            <td>${values.date}</td>
+            <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
             </tr>`;
-
-    }
-    
-    
-    document.getElementById("table_body_cards_assigned_list").innerHTML=cardsAssignedData;
-    
-    
+        });
+        document.getElementById("table_body_actions_on_board").innerHTML=allActionsData;
+    }).catch((err) => {
+        console.log(err);
     })
-    
 
 }
 
@@ -92,7 +85,7 @@ function getAllActionsInList(listID, key, token) {
 
              let actionType = values.type;
              let specificAction = "";
-             console.log(actionType);
+             
              if (actionType == "updateCard") {
                  if (values.data.old.hasOwnProperty('dueReminder')) {
                      specificAction = "Reminder change";
@@ -201,28 +194,83 @@ function getListsForDropdown(boardID, key, token) {
 }
 
 //gets all the cards in the list
-function countCardsInList(listID, key, token) {
-    fetch("https://api.trello.com/1/lists/" + listID + "/cards?key=" + key + "&token=" + token + "&fields=name,shortUrl,desc,dateLastActivity").then((data) =>{
-        return data.json();
-    }).then((objectData) => {
-        console.log(objectData[0].title);
-        let tableData="";
-        objectData.map((values) => {
-            //values.id is current placeholder for who is assigned to the card, needs to be updated
+async function buildCountCardsInList(boardID, listID, key, token) {
+        const result = await getCardsInList(listID, key, token);
+        const result2 = await fetchMembers(boardID, key, token);
+
+        var assignedMembersArray = [];
+
+        
+
+        //enter with first card
+        for(let i = 0; i < result.length; i++) {
+
+            
+
+            console.log("result[i]['idMembers'].length" + result[i]['idMembers'].length);
+            var assignedMembers = "";
+
+            //enter with first member on the board
+            for (let j = 0; j < result2.length; j++) {
+
+                
+
+                //enter with first member 
+                console.log("inside: result[i]['idMembers'].length" + result[i]['idMembers'].length);
+                
+                for(let k = 0; k < result[i]['idMembers'].length; k++) {
+
+                   
+                    if (result[i]['idMembers'][k] == result2[j]['id']) {
+
+                        assignedMembers+= result2[j]['fullName'] + " (" + result2[j]['username'] + ") ";
+    
+                    }
+
+                }
+                
+                assignedMembersArray.push(assignedMembers);
+                console.log(assignedMembersArray[0]);
+            }
+
+        }
+
+        let tableData=""
+        for(let i = 0; i < result.length; i++) {
             tableData+=`<tr>
-            <td>${values.name}</td>
-            <td><a href="${values.shortUrl}">${values.shortUrl}</a></td>
-            <td>${values.desc}</td>
-            <td>${values.dateLastActivity}</td>
-            <td>${values.id}</td>
+            
+            <td>${result[i]['name']}</td>
+            <td><a href="${result[i]['shortUrl']}">${result[i]['shortUrl']}</a></td>
+            <td>${result[i]['desc']}</td>
+            <td>${result[i]['dateLastActivity']}</td>
+            <td>${assignedMembersArray[i]}</td>
             </tr>`;
-        });
+        }
         document.getElementById("table_body").innerHTML=tableData;
-    }).catch((err) => {
-        console.log(err);
-    })
 
 }
+
+async function getCardsInList(listID, key, token) {
+
+        const response = await fetch("https://api.trello.com/1/lists/" + listID + "/cards?key=" + key + "&token=" + token + "&fields=name,shortUrl,desc,dateLastActivity,idMembers")
+
+        const data = await response.json();
+        return data;
+}
+
+async function fetchMembers(boardID, key, token) {
+
+        
+        const response = await fetch("https://api.trello.com/1/boards/" + boardID + "/members?key=" + key + "&token=" + token);
+
+        
+        const data = await response.json();
+        return data;
+    
+    
+}
+
+
 
  
 
