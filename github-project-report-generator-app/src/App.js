@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FileSaver from 'file-saver';
 import { Box, Flex, Heading, Link, Input, Button, Text, Divider } from '@chakra-ui/react';
-import { DownloadIcon } from '@chakra-ui/icons';
+import { DownloadIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 
 import AuthorCommits from './AuthorCommits';
 import Timeline from './Timeline';
@@ -97,7 +97,7 @@ function App() {
       <Heading>GitHub Project Report Generator</Heading>
       <Text mb={5}>By UCL Blueprints</Text>
       <Link href='https://github.com/settings/tokens/new?scopes=repo' isExternal>
-        Your GitHub Personal Access Token
+        Your GitHub Personal Access Token <ExternalLinkIcon mx='2px' />
       </Link>
       <Input value={token} onChange={onEditToken} type='password' mb={5} />
       <Text>GitHub Repository URL</Text>
