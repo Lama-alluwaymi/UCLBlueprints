@@ -207,16 +207,12 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
             
 
-            console.log("result[i]['idMembers'].length" + result[i]['idMembers'].length);
+    
             var assignedMembers = "";
 
             //enter with first member on the board
             for (let j = 0; j < result2.length; j++) {
 
-                
-
-                //enter with first member 
-                console.log("inside: result[i]['idMembers'].length" + result[i]['idMembers'].length);
                 
                 for(let k = 0; k < result[i]['idMembers'].length; k++) {
 
@@ -230,7 +226,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
                 }
                 
                 assignedMembersArray.push(assignedMembers);
-                console.log(assignedMembersArray[0]);
+                
             }
 
         }
@@ -257,6 +253,58 @@ async function getCardsInList(listID, key, token) {
         const data = await response.json();
         return data;
 }
+
+
+async function buildCardsAssignedPerBoardMember(boardID, listID, key, token) {
+
+    const result = await getCardsInList(listID, key, token);
+    const result2 = await fetchMembers(boardID, key, token);
+
+    var cardCounterArray = new Array(result2.length);
+
+    for(let z = 0; z < cardCounterArray.length; z++) {
+
+        cardCounterArray[z] = 0;
+
+    }
+        
+        for(let i = 0; i < result.length; i++) {
+
+            for (let j = 0; j < result2.length; j++) {
+
+            
+                for(let k = 0; k < result[i]['idMembers'].length; k++) {
+
+                   
+                    if (result[i]['idMembers'][k] == result2[j]['id']) {
+                        
+                        cardCounterArray[k] += 1;
+                        
+                    }
+
+                }
+                
+            }
+
+        }
+
+        let tableData=""
+        for(let i = 0; i < result2.length; i++) {
+            tableData+=`<tr>
+            
+            <td>${result2[i]['fullName']} (${result2[i]['username']})</td>
+            <td>${cardCounterArray[i]}</td>
+            </tr>`;
+        }
+        document.getElementById("table_body_cards_assigned_list").innerHTML=tableData;
+
+
+}
+
+
+
+
+
 
 async function fetchMembers(boardID, key, token) {
 
