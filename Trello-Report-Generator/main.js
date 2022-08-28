@@ -202,7 +202,6 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
         
 
-        //enter with first card
         for(let i = 0; i < result.length; i++) {
 
             
@@ -210,7 +209,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
     
             var assignedMembers = "";
 
-            //enter with first member on the board
+            
             for (let j = 0; j < result2.length; j++) {
 
                 
@@ -277,7 +276,7 @@ async function buildCardsAssignedPerBoardMember(boardID, listID, key, token) {
 
                    
                     if (result[i]['idMembers'][k] == result2[j]['id']) {
-                        
+
                         cardCounterArray[k] += 1;
                         
                     }
