@@ -100,10 +100,17 @@ namespace DesignPatternDetection
                 }
             }
 
-            string jsonData = JsonSerializer.Serialize(patterns, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText($"{directory}\\patterns.json", jsonData);
+            if (!patterns.Any(t => t.Pattern.Equals(pattern.Text.Trim().ToLower(), StringComparison.InvariantCultureIgnoreCase)))
+            {
+                VS.MessageBox.Show($"No {pattern.Text.Trim().ToLower()} found in {directory}");
+            }
+            else
+            {
+                string jsonData = JsonSerializer.Serialize(patterns, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText($"{directory}\\patterns.json", jsonData);
 
-            VS.MessageBox.Show($"Generated patterns.json in {directory}");
+                VS.MessageBox.Show($"Generated patterns.json in {directory}");
+            }
         }
     }
 
