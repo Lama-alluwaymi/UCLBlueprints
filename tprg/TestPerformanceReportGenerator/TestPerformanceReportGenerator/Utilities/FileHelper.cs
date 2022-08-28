@@ -100,7 +100,7 @@ namespace TestPerformanceReportGenerator.Utilities
                 var line_cov = doc.DocumentNode.SelectNodes("//td[@id='line_cov']").Last(); 
                 var tot_testcase = doc.DocumentNode.SelectNodes("//td[@id='tot_testcase']").Last();
 
-
+                string tot = tot_testcase.InnerText.Split('/').Last();
                 // store all values in an object
                 OverviewQualitytData data = new OverviewQualitytData()
                 {
@@ -109,7 +109,7 @@ namespace TestPerformanceReportGenerator.Utilities
                     DepthInheritance = inherit_val.InnerText,
                     ClassCoupling = classcoup_val.InnerText,
                     LineCoverage = line_cov.InnerText,
-                    TotalTestCases = tot_testcase.InnerText,
+                    TotalTestCases = tot,
                     ProjectName = project_name.InnerText,
                     ReportDate = report_date.InnerText,
                 };

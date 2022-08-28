@@ -64,9 +64,9 @@ namespace TestPerformanceReportGenerator.Utilities
                                <td>{item.Time}</td>
                                <td>{item.Version}</td>
                                <td>{item.Hardware}</td>
-                               <td>{item.Failed}/{item.Passed}&nbsp;&nbsp;<progress value='{item.Failed}' max='{item.Passed}'></progress></td>
+                               <td><span id=""tot_testcases"">{item.Passed}/{item.TestCases}</span>&nbsp;&nbsp;<progress value='{item.Passed}' max='{item.TestCases}'></progress></td>
                                <td>{item.Skipped}</td>
-                               <td id=""tot_testcase"">{item.TestCases}</td>                            
+                               <td>{item.Failed}</td>                            
                                <td id=""line_cov"">{item.LineCoverage} %</td>
                                <td>{item.Duration} ms</td>
                                </tr>";
