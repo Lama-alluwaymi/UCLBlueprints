@@ -154,11 +154,16 @@ function getActionsInList(listID, key, token) {
         console.log(objectData[0].title);
         let actionsData="";
         objectData.map((values) => {
+
+            let dateFormat = new Date(values.date);
+
+            let dateResult = dateFormat.getDate() + "/" +  (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear();
+
             actionsData+= `<tr>
             <td>${values.data.card.name}</td>
             <td><a href="https://trello.com/c/${values.data.card.shortLink}">https://trello.com/c/${values.data.card.shortLink}</a></td>
             <td>${values.data.listBefore.name}</td>
-            <td>${values.date}</td>
+            <td>${dateResult}</td>
             <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
             </tr>`;
         });
@@ -252,7 +257,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
             let dateFormat = new Date(result[i]['dateLastActivity']);
 
-            var dateResult = dateFormat.getDate() + "/" +  (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear();
+            let dateResult = dateFormat.getDate() + "/" +  (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear();
             
             tableData+=`<tr>
             
