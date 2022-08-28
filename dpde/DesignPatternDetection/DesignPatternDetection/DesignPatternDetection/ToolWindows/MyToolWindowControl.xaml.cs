@@ -25,7 +25,9 @@ namespace DesignPatternDetection
             this.InitializeComponent();
         }
 
-        private List<string> AvailablePatterns = new List<string>() { "SINGLETON","FACTORY","ABSTRACT FACTORY", "ABSTRACTFACTORY", "BUILDER", "PROTOTYPE"};
+        private List<string> AvailablePatterns = new List<string>() { "SINGLETON","FACTORY","ABSTRACTFACTORY", "BUILDER", "PROTOTYPE", "ADAPTER",
+        "COMPOSITE", "PROXY", "FLYWEIGHT", "FACADE", "BRIDGE", "DECORATOR", "TEMPLATEMETHOD", "MEDIATOR", "OBSERVER", "STRATEGY", "COMMAND", "STATE", "VISITOR", "ITERATOR",
+        "INTERPRETER", "MEMENTO", "CHAINOFRESPONSIBILITY"};
 
         /// <summary>
         /// Handles click on the button by displaying a message box.
@@ -60,12 +62,61 @@ namespace DesignPatternDetection
                 return;
             }
             VS.MessageBox.Show($"Searching for pattern {pattern.Text} in {directory}");
-            // Pattern
-            // FileName
-            // List<Location>
+            List<PatternData> patterns = new List<PatternData>();
+            // check if patterns.json exist
+            if (appendJson.IsChecked.HasValue && appendJson.IsChecked.Value && File.Exists($"{directory}\\patterns.json"))
+            {
+                var existingData = System.IO.File.ReadAllText($"{directory}\\patterns.json");
+                // De-serialize to object or create new list
+                var patternDataList = JsonSerializer.Deserialize<List<PatternData>>(existingData);
+                if (patternDataList.Any())
+                {
+                    patterns.AddRange(patternDataList);
+                }
+            }
 
-           
-            File.WriteAllText($"{directory}\\sample.json", "sample check");
+            var allFiles = Directory.GetFiles(directory, "*.*", SearchOption.AllDirectories).Where(filename => !(filename.ToLower().Contains("\\bin\\") ||
+            filename.ToLower().Contains("\\debug\\") || filename.ToLower().Contains("\\release\\") || filename.ToLower().Contains("\\obj\\") || filename.ToLower().Contains("patterns.json")));
+            // avoid all the bin and debug folder files 
+            foreach (string file in allFiles)
+            {
+                int count = 0;
+                foreach (string line in File.ReadLines(file))
+                {
+                    count++;
+                    if (line.ToUpper().Contains($"@{pattern.Text.ToUpper().Trim()}"))
+                    {
+                        var currentPattern = patterns.FirstOrDefault(t => t.Pattern.Equals(pattern.Text.ToLower().Trim()));
+                        if (currentPattern != null)
+                        {
+                            currentPattern.Entries.Add(new Entry() { FileName = file, Line = count });
+                            currentPattern.totalCount++;
+                        }
+                        else
+                        {
+                            patterns.Add(new PatternData() { Pattern = pattern.Text.ToLower().Trim(), totalCount = 1, Entries = new List<Entry> { new Entry() { FileName = file, Line = count } } });
+                        }
+                    }
+                }
+            }
+
+            string jsonData = JsonSerializer.Serialize(patterns, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText($"{directory}\\patterns.json", jsonData);
+
+            VS.MessageBox.Show($"Generated patterns.json in {directory}");
         }
+    }
+
+    public class PatternData
+    {
+        public string Pattern { get; set; }
+        public int totalCount { get; set; }
+        public List<Entry> Entries { get; set; }
+    }
+
+    public class Entry
+    {
+        public string FileName { get; set; }
+        public int Line { get; set; }
     }
 }

@@ -99,6 +99,7 @@
                 <TextBlock Text="@" Margin="10 0 0 0" VerticalAlignment="Center" FontSize="18"/>
                 <TextBox x:Name="pattern" Margin="5 0 0 0" FontSize="18" VerticalContentAlignment="Center" Width="120" Height="35"/>
             </StackPanel>
+            <CheckBox x:Name="appendJson" Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}" Content="Append to existing file" HorizontalAlignment="Center" Margin="0 0 0 30"/>
             <Button Content="Generate" Template="{DynamicResource RoundButtonTemplate}" FontWeight="SemiBold" Click="Generate_Click" Background="LightBlue" Width="120" Height="35"/>
         </StackPanel>
     </Grid>
