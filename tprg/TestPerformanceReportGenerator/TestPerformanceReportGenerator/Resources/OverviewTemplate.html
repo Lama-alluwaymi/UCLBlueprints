@@ -11,7 +11,10 @@
         }
 
         #TitleContainer{
-
+            display: flex;
+            flex-direction:row;
+            border-bottom: 1px solid #d1cfcf;
+            justify-content: space-between;
         }
         .LineChart {
             width: 100%;
@@ -53,8 +56,66 @@
                 var testMetricsOption = {
                     title: {
                         text: "Project's Overall Test Cases and Line Coverage"
-                    }
+                    },
+                    tooltip: {
+                        trigger: "axis",
+                        axisPointer: {
+                            type: "cross",
+                            crossStyle: {
+                                color: "#999"
+                            }
+                        }
+                    },
+                    toolbox: {
+                        feature: {
+                            restore: { show: true },
+                            magicType: { show: true, type:['line', 'bar'] }
+                        }
+                    },
+                    legend: {
+                        data:["Test Cases", "Line Coverage"]
+                    },
+                    xAxis: [{
+                        type: "category",
+                        data: [{$dateXAxis$}],
+                        axisPointer: {
+                            type: "shadow"
+                        }
+                    }],
+                    yAxis: [
+                        {
+                            type: "value",
+                            name: "Line Coverage",
+                            interval: 10,
+                            axisLabel: {
+                                formatter:"{value} %"
+                            }
+                        },
+                        {
+                            type: "value",
+                            name: "Test Cases",
+                        }
+                    ],
+                    series: [
+                        {
+                            name: "Line Coverage",
+                            type: "line",
+                            //tooltip: {
+                            //    valueFormatter: function (value) {
+                            //        return "value" + "%";
+                            //    }
+                            //},
+                            data: [{$LineCoverage$}],
+                            yAxisIndex: 1
+                        },
+                        {
+                            name: "Test Cases",
+                            type: "bar",
+                            data: [{$TestCases$}]
+                        }
+                    ]
                 };
+
                 var codeQualtiyOption = {
                     title: {
                         text: "Project's Overall Code Quality Measurement"
@@ -62,12 +123,17 @@
                     tooltop: {
                         trigger: "axis"
                     },
+                    toolbox: {
+                        feature: {
+                            restore: { show: true }
+                        }
+                    },
                     legend: {
                         data: ["Maintainability Index", "Cylcomatic Complexity", "Depth of Inheritance", "Class Coupling"]
                     },
                     xAxis: {
                         type: "category",
-                        data: [{ $dateXAxis$ }],
+                        data: [{$dateXAxis$}],
                         name: "Date",
                         position: "left"
                     },
@@ -81,30 +147,31 @@
                             name: "Maintainability Index",
                             type: "line",
                             stack: "Total",
-                            data: [{ $MaintainabilityIndex$ }]
+                            data: [{$MaintainabilityIndex$}]
                         },
                         {
                             name: "Cyclomatic Complexity",
                             type: "line",
                             stack: "Total",
-                            data: [{ $CyclomaticComplexity$ }]
+                            data: [{$CyclomaticComplexity$}]
                         },
                         {
                             name: "Depth of Inheritance",
                             type: "line",
                             stack: "Total",
-                            data: [{ $DepthOfInheritance$ }]
+                            data: [{$DepthOfInheritance$}]
                         },
                         {
                             name: "Class Coupling",
                             type: "line",
                             stack: "Total",
-                            data: [{ $ClassCoupling$ }]
+                            data: [{$ClassCoupling$}]
                         }
                     ]
                 };
 
                 codeQualityChart.setOption(codeQualtiyOption);
+                testMetricsChart.setOption(testMetricsOption);
             }
         )
 
