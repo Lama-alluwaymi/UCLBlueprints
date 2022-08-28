@@ -208,6 +208,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
     
             var assignedMembers = "";
+           
 
             
             for (let j = 0; j < result2.length; j++) {
@@ -219,7 +220,7 @@ async function buildCountCardsInList(boardID, listID, key, token) {
                     if (result[i]['idMembers'][k] == result2[j]['id']) {
 
                         assignedMembers+= result2[j]['fullName'] + " (" + result2[j]['username'] + ") ";
-    
+                       
                     }
 
                 }
@@ -232,13 +233,34 @@ async function buildCountCardsInList(boardID, listID, key, token) {
 
         let tableData=""
         for(let i = 0; i < result.length; i++) {
+            
+            let assignedMembersResult = "";
+
+            if (assignedMembersArray[i] == "") {
+                assignedMembersResult = "No assigned members";
+            } else {
+                assignedMembersResult = assignedMembersArray[i];
+            }
+            
+            let descriptionResult = "";
+
+            if (result[i]['desc'] == "") {
+                descriptionResult = "No description";
+            } else {
+                descriptionResult = result[i]['desc'];
+            }
+
+            let dateFormat = new Date(result[i]['dateLastActivity']);
+
+            var dateResult = dateFormat.getDate() + "/" +  (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear();
+            
             tableData+=`<tr>
             
             <td>${result[i]['name']}</td>
             <td><a href="${result[i]['shortUrl']}">${result[i]['shortUrl']}</a></td>
-            <td>${result[i]['desc']}</td>
-            <td>${result[i]['dateLastActivity']}</td>
-            <td>${assignedMembersArray[i]}</td>
+            <td>${descriptionResult}</td>
+            <td>${dateResult}</td>
+            <td>${assignedMembersResult}</td>
             </tr>`;
         }
         document.getElementById("table_body").innerHTML=tableData;
