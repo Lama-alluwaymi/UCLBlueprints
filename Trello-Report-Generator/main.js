@@ -54,11 +54,15 @@ function getAllActionsInBoard(boardID, key, token) {
                 trelloLinkCreation =""
             }
 
+            let dateFormat = new Date(values.date);
+
+            let dateResult = dateFormat.getDate() + "/" +  (dateFormat.getMonth()+1) + "/" + dateFormat.getFullYear();
+
             allActionsData+= `<tr>
             <td>${specificName}</td>
             <td><a href="${trelloLinkCreation}">${trelloLinkCreation}</a></td>
             <td>${specificAction}</td>
-            <td>${values.date}</td>
+            <td>${dateResult}</td>
             <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
             </tr>`;
         });
