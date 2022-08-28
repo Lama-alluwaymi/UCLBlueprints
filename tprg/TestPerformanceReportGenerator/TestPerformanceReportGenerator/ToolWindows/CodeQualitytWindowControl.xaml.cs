@@ -118,7 +118,7 @@ namespace TestPerformanceReportGenerator
             var model = new InfoBarModel(
                 new[]
                 {
-                    new InfoBarTextSpan("Report Successfully Generated")
+                    new InfoBarTextSpan("Report Successfully Generated.")
                 },
                 KnownMonikers.CheckAdd,
                 true
@@ -138,7 +138,7 @@ namespace TestPerformanceReportGenerator
                 // Run the generate report function asynchronously such that it won't block the UI
                 ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                 {
-                    InfoBar infobar = await VS.InfoBar.CreateAsync("{ce2a0f92-d094-48c5-be02-b8624558136a}", model);
+                    InfoBar infobar = await VS.InfoBar.CreateAsync(PackageGuids.CodeQualityWindowString, model);
                     await Task.Run(() =>
                     {
                         // get project name
@@ -186,7 +186,7 @@ namespace TestPerformanceReportGenerator
                     // add test run data asynchronously
                     ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
                     {
-                        InfoBar infobar = await VS.InfoBar.CreateAsync("{ce2a0f92-d094-48c5-be02-b8624558136a}", model);
+                        InfoBar infobar = await VS.InfoBar.CreateAsync(PackageGuids.CodeQualityWindowString, model);
                         await Task.Run(() =>
                         {
                             // Get current date
