@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{$ProjectName$} Overview</title>
+    <style>
+        #mainCenter{
+            width: 80%;
+            margin: 20px, auto;
+        }
+
+        #TitleContainer{
+
+        }
+        .LineChart {
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainCenter"></div>
+    <div id="TitleContainer">
+        <div id="ProjectName">{$ProjectName$}</div>
+    </div>
+    <div id="LineChartBox">
+        <div class="LineChart" id="CodeQualityChart"/>
+    </div>
+    <div id="LineChartBox">
+        <div class="LineChart" id="TestMetricsChart"/>
+    </div>
+
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        })
+
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar',
+                'echarts/chart/line'
+            ],
+            function (ec) {
+                var codeQualityChart = ec.init(document.getElementById("CodeQualityChart"));
+                var testMetricsChart = ec.init(document.getElementById("TestMetricsChart"));
+
+                var testMetricsOption = {
+                    title: {
+                        text: "Project's Overall Test Cases and Line Coverage"
+                    }
+                };
+                var codeQualtiyOption = {
+                    title: {
+                        text: "Project's Overall Code Quality Measurement"
+                    },
+                    tooltop: {
+                        trigger: "axis"
+                    },
+                    legend: {
+                        data: ["Maintainability Index", "Cylcomatic Complexity", "Depth of Inheritance", "Class Coupling"]
+                    },
+                    xAxis: {
+                        type: "category",
+                        data: [{ $dateXAxis$ }],
+                        name: "Date",
+                        position: "left"
+                    },
+                    yAxis: {
+                        type: "value",
+                        name: "Code Metrics",
+                        position: "left"
+                    },
+                    series: [
+                        {
+                            name: "Maintainability Index",
+                            type: "line",
+                            stack: "Total",
+                            data: [{ $MaintainabilityIndex$ }]
+                        },
+                        {
+                            name: "Cyclomatic Complexity",
+                            type: "line",
+                            stack: "Total",
+                            data: [{ $CyclomaticComplexity$ }]
+                        },
+                        {
+                            name: "Depth of Inheritance",
+                            type: "line",
+                            stack: "Total",
+                            data: [{ $DepthOfInheritance$ }]
+                        },
+                        {
+                            name: "Class Coupling",
+                            type: "line",
+                            stack: "Total",
+                            data: [{ $ClassCoupling$ }]
+                        }
+                    ]
+                };
+
+                codeQualityChart.setOption(codeQualtiyOption);
+            }
+        )
+
+    </script>
+</body>
+</html>
