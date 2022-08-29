@@ -1,5 +1,5 @@
 ﻿
-namespace TestPerformanceReportGenerator.Utilities
+namespace CodeQualityReportGen.Utilities
 {
     public class QualityData
     {

@@ -1,4 +1,4 @@
-﻿namespace TestPerformanceReportGenerator
+﻿namespace CodeQualityReportGen
 {
     [Command(PackageIds.MyCommand)]
     internal sealed class CodeQualityWindowCommand : BaseCommand<CodeQualityWindowCommand>

@@ -5,7 +5,7 @@ using System.IO;
 using HtmlAgilityPack;
 using System.Xml;
 
-namespace TestPerformanceReportGenerator.Utilities
+namespace CodeQualityReportGen.Utilities
 {
     public class FileHelper
     {

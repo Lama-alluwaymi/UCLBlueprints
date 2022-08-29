@@ -1,4 +1,4 @@
-﻿namespace TestPerformanceReportGenerator.Utilities
+﻿namespace CodeQualityReportGen.Utilities
 {
     public class OverviewQualitytData
     {

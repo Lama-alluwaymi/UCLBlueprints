@@ -6,10 +6,10 @@
   <Include href="KnownImageIds.vsct"/>
   <Include href="VSGlobals.vsct"/>
 
-  <Commands package="TestPerformanceReportGenerator">
+  <Commands package="CodeQualityReportGen">
     <!--This section defines the elements the user can interact with, like a menu command or a button or combo box in a toolbar. -->
     <Buttons>
-      <Button guid="TestPerformanceReportGenerator" id="MyCommand" priority="0x0100" type="Button">
+      <Button guid="CodeQualityReportGen" id="MyCommand" priority="0x0100" type="Button">
         <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="ToolWindow" />
         <CommandFlag>IconIsMoniker</CommandFlag>
@@ -31,7 +31,7 @@
   </Commands>
 
   <Symbols>
-    <GuidSymbol name="TestPerformanceReportGenerator" value="{6fd5e41c-ba69-492b-a787-cfd4e02c4190}">
+    <GuidSymbol name="CodeQualityReportGen" value="{6fd5e41c-ba69-492b-a787-cfd4e02c4190}">
       <IDSymbol name="MyCommand" value="0x0100" />
 	  <IDSymbol name="QualityOverviewCommand" value="0x101"/>
     </GuidSymbol>

@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.IO;
 
-namespace TestPerformanceReportGenerator.Utilities
+namespace CodeQualityReportGen.Utilities
 {
     public class ReportGenerator
     {
@@ -42,7 +42,7 @@ namespace TestPerformanceReportGenerator.Utilities
             //string reportFile = FileHelper.ReadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestTemplate.html"));
             //var root = Path.GetDirectoryName(typeof(VisualStudioServices).Assembly.Location);
             //string reportFile = FileHelper.ReadFile(Path.Combine(root!, "Utilities", "TestTemplate.html"));
-            string resourceName = "TestPerformanceReportGenerator.Resources.TestTemplate.html";
+            string resourceName = "CodeQualityReportGen.Resources.TestTemplate.html";
             string reportFile = FileHelper.ReadFromResource(resourceName);
 
             reportFile = reportFile.Replace("{$ProjectName$}", projectName);
@@ -97,7 +97,7 @@ namespace TestPerformanceReportGenerator.Utilities
         public static void GenerateOverview()
         {
             // Get the overview report template from resource
-            string overviewResName = "TestPerformanceReportGenerator.Resources.OverviewTemplate.html";
+            string overviewResName = "CodeQualityReportGen.Resources.OverviewTemplate.html";
             string overviewFile = FileHelper.ReadFromResource(overviewResName);
 
             // Get all files in the Report folder

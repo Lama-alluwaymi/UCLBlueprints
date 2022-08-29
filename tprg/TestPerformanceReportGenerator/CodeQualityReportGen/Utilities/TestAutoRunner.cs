@@ -3,7 +3,7 @@ using System.Text;
 using System.Linq;
 using System.IO;
 
-namespace TestPerformanceReportGenerator.Utilities
+namespace CodeQualityReportGen.Utilities
 {
     public class TestAutoRunner
     {

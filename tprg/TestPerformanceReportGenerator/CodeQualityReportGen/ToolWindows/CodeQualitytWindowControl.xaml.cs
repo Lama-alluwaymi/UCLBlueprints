@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using TestPerformanceReportGenerator.Utilities;
+using CodeQualityReportGen.Utilities;
 using Microsoft.VisualStudio.Imaging;
 
 
-namespace TestPerformanceReportGenerator
+namespace CodeQualityReportGen
 {
     public partial class CodeQualityWindowControl : UserControl
     {

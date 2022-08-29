@@ -4,20 +4,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace TestPerformanceReportGenerator
+namespace CodeQualityReportGen
 {
-    public class QualityOverviewToolWindow : BaseToolWindow<QualityOverviewToolWindow>
+    public class CodeQualityToolWindow : BaseToolWindow<CodeQualityToolWindow>
     {
-        public override string GetTitle(int toolWindowId) => "CQRG_overview";
+        public override string GetTitle(int toolWindowId) => "CQRG";
 
         public override Type PaneType => typeof(Pane);
 
         public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            return Task.FromResult<FrameworkElement>(new QualityOverviewToolWindowControl());
+            return Task.FromResult<FrameworkElement>(new CodeQualityWindowControl());
         }
 
-        [Guid(PackageGuids.QualityOverviewWindowString)]
+        [Guid(PackageGuids.CodeQualityWindowString)]
         internal class Pane : ToolWindowPane
         {
             public Pane()
