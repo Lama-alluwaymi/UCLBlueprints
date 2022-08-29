@@ -98,17 +98,19 @@ namespace TestPerformanceReportGenerator.Utilities
                 var classcoup_val = doc.DocumentNode.SelectSingleNode("//span[@id='classcoup_val']");
                 // Get the last entry of Line coverage and total number of test cases
                 var line_cov = doc.DocumentNode.SelectNodes("//td[@id='line_cov']").Last(); 
-                var tot_testcase = doc.DocumentNode.SelectNodes("//td[@id='tot_testcase']").Last();
+                var tot_testcase = doc.DocumentNode.SelectNodes("//span[@id='tot_testcases']").Last();
 
                 string tot = tot_testcase.InnerText.Split('/').Last();
+                string maintain = maintain_val.InnerText.Replace("%", "");
+                string lcov = line_cov.InnerText.Replace("%", "");
                 // store all values in an object
                 OverviewQualitytData data = new OverviewQualitytData()
                 {
-                    Maintainability = maintain_val.InnerText,
+                    Maintainability = maintain,
                     CyclomaticComplexity = cyclo_val.InnerText,
                     DepthInheritance = inherit_val.InnerText,
                     ClassCoupling = classcoup_val.InnerText,
-                    LineCoverage = line_cov.InnerText,
+                    LineCoverage = lcov,
                     TotalTestCases = tot,
                     ProjectName = project_name.InnerText,
                     ReportDate = report_date.InnerText,

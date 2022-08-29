@@ -116,13 +116,21 @@ namespace TestPerformanceReportGenerator.Utilities
             foreach (string reportFilePath in reportFiles)
             {
                 OverviewQualitytData data = FileHelper.ParseHtmlFile(reportFilePath);
-                dateXAxis += "'\"" + data.ReportDate + "\"',";
-                lineCoverageY += "'" + data.LineCoverage + "',";
-                testCasesY += "'" + data.TotalTestCases + "',";
-                maintainabilityY += "'" + data.Maintainability + "',";
-                cycloY += "'" + data.CyclomaticComplexity + "',";
-                depthOfInhY += "'" + data.DepthInheritance + "',";
-                classCouplY += "'" + data.ClassCoupling + "',";
+                //dateXAxis += "'\"" + data.ReportDate + "\"',";
+                //lineCoverageY += "'" + data.LineCoverage + "',";
+                //testCasesY += "'" + data.TotalTestCases + "',";
+                //maintainabilityY += "'" + data.Maintainability + "',";
+                //cycloY += "'" + data.CyclomaticComplexity + "',";
+                //depthOfInhY += "'" + data.DepthInheritance + "',";
+                //classCouplY += "'" + data.ClassCoupling + "',";
+                //projectName = data.ProjectName;
+                dateXAxis += "\"" + data.ReportDate + "\",";
+                lineCoverageY += data.LineCoverage + ",";
+                testCasesY += data.TotalTestCases + ",";
+                maintainabilityY += data.Maintainability + ",";
+                cycloY += data.CyclomaticComplexity + ",";
+                depthOfInhY += data.DepthInheritance + ",";
+                classCouplY += data.ClassCoupling + ",";
                 projectName = data.ProjectName;
             }
 
