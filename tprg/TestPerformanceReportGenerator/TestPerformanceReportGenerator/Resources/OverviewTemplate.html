@@ -35,7 +35,7 @@
             <div id="ProjectName">{$ProjectName$}</div>
         </div>
         <div id="LineChartBox">
-            <div class="LineChart" id="CodeQualityChart" />
+            <div class="LineChart" id="CodeMetricsChart" />
         </div>
         <div id="LineChartBox">
             <div class="LineChart" id="TestMetricsChart" />
@@ -56,7 +56,9 @@
                 'echarts/chart/line'
             ],
             function (ec) {
-                var codeQualityChart = ec.init(document.getElementById("CodeQualityChart"));
+                //var maintainChart = ec.init(document.getElementById("MaintainabilityChart"));
+                //var cyclochart = ec.init(document.getElementById("CyclomaticChart"));
+                var metricsChart = ec.init(document.getElementById("CodeMetricsChart"));
                 var testMetricsChart = ec.init(document.getElementById("TestMetricsChart"));
 
                 var testMetricsOption = {
@@ -127,12 +129,104 @@
                     ]
                 };
 
-                var codeQualtiyOption = {
+                // for some reason calling too many plots is showing an Maximum call stack error
+                // so this code will not be used in deployment
+                //var maintainOption = {
+                //    title: {
+                //        text: "Overall Maintainability Index"
+                //    },
+                //    tooltip: {
+                //        trigger: "axis",
+                //        axisPointer: {
+                //            type: "cross"
+                //        }
+                //    },
+                //    toolbox: {
+                //        feature: {
+                //            restore: { show: true }
+                //        }
+                //    },
+                //    legend: {
+                //        data: ['Maintainability Index']
+                //    },
+                //    xAxis: [{
+                //        type: "category",
+                //        data: [{$dateXAxis$}],
+                //        name: "Date",
+                //    }],
+                //    yAxis: [
+                //        {
+                //            type: "value",
+                //            name: "Maintainability Index",
+                //            position: "left",
+                //            axisLabel: {
+                //                formatter: "{value} %"
+                //            }
+                //        }
+                //    ],
+                //    series: [
+                //        {
+                //            name: "Maintainability Index",
+                //            type: "line",
+                //            data: [{$MaintainabilityIndex$}],
+                //            color: "#CC0066"
+                //        }
+                //    ]
+
+                //};
+
+                //var cycloOption = {
+                //    title: {
+                //        text: "Overall Cyclomatic Complexity"
+                //    },
+                //    tooltip: {
+                //        trigger: "axis",
+                //        axisPointer: {
+                //            type: "cross"
+                //        }
+                //    },
+                //    toolbox: {
+                //        feature: {
+                //            restore: { show: true }
+                //        }
+                //    },
+                //    legend: {
+                //        data: ['Cyclomatic Complexity']
+                //    },
+                //    xAxis: [{
+                //        type: "category",
+                //        data: [{$dateXAxis$}],
+                //        name: "Date",
+                //    }],
+                //    yAxis: [
+                //        {
+                //            type: "value",
+                //            name: "Cyclomatic Complexity",
+                //            position: "left",
+                //            axisLabel: {
+                //                formatter: "{value}"
+                //            }
+                //        }
+                //    ],
+                //    series: [
+                //        {
+                //            name: "Cyclomatic Complexity",
+                //            type: "line",
+                //            data: [{$CyclomaticComplexity$}],
+                //            color: "#CC0066"
+                //        }
+                //    ]
+                //};
+
+                var metricsOption = {
                     title: {
-                        text: "Overall Code Quality Measurement"
+                        text:"Overall Code Metrics"
                     },
-                    tooltop: {
-                        trigger: "axis"
+                    tooltip: {
+                        trigger: "axis",
+                        axisPointer: {
+                            type: "cross"
+                        }
                     },
                     toolbox: {
                         feature: {
@@ -140,7 +234,7 @@
                         }
                     },
                     legend: {
-                        data: ["Maintainability Index", "Cylcomatic Complexity", "Depth of Inheritance", "Class Coupling"]
+                        data: ['Depth of Inheritance', 'Class Coupling', 'Maintainability Index', 'Cyclomatic Complexity']
                     },
                     grid: {
                         containLabel: true,
@@ -148,10 +242,8 @@
                     xAxis: {
                         type: "category",
                         data: [{$dateXAxis$}],
-                        //data: ["27/08/2022", "28/08/2022", "29/08/2022", "30/08/2022", "31/08/2022"],
                         name: "Date",
                         position: "left",
-                        boundaryGap: false
                     },
                     yAxis: {
                         type: "value",
@@ -160,38 +252,41 @@
                     },
                     series: [
                         {
-                            name: "Maintainability Index",
-                            type: "line",
-                            stack: "Total",
-                            data: [{$MaintainabilityIndex$}]
-                            //data: [75, 85, 80, 61, 84]
-                        },
-                        {
-                            name: "Cyclomatic Complexity",
-                            type: "line",
-                            stack: "Total",
-                            //data: [{$CyclomaticComplexity$}]
-                            data:[7, 8, 9, 22, 35]
-                        },
-                        {
                             name: "Depth of Inheritance",
                             type: "line",
-                            stack: "Total",
+                            stack:"Total",
                             data: [{$DepthOfInheritance$}]
-                            //data:[7, 8, 9, 10, 11]
                         },
                         {
                             name: "Class Coupling",
                             type: "line",
                             stack: "Total",
                             data: [{$ClassCoupling$}]
-                            //data:[65, 70, 83, 95, 111]
+                        },
+                        {
+                            name: "Maintainability Index",
+                            type: "line",
+                            stack: "Total",
+                            data: [{$MaintainabilityIndex$}]
+                        },
+                        {
+                            name: "Cyclomatic Complexity",
+                            type: "line",
+                            stack: "Total",
+                            data: [{$CyclomaticComplexity$}]
                         }
                     ]
                 };
 
-                codeQualityChart.setOption(codeQualtiyOption);
+                //maintainChart.setOption(maintainOption);
+                //cyclochart.setOption(cycloOption);
+                metricsChart.setOption(metricsOption);
                 testMetricsChart.setOption(testMetricsOption);
+
+                //window.addEventListener("resize", maintainChart.resize);
+                //window.addEventListener("resize", cyclochart.resize);
+                window.addEventListener("resize", metricsChart.resize);
+                window.addEventListener("resize", testMetricsChart.resize);
             }
         );
 
