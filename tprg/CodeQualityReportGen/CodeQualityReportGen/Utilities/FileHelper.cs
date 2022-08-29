@@ -9,27 +9,29 @@ namespace CodeQualityReportGen.Utilities
 {
     public class FileHelper
     {
-        public static string ReadFile(string filePath)
-        {
-            try
-            {
-                if (File.Exists(filePath))
-                {
-                    string txt = File.ReadAllText(filePath);
-                    byte[] bytes = Encoding.UTF8.GetBytes(txt);
-                    string str = Encoding.UTF8.GetString(bytes);
-                    return str;
 
-                }
-                else
-                {
-                    return null;
-                }
-            }catch(Exception e)
-            {
-                return e.Message;
-            }
-        }
+        //function deprecated
+        //public static string ReadFile(string filePath)
+        //{
+        //    try
+        //    {
+        //        if (File.Exists(filePath))
+        //        {
+        //            string txt = File.ReadAllText(filePath);
+        //            byte[] bytes = Encoding.UTF8.GetBytes(txt);
+        //            string str = Encoding.UTF8.GetString(bytes);
+        //            return str;
+
+        //        }
+        //        else
+        //        {
+        //            return null;
+        //        }
+        //    }catch(Exception e)
+        //    {
+        //        return e.Message;
+        //    }
+        //}
 
         public static string ReadFromResource(string resourceName)
         {
