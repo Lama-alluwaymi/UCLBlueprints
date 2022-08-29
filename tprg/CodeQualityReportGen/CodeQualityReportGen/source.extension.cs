@@ -12,7 +12,7 @@ namespace CodeQualityReportGen
         public const string Description = @"Empty VSIX Project.";
         public const string Language = "en-US";
         public const string Version = "1.0";
-        public const string Author = "Simone Lin";
+        public const string Author = "UCLBlueprint";
         public const string Tags = "";
     }
 }

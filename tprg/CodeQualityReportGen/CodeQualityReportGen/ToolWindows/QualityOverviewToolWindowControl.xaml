@@ -18,7 +18,7 @@
             <Label x:Name="lblHeadline"
                    Margin="10"
                    HorizontalAlignment="Center">Generate Quality Reports' Overview</Label>
-            <Button Content="Generates"
+            <Button Content="Generate"
                     Click="button1_Click"
                     Width="120"
                     Height="80"
