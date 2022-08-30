@@ -11,11 +11,11 @@
     <Buttons>
       <Button guid="TestPerformanceReportGenerator" id="MyCommand" priority="0x0100" type="Button">
         <Parent guid="VSMainMenu" id="Tools.ExternalToolsGroup"/>
-        <Icon guid="ImageCatalogGuid" id="ToolWindow" />
+        <Icon guid="ImageCatalogGuid" id="Report" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>CQRG</ButtonText>
-          <LocCanonicalName>.View.CQRG</LocCanonicalName>
+          <ButtonText>CodeQualityReportGen</ButtonText>
+          <LocCanonicalName>.Tools.CodeQualityReportGen</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -25,5 +25,7 @@
     <GuidSymbol name="TestPerformanceReportGenerator" value="{6fd5e41c-ba69-492b-a787-cfd4e02c4190}">
       <IDSymbol name="MyCommand" value="0x0100" />
     </GuidSymbol>
+	<GuidSymbol name="CodeQualityToolWindow" value="{ce2a0f92-d094-48c5-be02-b8624558136a}"></GuidSymbol>
+	<GuidSymbol name="DataOverviewToolWindow" value="{fac491ae-1250-457c-a8c2-0a9423f55881}"></GuidSymbol>
   </Symbols>
 </CommandTable>

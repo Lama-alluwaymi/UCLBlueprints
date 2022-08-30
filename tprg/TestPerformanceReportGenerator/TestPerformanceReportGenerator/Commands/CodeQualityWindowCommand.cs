@@ -3,9 +3,10 @@
     [Command(PackageIds.MyCommand)]
     internal sealed class CodeQualityWindowCommand : BaseCommand<CodeQualityWindowCommand>
     {
-        protected override Task ExecuteAsync(OleMenuCmdEventArgs e)
+        protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            return CodeQualityToolWindow.ShowAsync();
+            await CodeQualityToolWindow.ShowAsync();
+            await DataOverviewToolWindow.ShowAsync();
         }
     }
 }

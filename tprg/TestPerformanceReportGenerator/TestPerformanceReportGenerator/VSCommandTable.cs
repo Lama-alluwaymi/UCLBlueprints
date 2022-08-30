@@ -14,6 +14,12 @@ namespace TestPerformanceReportGenerator
     {
         public const string TestPerformanceReportGeneratorString = "6fd5e41c-ba69-492b-a787-cfd4e02c4190";
         public static Guid TestPerformanceReportGenerator = new Guid(TestPerformanceReportGeneratorString);
+
+        public const string CodeQualityToolWindowString = "ce2a0f92-d094-48c5-be02-b8624558136a";
+        public static Guid CodeQualityToolWindow = new Guid(CodeQualityToolWindowString);
+
+        public const string DataOverviewToolWindowString = "fac491ae-1250-457c-a8c2-0a9423f55881";
+        public static Guid DataOverviewToolWindow = new Guid(DataOverviewToolWindowString);
     }
     /// <summary>
     /// Helper class that encapsulates all CommandIDs uses across VS Package.
