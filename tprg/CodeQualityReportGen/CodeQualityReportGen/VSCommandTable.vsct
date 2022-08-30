@@ -10,23 +10,23 @@
     <!--This section defines the elements the user can interact with, like a menu command or a button or combo box in a toolbar. -->
     <Buttons>
       <Button guid="CodeQualityReportGen" id="MyCommand" priority="0x0100" type="Button">
-        <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
-        <Icon guid="ImageCatalogGuid" id="ToolWindow" />
+        <Parent guid="VSMainMenu" id="Tools.ExternalToolsGroup"/>
+	    <Icon guid="ImageCatalogGuid" id="Report" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>CQRG</ButtonText>
-          <LocCanonicalName>.View.CQRG</LocCanonicalName>
+          <ButtonText>CodeQualityReportGen</ButtonText>
+          <LocCanonicalName>.Tools.CodeQualityReportGen</LocCanonicalName>
         </Strings>
       </Button>
-	  <!--<Button guid="TestPerformanceReportGenerator" id="QualityOverviewCommand" priority="0x0100" type="Button">
-		<Parent guid="VSMainMenu" id="View.ExplorerWindowsGroup"/>
+	  <Button guid="CodeQualityReportGen" id="QualityOverviewCommand" priority="0x0100" type="Button">
+	    <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
 		<Icon guid="ImageCatalogGuid" id="ToolWindow" />
 		<CommandFlag>IconIsMoniker</CommandFlag>
 		<Strings>
 			<ButtonText>CQRG_overview</ButtonText>
 			<LocCanonicalName>.View.CQRG_overview</LocCanonicalName>
 		</Strings>
-	  </Button>-->
+	  </Button>
     </Buttons>
   </Commands>
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="CodeQualityReportGen.8d73f547-31c3-41db-a78e-d0369731ea87" Version="1.0" Language="en-US" Publisher="UCLBlueprint" />
+        <Identity Id="CodeQualityReportGen.8d73f547-31c3-41db-a78e-d0369731ea87" Version="1.0" Language="en-US" Publisher="UCLBlueprints" />
         <DisplayName>CodeQualityReportGen</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">This extension generates html reports which reports the code metrics, test outcomes and line coverage. It can also generate an ""../overview"" report which includes all the code metrics and test outcomes from previous reports. 
+The reports will be stored in a directory called ""../Reports"" which can be found in the directory where the solution file (.sln) is stored.
+The overview report will be stored in a directory called ""../Overview_Report"" which can be found in the directory where the solution file (.sln) is stored.Visual Studio Extension that</Description>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
     </Metadata>
