@@ -418,13 +418,15 @@ async function buildCardsAssignedPerBoardMember(boardID, listID, key, token) {
                 for(let k = 0; k < result[i]['idMembers'].length; k++) {
 
                    
+            
                     if (result[i]['idMembers'][k] == result2[j]['id']) {
 
-                        cardCounterArray[k] += 1;
+                        
+                        cardCounterArray[j] += 1;
                         
                     }
 
-                }
+               }
                 
             }
 
