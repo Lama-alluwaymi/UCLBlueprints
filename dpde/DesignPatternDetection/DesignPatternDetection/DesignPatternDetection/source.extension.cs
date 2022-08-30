@@ -9,10 +9,10 @@ namespace DesignPatternDetection
     {
         public const string Id = "DesignPatternDetection.2d95465e-b4a0-4ca6-accc-66bbd67cb828";
         public const string Name = "Design Pattern Detection";
-        public const string Description = @"This tool reports the list of files containing a specific design patternThis tool reports ";
+        public const string Description = @"This tool generates json file and PDF file that contain the design patterns used in project, their total count, file names and line numbers.";
         public const string Language = "en-US";
         public const string Version = "1.0";
-        public const string Author = "Alfred Manoj";
+        public const string Author = "UCL Blueprints";
         public const string Tags = "";
     }
 }

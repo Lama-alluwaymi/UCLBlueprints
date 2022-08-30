@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="DesignPatternDetection.2d95465e-b4a0-4ca6-accc-66bbd67cb828" Version="1.0" Language="en-US" Publisher="Alfred Manoj" />
+        <Identity Id="DesignPatternDetection.2d95465e-b4a0-4ca6-accc-66bbd67cb828" Version="1.0" Language="en-US" Publisher="UCL Blueprints" />
         <DisplayName>Design Pattern Detection</DisplayName>
-        <Description xml:space="preserve">This tool reports the list of files containing a specific design patternThis tool reports </Description>
+        <Description xml:space="preserve">This tool generates json file and PDF file that contain the design patterns used in project, their total count, file names and line numbers.</Description>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
     </Metadata>
