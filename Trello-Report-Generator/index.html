@@ -12,6 +12,7 @@
 
 <body>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <div id="inputSection">
     <h1>Trello Harvester</h1>
@@ -38,7 +39,9 @@
         getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); 
         buildCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value); 
         getAllActionsInBoard(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value);
+        generateMostCardsIntoListChart(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);
         
+
         " ><p id="button_text">Generate Report</p></button>
     
     </div>
@@ -77,11 +80,11 @@
         <tbody id="table_body_cards_into_list"></tbody>
     </table>
     
-    <text>Graph of who moved the most cards into list</text>
+    <text>Who moved the most cards into the list over the boards duration?</text>
 
-        <div class="mostCardsIntoListGraph">
-            <canvas id="mostCardsIntoListChart"></canvas>
-        </div>
+    <div class="chart" style="height:100%; width:100%">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
     
     
@@ -139,4 +142,5 @@
     </div>
 
 </body>
+
 </html>

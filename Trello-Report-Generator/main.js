@@ -24,48 +24,6 @@ function revealSections() {
 
 
 
-async function prepareMostCardsIntoListChartData(boardID, key, token, values) {
-
-
-    const result = await fetchMembers(boardID, key, token);
-
-
-    //result[i]['id']
-
-    for(let i=0; i < values.length; i++) {
-
-
-    }
-
-}
-
-//generate mostCardsIntoList chart
-
-function generateMostCardsIntoListChart(values) {
-
-   
-   prepareMostCardsIntoListChartData();
-   
-   
-   
-   
-   
-   
-   
-   
-    let myChart = document.getElementById('mostCardsIntoListChart').getContext('2d');
-
-    let barChart = new Chart(myChart, {
-        type:'bar',
-        data:{
-            labels:[],
-            datasets:[]
-        },
-        options:{}
-    });
-
-}
-
 
 //gets all actions that have happened in a board
 function getAllActionsInBoard(boardID, key, token) {
@@ -476,6 +434,113 @@ async function fetchMembers(boardID, key, token) {
         return data;
     
     
+}
+
+async function getCardsMovedIntoListForGraph(listID, key, token) {
+
+        
+    const response = await fetch("https://api.trello.com/1/lists/" + listID + "/actions?key=" + key + "&token=" + token + "&filter=updateCard:idList");
+
+    
+    const data = await response.json();
+    return data;
+
+
+}
+
+
+//generate mostCardsIntoList chart
+
+async function generateMostCardsIntoListChart(boardID, listID, key, token) {
+
+   
+    const membersResult = await fetchMembers(boardID, key, token);
+    const cardsResult = await getCardsMovedIntoListForGraph(listID, key, token)
+    
+
+    var cardCounterArray = new Array(membersResult.length);
+
+    for(let z = 0; z < cardCounterArray.length; z++) {
+
+        cardCounterArray[z] = 0;
+
+    }
+        
+        for(let i = 0; i < cardsResult.length; i++) {
+
+            for (let j = 0; j < membersResult.length; j++) {
+
+            
+                //for(let k = 0; k < cardsResult[i]['idMembers'].length; k++) {
+
+                   
+            
+                    if (cardsResult[i]['idMemberCreator'] == membersResult[j]['id']) {
+
+                        
+                        cardCounterArray[j] += 1;
+                        
+                    }
+
+               //}
+                
+            }
+
+        }
+
+
+        var membersArray = new Array(membersResult.length);
+
+        for(let x = 0; x < membersArray.length; x++) {
+
+            
+            membersArray[x] = membersResult[x]['fullName'];
+            
+        }
+
+
+
+        //cardCounterArray
+        //membersArray
+        
+        const membersCards = membersArray.map((member, index) => {
+            let memberCardObject = {};
+            memberCardObject.member = member;
+            memberCardObject.cardCount = cardCounterArray[index];
+
+            return memberCardObject;
+        })
+
+        console.log(membersCards);
+
+        
+        
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let barChart = new Chart(myChart, {
+        type:'bar',
+        data:{
+            //labels:[membersArray.map()],
+            datasets:[{
+                label:'Cards moved into list',
+                data: membersCards,
+                parsing: {
+                    xAxisKey: 'member',
+                    yAxisKey: 'cardCount'
+                }
+
+
+
+                }]
+            },
+            options:{}
+        });
+
+
+
+
+
+
 }
 
 
