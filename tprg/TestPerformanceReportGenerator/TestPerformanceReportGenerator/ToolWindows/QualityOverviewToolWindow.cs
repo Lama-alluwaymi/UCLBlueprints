@@ -6,18 +6,18 @@ using System.Windows;
 
 namespace TestPerformanceReportGenerator
 {
-    public class CodeQualityToolWindow : BaseToolWindow<CodeQualityToolWindow>
+    public class QualityOverviewToolWindow : BaseToolWindow<QualityOverviewToolWindow>
     {
-        public override string GetTitle(int toolWindowId) => "CodeQualityReportGen";
+        public override string GetTitle(int toolWindowId) => "CodeQualityReportGen_Overview";
 
         public override Type PaneType => typeof(Pane);
 
         public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            return Task.FromResult<FrameworkElement>(new CodeQualityWindowControl());
+            return Task.FromResult<FrameworkElement>(new QualityOverviewToolWindowControl());
         }
 
-        [Guid("ce2a0f92-d094-48c5-be02-b8624558136a")]
+        [Guid("f7bb0d1b-322c-4f43-9a1e-30e9981b89ce")]
         internal class Pane : ToolWindowPane
         {
             public Pane()
