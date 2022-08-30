@@ -1,6 +1,9 @@
 ﻿
 namespace CodeQualityReportGen.Utilities
 {
+    /// <summary>
+    /// Store code metrics and test quality data necessary to generate a single code quality report.
+    /// </summary>
     public class QualityData
     {
         public string Time { get; set; }

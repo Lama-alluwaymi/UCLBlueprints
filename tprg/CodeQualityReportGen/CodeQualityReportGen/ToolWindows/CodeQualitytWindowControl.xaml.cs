@@ -190,7 +190,7 @@ namespace CodeQualityReportGen
                         await Task.Run(() =>
                         {
                             // Get current date
-                            string dateNow = SystemInfoRetriver.GetCurrentDate();
+                            string dateNow = SystemInfoRetriver.GetCurrentTime();
                             // Get the project version
                             string version = SystemInfoRetriver.GetProductVersion();
                             // Get hardware info of the user
@@ -231,7 +231,7 @@ namespace CodeQualityReportGen
                         await Task.Run(() =>
                         {
                             // Get date
-                            string dateNow = SystemInfoRetriver.GetCurrentDate();
+                            string dateNow = SystemInfoRetriver.GetCurrentTime();
                             // Get project version
                             string version = SystemInfoRetriver.GetProductVersion();
                             // Get user hardware info

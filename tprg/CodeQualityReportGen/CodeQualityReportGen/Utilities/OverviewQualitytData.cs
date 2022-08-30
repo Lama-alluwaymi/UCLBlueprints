@@ -1,5 +1,8 @@
 ﻿namespace CodeQualityReportGen.Utilities
 {
+    /// <summary>
+    /// Stores code metrics and test quality data necessary to generate code quality overview reports.
+    /// </summary>
     public class OverviewQualitytData
     {
         public string Maintainability { get; set; }

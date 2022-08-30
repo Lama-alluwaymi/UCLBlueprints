@@ -4,10 +4,24 @@ using System.IO;
 
 namespace CodeQualityReportGen.Utilities
 {
+    /// <summary>
+    /// Helper class for report generations.
+    /// </summary>
     public class ReportGenerator
     {
         public List<QualityData> dataList = new List<QualityData>();
-
+        /// <summary>
+        /// Add a QualityData object to the list to register outcome of a single test run.
+        /// </summary>
+        /// <param name="time">Time when the test run has finished</param>
+        /// <param name="version">The version of current project</param>
+        /// <param name="hardware">The CPU name and memory size of the machine that has executed the test run.</param>
+        /// <param name="failedTests">Number of failed tests</param>
+        /// <param name="passedTests">Number of passed tests</param>
+        /// <param name="testCases">Total number of tests</param>
+        /// <param name="lineCoverage">Line coverage obtained by the test suite</param>
+        /// <param name="testDuration">Duration of the whole test</param>
+        /// <param name="skipped">Number of skipped tests</param>
         public void AddTestData(string time, string version, string hardware, string failedTests, 
             string passedTests, string testCases, string lineCoverage, string testDuration, string skipped)
         {
@@ -25,6 +39,17 @@ namespace CodeQualityReportGen.Utilities
             });
             
         }
+        /// <summary>
+        /// Generates a single code quality report.
+        /// </summary>
+        /// <param name="projectName">The project name</param>
+        /// <param name="dataList">The list of QualityData object (test run information)</param>
+        /// <param name="maintainability">The maintainability index of the current project</param>
+        /// <param name="cycloComplexity">The cyclomatic complexity metric of the current project</param>
+        /// <param name="depthOfInheritnace">The depth of inheritance metric of the current project</param>
+        /// <param name="classCoupling">The class coupling metric of the current project</param>
+        /// <param name="losc">The lines of source code of the current project</param>
+        /// <param name="loec">The lines of executable code of the current project</param>
         public static void GenerateReport(string projectName, List<QualityData> dataList,
             string maintainability, string cycloComplexity, string depthOfInheritnace, string classCoupling,
             string losc, string loec)
@@ -93,7 +118,9 @@ namespace CodeQualityReportGen.Utilities
             }
 
         }
-        
+        /// <summary>
+        /// Generates an overview report based on all the code quality reports.
+        /// </summary>
         public static void GenerateOverview()
         {
             // Get the overview report template from resource

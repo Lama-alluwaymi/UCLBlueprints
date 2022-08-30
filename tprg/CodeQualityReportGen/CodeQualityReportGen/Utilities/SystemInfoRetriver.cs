@@ -7,9 +7,16 @@ using System.Diagnostics;
 
 namespace CodeQualityReportGen.Utilities
 {
+    /// <summary>
+    /// Helper class to retrieve required system information.
+    /// </summary>
     public class SystemInfoRetriver
     {
-        public static string GetCurrentDate()
+        /// <summary>
+        /// Gets the current time
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCurrentTime()
         {
             return DateTime.Now.ToString("T", new CultureInfo("en-GB"));
         }
