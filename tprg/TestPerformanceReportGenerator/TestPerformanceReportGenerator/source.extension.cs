@@ -7,9 +7,9 @@ namespace TestPerformanceReportGenerator
 {
     internal sealed partial class Vsix
     {
-        public const string Id = "TestPerformanceReportGenerator.8d73f547-31c3-41db-a78e-d0369731ea87";
-        public const string Name = "TestPerformanceReportGenerator";
-        public const string Description = @"Empty VSIX Project.";
+        public const string Id = "CodeQualityReportGen.21768D15-DDDF-419A-891E-191EA8FEC3BC";
+        public const string Name = "CodeQualityReportGen";
+        public const string Description = @"This extension generates html reports which reports the code metrics, test outcomes and line coverage. It can also generate an ""overview"" report which includes all the code metrics and test outcomes from previous reports. ";
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "UCLBlueprints";
