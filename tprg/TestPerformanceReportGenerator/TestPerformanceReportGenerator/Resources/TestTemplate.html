@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,7 +15,20 @@
             font-weight: 900;
             height: 50px;
             line-height: 60px;
+        }
+
+        #ReportDate {
+            font-size: 19px;
+            font-weight: 900;
+            height: 50px;
+            line-height: 60px;
+        }
+
+        #TitleContainer {
+            display: flex;
+            flex-direction: row;
             border-bottom: 1px solid #d1cfcf;
+            justify-content: space-between;
         }
 
         #PieChartBox {
@@ -57,7 +71,7 @@
             }
 
         progress {
-            168px;
+            /*168px;*/
             /*height: 20px;*/
             background-color: #fff;
             border-radius: 1em;
@@ -78,10 +92,13 @@
 
         .centent-rigth-item {
             width: 90%;
-            height: 45px;
-            line-height: 45px;
+            min-height: 45px;
+            /*line-height: 45px;*/
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             text-align: left;
-            font-size: 20px;
+            font-size: 1vw;
             font-weight: 600;
             border-bottom: 1px solid #cdcbcb;
             margin: auto;
@@ -91,22 +108,25 @@
 </head>
 <body>
     <div id="mainCenter">
-        <div id="ProjectName">{$ProjectName$}</div>
+        <div id="TitleContainer">
+            <div id="ProjectName">{$ProjectName$}</div>
+            <div id="ReportDate">{$ReportDate$}</div>
+        </div>
         <div id="PieChartBox">
 
             <div id="DataBox" class="chartstyle" style="">
                 <div style="width:50%;font-size:30px;text-align:left;color:#6c6c6c;margin-top:20px;">Maintainability Index</div>
-                <div id="centent" style="display: flex; height: 200px; align-items: flex-end; border-right: 1px solid #e3dada">
+                <div id="centent" style="display: flex; height: 200px; align-items: flex-end; border-right: 1px solid #e3dada; overflow: hidden">
                     <div id="centent-left" style="height: 70%; width: 50%;  display: flex; align-items: flex-end">
                         <div style="width: 10px; height: 80%; background-color: forestgreen; margin: 0px 10px;">
                             <div style="height:{$MaintainabilityIndexSchedule$}%; background-color: red; margin-bottom: 0px;"></div>
                         </div>
-                        <div style="color: #6c6c6c;font-size:95px;font-weight:800">{$MaintainabilityIndex$}%</div>
+                        <div style="color: #6c6c6c; font-size: 6vw; font-weight: 800" id="maintain_val">{$MaintainabilityIndex$}%</div>
                     </div>
                     <div id="centent-rigth" style="height: 100%; width: 50%; ">
-                        <div class="centent-rigth-item">Cyclomatic Complexity： <span style="float:right;">{$CyclomaticComplexity$}</span></div>
-                        <div class="centent-rigth-item">Depth of inheritance：  <span style="float:right;">{$DepthOfInheritance$}</span></div>
-                        <div class="centent-rigth-item">Class Coupling：        <span style="float:right;">{$ClassCoupling$}</span></div>
+                        <div class="centent-rigth-item">Cyclomatic Complexity: <span style="float:right;" id="cyclo_val">{$CyclomaticComplexity$}</span></div>
+                        <div class="centent-rigth-item">Depth of inheritance:  <span style="float:right;" id="inherit_val">{$DepthOfInheritance$}</span></div>
+                        <div class="centent-rigth-item">Class Coupling:        <span style="float:right;" id="classcoup_val">{$ClassCoupling$}</span></div>
                     </div>
                 </div>
             </div>
@@ -121,9 +141,9 @@
                         <th>Time</th>
                         <th>Version</th>
                         <th>Hardware</th>
-                        <th>FAILED/PASS </th>
-                        <th>Skipped Test</th>
-                        <th>Test Cases</th>
+                        <th>Passed/Total </th>
+                        <th>Skipped Tests</th>
+                        <th>Failed Tests</th>
                         <th>Line Coverage</th>
                         <th>Duration</th>
                         <!--<th>Devices</th>-->
@@ -141,7 +161,7 @@
 
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
     <script type="text/javascript">
-        
+
         require.config({
             paths: {
                 echarts: 'http://echarts.baidu.com/build/dist'
@@ -151,7 +171,7 @@
         require(
             [
                 'echarts',
-                'echarts/chart/bar', 
+                'echarts/chart/bar',
                 'echarts/chart/line',
                 'echarts/chart/pie'
             ],
@@ -175,14 +195,14 @@
                         {
                             name: 'LOC',
                             type: 'pie',
-                            radius: '60%',                       
+                            radius: '60%',
                             center: ['50%', '50%'],
                             data: [
                                 { value: {$SOURCECODE$}, name: 'Lines of source code' },
                                 { value: {$EXECUTABLECODE$}, name: 'Lines of executable code' },
                             ],
                             itemStyle: {
-                                
+
                                 normal: {
                                     label: {
                                         show: true
@@ -191,7 +211,7 @@
                                         show: true
                                     }
                                 },
-                                emphasis: {                                    
+                                emphasis: {
                                     shadowBlur: 10,
                                     shadowOffsetX: 0,
                                     shadowColor: 'rgba(0, 0, 0, 0.5)'
@@ -201,7 +221,7 @@
                     ]
                 };
 
-                var linecoverageOption = { 
+                var linecoverageOption = {
                     title: {
                         text: 'LINE COVERAGE',
                         textStyle: { //Main title text font{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
