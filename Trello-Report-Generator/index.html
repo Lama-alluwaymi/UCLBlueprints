@@ -40,6 +40,7 @@
         buildCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value); 
         getAllActionsInBoard(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value);
         generateMostCardsIntoListChart(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);
+        generateCardsAssignedPerBoardMemberOnListChart(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);
         
 
         " ><p id="button_text">Generate Report</p></button>
@@ -82,7 +83,7 @@
     
     <text>Who moved the most cards into the list over the boards duration?</text>
 
-    <div class="chart" style="height:100%; width:100%">
+    <div class="chart" style="height:80%; width:80%">
         <canvas id="myChart"></canvas>
       </div>
     </div>
@@ -121,6 +122,12 @@
         <tbody id="table_body_cards_assigned_list"></tbody>
     </table>
     <text>Graph of this</text>
+
+    <div class="chart2" style="height:80%; width:80%">
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+
     </div>
     
 

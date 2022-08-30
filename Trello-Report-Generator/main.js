@@ -543,6 +543,97 @@ async function generateMostCardsIntoListChart(boardID, listID, key, token) {
 
 }
 
+async function generateCardsAssignedPerBoardMemberOnListChart(boardID, listID, key, token) {
+
+   
+    const result = await getCardsInList(listID, key, token);
+    const result2 = await fetchMembers(boardID, key, token);
+
+    var cardCounterArray = new Array(result2.length);
+
+    for(let z = 0; z < cardCounterArray.length; z++) {
+
+        cardCounterArray[z] = 0;
+
+    }
+        
+        for(let i = 0; i < result.length; i++) {
+
+            for (let j = 0; j < result2.length; j++) {
+
+            
+                for(let k = 0; k < result[i]['idMembers'].length; k++) {
+
+                   
+            
+                    if (result[i]['idMembers'][k] == result2[j]['id']) {
+
+                        
+                        cardCounterArray[j] += 1;
+                        
+                    }
+
+               }
+                
+            }
+
+        }
+
+
+        var membersArray = new Array(result2.length);
+
+        for(let x = 0; x < membersArray.length; x++) {
+
+            
+            membersArray[x] = result2[x]['fullName'];
+            
+        }
+
+
+
+        //cardCounterArray
+        //membersArray
+        
+        const membersCards = membersArray.map((member, index) => {
+            let memberCardObject = {};
+            memberCardObject.member = member;
+            memberCardObject.cardCount = cardCounterArray[index];
+
+            return memberCardObject;
+        })
+
+        console.log(membersCards);
+
+        
+        
+        let myChart = document.getElementById('myChart2').getContext('2d');
+
+        let barChart = new Chart(myChart, {
+        type:'bar',
+        data:{
+            //labels:[membersArray.map()],
+            datasets:[{
+                label:'Cards assigned per board member on the list',
+                data: membersCards,
+                parsing: {
+                    xAxisKey: 'member',
+                    yAxisKey: 'cardCount'
+                }
+
+
+
+                }]
+            },
+            options:{}
+        });
+
+
+
+
+
+
+}
+
 
 
  
