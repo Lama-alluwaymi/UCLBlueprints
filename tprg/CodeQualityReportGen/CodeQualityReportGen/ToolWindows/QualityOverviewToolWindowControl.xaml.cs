@@ -11,7 +11,11 @@ namespace CodeQualityReportGen
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Generate Overview report button event handler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             // set info bar model
