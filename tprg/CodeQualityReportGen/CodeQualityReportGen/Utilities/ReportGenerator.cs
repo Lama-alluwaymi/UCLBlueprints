@@ -79,7 +79,7 @@ namespace CodeQualityReportGen.Utilities
             reportFile = reportFile.Replace("{$linecoverageOptionyAxis$}", coverageOptionYAxis.TrimEnd(','));
 
             //Write to path "../Reports/CodeQualityReport_dmy.html"
-            DirectoryInfo outputDir = FileHelper.getSolutionDir();
+            DirectoryInfo outputDir = FileHelper.GetSolutionDir();
             string outputPath = outputDir.FullName;
             string[] path = { outputPath, "Reports", reportName };
             if (Directory.Exists(Path.Combine(outputPath, "Reports")))
@@ -144,7 +144,7 @@ namespace CodeQualityReportGen.Utilities
             overviewFile = overviewFile.Replace("{$ProjectName$}", projectName);
 
             // write file to repository
-            DirectoryInfo outputDir = FileHelper.getSolutionDir();
+            DirectoryInfo outputDir = FileHelper.GetSolutionDir();
             string outputPath = outputDir.FullName;
             string[] path = { outputPath, "Overview_Report", "CodeQuality_Overview.html" };
             if(Directory.Exists(Path.Combine(outputPath, "Overview_Report"))){

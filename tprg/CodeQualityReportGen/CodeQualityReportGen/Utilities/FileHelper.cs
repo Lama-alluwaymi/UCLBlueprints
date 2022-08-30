@@ -7,6 +7,9 @@ using System.Xml;
 
 namespace CodeQualityReportGen.Utilities
 {
+    /// <summary>
+    /// Helper class for reading, writing and parsing specific files.
+    /// </summary>
     public class FileHelper
     {
 
@@ -32,7 +35,11 @@ namespace CodeQualityReportGen.Utilities
         //        return e.Message;
         //    }
         //}
-
+        /// <summary>
+        /// Reads the specified file from assembly using the specified manifest resource.
+        /// </summary>
+        /// <param name="resourceName">Manifest resouce string. Format: ProjectNamespace.ResourceFile</param>
+        /// <returns>The entire resource file as a string.</returns>
         public static string ReadFromResource(string resourceName)
         {
             var assembly = Assembly.GetExecutingAssembly();
@@ -42,7 +49,13 @@ namespace CodeQualityReportGen.Utilities
                 return sr.ReadToEnd();
             }
         }
-        public static DirectoryInfo getSolutionDir(string currentPath = null, string fileExt = "*.sln")
+        /// <summary>
+        /// Retrives DirectoryInfo object of the directory containing .sln (solution) file.
+        /// </summary>
+        /// <param name="currentPath">Specifies the path to start with.</param>
+        /// <param name="fileExt">Specifies the file extension to search for.</param>
+        /// <returns>A DirectoryInfo object of the directory that contains the file.</returns>
+        public static DirectoryInfo GetSolutionDir(string currentPath = null, string fileExt = "*.sln")
         {
             var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
             while (directory != null && !directory.GetFiles(fileExt).Any())
@@ -51,9 +64,18 @@ namespace CodeQualityReportGen.Utilities
             }
             return directory;
         }
+        /// <summary>
+        /// Gets the solution name.
+        /// </summary>
+        /// <returns>Solution name</returns>
+        public static string GetSolutionName() => GetSolutionDir().FullName.Split('\\').Last().Replace(".sln", "");
 
-        public static string GetSolutionName() => getSolutionDir().FullName.Split('\\').Last().Replace(".sln", "");
-
+        /// <summary>
+        /// Write specified report string to a specified path
+        /// </summary>
+        /// <param name="report">The report content that needs to be written</param>
+        /// <param name="path">File path where the report file is going to be generated</param>
+        /// <param name="isClearedOldText">Overwrite existing text. Default value = true.</param>
         public static void WriteFile(string report, string path, bool isClearedOldText = true)
         {
             if (isClearedOldText)
@@ -70,10 +92,14 @@ namespace CodeQualityReportGen.Utilities
                 writer.WriteLine(report);
             }
         }
-
+        /// <summary>
+        /// Gets all files (and paths to file) inside the directory "PathToSolutionDirectory/Reports".
+        /// </summary>
+        /// <returns>An array of file paths inside the Reports directory</returns>
+        /// <exception cref="DirectoryNotFoundException"></exception>
         public static string[] GetAllReportFiles()
         {
-            string path = Path.Combine(getSolutionDir().FullName, "Reports");
+            string path = Path.Combine(GetSolutionDir().FullName, "Reports");
             if (Directory.Exists(path))
             {
                 return Directory.GetFiles(path);
@@ -83,7 +109,12 @@ namespace CodeQualityReportGen.Utilities
                 throw new DirectoryNotFoundException();
             }
         }
-
+        /// <summary>
+        /// Parse the specified html file and store the necessary data into an OverviewQualityData object
+        /// </summary>
+        /// <param name="filePath">Path to the HTML file</param>
+        /// <returns>an OverviewQualityData object</returns>
+        /// <exception cref="FileNotFoundException"></exception>
         public static OverviewQualitytData ParseHtmlFile(string filePath)
         {
             if (File.Exists(filePath))

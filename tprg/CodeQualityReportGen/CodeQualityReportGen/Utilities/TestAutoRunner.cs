@@ -42,7 +42,7 @@ namespace CodeQualityReportGen.Utilities
         {
             // Get the directory that contain the solution such that process can 
             // start in that directory
-            DirectoryInfo directory = FileHelper.getSolutionDir();
+            DirectoryInfo directory = FileHelper.GetSolutionDir();
             if (directory != null)
             {
                 // Set stringBuilders to fetch the output of the process

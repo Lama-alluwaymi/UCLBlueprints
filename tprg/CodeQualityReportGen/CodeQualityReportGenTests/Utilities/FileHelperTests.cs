@@ -16,7 +16,7 @@ namespace CodeQualityReportGen.Utilities.Tests
         public void getSolutionDirTest()
         {
             string expected = @"C:\Users\50264\source\repos\UCLBlueprints\tprg\CodeQualityReportGen";
-            var directory = FileHelper.getSolutionDir();
+            var directory = FileHelper.GetSolutionDir();
             Assert.IsTrue(directory.GetType() == typeof(DirectoryInfo));
             Assert.AreEqual(directory.FullName, expected);
         }
