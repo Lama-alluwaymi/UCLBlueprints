@@ -1,5 +1,27 @@
+
+//test API
+async function testAPI(boardID, key, token) {
+
+    
+    try {
+        
+        
+        const result = await fetchMembers(boardID, key, token)
+
+    
+        revealLists();
+
+    } catch (err) {
+        
+        alert("Invalid Board ID/Key/Token");      
+    }
+
+}
+
+
 //reveal lists
 function revealLists() {
+
 
     let lists = document.getElementById("listDisplay");
 
@@ -28,7 +50,7 @@ function revealSections() {
 //gets all actions that have happened in a board
 function getAllActionsInBoard(boardID, key, token) {
 
-    fetch("https://api.trello.com/1/boards/" + boardID + "/actions?key=" + key + "&token=" + token).then((data) => {
+    fetch("https://api.trello.com/1/boards/" + boardID + "/actions?key=" + key + "&token=" + token +"&limit=1000").then((data) => {
 
     return data.json();
     }).then((objectData) => {
@@ -54,6 +76,8 @@ function getAllActionsInBoard(boardID, key, token) {
                      specificAction = "Card archived";
                  } else if (values.data.old.hasOwnProperty('pos')) {
                      specificAction = "Position in list change";
+                 } else if (values.data.old.hasOwnProperty('name')) {
+                    specificAction = "Card name change";
                  } else {
                      specificAction = "Error";
                  }
@@ -103,6 +127,14 @@ function getAllActionsInBoard(boardID, key, token) {
              if (actionType == "updateCheckItemStateOnCard") {
                 specificAction = "Checklist item state updated";
              }
+
+             if (actionType == "updateList") {
+                if (values.data.old.hasOwnProperty('pos')) {
+                    specificAction = "List position change";
+                } else if (values.data.old.hasOwnProperty('name')) {
+                    specificAction = "List name change";
+                }
+            }
 
 
 
@@ -174,6 +206,8 @@ function getAllActionsInList(listID, key, token) {
                      specificAction = "Card archived";
                  } else if (values.data.old.hasOwnProperty('pos')) {
                         specificAction = "Position in list change";
+                 } else if (values.data.old.hasOwnProperty('name')) {
+                    specificAction = "Card name change"; 
                  } else {
                      specificAction = "Error";
                  }
@@ -195,6 +229,17 @@ function getAllActionsInList(listID, key, token) {
              if (actionType == "updateCheckItemStateOnCard") {
                 specificAction = "Checklist item state updated";
              }
+
+             if (actionType == "updateList") {
+                if (values.data.old.hasOwnProperty('pos')) {
+                    specificAction = "List position change";
+                } else if (values.data.old.hasOwnProperty('name')) {
+                    specificAction = "List name change";
+                }
+            }
+
+
+
 
             let specificName ="testName";
             let shortLink ="";
@@ -283,6 +328,7 @@ function getListsForDropdown(boardID, key, token) {
         document.getElementById("listDropDown").innerHTML=dropDownData;
     }).catch((err) => {
         console.log(err);
+        
     })
 
 }
@@ -431,7 +477,11 @@ async function fetchMembers(boardID, key, token) {
 
         
         const data = await response.json();
-        return data;
+
+       
+            return data;
+       
+        
     
     
 }
@@ -513,10 +563,14 @@ async function generateMostCardsIntoListChart(boardID, listID, key, token) {
 
         console.log(membersCards);
 
-        
-        
         let myChart = document.getElementById('myChart').getContext('2d');
 
+        let chartStatus = Chart.getChart("myChart"); // <canvas> id
+        if (chartStatus != undefined) {
+            chartStatus.destroy();
+        }
+        
+        
         let barChart = new Chart(myChart, {
         type:'bar',
         data:{
@@ -608,6 +662,11 @@ async function generateCardsAssignedPerBoardMemberOnListChart(boardID, listID, k
         
         
         let myChart = document.getElementById('myChart2').getContext('2d');
+
+        let chartStatus = Chart.getChart("myChart2"); // <canvas> id
+        if (chartStatus != undefined) {
+            chartStatus.destroy();
+        }
 
         let barChart = new Chart(myChart, {
         type:'bar',

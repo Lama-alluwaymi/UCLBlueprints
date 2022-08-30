@@ -17,19 +17,27 @@
     <div id="inputSection">
     <h1>Trello Harvester</h1>
     
+    
     <label for="boardID">Board ID:</label>
     <input type="text" id="boardID" name="boardID"><br><br>
     <label for="key">Key:</label>
     <input type="password" id="key" name="key"><br><br>
     <label for="token">Token:</label>
     <input type="password" id="token" name="token"><br><br>
-    <button id="btn" onclick="revealLists(); getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );" ><p id="button_text">Fetch Lists</p></button><br><br>
+    <button id="btn" onclick="
+        testAPI(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );
+        getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );
+        
+        " ><p id="button_text">Fetch Lists</p></button><br><br>
+    
+
 
     <div id="listDisplay" style="display:none">
     <label for="lists">List:</label>
         <select name="listDropDown" id="listDropDown">
         
         </select>
+    
     
   <br><br>
     <button id="btn" onclick="
@@ -128,7 +136,7 @@
       </div>
     </div>
 
-    </div>
+
     
 
     <div id="allActionsOnList" style="display:none">
