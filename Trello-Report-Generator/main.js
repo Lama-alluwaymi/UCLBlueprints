@@ -524,6 +524,7 @@ async function generateMostCardsIntoListChart(boardID, listID, key, token) {
             datasets:[{
                 label:'Cards moved into list',
                 data: membersCards,
+                backgroundColor: ["red", "blue", "green", "orange", "purple", "yellow", "pink", "cyan", "magenta", "grey"],
                 parsing: {
                     xAxisKey: 'member',
                     yAxisKey: 'cardCount'
@@ -615,10 +616,12 @@ async function generateCardsAssignedPerBoardMemberOnListChart(boardID, listID, k
             datasets:[{
                 label:'Cards assigned per board member on the list',
                 data: membersCards,
+                backgroundColor: ["red", "blue", "green", "orange", "purple", "yellow", "pink", "cyan", "magenta", "grey"],
                 parsing: {
                     xAxisKey: 'member',
                     yAxisKey: 'cardCount'
                 }
+
 
 
 
