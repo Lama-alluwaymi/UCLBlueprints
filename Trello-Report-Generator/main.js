@@ -94,6 +94,8 @@ function getAllActionsInBoard(boardID, key, token) {
                      specificAction = "Due date change";
                  } else if (values.data.old.hasOwnProperty('closed')) {
                      specificAction = "Card archived";
+                 } else if (values.data.old.hasOwnProperty('pos')) {
+                     specificAction = "Position in list change";
                  } else {
                      specificAction = "Error";
                  }
@@ -139,6 +141,14 @@ function getAllActionsInBoard(boardID, key, token) {
              if (actionType == "enablePlugin") {
                 specificAction = "Plugin enabled";
              }
+
+             if (actionType == "updateCheckItemStateOnCard") {
+                specificAction = "Checklist item state updated";
+             }
+
+
+
+             //updateCheckItemStateOnCard
 
             let specificName ="testName";
             let shortLink ="";
@@ -197,13 +207,15 @@ function getAllActionsInList(listID, key, token) {
                  } else if (values.data.old.hasOwnProperty('desc')) {
                      specificAction = "Description change";
                  } else if (values.data.old.hasOwnProperty('idList')) {
-                     specificAction = "Card list change";
+                     specificAction = "List change";
                  } else if (values.data.old.hasOwnProperty('idLabels')) {
                      specificAction = "Label change";
                  } else if (values.data.old.hasOwnProperty('due')) {
                      specificAction = "Due date change";
                  } else if (values.data.old.hasOwnProperty('closed')) {
                      specificAction = "Card archived";
+                 } else if (values.data.old.hasOwnProperty('pos')) {
+                        specificAction = "Position in list change";
                  } else {
                      specificAction = "Error";
                  }
@@ -220,6 +232,10 @@ function getAllActionsInList(listID, key, token) {
 
              if (actionType == "addAttachmentToCard") {
                 specificAction = "Attachment added to card (" + values.data.attachment.name + ")";
+             }
+
+             if (actionType == "updateCheckItemStateOnCard") {
+                specificAction = "Checklist item state updated";
              }
 
             let specificName ="testName";
