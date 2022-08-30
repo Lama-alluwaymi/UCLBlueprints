@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trello Harvester</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
+
+</head>
+
+<body>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <div id="inputSection">
+    <h1>Trello Harvester</h1>
+    
+    
+    <label for="boardID">Board ID:</label>
+    <input type="text" id="boardID" name="boardID"><br><br>
+    <label for="key">Key:</label>
+    <input type="password" id="key" name="key"><br><br>
+    <label for="token">Token:</label>
+    <input type="password" id="token" name="token"><br><br>
+    <button id="btn" onclick="
+        testAPI(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );
+        getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );
+        
+        " ><p id="button_text">Fetch Lists</p></button><br><br>
+    
+
+
+    <div id="listDisplay" style="display:none">
+    <label for="lists">List:</label>
+        <select name="listDropDown" id="listDropDown">
+        
+        </select>
+    
+    
+  <br><br>
+    <button id="btn" onclick="
+        revealSections();
+        buildCountCardsInList(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
+        getActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value );
+        getAllActionsInList(document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value ); 
+        buildCardsAssignedPerBoardMember(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value); 
+        getAllActionsInBoard(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value);
+        generateMostCardsIntoListChart(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);
+        generateCardsAssignedPerBoardMemberOnListChart(document.getElementById('boardID').value, document.getElementById('listDropDown').value, document.getElementById('key').value, document.getElementById('token').value);
+        
+
+        " ><p id="button_text">Generate Report</p></button>
+    
+    </div>
+    </div>
+    
+    
+    <div id="reportSection">
+    <div id="cardsCurrentlyInList" style="display:none">
+    <h1>Cards currently in list</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>Description</th>
+                <th>Date of last activity</th>
+                <th>Assigned</th>
+            </tr>
+        </thead>
+        <tbody id="table_body"></tbody>
+    </table>
+    </div>
+
+    <div id="cardsMovedIntoList" style="display:none">
+    <h1>Cards moved into list</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>List before</th>
+                <th>Date of movement</th>
+                <th>By who</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_cards_into_list"></tbody>
+    </table>
+    
+    <text>Who moved the most cards into the list over the boards duration?</text>
+
+    <div class="chart" style="height:80%; width:80%">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    
+    
+    
+    <div id="actionsTakenPlaceInList" style="display:none">
+    <h1>All actions that have taken place in the list</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>Action</th>
+                <th>Date of action</th>
+                <th>By who</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_actions_on_list"></tbody>
+    </table>
+    </div>
+
+
+
+
+
+    <div id="cardsAssignedPerBoardMemberOnList" style="display:none">
+    <h1>Cards assigned per board member on the list</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Member</th>
+                <th>Number of cards</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_cards_assigned_list"></tbody>
+    </table>
+    
+
+    <div class="chart2" style="height:80%; width:80%">
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+
+
+    
+
+    <div id="allActionsOnList" style="display:none">
+    <h1>All actions that have taken place on the board</h1>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Card Name</th>
+                <th>URL</th>
+                <th>Action</th>
+                <th>Date of action</th>
+                <th>By who</th>
+            </tr>
+        </thead>
+        <tbody id="table_body_actions_on_board"></tbody>
+    </table>
+    </div>
+    </div>
+
+</body>
+
+</html>
