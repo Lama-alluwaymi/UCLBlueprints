@@ -23,6 +23,50 @@ function revealSections() {
 }
 
 
+
+async function prepareMostCardsIntoListChartData(boardID, key, token, values) {
+
+
+    const result = await fetchMembers(boardID, key, token);
+
+
+    //result[i]['id']
+
+    for(let i=0; i < values.length; i++) {
+
+
+    }
+
+}
+
+//generate mostCardsIntoList chart
+
+function generateMostCardsIntoListChart(values) {
+
+   
+   prepareMostCardsIntoListChartData();
+   
+   
+   
+   
+   
+   
+   
+   
+    let myChart = document.getElementById('mostCardsIntoListChart').getContext('2d');
+
+    let barChart = new Chart(myChart, {
+        type:'bar',
+        data:{
+            labels:[],
+            datasets:[]
+        },
+        options:{}
+    });
+
+}
+
+
 //gets all actions that have happened in a board
 function getAllActionsInBoard(boardID, key, token) {
 
@@ -43,7 +87,7 @@ function getAllActionsInBoard(boardID, key, token) {
                  } else if (values.data.old.hasOwnProperty('desc')) {
                      specificAction = "Description change";
                  } else if (values.data.old.hasOwnProperty('idList')) {
-                     specificAction = "List change";
+                     specificAction = "Card list change";
                  } else if (values.data.old.hasOwnProperty('idLabels')) {
                      specificAction = "Label change";
                  } else if (values.data.old.hasOwnProperty('due')) {
@@ -62,6 +106,38 @@ function getAllActionsInBoard(boardID, key, token) {
 
              if (actionType == "commentCard") {
                 specificAction = "Comment added";
+             }
+
+             if (actionType == "removeMemberFromCard") {
+                specificAction = "Member removed from card";
+             }
+
+             if (actionType == "addMemberToCard") {
+                specificAction = "Member added to card";
+             }
+
+             if (actionType == "addChecklistToCard") {
+                specificAction = "Checklist added to card";
+             }
+
+             if (actionType == "removeChecklistFromCard") {
+                specificAction = "Checklist removed from card";
+             }
+
+             if (actionType == "addAttachmentToCard") {
+                specificAction = "Attachment added to card (" + values.data.attachment.name + ")";
+             }
+
+             if (actionType == "createBoard") {
+                specificAction = "Board created";
+             }
+
+             if (actionType == "addToOrganizationBoard") {
+                specificAction = "Add to organizations boards";
+             }
+
+             if (actionType == "enablePlugin") {
+                specificAction = "Plugin enabled";
              }
 
             let specificName ="testName";
@@ -121,7 +197,7 @@ function getAllActionsInList(listID, key, token) {
                  } else if (values.data.old.hasOwnProperty('desc')) {
                      specificAction = "Description change";
                  } else if (values.data.old.hasOwnProperty('idList')) {
-                     specificAction = "List change";
+                     specificAction = "Card list change";
                  } else if (values.data.old.hasOwnProperty('idLabels')) {
                      specificAction = "Label change";
                  } else if (values.data.old.hasOwnProperty('due')) {
@@ -140,6 +216,10 @@ function getAllActionsInList(listID, key, token) {
 
              if (actionType == "commentCard") {
                 specificAction = "Comment added";
+             }
+
+             if (actionType == "addAttachmentToCard") {
+                specificAction = "Attachment added to card (" + values.data.attachment.name + ")";
              }
 
             let specificName ="testName";
@@ -199,6 +279,8 @@ function getActionsInList(listID, key, token) {
             <td>${dateResult}</td>
             <td>${values.memberCreator.fullName} (${values.memberCreator.username})</td>
             </tr>`;
+
+            
         });
         document.getElementById("table_body_cards_into_list").innerHTML=actionsData;
     }).catch((err) => {

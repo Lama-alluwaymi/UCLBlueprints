@@ -19,9 +19,9 @@
     <label for="boardID">Board ID:</label>
     <input type="text" id="boardID" name="boardID"><br><br>
     <label for="key">Key:</label>
-    <input type="text" id="key" name="key"><br><br>
+    <input type="password" id="key" name="key"><br><br>
     <label for="token">Token:</label>
-    <input type="text" id="token" name="token"><br><br>
+    <input type="password" id="token" name="token"><br><br>
     <button id="btn" onclick="revealLists(); getListsForDropdown(document.getElementById('boardID').value, document.getElementById('key').value, document.getElementById('token').value );" ><p id="button_text">Fetch Lists</p></button><br><br>
 
     <div id="listDisplay" style="display:none">
@@ -79,12 +79,15 @@
     
     <text>Graph of who moved the most cards into list</text>
 
+        <div class="mostCardsIntoListGraph">
+            <canvas id="mostCardsIntoListChart"></canvas>
+        </div>
     </div>
     
     
     
     <div id="actionsTakenPlaceInList" style="display:none">
-    <h1>All actions that have take place in the list</h1>
+    <h1>All actions that have taken place in the list</h1>
     <table class="styled-table">
         <thead>
             <tr>
