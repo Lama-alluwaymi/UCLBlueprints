@@ -5,9 +5,6 @@ using System.IO;
 
 namespace TestPerformanceReportGenerator.Utilities
 {
-    /// <summary>
-    /// Helper class which automates test run
-    /// </summary>
     public class TestAutoRunner
     {
         private string output;
@@ -18,11 +15,6 @@ namespace TestPerformanceReportGenerator.Utilities
         public string duration;
         public string totalTests;
 
-        /// <summary>
-        /// Find test run results values. (e.g. Passed Tests, Failed Tests, Skipped Tests, Total number of tests, Duration of tests)
-        /// </summary>
-        /// <param name="target">Target substring to search for.</param>
-        /// <returns>The value of the specified target of a test run</returns>
         private string findSubString(string target)
         {
             int targetIndex = this.output.IndexOf(target);
@@ -44,9 +36,6 @@ namespace TestPerformanceReportGenerator.Utilities
             return null;
         }
 
-        /// <summary>
-        /// Creates a process that calls the command line to run the command "dotnet test" to retrive test run information.
-        /// </summary>
         public void runTestCases()
         {
             // Get the directory that contain the solution such that process can 

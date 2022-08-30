@@ -8,7 +8,7 @@ namespace TestPerformanceReportGenerator
 {
     public class CodeQualityToolWindow : BaseToolWindow<CodeQualityToolWindow>
     {
-        public override string GetTitle(int toolWindowId) => "CodeQualityReportGen";
+        public override string GetTitle(int toolWindowId) => "CQRG";
 
         public override Type PaneType => typeof(Pane);
 
