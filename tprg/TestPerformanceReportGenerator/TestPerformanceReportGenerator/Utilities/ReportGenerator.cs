@@ -36,7 +36,7 @@ namespace TestPerformanceReportGenerator.Utilities
             //string reportFile = FileHelper.ReadFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestTemplate.html"));
             //var root = Path.GetDirectoryName(typeof(VisualStudioServices).Assembly.Location);
             //string reportFile = FileHelper.ReadFile(Path.Combine(root!, "Utilities", "TestTemplate.html"));
-            string resourceName = "TestPerformanceReportGenerator.Utilities.TestTemplate.html";
+            string resourceName = "TestPerformanceReportGenerator.Resources.TestTemplate.html";
             string reportFile = FileHelper.ReadFromResource(resourceName);
 
             reportFile = reportFile.Replace("{$ProjectName$}", projectName);
