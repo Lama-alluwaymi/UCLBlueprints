@@ -53,10 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>source.extension.vsixmanifest</DependentUpon>
     </Compile>
-    <Compile Include="ToolWindows\QualityOverviewToolWindow.cs" />
-    <Compile Include="ToolWindows\QualityOverviewToolWindowControl.xaml.cs">
-      <DependentUpon>QualityOverviewToolWindowControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\OverviewQualityData.cs" />
     <Compile Include="Utilities\FileHelper.cs" />
     <Compile Include="Utilities\ReportGenerator.cs" />
@@ -98,10 +94,6 @@
     <Compile Include="ToolWindows\CodeQualitytWindowControl.xaml.cs">
       <DependentUpon>CodeQualitytWindowControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="ToolWindows\QualityOverviewToolWindowControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
