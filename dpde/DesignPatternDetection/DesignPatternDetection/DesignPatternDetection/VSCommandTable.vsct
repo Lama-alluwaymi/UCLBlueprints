@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+  <Include href="KnownImageIds.vsct" />
+  <Include href="VSGlobals.vsct" />
+
+  <Commands package="DesignPatternDetection">
+    <Buttons>
+      <Button guid="DesignPatternDetection" id="MyToolWindowCommand" priority="0x0100" type="Button">
+        <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
+        <Icon guid="ImageCatalogGuid" id="ExtensionApplication" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Design Pattern Detection</ButtonText>
+          <LocCanonicalName>.View.Design Pattern Detection</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="DesignPatternDetection" value="{e1bd1dba-5143-40a4-ad26-62a390908d1e}">
+      <IDSymbol name="MyToolWindowCommand" value="0x0100" />
+    </GuidSymbol>
+    
+  </Symbols>
+</CommandTable>
