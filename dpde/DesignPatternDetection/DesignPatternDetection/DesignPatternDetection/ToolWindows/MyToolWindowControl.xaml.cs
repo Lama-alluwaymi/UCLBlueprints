@@ -1,17 +1,14 @@
 ﻿using EnvDTE;
 using EnvDTE80;
+using FileCreation.Service;
 using Microsoft;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Collections.Generic;
-using Aspose.Cells;
-using System.Data;
-using Style = Aspose.Cells.Style;
 
 namespace DesignPatternDetection
 {
@@ -26,11 +23,14 @@ namespace DesignPatternDetection
         public MyToolWindowControl()
         {
             this.InitializeComponent();
+            CreateFileService = new FileCreationService();
         }
 
         private List<string> AvailablePatterns = new List<string>() { "SINGLETON","FACTORY","ABSTRACTFACTORY", "BUILDER", "PROTOTYPE", "ADAPTER",
         "COMPOSITE", "PROXY", "FLYWEIGHT", "FACADE", "BRIDGE", "DECORATOR", "TEMPLATEMETHOD", "MEDIATOR", "OBSERVER", "STRATEGY", "COMMAND", "STATE", "VISITOR", "ITERATOR",
         "INTERPRETER", "MEMENTO", "CHAINOFRESPONSIBILITY"};
+
+        public FileCreationService CreateFileService { get; }
 
         /// <summary>
         /// Handles click on the button by displaying a message box.
@@ -109,92 +109,28 @@ namespace DesignPatternDetection
             }
             else
             {
-                string jsonData = JsonSerializer.Serialize(patterns, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText($"{directory}\\patterns.json", jsonData);
-
-                VS.MessageBox.Show($"Generated patterns.json in {directory}");
+                if (CreateFileService.WriteJsonData(patterns, directory))
+                {
+                    VS.MessageBox.Show($"Generated patterns.json in {directory}");
+                }
+                else
+                {
+                    VS.MessageBox.Show($"Error while generating json file");
+                }
 
                 var result = VS.MessageBox.Show($"Do you want to generate patterns.pdf?");
                 if (result == Microsoft.VisualStudio.VSConstants.MessageBoxResult.IDOK)
                 {
-                    var workbook = new Workbook();
-                    var worksheet = workbook.Worksheets[0];
-
-                    var dt = new DataTable();
-
-                    dt.Columns.Add("Pattern", typeof(string));
-                    dt.Columns.Add("Total", typeof(string));
-                    dt.Columns.Add("File Name", typeof(string));
-                    dt.Columns.Add("Line", typeof(string));
-
-                    dt.Rows.Add(dt.NewRow());
-                    foreach (var pattern in patterns)
+                    if (CreateFileService.WritePdfData(patterns, directory))
                     {
-                        var dr = dt.NewRow();
-                        dr["Pattern"] = pattern.Pattern;
-                        dr["Total"] = pattern.totalCount.ToString();
-                        dr["File Name"] = string.Empty;
-                        dr["Line"] = string.Empty;
-                        dt.Rows.Add(dr);
-                        foreach (var entry in pattern.Entries)
-                        {
-                            dr = dt.NewRow();
-                            dr["Pattern"] = string.Empty;
-                            dr["Total"] = string.Empty;
-                            dr["File Name"] = entry.FileName;
-                            dr["Line"] = entry.Line;
-                            dt.Rows.Add(dr);
-                        }
-                        dr = dt.NewRow(); //empty row to differentiate
-                        dt.Rows.Add(dr);
+                        VS.MessageBox.Show($"Generated patterns.pdf in {directory}");
                     }
-
-                    Cells cells = worksheet.Cells;
-                    cells.UnMerge(0, 1, 2, 2);
-                    cells.Merge(0, 1, 2, 2);
-                    worksheet.Cells[0, 1].PutValue("DESIGN PATTERN REPORT");
-                    Style style = worksheet.Cells[0, 1].GetStyle();
-                    Aspose.Cells.Font font = style.Font;
-                    font.Size = 18;
-                    font.IsBold = true;
-                    style.Pattern = BackgroundType.Solid;
-                    style.HorizontalAlignment = TextAlignmentType.Center;
-                    cells[0, 1].SetStyle(style);
-
-                    worksheet.Cells.ImportDataTable(dt, true, "A8");
-                    worksheet.AutoFitColumn(0);
-                    worksheet.AutoFitColumn(1);
-                    worksheet.AutoFitColumn(2);
-                    worksheet.AutoFitColumn(3);
-                    worksheet.PageSetup.Orientation = PageOrientationType.Landscape;
-
-                    Style patternStyle = worksheet.Cells[7, 0].GetStyle();
-                    Aspose.Cells.Font patternFont = patternStyle.Font;
-                    patternFont.IsBold = true;
-                    patternStyle.Pattern = BackgroundType.Solid;
-                    patternStyle.HorizontalAlignment = TextAlignmentType.Center;
-                    cells[7, 0].SetStyle(patternStyle);
-                    cells[7, 1].SetStyle(patternStyle);
-                    cells[7, 2].SetStyle(patternStyle);
-                    cells[7, 3].SetStyle(patternStyle);
-
-                    workbook.Save($"{directory}\\patterns.pdf", Aspose.Cells.SaveFormat.Pdf);
-                    VS.MessageBox.Show($"Generated patterns.pdf in {directory}");
+                    else
+                    {
+                        VS.MessageBox.Show($"Error while generating pdf file");
+                    }
                 }
             }
         }
-    }
-
-    public class PatternData
-    {
-        public string Pattern { get; set; }
-        public int totalCount { get; set; }
-        public List<Entry> Entries { get; set; }
-    }
-
-    public class Entry
-    {
-        public string FileName { get; set; }
-        public int Line { get; set; }
     }
 }
