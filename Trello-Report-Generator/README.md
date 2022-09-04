@@ -1,4 +1,4 @@
-Trello Harvester
+# Trello Harvester
 
 The Trello Harvestor tool is an easy to use tool designed to aid development team leads/managers in better understanding their teams performance based on the Trello board of a project. It requires users to have a Trello API Key, Token and the ID of their chosen board.
 
