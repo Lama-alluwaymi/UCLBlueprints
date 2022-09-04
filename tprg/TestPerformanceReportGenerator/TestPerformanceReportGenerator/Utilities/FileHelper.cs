@@ -4,6 +4,7 @@ using System.Reflection;
 using System.IO;
 using HtmlAgilityPack;
 using System.Xml;
+using System.Collections.Generic;
 
 
 namespace TestPerformanceReportGenerator.Utilities
@@ -103,15 +104,31 @@ namespace TestPerformanceReportGenerator.Utilities
         /// <exception cref="DirectoryNotFoundException"></exception>
         public static string[] GetAllReportFiles()
         {
-            string path = Path.Combine(GetSolutionDir().FullName, "Reports");
-            if (Directory.Exists(path))
+            try
             {
-                return Directory.GetFiles(path);
-            }
-            else
+                string path = Path.Combine(GetSolutionDir().FullName, "Reports");
+                DirectoryInfo info = new DirectoryInfo(path);
+                FileInfo[] files = info.GetFiles().OrderBy(p => p.CreationTime).ToArray();
+                List<string> filenames = new List<string>();
+                foreach (FileInfo file in files)
+                {
+                    filenames.Add(file.FullName);
+                }
+                string[] filearray = filenames.ToArray();
+                return filearray;
+            }catch(DirectoryNotFoundException e)
             {
-                throw new DirectoryNotFoundException();
+                VS.MessageBox.ShowError("CodeQualityReportGen", "Cannot generate overview reports. Please use CQRG window to generate a report first.");
+                return null;
             }
+            //if (Directory.Exists(path))
+            //{
+            //    return Directory.GetFiles(path);
+            //}
+            //else
+            //{
+            //    throw new DirectoryNotFoundException();
+            //}
         }
 
         /// <summary>
