@@ -93,7 +93,7 @@ function App() {
   };
 
   return (
-    <Box p={5}>
+    <Box p={5} maxW='70rem' m='auto'>
       <Heading>GitHub Project Report Generator</Heading>
       <Text mb={5}>By UCL Blueprints</Text>
       <Link href='https://github.com/settings/tokens/new?scopes=repo' isExternal>
