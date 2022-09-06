@@ -39,7 +39,7 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
   const fileCommits = {};
   for (const file of tree) {
     setFileCommitsFetchingStatus(
-      `Fetching commits for: ${file.path} (${
+      `Fetching commits for: ${file.path.substring(0, 55)}${file.path.length > 55 ? '...' : ''} (${
         tree.findIndex((treeFile) => treeFile.path === file.path) + 1
       }/${tree.length})`
     );
