@@ -4,12 +4,13 @@ export async function generateBasicReport(octokitAuth, repo) {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/repos/repos#get-a-repository
-  const { name, html_url, created_at } = (await octokit.request('GET /repos/{owner}/{repo}', repo))
-    .data;
+  const { name, html_url } = (await octokit.request('GET /repos/{owner}/{repo}', repo)).data;
 
   // https://docs.github.com/en/rest/commits/commits#list-commits
-  const mostRecentCommit = (await octokit.request('GET /repos/{owner}/{repo}/commits', repo))
-    .data[0];
+  const commits = await octokit.paginate('GET /repos/{owner}/{repo}/commits', {
+    ...repo,
+    per_page: 100,
+  });
 
   // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
   const commitActivity = (
@@ -19,9 +20,9 @@ export async function generateBasicReport(octokitAuth, repo) {
   return {
     url: html_url,
     name: name,
-    firstCommitDate: created_at,
-    lastCommitDate: mostRecentCommit.commit.committer.date,
-    mostRecentCommitSha: mostRecentCommit.sha,
+    firstCommitDate: commits[commits.length - 1].commit.committer.date,
+    lastCommitDate: commits[0].commit.committer.date,
+    mostRecentCommitSha: commits[0].sha,
     commitActivity: commitActivity.sort((a, b) => b.total - a.total),
   };
 }
