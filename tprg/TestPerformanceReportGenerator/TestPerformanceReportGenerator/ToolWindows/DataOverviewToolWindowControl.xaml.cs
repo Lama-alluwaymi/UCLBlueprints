@@ -52,5 +52,45 @@ namespace TestPerformanceReportGenerator
 
             //VS.MessageBox.Show("QualityOverviewToolWindowControl", "Button clicked");
         }
+
+        private void pdfConverter_Click(object sender, RoutedEventArgs e)
+        {
+            var model = new InfoBarModel(
+            new[]
+            {
+                new InfoBarTextSpan("Successfully converted CodeQuality_Overview.html report into PDF format")
+            },
+            KnownMonikers.CheckAdd,
+            true
+            );
+            ThreadHelper.JoinableTaskFactory.RunAsync(async () =>
+            {
+                InfoBar infobar = await VS.InfoBar.CreateAsync(PackageGuids.DataOverviewToolWindowString, model);
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        string directory = FileHelper.GetSolutionDir().FullName;
+                        string path = Path.Combine(directory, "Overview_Report");
+                        string[] files = Directory.GetFiles(path, "*.html");
+                        if (files.Length != 0)
+                        {
+                            ReportGenerator.ConvertToPdf(directory, path, files);
+                        }
+                        else
+                        {
+                            throw new FileNotFoundException();
+                        }
+                    });
+
+                    await infobar.TryShowInfoBarUIAsync();
+                }
+                catch(FileNotFoundException e)
+                {
+                    await VS.MessageBox.ShowErrorAsync("CodeQualityReportGen", "No overview reports are produced, please click the generate button above");
+                }
+            }).FireAndForget();
+
+        }
     }
 }

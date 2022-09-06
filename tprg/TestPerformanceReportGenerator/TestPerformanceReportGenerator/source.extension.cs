@@ -11,7 +11,7 @@ namespace TestPerformanceReportGenerator
         public const string Name = "CodeQualityReportGen";
         public const string Description = @"This extension generates html reports which reports the code metrics, test outcomes and line coverage. It can also generate an ""overview"" report which includes all the code metrics and test outcomes from previous reports. ";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.1";
         public const string Author = "UCL Blueprints";
         public const string Tags = "";
     }

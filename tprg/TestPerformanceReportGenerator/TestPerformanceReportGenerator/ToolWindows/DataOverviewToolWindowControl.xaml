@@ -23,6 +23,13 @@
                     Width="120"
                     Height="80"
                     Name="button1" />
+
+            <Button Content="Convert to PDF"
+                    Name="pdfConverter"
+                    Click="pdfConverter_Click"
+                    Margin="0 20 0 0"
+                    Width="120"
+                    Height="30"/>
         </StackPanel>
     </Grid>
 </UserControl>

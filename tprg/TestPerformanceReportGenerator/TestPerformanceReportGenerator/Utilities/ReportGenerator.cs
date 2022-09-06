@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using Aspose.Pdf;
 
 namespace TestPerformanceReportGenerator.Utilities
 {
@@ -186,6 +187,27 @@ namespace TestPerformanceReportGenerator.Utilities
             {
                 Directory.CreateDirectory(Path.Combine(outputPath, "Overview_Report"));
                 FileHelper.WriteFile(overviewFile, Path.Combine(path));
+            }
+        }
+        /// <summary>
+        /// Converts an html file to pdf.
+        /// </summary>
+        /// <exception cref="DirectoryNotFoundException"></exception>
+        public static void ConvertToPdf(string directory, string path, string[] files)
+        {
+            //string directory = FileHelper.GetSolutionDir().FullName;
+            //string path = Path.Combine(directory, "Overview_Report");
+            if (Directory.Exists(path))
+            {
+                //string[] files = Directory.GetFiles(path, "*.html");
+                HtmlLoadOptions htmlLoadOptions = new HtmlLoadOptions();
+                Document doc = new Document(files[0], htmlLoadOptions);
+                string[] topdfPath = {directory, "Overview_Report", "CodeQuality_Overview.pdf" };
+                doc.Save(Path.Combine(topdfPath));
+            }
+            else
+            {
+                throw new DirectoryNotFoundException();
             }
         }
     }
