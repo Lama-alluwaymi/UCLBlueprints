@@ -25,8 +25,8 @@ function App() {
     name,
     firstCommitDate,
     lastCommitDate,
-    commitActivity,
     mostRecentCommitSha,
+    commitActivity,
     fileCommits,
   } = data;
 

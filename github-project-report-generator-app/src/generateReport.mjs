@@ -4,9 +4,12 @@ export async function generateBasicReport(octokitAuth, repo) {
   const octokit = new Octokit({ auth: octokitAuth });
 
   // https://docs.github.com/en/rest/repos/repos#get-a-repository
-  const { name, html_url, created_at, pushed_at } = (
-    await octokit.request('GET /repos/{owner}/{repo}', repo)
-  ).data;
+  const { name, html_url, created_at } = (await octokit.request('GET /repos/{owner}/{repo}', repo))
+    .data;
+
+  // https://docs.github.com/en/rest/commits/commits#list-commits
+  const mostRecentCommit = (await octokit.request('GET /repos/{owner}/{repo}/commits', repo))
+    .data[0];
 
   // https://docs.github.com/en/rest/metrics/statistics#get-all-contributor-commit-activity
   const commitActivity = (
@@ -17,7 +20,8 @@ export async function generateBasicReport(octokitAuth, repo) {
     url: html_url,
     name: name,
     firstCommitDate: created_at,
-    lastCommitDate: pushed_at,
+    lastCommitDate: mostRecentCommit.commit.committer.date,
+    mostRecentCommitSha: mostRecentCommit.sha,
     commitActivity: commitActivity.sort((a, b) => b.total - a.total),
   };
 }
@@ -25,14 +29,13 @@ export async function generateBasicReport(octokitAuth, repo) {
 export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchingStatus) {
   const octokit = new Octokit({ auth: octokitAuth });
 
-  // https://docs.github.com/en/rest/commits/commits#list-commits
-  const treeSha = (await octokit.request('GET /repos/{owner}/{repo}/commits', repo)).data[0].sha;
+  const basicReport = await generateBasicReport(octokitAuth, repo);
 
   // https://docs.github.com/en/rest/git/trees#get-a-tree
   const tree = (
     await octokit.request('GET /repos/{owner}/{repo}/git/trees/{tree_sha}?recursive=true', {
       ...repo,
-      tree_sha: treeSha,
+      tree_sha: basicReport.mostRecentCommitSha,
     })
   ).data.tree;
 
@@ -83,8 +86,7 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
   }
 
   return {
-    ...(await generateBasicReport(octokitAuth, repo)),
-    mostRecentCommitSha: treeSha,
+    ...basicReport,
     fileCommits: Object.entries(fileCommits),
   };
 }
