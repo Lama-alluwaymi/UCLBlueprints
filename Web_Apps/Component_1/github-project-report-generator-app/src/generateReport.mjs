@@ -49,59 +49,50 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
       }/${tree.length})`
     );
 
-    // https://stackoverflow.com/a/46762417
-    const getCommits = async (sha, path) =>
-      await octokit.paginate(`GET /repos/{owner}/{repo}/commits?sha=${sha}&path=${path}`, {
-        ...repo,
-        per_page: 100,
-      });
+    // To recursively get commits from before file was renamed if it was renamed
+    const getAllCommits = async (sha, path) => {
+      // https://stackoverflow.com/a/46762417
+      const commits = await octokit.paginate(
+        `GET /repos/{owner}/{repo}/commits?sha=${sha}&path=${path}`,
+        {
+          ...repo,
+          per_page: 100,
+        }
+      );
 
-    const commits = await getCommits(basicReport.mostRecentCommitSha, file.path);
+      if (commits.length === 0) return [];
 
-    if (commits.length === 0) continue;
+      if (file.type === 'blob') {
+        const firstCommitSha = commits[commits.length - 1].sha;
 
-    // Iteratively get commits from before file was renamed if it was renamed
-    if (file.type === 'blob') {
-      const getFirstCommit = async (sha) => {
-        let commit = commitsWithFiles[sha];
-        if (!commit) {
+        let firstCommit = commitsWithFiles[firstCommitSha];
+        if (!firstCommit) {
           // https://docs.github.com/en/rest/commits/commits#get-a-commit
-          commit = (
+          firstCommit = (
             await octokit.paginate('GET /repos/{owner}/{repo}/commits/{ref}', {
               ...repo,
-              ref: sha,
+              ref: firstCommitSha,
             })
           ).reduce((commit, sameCommitWithMoreFiles) => ({
             ...commit,
             files: [...commit.files, ...sameCommitWithMoreFiles.files],
           }));
-          commitsWithFiles[sha] = commit;
+          commitsWithFiles[firstCommitSha] = firstCommit;
         }
-        return commit;
-      };
 
-      let firstCommit = await getFirstCommit(commits[commits.length - 1].sha);
-
-      const getFirstCommitFile = (firstCommit, path) =>
-        firstCommit.files.find(({ filename }) => filename === path);
-
-      let { status, previous_filename } = getFirstCommitFile(firstCommit, file.path);
-
-      while (status === 'renamed') {
-        const previousFilenameCommits = (
-          await getCommits(firstCommit.sha, previous_filename)
-        ).slice(1);
-
-        if (previousFilenameCommits.length === 0) break;
-
-        commits.push(...previousFilenameCommits);
-
-        firstCommit = await getFirstCommit(
-          previousFilenameCommits[previousFilenameCommits.length - 1].sha
+        const { status, previous_filename } = firstCommit.files.find(
+          ({ filename }) => filename === path
         );
-        ({ status, previous_filename } = getFirstCommitFile(firstCommit, previous_filename));
+
+        if (status === 'renamed') {
+          commits.push(...(await getAllCommits(firstCommit.sha, previous_filename)).slice(1));
+        }
       }
-    }
+
+      return commits;
+    };
+
+    const commits = await getAllCommits(basicReport.mostRecentCommitSha, file.path);
 
     const authors = {};
     const order = [];
