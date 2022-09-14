@@ -197,13 +197,13 @@ const FileCommits = ({
                 </Link>
                 {' - '}
                 <Link href={`${url}/commits/${mostRecentCommitSha}/${file}`} isExternal>
-                  {`${totalCommits} commit${totalCommits > 1 ? 's' : ''} ${
+                  {`${totalCommits} commit${totalCommits > 1 ? 's' : ''}${
                     timelineView || commitsInOrder
                       ? new Date(first).toLocaleDateString() !== new Date(last).toLocaleDateString()
-                        ? `from ${new Date(first).toLocaleDateString()} to ${new Date(
+                        ? ` from ${new Date(first).toLocaleDateString()} to ${new Date(
                             last
                           ).toLocaleDateString()}`
-                        : `on ${new Date(first).toLocaleDateString()}`
+                        : ` on ${new Date(first).toLocaleDateString()}`
                       : ''
                   }`}
                 </Link>
