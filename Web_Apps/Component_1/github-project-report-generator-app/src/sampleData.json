@@ -829,6 +829,12 @@
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1662854400,
+          "a": 0,
+          "d": 0,
+          "c": 0
         }
       ],
       "author": {
@@ -1673,6 +1679,12 @@
         },
         {
           "w": 1662249600,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1662854400,
           "a": 0,
           "d": 0,
           "c": 0
@@ -2523,6 +2535,12 @@
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1662854400,
+          "a": 0,
+          "d": 0,
+          "c": 0
         }
       ],
       "author": {
@@ -3367,6 +3385,12 @@
         },
         {
           "w": 1662249600,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1662854400,
           "a": 0,
           "d": 0,
           "c": 0
@@ -4217,6 +4241,12 @@
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1662854400,
+          "a": 0,
+          "d": 0,
+          "c": 0
         }
       ],
       "author": {
@@ -5061,6 +5091,12 @@
         },
         {
           "w": 1662249600,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1662854400,
           "a": 0,
           "d": 0,
           "c": 0
@@ -5911,6 +5947,12 @@
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1662854400,
+          "a": 0,
+          "d": 0,
+          "c": 0
         }
       ],
       "author": {
@@ -6758,6 +6800,12 @@
           "a": 0,
           "d": 0,
           "c": 0
+        },
+        {
+          "w": 1662854400,
+          "a": 0,
+          "d": 0,
+          "c": 0
         }
       ],
       "author": {
@@ -7602,6 +7650,12 @@
         },
         {
           "w": 1662249600,
+          "a": 0,
+          "d": 0,
+          "c": 0
+        },
+        {
+          "w": 1662854400,
           "a": 0,
           "d": 0,
           "c": 0
@@ -10976,11 +11030,84 @@
       "src/integration/java/guiintegrationtest/AppRunner.java",
       {
         "authors": {
-          "elouak1002": 3,
-          "ArchawinWongkittiruk": 1
+          "garg-shubh": 9,
+          "elouak1002": 5,
+          "ArchawinWongkittiruk": 2
         },
-        "commits": 4,
+        "commits": 16,
         "order": [
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-03-12T17:31:59Z",
+            "message": "Fix TestFX setup structure",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/31df4bc7f5e982a4ae913dbb12bcd49c17041cb2"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T12:30:49Z",
+            "message": "Added Input tests",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f4aa7955d6efe94d68879de569c0ea50089a7797"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:47:16Z",
+            "message": "Refactor button clicks",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/77304b8f10459d51d5bd8de26dafd0ba721731b7"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:58:01Z",
+            "message": "Refactor writing in text fields",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/db7f5844901bb2eb9bdd93e2c928f3a15b3214cf"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T19:39:38Z",
+            "message": "Refactor file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/550e7f2ac47c7bfb09b18be4e943fcc1e48747c1"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T19:41:01Z",
+            "message": "Refactor file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/34f9c8f482e92c2dc9d61ee550b7ea5d28d516e4"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T22:04:20Z",
+            "message": "Add initial tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7907fbe9761830984bbf5f42160b35b0518d83"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-04-02T16:10:05Z",
+            "message": "Add file upload support for mac",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/6c5112b5e8b220dcbf19e84dc0dc3f37341ec026"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-04-03T12:21:40Z",
+            "message": "update test files for mac support",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7efcc11eb56fe394bcd4baaf28bc2e3828903608"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-04-03T12:35:56Z",
+            "message": "update test files for mac support",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/daf99f19efd7b3873cc35ca33112c2b5f9f0bb73"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-04-03T12:47:47Z",
+            "message": "Fix Dialog test",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a78435ca85377c4d8f3416840cdb24d2986de566"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-04-04T14:41:40Z",
+            "message": "Create method to write from keyboard",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/1c40ebbcb0e7cff9b218868160c370ea1a0bcb40"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11006,7 +11133,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-12T17:31:59Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -11014,11 +11141,30 @@
       "src/integration/java/guiintegrationtest/HomeTest.java",
       {
         "authors": {
+          "ArchawinWongkittiruk": 3,
           "elouak1002": 3,
-          "ArchawinWongkittiruk": 2
+          "garg-shubh": 2
         },
-        "commits": 5,
+        "commits": 8,
         "order": [
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-03-12T17:32:17Z",
+            "message": "Add tests from Home page",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/83993752ef93984bc0fdbf16e10bfa8d3243b4a3"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-15T16:35:41Z",
+            "message": "add guiLoaded test to HomeTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9c58efa12b3ab09e92a38db9dd24fc5271a1e49a"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:47:16Z",
+            "message": "Refactor button clicks",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/77304b8f10459d51d5bd8de26dafd0ba721731b7"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11050,7 +11196,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ac22848a1196118ba1213adf469e1246d9bbed98"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-12T17:32:17Z",
         "lastCommitDate": "2020-04-07T06:04:53Z"
       }
     ],
@@ -11058,11 +11204,72 @@
       "src/integration/java/guiintegrationtest/InputTest.java",
       {
         "authors": {
+          "garg-shubh": 10,
           "elouak1002": 2,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 3,
+        "commits": 13,
         "order": [
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-21T15:37:53Z",
+            "message": "create InputTest class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/cbede85f15d83ca9645a9fed2ebcb819c60c55c5"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T09:47:46Z",
+            "message": "refactor uploadFiles",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a2bb898729d4c1dbe76d2d898fe86f1bdcd06035"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T12:30:49Z",
+            "message": "Added Input tests",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f4aa7955d6efe94d68879de569c0ea50089a7797"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:47:16Z",
+            "message": "Refactor button clicks",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/77304b8f10459d51d5bd8de26dafd0ba721731b7"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:58:01Z",
+            "message": "Refactor writing in text fields",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/db7f5844901bb2eb9bdd93e2c928f3a15b3214cf"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T09:35:20Z",
+            "message": "refactor inputTest and outputTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9bb45df7bab1ad36d40fbb14c2aed77e2bccf6f5"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T19:39:38Z",
+            "message": "Refactor file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/550e7f2ac47c7bfb09b18be4e943fcc1e48747c1"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T22:04:20Z",
+            "message": "Add initial tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7907fbe9761830984bbf5f42160b35b0518d83"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-30T13:22:42Z",
+            "message": "end all InputTest tests on home screen",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f3ab4c5f5a6c305108bc1ccc57ffe72d76ec0839"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-04-03T12:21:40Z",
+            "message": "update test files for mac support",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7efcc11eb56fe394bcd4baaf28bc2e3828903608"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11082,7 +11289,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-21T15:37:53Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -11090,11 +11297,72 @@
       "src/integration/java/guiintegrationtest/LoadTest.java",
       {
         "authors": {
+          "garg-shubh": 10,
           "elouak1002": 2,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 3,
+        "commits": 13,
         "order": [
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-15T20:11:12Z",
+            "message": "create LoadTest and add guiLoaded test to it",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/8a7b8deccb95f79410c2a45cd44f847cce8e0edf"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-17T19:27:05Z",
+            "message": "Add FileTest class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/23683812b8c7c5fe477c7f6959edb73f59ae2c20"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-22T11:08:33Z",
+            "message": "added fileUploadTest to LoadTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a6535b8082dae0da18dba73a4ab01668e17729a0"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T09:47:46Z",
+            "message": "refactor uploadFiles",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a2bb898729d4c1dbe76d2d898fe86f1bdcd06035"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T12:30:49Z",
+            "message": "Added Input tests",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f4aa7955d6efe94d68879de569c0ea50089a7797"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:47:16Z",
+            "message": "Refactor button clicks",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/77304b8f10459d51d5bd8de26dafd0ba721731b7"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T14:58:01Z",
+            "message": "Refactor writing in text fields",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/db7f5844901bb2eb9bdd93e2c928f3a15b3214cf"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T19:39:38Z",
+            "message": "Refactor file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/550e7f2ac47c7bfb09b18be4e943fcc1e48747c1"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T22:04:20Z",
+            "message": "Add initial tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7907fbe9761830984bbf5f42160b35b0518d83"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-30T13:24:17Z",
+            "message": "end all LoadTest tests on home screen",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/34ed12c557d6b50411941124d3123d169c60a8fb"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11114,7 +11382,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-15T20:11:12Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -11122,11 +11390,60 @@
       "src/integration/java/guiintegrationtest/OutputTest.java",
       {
         "authors": {
-          "elouak1002": 3,
+          "garg-shubh": 7,
+          "elouak1002": 4,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 4,
+        "commits": 12,
         "order": [
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T15:02:19Z",
+            "message": "Create OutputTest class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/921ef29f860d82e18054bbda471b7ab818e2f12f"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T09:35:20Z",
+            "message": "refactor inputTest and outputTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9bb45df7bab1ad36d40fbb14c2aed77e2bccf6f5"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T11:03:24Z",
+            "message": "Add tests for OutputTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/05adef1dd863cca20c390ec48c40a4695a0b7e84"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T19:41:01Z",
+            "message": "Refactor file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/34f9c8f482e92c2dc9d61ee550b7ea5d28d516e4"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T22:04:20Z",
+            "message": "Add initial tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7907fbe9761830984bbf5f42160b35b0518d83"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-30T13:26:48Z",
+            "message": "end all OutputTest tests on home screen",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/22a88f2018d2008e6b9ed77173218093f6e4f918"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-04-03T11:24:05Z",
+            "message": "add setPath to LoadController",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/183ad8b197e152b08ab42f8b7c60182dc69a4f66"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-04-03T13:07:17Z",
+            "message": "Replace ClickOn Yes with Press enter",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/538a649806db3511fd304de6f2ba67823092da67"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11152,7 +11469,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-23T15:02:19Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -11160,11 +11477,60 @@
       "src/integration/java/guiintegrationtest/XMLGeneratorTest.java",
       {
         "authors": {
-          "elouak1002": 4,
+          "elouak1002": 6,
+          "garg-shubh": 6,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 5,
+        "commits": 13,
         "order": [
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-22T13:26:00Z",
+            "message": "create class XMLGeneratorTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/b291586d8628fe6f4cfc9392495d77ca505f4abe"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-23T09:47:46Z",
+            "message": "refactor uploadFiles",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a2bb898729d4c1dbe76d2d898fe86f1bdcd06035"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-24T22:04:20Z",
+            "message": "Add initial tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7907fbe9761830984bbf5f42160b35b0518d83"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-25T09:15:40Z",
+            "message": "Add tests for XMLGenerator",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/bb2ac68ba5d96f56478a6fe39dcfe8128752ad6b"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-30T12:29:48Z",
+            "message": "Add more tests to XMLGeneratorTest",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/80972656da6937c4f1d2190835f824015d1bcf80"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-03-30T13:00:05Z",
+            "message": "end all XMLGenerator tests on home screen",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/260236fcd1e1a667d5ff139018a7bc50536e1788"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-04-03T13:07:17Z",
+            "message": "Replace ClickOn Yes with Press enter",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/538a649806db3511fd304de6f2ba67823092da67"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-04-03T13:12:14Z",
+            "message": "Replace click on Close with Espace for language purpose",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/136f217a0f07ed6e83daa80823b1a6c8f11482d6"
+          },
           {
             "author": "elouak1002",
             "date": "2020-04-04T17:41:44Z",
@@ -11196,7 +11562,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-04-04T17:41:44Z",
+        "firstCommitDate": "2020-03-22T13:26:00Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -16592,15 +16958,27 @@
       "src/main/java/GUI/InputController.java",
       {
         "authors": {
-          "ArchawinWongkittiruk": 25,
+          "ArchawinWongkittiruk": 27,
           "elouak1002": 7,
           "garg-shubh": 3,
           "ben-wsh10": 3,
           "SV-Albert": 2,
           "asfand987": 1
         },
-        "commits": 41,
+        "commits": 43,
         "order": [
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T18:12:51Z",
+            "message": "Continue input page + add controller",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/55b96fd85cd4df79493aa72a8a4dfb9d4d7bd00d"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T22:45:03Z",
+            "message": "Specify input controller class name",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a41aea9a1e8379e42d2214fb15ed2f882e7edfa0"
+          },
           {
             "author": "ArchawinWongkittiruk",
             "date": "2020-02-03T23:13:35Z",
@@ -16848,7 +17226,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/50393c602e7ee6c883bfc519fc77fb6c15f78883"
           }
         ],
-        "firstCommitDate": "2020-02-03T23:13:35Z",
+        "firstCommitDate": "2020-02-03T18:12:51Z",
         "lastCommitDate": "2020-03-06T19:12:42Z"
       }
     ],
@@ -16944,11 +17322,89 @@
       "src/main/java/GUI/LoggerController.java",
       {
         "authors": {
-          "asfand987": 14,
+          "asfand987": 27,
           "ArchawinWongkittiruk": 8
         },
-        "commits": 22,
+        "commits": 35,
         "order": [
+          {
+            "author": "asfand987",
+            "date": "2020-02-24T23:22:49Z",
+            "message": "added Logger class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/0725dfe6ee96e00ca22aac223777c37eb002ba85"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-24T23:23:30Z",
+            "message": "fixed typo",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/3766ae3461c230525cf670b080c13dd669e78fb0"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-24T23:54:30Z",
+            "message": "added addLog",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/841ae418a11f51840df305d7a9f6c123a44a4e10"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T00:00:42Z",
+            "message": "added logRemove method",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/fcdf8d1510c65403491c5d01665f0263d1cea278"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T00:03:04Z",
+            "message": "small fix",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f5b3642726a0badc9e238fcc568b6d49868935a4"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T13:05:40Z",
+            "message": "updated log message",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/b61b943b321bdcd16e61783e59b06f565a919d46"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T13:30:18Z",
+            "message": "added ability to save logger file",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a2b876cc04bdf59554bb4b0de424a34c411bb285"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T13:46:49Z",
+            "message": "Code clean up on OutputController",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/c45c7a20549a36ca62f5fa29274aa5b75b4b7551"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T14:10:08Z",
+            "message": "can save log file to directory",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/6100c23ae389c005fc175dfdd066e1b26bda077f"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T14:44:54Z",
+            "message": "added log GUI method",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/89315f2e96c2ffc823e718fa1ea40e6c3bd60663"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T14:45:06Z",
+            "message": "added log GUI method",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e9e31eaf0ef7e6e39d1c2a4a6195f774a077b480"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-25T15:18:57Z",
+            "message": "small strin correction",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7929198282ac4855fabd0a0c6706083d7ae20911"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-26T15:38:45Z",
+            "message": "moved Logger class to GUI package",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/3ccb3cc5415b0e05b817110461c376eefdc9d680"
+          },
           {
             "author": "asfand987",
             "date": "2020-02-26T16:31:10Z",
@@ -17082,7 +17538,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/4d82c3b45eb361926521b21d5ff7ffc36bfa1007"
           }
         ],
-        "firstCommitDate": "2020-02-26T16:31:10Z",
+        "firstCommitDate": "2020-02-24T23:22:49Z",
         "lastCommitDate": "2020-03-09T12:11:48Z"
       }
     ],
@@ -18369,14 +18825,86 @@
       "src/main/java/dataprocessors/Wrangler.java",
       {
         "authors": {
+          "SeptimiuPop": 11,
+          "SV-Albert": 5,
+          "ArchawinWongkittiruk": 4,
           "elouak1002": 4,
-          "SeptimiuPop": 4,
-          "SV-Albert": 3,
-          "MihailBratanov": 2,
-          "ArchawinWongkittiruk": 1
+          "MihailBratanov": 2
         },
-        "commits": 14,
+        "commits": 26,
         "order": [
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-06T13:59:34Z",
+            "message": "Created a algorithm class for applying requested transformations to the node list",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/239dec00e5bbb26928fb5b19115c588573d5372d"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-06T14:07:37Z",
+            "message": "Removed one System.out line I left out",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/5ed3e1144be25b8fd8d15074e83d669aceb666a2"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-07T09:44:03Z",
+            "message": "changed the copy method to work properly",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ee6ee38dc9fe2b4c1ba00b60ce08e5b9aed1d43d"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-07T10:04:35Z",
+            "message": "Refactor the Algorith class to allow it to work with HashMaps instead of ArrayLists",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/28a08ac2709c710a02156473f0383af39e73cde5"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-07T11:59:46Z",
+            "message": "Changed node list to HashMap",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/2930f7ce6f6752afb86875bc91f1d2f4ba71d710"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-07T12:06:10Z",
+            "message": "Rename Algoritm class to Wrangler",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/cd778cfbae6f4357e8df32c8a68815baeaa089ad"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-07T12:23:19Z",
+            "message": "Better comments",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/43fdbc1ea62694c79f4f9e4a7f53533c24bc2399"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-07T23:18:03Z",
+            "message": "HashMap to TreeMap in Wrangler",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a63f9bd40e3e6ecdbdceb379199572397cb5f164"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-09T15:38:37Z",
+            "message": "Make IntelliJ suggested changes",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/67a8005575559add10333d54854f8ee73460ba7b"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-09T15:47:18Z",
+            "message": "Change \"Algorithm\" to \"Wrangler\" in comments",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9ac47e5a19d55d71c47bbfeedf14104fdcedbaee"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-10T02:39:41Z",
+            "message": "fixed bug where the wrangler was not updating the pivot note for transformations",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/98dff0e1be3ed9e6d896cd470d940db916846c80"
+          },
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-10T12:17:23Z",
+            "message": "hot fix and refactor runTransformations in Wrangler class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/d91e955496f0df677c0c60d104eca8a0652ef23b"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:32:15Z",
@@ -18462,7 +18990,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:32:15Z",
+        "firstCommitDate": "2020-02-06T13:59:34Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -18470,12 +18998,66 @@
       "src/main/java/dataprocessors/XMLCreator.java",
       {
         "authors": {
-          "MihailBratanov": 4,
-          "SV-Albert": 3,
+          "MihailBratanov": 9,
+          "SV-Albert": 7,
           "elouak1002": 1
         },
-        "commits": 8,
+        "commits": 17,
         "order": [
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-21T13:23:53Z",
+            "message": "XML Creator in progress",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f2397c87bfa330e1348bf927031daae59682b6cb"
+          },
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-24T11:42:45Z",
+            "message": "added x,y, did changes on IDGeneration",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/d51eed4e084494b2bf00cca497177a2be44a7a99"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-24T13:14:07Z",
+            "message": "Add floor data extraction to Node creation process",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/b8edb83e684b582a8600b8beb211383392b8405a"
+          },
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-24T16:54:29Z",
+            "message": "xmlCretor added neighbours,parser extracting specialTrait",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/4ea9a22d04853c0256382cb91baa8bef7b876460"
+          },
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-24T17:09:16Z",
+            "message": "extracting special trait and adding neighbours to xml",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/c1718fa49480fc7e9a26a84be3d9711d2c74d9cc"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-24T19:26:07Z",
+            "message": "Add NodeCreator class, fix failing tests, general code refactoring",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/8d76fc040da23e76a4bd4bde6e4ff406b88f2f84"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-24T20:17:57Z",
+            "message": "Extend the XML creator to add special types of nodes into a created file",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/71a32624bc0b631f62eaceaaa47760644651fc2d"
+          },
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-26T14:19:45Z",
+            "message": "NodeCreator - id now starts from 0, XMLCreator - maintaining insertion order just in case",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/2f17b44da1436c492f9da09c613649416f9a7c5f"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-27T16:03:50Z",
+            "message": "Create an XMLParser class, which handles combining multiple inputs and creating objects for further XML file creation",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/279eee9e897f7e9f9445f4a0cc35873ffcbe2502"
+          },
           {
             "author": "SV-Albert",
             "date": "2020-02-27T23:29:24Z",
@@ -18525,7 +19107,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/d223436d9177d0823e506733d388ae0b3a609eee"
           }
         ],
-        "firstCommitDate": "2020-02-27T23:29:24Z",
+        "firstCommitDate": "2020-02-21T13:23:53Z",
         "lastCommitDate": "2020-03-29T16:44:45Z"
       }
     ],
@@ -18718,10 +19300,54 @@
       "src/main/java/datastructures/DataLine.java",
       {
         "authors": {
-          "elouak1002": 2
+          "elouak1002": 7,
+          "ArchawinWongkittiruk": 1,
+          "SV-Albert": 1
         },
-        "commits": 2,
+        "commits": 9,
         "order": [
+          {
+            "author": "elouak1002",
+            "date": "2020-02-07T09:30:51Z",
+            "message": "Create a Data Line object that represents a parsed line of data in the input file",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/4c1816a932aa3556e581751ca02c3ae2d8be0e90"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-07T10:00:59Z",
+            "message": "Comment Data Line class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/686750a470dfb4557c0e923d893498795ea2e028"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-07T10:56:38Z",
+            "message": "Make method private, no need to expose it to public",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/1975fb670286da772d1c414d6f5d9a75966155ab"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-07T12:24:06Z",
+            "message": "Refactor DataLine and FileCreator classes",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/61f919ac0c8f953c320a5eb4f5b8844f06c495c9"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-09T15:38:37Z",
+            "message": "Make IntelliJ suggested changes",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/67a8005575559add10333d54854f8ee73460ba7b"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T17:03:44Z",
+            "message": "Add a method to dataLine to format the arguments, depending on the number of arguments in the data line, write tests for this class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e354d5eeac920c1199166a5928792a90bd64cdf8"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T19:08:11Z",
+            "message": "Trim the coordinates argmuments, and protect accessing the other arguments list if null",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a6c864a436add591660f3847782149e8cf7e1f4f"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:32:15Z",
@@ -18735,7 +19361,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/759d17638791531fdbd8929472de99780d644b80"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:32:15Z",
+        "firstCommitDate": "2020-02-07T09:30:51Z",
         "lastCommitDate": "2020-02-13T14:35:29Z"
       }
     ],
@@ -18744,12 +19370,24 @@
       {
         "authors": {
           "elouak1002": 12,
-          "SV-Albert": 6,
+          "SV-Albert": 8,
           "MihailBratanov": 4,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 23,
+        "commits": 25,
         "order": [
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T12:11:41Z",
+            "message": "Add toString method to Node class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/131a0b85c41cacd27994bd8b4c3ef1f0816816b2"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-06T12:36:03Z",
+            "message": "Address the changes requested after a merge request review",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/83a42d24359290efcd75f677364fa86126c99571"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:32:15Z",
@@ -18889,7 +19527,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:32:15Z",
+        "firstCommitDate": "2020-02-05T12:11:41Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -19676,11 +20314,23 @@
       "src/main/java/parser/DataLineParser.java",
       {
         "authors": {
-          "elouak1002": 3,
+          "elouak1002": 5,
           "ArchawinWongkittiruk": 1
         },
-        "commits": 4,
+        "commits": 6,
         "order": [
+          {
+            "author": "elouak1002",
+            "date": "2020-02-07T10:19:44Z",
+            "message": "The DataLineParser, give it a data line as a String and get a DataLine object",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/70441e2cc1bf9f54847ae12bd522c747adb1952f"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T19:10:09Z",
+            "message": "trim the elements of each list, make tested methods public and protect from accessing null and empty lists",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/d3d799bed165baf792a1e4603b7789b2f64b6fb8"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:32:15Z",
@@ -19706,7 +20356,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab7d589757901fb627b2d5479f54221bb1235ede"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:32:15Z",
+        "firstCommitDate": "2020-02-07T10:19:44Z",
         "lastCommitDate": "2020-04-05T16:38:33Z"
       }
     ],
@@ -21009,11 +21659,35 @@
       "src/main/resources/GUI/Input.fxml",
       {
         "authors": {
-          "ArchawinWongkittiruk": 13,
+          "ArchawinWongkittiruk": 17,
           "ben-wsh10": 3
         },
-        "commits": 16,
+        "commits": 20,
         "order": [
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T18:12:51Z",
+            "message": "Continue input page + add controller",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/55b96fd85cd4df79493aa72a8a4dfb9d4d7bd00d"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T22:45:03Z",
+            "message": "Specify input controller class name",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a41aea9a1e8379e42d2214fb15ed2f882e7edfa0"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T23:13:35Z",
+            "message": "Capitalise 'i' in inputController",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/3b8ad49269853eb79a491d0b7fa5ac9aba048276"
+          },
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-06T14:52:48Z",
+            "message": "Continue input page + add node chooser functionality",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/636a4ce592f632f8af8e3f71422cc0dc90f17026"
+          },
           {
             "author": "ArchawinWongkittiruk",
             "date": "2020-02-06T16:32:40Z",
@@ -21111,7 +21785,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ed42d90ca9cac1be9e0c87addc13c4fb3b84065a"
           }
         ],
-        "firstCommitDate": "2020-02-06T16:32:40Z",
+        "firstCommitDate": "2020-02-03T18:12:51Z",
         "lastCommitDate": "2020-04-05T19:46:54Z"
       }
     ],
@@ -21120,10 +21794,48 @@
       {
         "authors": {
           "ArchawinWongkittiruk": 5,
-          "ben-wsh10": 4
+          "ben-wsh10": 4,
+          "k1889292": 4,
+          "garg-shubh": 2
         },
-        "commits": 9,
+        "commits": 15,
         "order": [
+          {
+            "author": "k1889292",
+            "date": "2020-02-03T14:07:03Z",
+            "message": "Create FXML for uploading file.",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/d87374601847549cc18a45f68863562246da6c67"
+          },
+          {
+            "author": "k1889292",
+            "date": "2020-02-07T11:58:01Z",
+            "message": "Add controller class for Input window.\n\nCreate InputController class, modify Input fxml-file, edit Main class.",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/6744da17b7fd1f49e554c25829a9d84c9de63b69"
+          },
+          {
+            "author": "k1889292",
+            "date": "2020-02-07T12:28:19Z",
+            "message": "Fix nullPointerException and add label.\n\nHandles no file selected. Displays chosen file properly.",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/6cb7b821f7ad957548e122ac4a85710e2c72cc27"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-02-07T12:40:13Z",
+            "message": "remove next button",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/c21c8a139b5acb1d11bf6fa7498185686955c3d3"
+          },
+          {
+            "author": "garg-shubh",
+            "date": "2020-02-07T13:26:40Z",
+            "message": "implement drag and drop",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e754c09de6dd3eed9f918db751faf36a4603390e"
+          },
+          {
+            "author": "k1889292",
+            "date": "2020-02-07T13:55:41Z",
+            "message": "Fix drag and drop.\n\nImplement functioning drag and drop methods in LoadController.java",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7c28f52e27bf6585d1afdb9bd3fc6b5296557b64"
+          },
           {
             "author": "ArchawinWongkittiruk",
             "date": "2020-02-07T15:51:48Z",
@@ -21179,7 +21891,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ed42d90ca9cac1be9e0c87addc13c4fb3b84065a"
           }
         ],
-        "firstCommitDate": "2020-02-07T15:51:48Z",
+        "firstCommitDate": "2020-02-03T14:07:03Z",
         "lastCommitDate": "2020-04-05T19:46:54Z"
       }
     ],
@@ -21187,10 +21899,47 @@
       "src/main/resources/GUI/Logger.fxml",
       {
         "authors": {
+          "asfand987": 6,
           "ArchawinWongkittiruk": 2
         },
-        "commits": 2,
+        "commits": 8,
         "order": [
+          {
+            "author": "asfand987",
+            "date": "2020-02-26T16:31:10Z",
+            "message": "changed Logger class package and added logger GUI",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/0494ea4990e29e73e021574e786f7d2627b17be4"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-26T16:55:14Z",
+            "message": "intergrated log page to appliation",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/45b7b27ae26fc950ffeb2b40df2ba77a917fef30"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-27T15:06:49Z",
+            "message": "clean up LoggerController class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/3bf761749d444d3c516a3be958a2de031443da1a"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-27T15:18:57Z",
+            "message": "Now displays log page name on logger page",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/78f0159a8f0245f7175977bdf2eb5a07311d165f"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-28T17:59:15Z",
+            "message": "added new log button",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7d4f5ec9ac68d3d3f45efd66b87586efc4159efc"
+          },
+          {
+            "author": "asfand987",
+            "date": "2020-02-28T18:28:53Z",
+            "message": "added clearTextField method to logger.fxml",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/13cafc6e58112a18f16d2f303d78e6574d69d514"
+          },
           {
             "author": "ArchawinWongkittiruk",
             "date": "2020-02-28T19:54:55Z",
@@ -21204,7 +21953,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ed42d90ca9cac1be9e0c87addc13c4fb3b84065a"
           }
         ],
-        "firstCommitDate": "2020-02-28T19:54:55Z",
+        "firstCommitDate": "2020-02-26T16:31:10Z",
         "lastCommitDate": "2020-04-05T19:46:54Z"
       }
     ],
@@ -23638,11 +24387,17 @@
       {
         "authors": {
           "SV-Albert": 5,
-          "SeptimiuPop": 4,
+          "SeptimiuPop": 5,
           "elouak1002": 2
         },
-        "commits": 11,
+        "commits": 12,
         "order": [
+          {
+            "author": "SeptimiuPop",
+            "date": "2020-02-13T19:25:15Z",
+            "message": "Added test class for wrangler",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/3d3be2cbbfae1c1abc06218d896b78c0b047646b"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T19:42:59Z",
@@ -23710,7 +24465,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/8d76fc040da23e76a4bd4bde6e4ff406b88f2f84"
           }
         ],
-        "firstCommitDate": "2020-02-13T19:42:59Z",
+        "firstCommitDate": "2020-02-13T19:25:15Z",
         "lastCommitDate": "2020-02-24T19:26:07Z"
       }
     ],
@@ -23844,11 +24599,35 @@
       "src/test/java/datastructurestest/DataLineTest.java",
       {
         "authors": {
-          "elouak1002": 3,
+          "elouak1002": 7,
           "SV-Albert": 1
         },
-        "commits": 4,
+        "commits": 8,
         "order": [
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:25:04Z",
+            "message": "Change test directory name to only lowercase characters",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ddef985872efe9f8a4d141c398581abacda2c9b8"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:27:59Z",
+            "message": "Properly rename the filecreatortest directory",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/bc5d40161e4303d6ddd0eba059b57116300959a0"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T17:03:44Z",
+            "message": "Add a method to dataLine to format the arguments, depending on the number of arguments in the data line, write tests for this class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e354d5eeac920c1199166a5928792a90bd64cdf8"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T20:09:47Z",
+            "message": "Change Test method name to follow JUnit principles",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9b1e7bc0353c16feca9275aeb0d9628588e2a2f9"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:41:58Z",
@@ -23874,7 +24653,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/fb379851ae532b271f2218703d622031f88fbc62"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:41:58Z",
+        "firstCommitDate": "2020-02-12T14:25:04Z",
         "lastCommitDate": "2020-02-19T12:10:06Z"
       }
     ],
@@ -24190,11 +24969,65 @@
       "src/test/java/linecreatorstest/FileLinesCreatorTest.java",
       {
         "authors": {
-          "elouak1002": 4,
-          "SV-Albert": 3
+          "elouak1002": 11,
+          "SV-Albert": 5
         },
-        "commits": 7,
+        "commits": 16,
         "order": [
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:25:04Z",
+            "message": "Change test directory name to only lowercase characters",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ddef985872efe9f8a4d141c398581abacda2c9b8"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:27:59Z",
+            "message": "Properly rename the filecreatortest directory",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/bc5d40161e4303d6ddd0eba059b57116300959a0"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-13T00:27:43Z",
+            "message": "Add Test for processOuputFile",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/cd1a685ea9dd2f145fbeaf8f3f88b4bc29bebca3"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-13T14:24:20Z",
+            "message": "Remove unused imports",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a160197c2bae6c19e242ca584caa0bcf81b20e66"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-13T14:41:58Z",
+            "message": "Modify the package test names",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/228150f3a53536a1bdeb53c40e7861bec236c9fb"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-13T14:45:01Z",
+            "message": "Change package names and import package names in test structure",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ac82b9f8b8ed14f3c7677c98c91fbfb304c4d914"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-17T23:07:17Z",
+            "message": "Change the project's java version to 1.8 and comment out the tests due to junit import issues",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7a581aa0524730202a8504197565b6aa0b5eb6b8"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-18T00:19:04Z",
+            "message": "Add JUnit 5 support and modify Wrangler and Parser tests to work with the newer version",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/8a20153a12bcf074e3b0a17b4b4ba33f0a159c07"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-19T12:34:10Z",
+            "message": "File Creator Test changed to work with JUnit 5 Parameterized Class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ae0448d8c21c31b6b8ed6c8f36db19cc38c03895"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-23T00:39:47Z",
@@ -24238,7 +25071,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/23b996aba63e233aef3a5c3f8ca233304da89682"
           }
         ],
-        "firstCommitDate": "2020-02-23T00:39:47Z",
+        "firstCommitDate": "2020-02-12T14:25:04Z",
         "lastCommitDate": "2020-03-12T22:03:42Z"
       }
     ],
@@ -24509,11 +25342,35 @@
       "src/test/java/parsertest/DataLineParserTest.java",
       {
         "authors": {
-          "elouak1002": 4,
+          "elouak1002": 8,
           "SV-Albert": 2
         },
-        "commits": 6,
+        "commits": 10,
         "order": [
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:18:12Z",
+            "message": "Create Directory for File Creator Test",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/2518373175d1ce2d5c77ba3e4c0648ab414c9845"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T14:27:59Z",
+            "message": "Properly rename the filecreatortest directory",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/bc5d40161e4303d6ddd0eba059b57116300959a0"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T19:10:32Z",
+            "message": "Test the DataLineParser",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e709d2dc207a77a77bf52029b45114b2b140c6b1"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T20:09:47Z",
+            "message": "Change Test method name to follow JUnit principles",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/9b1e7bc0353c16feca9275aeb0d9628588e2a2f9"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:41:58Z",
@@ -24551,7 +25408,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7c8e6dc97abba8b1f7f4727f027fec1f2a5833af"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:41:58Z",
+        "firstCommitDate": "2020-02-12T14:18:12Z",
         "lastCommitDate": "2020-03-13T21:58:15Z"
       }
     ],
@@ -24591,12 +25448,48 @@
       "src/test/java/parsertest/ParserTest.java",
       {
         "authors": {
-          "elouak1002": 11,
-          "MihailBratanov": 7,
-          "SV-Albert": 5
+          "elouak1002": 13,
+          "SV-Albert": 9,
+          "MihailBratanov": 7
         },
-        "commits": 23,
+        "commits": 29,
         "order": [
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T16:03:58Z",
+            "message": "Add tests for the parser class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7ca24e9e5b37683bbac9c2a992ae3549ba667abc"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T16:19:44Z",
+            "message": "Reduce float precision in extracted data to 2 decimal points",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/fcd5d65a148583bbbf9b8039438c9827abeede97"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T16:22:46Z",
+            "message": "Move data files to resources folder",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e144ee2748edf6072830b8c76fb8f22a0f65c0c1"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-10T19:14:51Z",
+            "message": "Add shadowJar dependency for the project packaging and change the Main class to accomodate this task; fix failing tests",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/b1aab416d07f052bb70e1577c0a8e01711c72262"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-12T19:52:24Z",
+            "message": "Add Tests for End and Begin of DataLines in the full file input",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/f0acaf49b11048cc7d24c3b11f26f5674f434ff9"
+          },
+          {
+            "author": "elouak1002",
+            "date": "2020-02-13T14:24:20Z",
+            "message": "Remove unused imports",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/a160197c2bae6c19e242ca584caa0bcf81b20e66"
+          },
           {
             "author": "elouak1002",
             "date": "2020-02-13T14:41:58Z",
@@ -24736,7 +25629,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/ab4341cc11e9893d9c0fd01edf35b446025f2316"
           }
         ],
-        "firstCommitDate": "2020-02-13T14:41:58Z",
+        "firstCommitDate": "2020-02-05T16:03:58Z",
         "lastCommitDate": "2020-04-05T15:14:29Z"
       }
     ],
@@ -24933,10 +25826,30 @@
       "src/test/resources/fullInputData.txt",
       {
         "authors": {
-          "SV-Albert": 1
+          "SV-Albert": 2,
+          "MihailBratanov": 1,
+          "ArchawinWongkittiruk": 1
         },
-        "commits": 1,
+        "commits": 4,
         "order": [
+          {
+            "author": "ArchawinWongkittiruk",
+            "date": "2020-02-03T13:44:27Z",
+            "message": "Setup gradle structure",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/b72e0bf1e6b0e8af1a71af93cb225157150f44fc"
+          },
+          {
+            "author": "MihailBratanov",
+            "date": "2020-02-04T16:21:54Z",
+            "message": "added nodeMap generation and tests",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/0f30ca6a32b4d0aa622b57621859f2de597e8ff7"
+          },
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T16:03:58Z",
+            "message": "Add tests for the parser class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7ca24e9e5b37683bbac9c2a992ae3549ba667abc"
+          },
           {
             "author": "SV-Albert",
             "date": "2020-02-05T16:22:46Z",
@@ -24944,7 +25857,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e144ee2748edf6072830b8c76fb8f22a0f65c0c1"
           }
         ],
-        "firstCommitDate": "2020-02-05T16:22:46Z",
+        "firstCommitDate": "2020-02-03T13:44:27Z",
         "lastCommitDate": "2020-02-05T16:22:46Z"
       }
     ],
@@ -24952,10 +25865,16 @@
       "src/test/resources/testData.txt",
       {
         "authors": {
-          "SV-Albert": 1
+          "SV-Albert": 2
         },
-        "commits": 1,
+        "commits": 2,
         "order": [
+          {
+            "author": "SV-Albert",
+            "date": "2020-02-05T16:03:58Z",
+            "message": "Add tests for the parser class",
+            "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/7ca24e9e5b37683bbac9c2a992ae3549ba667abc"
+          },
           {
             "author": "SV-Albert",
             "date": "2020-02-05T16:22:46Z",
@@ -24963,7 +25882,7 @@
             "html_url": "https://github.com/ArchawinWongkittiruk/TheBackrowers/commit/e144ee2748edf6072830b8c76fb8f22a0f65c0c1"
           }
         ],
-        "firstCommitDate": "2020-02-05T16:22:46Z",
+        "firstCommitDate": "2020-02-05T16:03:58Z",
         "lastCommitDate": "2020-02-05T16:22:46Z"
       }
     ],

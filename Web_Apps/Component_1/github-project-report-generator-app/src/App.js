@@ -50,6 +50,7 @@ function App() {
     try {
       setData(await generateBasicReport(token, repo));
     } catch (error) {
+      console.error(error);
       setResError(error.message);
     }
     setBasicReportLoading(false);
@@ -61,6 +62,7 @@ function App() {
     try {
       setData(await generateFullReport(token, repo, setFileCommitsFetchingStatus));
     } catch (error) {
+      console.error(error);
       setResError(error.message);
     }
     setFileCommitsFetchingStatus('');
