@@ -118,6 +118,7 @@ export async function generateFullReport(octokitAuth, repo, setFileCommitsFetchi
     // Therefore, to be consistent, the commit count output should be the author commits' sums
     // rather than the seemingly more intuitive commits.length
     fileCommits[file.path] = {
+      type: file.type,
       authors: Object.fromEntries(Object.entries(authors).sort((a, b) => b[1] - a[1])),
       commits: Object.values(authors).reduce((a, b) => a + b, 0),
       order: order,

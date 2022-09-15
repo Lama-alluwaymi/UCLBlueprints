@@ -43,8 +43,8 @@ const FileCommits = ({
       return true;
     })
     .filter((file) => {
-      if (showFiles && file[0].includes('.')) return true;
-      if (showFolders && !file[0].includes('.')) return true;
+      if (showFiles && file[1].type === 'blob') return true;
+      if (showFolders && file[1].type === 'tree') return true;
       return false;
     });
   const highlightedFileCommits = fileCommits.filter(
