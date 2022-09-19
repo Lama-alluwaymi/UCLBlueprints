@@ -1,3 +1,9 @@
+# GitHub Project Report Generator
+
+Find out the 'who, what, and when' of any GitHub repository by generating interactive reports about their contributors and the commits they made for each file.
+
+https://github-project-report-generator.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
